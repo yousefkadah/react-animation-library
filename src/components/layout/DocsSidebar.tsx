@@ -2,7 +2,12 @@ import React from 'react'
 import { Link, useParams } from 'react-router-dom'
 import { clsx } from 'clsx'
 
-const DocsSidebar = () => {
+interface DocsSidebarProps {
+  mobile?: boolean;
+  onNavigate?: () => void;
+}
+
+const DocsSidebar = ({ mobile = false, onNavigate }: DocsSidebarProps) => {
   const { componentName } = useParams<{ componentName: string }>()
 
   const componentCategories = [
@@ -50,7 +55,7 @@ const DocsSidebar = () => {
   ]
 
   return (
-    <aside className="w-64 h-screen sticky top-16 overflow-y-auto transition-colors duration-300 bg-white border-r border-secondary-200 dark:bg-secondary-900 dark:border-secondary-700 flex-shrink-0">
+    <aside className={`${mobile ? '' : 'hidden md:block'} w-64 h-screen sticky top-16 overflow-y-auto transition-colors duration-300 bg-white border-r border-secondary-200 dark:bg-secondary-900 dark:border-secondary-700 flex-shrink-0`}>
       <div className="p-6">
         <div className="mb-8">
           <Link 
@@ -82,6 +87,7 @@ const DocsSidebar = () => {
                           ? 'bg-primary-500/20 text-primary-300 border-l-2 border-primary-400'
                           : 'text-secondary-600 dark:text-secondary-400 hover:text-secondary-900 dark:hover:text-white hover:bg-secondary-100 dark:hover:bg-secondary-800'
                       )}
+                      onClick={onNavigate}
                     >
                       {component.name}
                     </Link>

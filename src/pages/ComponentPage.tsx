@@ -19,6 +19,7 @@ import BackgroundGradient from '../components/animations/BackgroundGradient'
 import EnhancedCodeBlock from '../components/animations/EnhancedCodeBlock'
 import CodeBlock from '../components/ui/CodeBlock'
 import DocsSidebar from '../components/layout/DocsSidebar'
+import DocsLayout from '../components/layout/DocsLayout'
 
 const ComponentPage = () => {
   const { componentName } = useParams<{ componentName: string }>()
@@ -793,22 +794,112 @@ const ComponentPage = () => {
         }
       ],
       component: (
-        <div className="flex flex-wrap items-center justify-center gap-8">
-          <div className="text-center">
+        <div className="grid grid-cols-3 gap-10">
+          {/* Modern and creative loading spinners */}
+          <div className="flex flex-col items-center justify-center min-h-[120px]">
             <LoadingSpinner variant="spin" size="lg" color="primary" />
-            <p className="text-sm mt-2 text-secondary-600 dark:text-secondary-300">Spin</p>
+            <span className="text-xs mt-2 text-secondary-600 dark:text-secondary-300 text-center">Classic Spin</span>
           </div>
-          <div className="text-center">
-            <LoadingSpinner variant="pulse" size="lg" color="blue" />
-            <p className="text-sm mt-2 text-secondary-600 dark:text-secondary-300">Pulse</p>
+          <div className="flex flex-col items-center justify-center min-h-[120px]">
+            {/* Dual ring spinner - both rings spin (one clockwise, one counterclockwise) */}
+            <div className="relative w-12 h-12">
+              <span className="absolute inset-0 rounded-full border-4 border-primary-500 border-t-transparent animate-spin" style={{ animationDuration: '1s' }} />
+              <span className="absolute inset-2 rounded-full border-2 border-blue-400 border-b-transparent animate-spin" style={{ animationDuration: '1.5s', animationDirection: 'reverse' }} />
+            </div>
+            <span className="text-xs mt-2 text-secondary-600 dark:text-secondary-300 text-center">Dual Ring</span>
           </div>
-          <div className="text-center">
-            <LoadingSpinner variant="bounce" size="lg" color="green" />
-            <p className="text-sm mt-2 text-secondary-600 dark:text-secondary-300">Bounce</p>
+          <div className="flex flex-col items-center justify-center min-h-[120px]">
+            {/* Dots wave */}
+            <div className="flex items-end gap-1 h-8">
+              {[0, 1, 2, 3, 4].map(i => (
+                <span
+                  key={i}
+                  className="w-2 h-2 rounded-full bg-primary-500 animate-bounce"
+                  style={{
+                    animationDelay: `${i * 0.12}s`,
+                    animationDuration: '0.8s'
+                  }}
+                />
+              ))}
+            </div>
+            <span className="text-xs mt-2 text-secondary-600 dark:text-secondary-300 text-center">Wave Dots</span>
           </div>
-          <div className="text-center">
-            <LoadingSpinner variant="dots" size="lg" color="red" />
-            <p className="text-sm mt-2 text-secondary-600 dark:text-secondary-300">Dots</p>
+          <div className="flex flex-col items-center justify-center min-h-[120px]">
+            {/* Bar loader */}
+            <div className="flex gap-1 h-8">
+              {[0, 1, 2, 3].map(i => (
+                <span
+                  key={i}
+                  className="w-1.5 rounded bg-blue-500 animate-pulse"
+                  style={{
+                    height: `${8 + i * 8}px`,
+                    animationDelay: `${i * 0.15}s`,
+                    animationDuration: '1s'
+                  }}
+                />
+              ))}
+            </div>
+            <span className="text-xs mt-2 text-secondary-600 dark:text-secondary-300 text-center">Bar Loader</span>
+          </div>
+          <div className="flex flex-col items-center justify-center min-h-[120px]">
+            {/* Orbit spinner - dot orbits around the center */}
+            <div className="relative w-12 h-12 flex items-center justify-center">
+              <span className="absolute w-8 h-8 border-2 border-dashed border-primary-500 rounded-full animate-spin" style={{ animationDuration: '1.2s' }} />
+              <span className="absolute left-1/2 top-1/2 w-3 h-3 bg-blue-400 rounded-full animate-orbit-dot"
+                style={{
+                  transform: 'rotate(0deg) translateY(-16px) translateX(-50%)',
+                  transformOrigin: '50% 50%',
+                  animation: 'orbit-dot-spin 1.2s linear infinite'
+                }}
+              />
+              {/* Orbit dot animation keyframes */}
+              <style>
+                {`
+                  @keyframes orbit-dot-spin {
+                    100% { transform: rotate(360deg) translateY(-16px) translateX(-50%); }
+                  }
+                `}
+              </style>
+            </div>
+            <span className="text-xs mt-2 text-secondary-600 dark:text-secondary-300 text-center">Orbit</span>
+          </div>
+          <div className="flex flex-col items-center justify-center min-h-[120px]">
+            {/* Growing dot */}
+            <span className="w-6 h-6 bg-primary-500 rounded-full animate-ping" style={{ animationDuration: '1.2s' }} />
+            <span className="text-xs mt-2 text-secondary-600 dark:text-secondary-300 text-center">Growing Dot</span>
+          </div>
+          <div className="flex flex-col items-center justify-center min-h-[120px]">
+            {/* Ripple */}
+            <div className="relative w-10 h-10 flex items-center justify-center">
+              <span className="absolute w-10 h-10 border-2 border-primary-500 rounded-full animate-ping" style={{ animationDuration: '1.2s' }} />
+              <span className="absolute w-6 h-6 bg-primary-500 rounded-full opacity-80" />
+            </div>
+            <span className="text-xs mt-2 text-secondary-600 dark:text-secondary-300 text-center">Ripple</span>
+          </div>
+          <div className="flex flex-col items-center justify-center min-h-[120px]">
+            {/* Ellipsis */}
+            <div className="flex gap-1">
+              {[0, 1, 2].map(i => (
+                <span
+                  key={i}
+                  className="w-2 h-2 rounded-full bg-primary-500 animate-bounce"
+                  style={{
+                    animationDelay: `${i * 0.18}s`,
+                    animationDuration: '0.9s'
+                  }}
+                />
+              ))}
+            </div>
+            <span className="text-xs mt-2 text-secondary-600 dark:text-secondary-300 text-center">Ellipsis</span>
+          </div>
+          <div className="flex flex-col items-center justify-center min-h-[120px]">
+            {/* Flip square */}
+            <span className="block w-6 h-6 bg-primary-500 rounded animate-spin" style={{
+              animationDuration: '1.2s',
+              borderRadius: '0.25rem',
+              transform: 'rotateY(0deg)'
+            }} />
+            <span className="text-xs mt-2 text-secondary-600 dark:text-secondary-300 text-center">Flip Square</span>
           </div>
         </div>
       )
@@ -1076,7 +1167,7 @@ export const Counter = () => {
 
   if (!component) {
     return (
-      <div className="min-h-screen py-8">
+      <DocsLayout>
         <div className="container">
           <div className="text-center">
             <h1 className="text-4xl font-bold text-secondary-900 dark:text-white mb-4">Component Not Found</h1>
@@ -1088,7 +1179,7 @@ export const Counter = () => {
             </Link>
           </div>
         </div>
-      </div>
+      </DocsLayout>
     )
   }
 
@@ -2922,21 +3013,20 @@ export default EnhancedCodeBlock`
   const fullComponentCode = getFullSourceCode(componentName || '')
 
   return (
-    <div className="flex min-h-screen">
-      <DocsSidebar />
+    <DocsLayout>
       <div ref={containerRef} className="flex-1 min-w-0">
         <div className="component-page-content">
           {/* Header */}
-          <div className="border-b px-8 py-6 transition-colors duration-300 bg-white border-secondary-200 dark:bg-secondary-900 dark:border-secondary-700">
-            <div className="flex items-center gap-4 mb-4">
-              <h1 className="text-3xl md:text-4xl font-bold text-secondary-900 dark:text-white">
+          <div className="border-b px-4 md:px-8 py-4 md:py-6 transition-colors duration-300 bg-white border-secondary-200 dark:bg-secondary-900 dark:border-secondary-700">
+            <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4 mb-3">
+              <h1 className="text-xl sm:text-2xl md:text-3xl font-bold text-secondary-900 dark:text-white break-words">
                 {component.name}
               </h1>
-              <span className="px-3 py-1 text-sm font-medium bg-primary-500/20 text-primary-300 rounded-full">
+              <span className="px-2 py-1 text-xs sm:text-sm font-medium bg-primary-500/20 text-primary-300 rounded-full w-fit">
                 {component.category}
               </span>
             </div>
-            <p className="text-lg max-w-4xl text-secondary-600 dark:text-secondary-300">
+            <p className="text-base md:text-lg max-w-full md:max-w-4xl text-secondary-600 dark:text-secondary-300">
               {component.description}
             </p>
           </div>
@@ -3002,13 +3092,39 @@ export default EnhancedCodeBlock`
                   </p>
                   <button
                     onClick={() => copyToClipboard(fullComponentCode)}
-                    className={`px-4 py-2 rounded-lg font-medium transition-colors ${
+                    className={`p-2 rounded-lg transition-colors flex items-center justify-center ${
                       copied 
                         ? 'bg-green-500/20 text-green-300' 
                         : 'bg-primary-500/20 text-primary-300 hover:bg-primary-500/30'
                     }`}
+                    title={copied ? 'Copied!' : 'Copy code'}
                   >
-                    {copied ? '✓ Copied!' : 'Copy Code'}
+                    {copied ? (
+                      // Check icon
+                      <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                        <path
+                          d="M9 12.75L11.25 15L15 9.75M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z"
+                          stroke="currentColor"
+                          strokeWidth="1.5"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                        />
+                      </svg>
+                    ) : (
+                      // Copy icon
+                      <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                        <path
+                          d="M8 5.00005C7.01165 5.00005 6.49359 5.01782 6.09202 5.21799C5.71569 5.40973 5.40973 5.71569 5.21799 6.09202C5.01782 6.49359 5 7.01165 5 8.00005V16C5 16.9884 5.01782 17.5065 5.21799 17.908C5.40973 18.2843 5.71569 18.5903 6.09202 18.782C6.49359 18.9822 7.01165 19 8 19H16C16.9884 19 17.5065 18.9822 17.908 18.782C18.2843 18.5903 18.5903 18.2843 18.782 17.908C18.9822 17.5065 19 16.9884 19 16V8.00005C19 7.01165 18.9822 6.49359 18.782 6.09202C18.5903 5.71569 18.2843 5.40973 17.908 5.21799C17.5065 5.01782 16.9884 5.00005 16 5.00005H8Z"
+                          stroke="currentColor"
+                          strokeWidth="2"
+                        />
+                        <path
+                          d="M8 3C9.9319 3 10.3983 3.00275 11.5277 3.048C12.6439 3.09263 13.2609 3.27677 13.7236 3.52786C14.2454 3.80611 14.6973 4.18982 14.9871 4.73056C15.2668 5.2387 15.4612 5.95139 15.4612 7V17H8C7.00319 17 6.90085 16.9927 6.5277 16.952C5.95139 16.8388 5.2387 16.6332 4.73056 16.2764C4.18982 15.9027 3.80611 15.4546 3.52786 14.9264C3.27677 14.4391 3.09263 13.7561 3.048 12.5277C3.00275 11.3017 3 9.9319 3 8V7C3 5.95139 3.1388 5.2387 3.52786 4.73056C3.80611 4.18982 4.24546 3.80611 4.73056 3.52786C5.2387 3.27677 5.95139 3.09263 7.4723 3.048C8.1098 3.00275 8.7927 3 8 3Z"
+                          stroke="currentColor"
+                          strokeWidth="2"
+                        />
+                      </svg>
+                    )}
                   </button>
                 </div>
                 <CodeBlock code={fullComponentCode} language="jsx" />
@@ -3070,7 +3186,7 @@ export default EnhancedCodeBlock`
           </div>
         </div>
       </div>
-    </div>
+    </DocsLayout>
   )
 }
 
