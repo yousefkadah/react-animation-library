@@ -132,6 +132,12 @@
     text-wrap: balance;
   }
 
+  .responsive-media {
+    max-width: 100%;
+    height: auto;
+    display: block;
+  }
+
   .animation-delay-200 {
     animation-delay: 200ms;
   }
@@ -151,6 +157,13 @@
   .animation-delay-1000 {
     animation-delay: 1000ms;
   }
+}
+
+/* Make all images, videos, and iframes responsive by default */
+img, video, iframe {
+  max-width: 100%;
+  height: auto;
+  display: block;
 }
 
 /* Custom animations */

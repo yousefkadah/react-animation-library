@@ -13,25 +13,25 @@ const Navbar = () => {
 
   return (
     <nav className="sticky top-0 z-50 backdrop-blur-md border-b transition-colors duration-300 bg-white/80 border-secondary-200 dark:bg-secondary-900/80 dark:border-secondary-700">
-      <div className="container">
-        <div className="flex items-center justify-between h-16">
+      <div className="max-w-7xl mx-auto px-2 sm:px-4 md:px-8">
+        <div className="flex flex-wrap items-center justify-between h-16 gap-2">
           <Link 
             to="/" 
-            className="flex items-center space-x-2 text-xl font-bold gradient-text"
+            className="flex items-center space-x-2 text-lg sm:text-xl font-bold gradient-text min-w-0"
           >
-            <div className="w-8 h-8 bg-gradient-to-r from-primary-500 to-primary-600 rounded-lg flex items-center justify-center">
-              <span className="text-white font-bold">R</span>
+            <div className="w-8 h-8 bg-gradient-to-r from-primary-500 to-primary-600 rounded-lg flex items-center justify-center flex-shrink-0">
+              <span className="text-white font-bold text-base sm:text-lg">R</span>
             </div>
-            <span>React GSAP UI</span>
+            <span className="truncate max-w-[120px] sm:max-w-none">React GSAP UI</span>
           </Link>
 
-          <div className="flex items-center space-x-8">
+          <div className="flex items-center space-x-2 sm:space-x-8 overflow-x-auto">
             {navItems.map((item) => (
               <Link
                 key={item.name}
                 to={item.href}
                 className={clsx(
-                  'text-sm font-medium transition-colors duration-200 hover:text-primary-400',
+                  'text-xs sm:text-sm font-medium transition-colors duration-200 hover:text-primary-400 whitespace-nowrap',
                   location.pathname === item.href
                     ? 'text-primary-400'
                     : 'text-secondary-600 dark:text-secondary-300'
@@ -40,9 +40,7 @@ const Navbar = () => {
                 {item.name}
               </Link>
             ))}
-            
             <ThemeToggle />
-            
             <a
               href="https://github.com"
               target="_blank"

@@ -167,28 +167,28 @@ const DemoPage = () => {
   }, [currentDemo])
 
   return (
-    <div ref={containerRef} className="min-h-screen pt-20 pb-12">
-      <div className="container mx-auto px-4">
+    <div ref={containerRef} className="min-h-screen pt-16 pb-8 bg-gradient-to-br from-gray-50 via-white to-gray-100 dark:from-secondary-900 dark:via-secondary-800 dark:to-secondary-900">
+      <div className="max-w-7xl mx-auto px-2 sm:px-4 md:px-8">
         {/* Header */}
-        <div className="text-center mb-12">
+        <div className="text-center mb-8 sm:mb-12">
           <TypewriterEffect
             text="Interactive Demo Playground"
             speed={50}
-            className="text-5xl font-bold mb-4"
+            className="text-2xl sm:text-4xl md:text-5xl font-bold mb-3 sm:mb-4"
           />
-          <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-            Explore all the animation components in action. Click on any component name below to see it in action!
+          <p className="text-base sm:text-lg md:text-xl text-gray-600 dark:text-gray-300 max-w-2xl sm:max-w-3xl mx-auto px-2">
+            Explore all the animation components in action. Tap any component name below to see it in action!
           </p>
         </div>
 
         {/* Component Selector */}
-        <div className="mb-8">
-          <div className="flex flex-wrap justify-center gap-2 mb-6">
+        <div className="mb-6 sm:mb-8">
+          <div className="flex flex-wrap justify-center gap-2 mb-4 sm:mb-6">
             {demos.map((demo, index) => (
               <button
                 key={demo.name}
                 onClick={() => setCurrentDemo(index)}
-                className={`px-4 py-2 rounded-lg font-medium transition-all duration-300 ${
+                className={`px-3 py-2 sm:px-4 sm:py-2 rounded-lg font-medium text-sm sm:text-base transition-all duration-300 ${
                   currentDemo === index
                     ? 'bg-blue-600 text-white shadow-lg scale-105'
                     : 'bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 hover:bg-gray-300 dark:hover:bg-gray-600'
@@ -202,29 +202,27 @@ const DemoPage = () => {
 
         {/* Current Demo */}
         <div className="demo-container">
-          <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-xl p-8 mb-8">
-            <div className="text-center mb-6">
-              <h2 className="text-3xl font-bold mb-2">{demos[currentDemo].name}</h2>
-              <p className="text-gray-600 dark:text-gray-300">
+          <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-xl p-4 sm:p-8 mb-8">
+            <div className="text-center mb-4 sm:mb-6">
+              <h2 className="text-2xl sm:text-3xl font-bold mb-1 sm:mb-2">{demos[currentDemo].name}</h2>
+              <p className="text-gray-600 dark:text-gray-300 text-sm sm:text-base">
                 {demos[currentDemo].description}
               </p>
             </div>
-            
-            <div className="flex justify-center items-center min-h-[300px]">
+            <div className="flex flex-col justify-center items-center min-h-[200px] sm:min-h-[300px]">
               {demos[currentDemo].component}
             </div>
-
-            <div className="mt-8 pt-6 border-t border-gray-200 dark:border-gray-700">
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <div className="mt-6 sm:mt-8 pt-4 sm:pt-6 border-t border-gray-200 dark:border-gray-700">
+              <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
                 <Link
                   to={`/docs/${demos[currentDemo].name.toLowerCase()}`}
-                  className="px-6 py-3 bg-blue-600 text-white rounded-lg font-medium hover:bg-blue-700 transition-colors text-center"
+                  className="px-5 py-2 sm:px-6 sm:py-3 bg-blue-600 text-white rounded-lg font-medium hover:bg-blue-700 transition-colors text-center"
                 >
                   View Documentation
                 </Link>
                 <button
                   onClick={() => setCurrentDemo((prev) => (prev + 1) % demos.length)}
-                  className="px-6 py-3 bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded-lg font-medium hover:bg-gray-300 dark:hover:bg-gray-600 transition-colors"
+                  className="px-5 py-2 sm:px-6 sm:py-3 bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded-lg font-medium hover:bg-gray-300 dark:hover:bg-gray-600 transition-colors"
                 >
                   Next Component
                 </button>
@@ -234,29 +232,28 @@ const DemoPage = () => {
         </div>
 
         {/* All Components Grid */}
-        <div className="mt-16">
-          <h2 className="text-3xl font-bold text-center mb-12">
-            <GradientText>All Components Overview</GradientText>
+        <div className="mt-10 sm:mt-16">
+          <h2 className="text-2xl sm:text-3xl font-bold text-center mb-8 sm:mb-12">
+            <GradientText text="All Components Overview" className="inline-block" />
           </h2>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
             {demos.map((demo, index) => (
               <FadeIn key={demo.name} delay={index * 0.1}>
-                <div className="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-6 hover:shadow-xl transition-shadow">
-                  <h3 className="text-xl font-bold mb-3">{demo.name}</h3>
-                  <p className="text-gray-600 dark:text-gray-300 mb-4 text-sm">
+                <div className="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-4 sm:p-6 hover:shadow-xl transition-shadow flex flex-col h-full">
+                  <h3 className="text-lg sm:text-xl font-bold mb-2 sm:mb-3">{demo.name}</h3>
+                  <p className="text-gray-600 dark:text-gray-300 mb-3 sm:mb-4 text-xs sm:text-sm">
                     {demo.description}
                   </p>
-                  <div className="flex gap-2">
+                  <div className="flex flex-col sm:flex-row gap-2 mt-auto">
                     <button
                       onClick={() => setCurrentDemo(index)}
-                      className="px-4 py-2 bg-blue-600 text-white rounded-lg text-sm font-medium hover:bg-blue-700 transition-colors"
+                      className="px-3 py-2 bg-blue-600 text-white rounded-lg text-xs sm:text-sm font-medium hover:bg-blue-700 transition-colors"
                     >
                       Demo
                     </button>
                     <Link
                       to={`/docs/${demo.name.toLowerCase()}`}
-                      className="px-4 py-2 bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded-lg text-sm font-medium hover:bg-gray-300 dark:hover:bg-gray-600 transition-colors"
+                      className="px-3 py-2 bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded-lg text-xs sm:text-sm font-medium hover:bg-gray-300 dark:hover:bg-gray-600 transition-colors"
                     >
                       Docs
                     </Link>
@@ -268,19 +265,19 @@ const DemoPage = () => {
         </div>
 
         {/* CTA Section */}
-        <div className="mt-16 text-center">
-          <BackgroundGradient className="rounded-2xl p-8 max-w-4xl mx-auto">
+        <div className="mt-10 sm:mt-16 text-center">
+          <BackgroundGradient className="rounded-2xl p-4 sm:p-8 max-w-2xl sm:max-w-4xl mx-auto">
             <div className="relative z-10">
-              <h2 className="text-3xl font-bold text-white mb-4">
+              <h2 className="text-2xl sm:text-3xl font-bold text-white mb-3 sm:mb-4">
                 Ready to Get Started?
               </h2>
-              <p className="text-white/90 mb-6 text-lg">
+              <p className="text-white/90 mb-4 sm:mb-6 text-base sm:text-lg">
                 Copy these components into your project and start building amazing animations!
               </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
                 <Link
                   to="/docs"
-                  className="px-8 py-3 bg-white text-gray-900 rounded-lg font-medium hover:bg-gray-100 transition-colors"
+                  className="px-6 py-2 sm:px-8 sm:py-3 bg-white text-gray-900 rounded-lg font-medium hover:bg-gray-100 transition-colors"
                 >
                   View Documentation
                 </Link>
@@ -288,7 +285,7 @@ const DemoPage = () => {
                   href="https://github.com/yousefkadah/react-animation-library"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="px-8 py-3 bg-white/20 text-white rounded-lg font-medium hover:bg-white/30 transition-colors"
+                  className="px-6 py-2 sm:px-8 sm:py-3 bg-white/20 text-white rounded-lg font-medium hover:bg-white/30 transition-colors"
                 >
                   GitHub Repository
                 </a>
