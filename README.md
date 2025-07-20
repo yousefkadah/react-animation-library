@@ -14,7 +14,13 @@ A powerful React animation component library built with GSAP, inspired by Aceter
 
 ## 🌐 Live Demo
 
-Visit our [GitHub Pages demo](https://yousefkadah.github.io/react-animation-library/) to see all components in action!
+🚀 **[View Live Demo](https://yousefkadah.github.io/react-animation-library/)**
+
+Explore all components in action with our interactive demo! The demo includes:
+- Real-time component previews
+- Interactive examples
+- Complete source code for each component
+- Documentation and usage examples
 
 ## 📦 Installation
 
@@ -59,10 +65,36 @@ function App() {
 - **TextReveal** - Text that reveals on scroll with various animations
 - **GradientText** - Animated gradient text effects
 
-### Card Components
-- **AnimatedCard** - Interactive 3D card with tilt effects
-- **GlareCard** - Card with mouse-following glare effect
-- **FlipCard** - Card that flips to reveal back content
+### Card & Container Components
+- **AnimatedCard** - 3D hover effects with tilt and lighting
+- **GlareCard** - Interactive glare effect following mouse movement
+- **FlipCard** - Smooth 3D flip animation on hover
+- **BackgroundGradient** - Animated gradient backgrounds
+
+### Loading & Progress Components  
+- **LoadingSpinner** - Customizable loading spinners in different sizes
+- **ProgressBar** - Animated progress bars with labels and colors
+- **CountUpAnimation** - Animated number counter with customizable duration
+
+### Layout & Background Effects
+- **FloatingParticles** - Interactive floating particles with mouse tracking
+- **WaveBackground** - Animated wave background with smooth motion
+- **Parallax** - Smooth parallax scrolling effects
+- **FadeIn** - Fade in animations with intersection observer
+- **SlideIn** - Slide in animations from different directions
+
+## 🎮 Interactive Demo Features
+
+Our live demo at [yousefkadah.github.io/react-animation-library](https://yousefkadah.github.io/react-animation-library/) includes:
+
+- 🔄 **Component Switcher**: Click through all components instantly
+- 📱 **Responsive Design**: Test components on mobile and desktop
+- 🎨 **Dark/Light Mode**: See how components look in both themes
+- 📋 **Copy Source Code**: Get the complete source code for each component
+- 📖 **Live Documentation**: Interactive docs with real examples
+- ⚡ **Performance Optimized**: Smooth 60fps animations powered by GSAP
+
+## 💻 Usage Examples
 
 ### Background Effects
 - **FloatingParticles** - Connected particle system background
