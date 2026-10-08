@@ -1,0 +1,96 @@
+{
+  "name": "shimmer-button",
+  "title": "Shimmer Button",
+  "description": "A button with a shimmering light which travels around the perimeter.",
+  "category": "buttons",
+  "exports": [
+    "ShimmerButton"
+  ],
+  "dependencies": [],
+  "cssVars": {
+    "theme": {
+      "animate-shimmer-slide": "shimmer-slide var(--speed) ease-in-out infinite alternate",
+      "animate-spin-around": "spin-around calc(var(--speed) * 2) infinite linear"
+    }
+  },
+  "css": {
+    "@keyframes shimmer-slide": {
+      "to": {
+        "transform": "translate(calc(100cqw - 100%), 0)"
+      }
+    },
+    "@keyframes spin-around": {
+      "0%": {
+        "transform": "translateZ(0) rotate(0)"
+      },
+      "15%, 35%": {
+        "transform": "translateZ(0) rotate(90deg)"
+      },
+      "65%, 85%": {
+        "transform": "translateZ(0) rotate(270deg)"
+      },
+      "100%": {
+        "transform": "translateZ(0) rotate(360deg)"
+      }
+    }
+  },
+  "usage": "import { ShimmerButton } from \"@/components/ui/shimmer-button\"\n\nexport function Cta() {\n  return <ShimmerButton>Shimmer Button</ShimmerButton>\n}",
+  "examples": [
+    {
+      "name": "shimmer-button-demo",
+      "title": "Default"
+    }
+  ],
+  "api": [
+    {
+      "name": "ShimmerButton",
+      "props": [
+        {
+          "name": "className",
+          "type": "string",
+          "description": "Classes for the button."
+        },
+        {
+          "name": "shimmerColor",
+          "type": "string",
+          "default": "\"#ffffff\"",
+          "description": "Colour of the shimmer."
+        },
+        {
+          "name": "shimmerSize",
+          "type": "string",
+          "default": "\"0.05em\"",
+          "description": "Thickness of the shimmer ring."
+        },
+        {
+          "name": "borderRadius",
+          "type": "string",
+          "default": "\"100px\"",
+          "description": "Corner radius."
+        },
+        {
+          "name": "shimmerDuration",
+          "type": "string",
+          "default": "\"3s\"",
+          "description": "Speed of the shimmer."
+        },
+        {
+          "name": "background",
+          "type": "string",
+          "default": "\"rgba(0, 0, 0, 1)\"",
+          "description": "Button background."
+        },
+        {
+          "name": "children",
+          "type": "React.ReactNode",
+          "description": "Button label."
+        },
+        {
+          "name": "onClick",
+          "type": "() => void",
+          "description": "Native click (falls through to the button)."
+        }
+      ]
+    }
+  ]
+}

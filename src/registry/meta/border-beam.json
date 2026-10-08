@@ -1,0 +1,96 @@
+{
+  "name": "border-beam",
+  "title": "Border Beam",
+  "description": "An animated beam of light which travels along the border of its container.",
+  "category": "special-effects",
+  "exports": [
+    "BorderBeam"
+  ],
+  "dependencies": [
+    "motion"
+  ],
+  "usage": "import { BorderBeam } from \"@/components/ui/border-beam\"\n\nexport function Card() {\n  return (\n    <div className=\"relative h-[200px] w-full overflow-hidden rounded-xl border\">\n      <BorderBeam />\n    </div>\n  )\n}",
+  "examples": [
+    {
+      "name": "border-beam-demo",
+      "title": "Login card"
+    },
+    {
+      "name": "border-beam-two-beams",
+      "title": "Two beams"
+    },
+    {
+      "name": "border-beam-reverse",
+      "title": "Reverse"
+    },
+    {
+      "name": "border-beam-button",
+      "title": "Button with spring"
+    }
+  ],
+  "api": [
+    {
+      "name": "BorderBeam",
+      "props": [
+        {
+          "name": "className",
+          "type": "string",
+          "description": "Classes for the beam element."
+        },
+        {
+          "name": "size",
+          "type": "number",
+          "default": "50",
+          "description": "Size of the beam in pixels."
+        },
+        {
+          "name": "duration",
+          "type": "number",
+          "default": "6",
+          "description": "Seconds for one lap around the border."
+        },
+        {
+          "name": "delay",
+          "type": "number",
+          "default": "0",
+          "description": "Seconds to offset the start."
+        },
+        {
+          "name": "colorFrom",
+          "type": "string",
+          "default": "\"#ffaa40\"",
+          "description": "Gradient start colour."
+        },
+        {
+          "name": "colorTo",
+          "type": "string",
+          "default": "\"#9c40ff\"",
+          "description": "Gradient end colour."
+        },
+        {
+          "name": "transition",
+          "type": "Transition",
+          "description": "Motion transition overrides (e.g. a spring)."
+        },
+        {
+          "name": "reverse",
+          "type": "boolean",
+          "default": "false",
+          "description": "Travel counter-clockwise."
+        },
+        {
+          "name": "initialOffset",
+          "type": "number",
+          "default": "0",
+          "description": "Starting position along the border (0–100)."
+        },
+        {
+          "name": "borderWidth",
+          "type": "number",
+          "default": "1",
+          "description": "Border thickness in pixels."
+        }
+      ]
+    }
+  ]
+}

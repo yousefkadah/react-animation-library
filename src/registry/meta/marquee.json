@@ -1,0 +1,106 @@
+{
+  "name": "marquee",
+  "title": "Marquee",
+  "description": "An infinite scrolling component that can be used to display text, images, or videos.",
+  "category": "components",
+  "exports": [
+    "Marquee"
+  ],
+  "dependencies": [],
+  "cssVars": {
+    "theme": {
+      "animate-marquee": "marquee var(--duration) infinite linear",
+      "animate-marquee-vertical": "marquee-vertical var(--duration) linear infinite"
+    }
+  },
+  "css": {
+    "@keyframes marquee": {
+      "from": {
+        "transform": "translateX(0)"
+      },
+      "to": {
+        "transform": "translateX(calc(-100% - var(--gap)))"
+      }
+    },
+    "@keyframes marquee-vertical": {
+      "from": {
+        "transform": "translateY(0)"
+      },
+      "to": {
+        "transform": "translateY(calc(-100% - var(--gap)))"
+      }
+    }
+  },
+  "usage": "import { Marquee } from \"@/components/ui/marquee\"\n\nexport function Logos() {\n  return (\n    <Marquee pauseOnHover>\n      <span>React</span>\n      <span>Next.js</span>\n      <span>Vite</span>\n    </Marquee>\n  )\n}",
+  "examples": [
+    {
+      "name": "marquee-demo",
+      "title": "Testimonials"
+    },
+    {
+      "name": "marquee-vertical",
+      "title": "Vertical"
+    },
+    {
+      "name": "marquee-3d",
+      "title": "3D"
+    },
+    {
+      "name": "marquee-logos",
+      "title": "Logo cloud"
+    }
+  ],
+  "api": [
+    {
+      "name": "Marquee",
+      "props": [
+        {
+          "name": "className",
+          "type": "string",
+          "description": "Classes for the outer container."
+        },
+        {
+          "name": "reverse",
+          "type": "boolean",
+          "default": "false",
+          "description": "Reverse the scroll direction."
+        },
+        {
+          "name": "pauseOnHover",
+          "type": "boolean",
+          "default": "false",
+          "description": "Pause while hovered."
+        },
+        {
+          "name": "vertical",
+          "type": "boolean",
+          "default": "false",
+          "description": "Scroll vertically."
+        },
+        {
+          "name": "repeat",
+          "type": "number",
+          "default": "4",
+          "description": "Number of copies of the content rendered for a seamless loop."
+        },
+        {
+          "name": "duration",
+          "type": "string",
+          "default": "\"40s\"",
+          "description": "Duration of one loop. Also settable with the --duration CSS variable."
+        },
+        {
+          "name": "gap",
+          "type": "string",
+          "default": "\"1rem\"",
+          "description": "Gap between items. Also settable with the --gap CSS variable."
+        },
+        {
+          "name": "children",
+          "type": "React.ReactNode",
+          "description": "The items to scroll."
+        }
+      ]
+    }
+  ]
+}

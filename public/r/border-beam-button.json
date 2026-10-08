@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "border-beam-button",
+  "title": "Border Beam — Button with spring",
+  "registryDependencies": [
+    "https://yousefkadah.github.io/react-animation-library/r/border-beam.json"
+  ],
+  "files": [
+    {
+      "path": "src/registry/examples/border-beam-button.tsx",
+      "content": "import { BorderBeam } from \"@/components/ui/border-beam\"\n\nexport default function BorderBeamButton() {\n  return (\n    <button className=\"relative overflow-hidden rounded-md border bg-background px-5 py-2 text-sm font-medium hover:bg-accent\">\n      Buy Now\n      <BorderBeam\n        size={40}\n        initialOffset={20}\n        className=\"from-transparent via-yellow-500 to-transparent\"\n        transition={{ type: \"spring\", stiffness: 60, damping: 20 }}\n      />\n    </button>\n  )\n}\n",
+      "type": "registry:example"
+    }
+  ],
+  "type": "registry:example"
+}

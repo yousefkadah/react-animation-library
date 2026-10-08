@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "marquee-logos",
+  "title": "Marquee — Logo cloud",
+  "registryDependencies": [
+    "https://yousefkadah.github.io/react-animation-library/r/marquee.json"
+  ],
+  "files": [
+    {
+      "path": "src/registry/examples/marquee-logos.tsx",
+      "content": "import { Marquee } from \"@/components/ui/marquee\"\n\nconst logos = [\"React\", \"Next.js\", \"Vite\", \"Remix\", \"Vitest\", \"Zustand\", \"Tailwind\", \"Motion\"]\n\nexport default function MarqueeLogos() {\n  return (\n    <div className=\"relative w-full overflow-hidden py-6\">\n      <p className=\"mb-6 text-center text-sm font-medium text-muted-foreground\">Trusted by teams building with</p>\n      <Marquee pauseOnHover gap=\"3rem\" duration=\"25s\">\n        {logos.map((logo) => (\n          <span key={logo} className=\"text-2xl font-semibold tracking-tight text-foreground/60 transition-colors hover:text-foreground\">\n            {logo}\n          </span>\n        ))}\n      </Marquee>\n      <div className=\"pointer-events-none absolute inset-y-0 left-0 w-1/5 bg-linear-to-r from-background\" />\n      <div className=\"pointer-events-none absolute inset-y-0 right-0 w-1/5 bg-linear-to-l from-background\" />\n    </div>\n  )\n}\n",
+      "type": "registry:example"
+    }
+  ],
+  "type": "registry:example"
+}

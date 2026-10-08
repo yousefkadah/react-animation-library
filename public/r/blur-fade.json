@@ -1,0 +1,23 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "blur-fade",
+  "title": "Blur Fade",
+  "description": "Blur fade in and out animation. Used to smoothly fade in and out content.",
+  "dependencies": [
+    "motion"
+  ],
+  "registryDependencies": [
+    "utils"
+  ],
+  "files": [
+    {
+      "path": "src/registry/ui/blur-fade.tsx",
+      "content": "\"use client\"\n\nimport { useRef, type ReactNode } from \"react\"\nimport { AnimatePresence, motion, useInView, type UseInViewOptions, type Variants } from \"motion/react\"\n\nimport { cn } from \"@/lib/utils\"\n\ntype MarginType = UseInViewOptions[\"margin\"]\n\nexport interface BlurFadeProps {\n  children: ReactNode\n  className?: string\n  /** Custom `hidden` / `visible` variants. Replaces the default blur-and-slide. */\n  variant?: { hidden: { y: number }; visible: { y: number } }\n  /** Seconds the animation lasts. */\n  duration?: number\n  /** Seconds to wait before animating. */\n  delay?: number\n  /** Distance in pixels the element travels while fading in. */\n  offset?: number\n  /** Direction the element travels from. */\n  direction?: \"up\" | \"down\" | \"left\" | \"right\"\n  /** Wait until the element scrolls into view before animating. */\n  inView?: boolean\n  /** Root margin used for the in-view check. */\n  inViewMargin?: MarginType\n  /** Initial blur amount. */\n  blur?: string\n}\n\nexport function BlurFade({\n  children,\n  className,\n  variant,\n  duration = 0.4,\n  delay = 0,\n  offset = 6,\n  direction = \"down\",\n  inView = false,\n  inViewMargin = \"-50px\",\n  blur = \"6px\",\n}: BlurFadeProps) {\n  const ref = useRef<HTMLDivElement>(null)\n  const inViewResult = useInView(ref, { once: true, margin: inViewMargin })\n  const isInView = !inView || inViewResult\n  const axis = direction === \"left\" || direction === \"right\" ? \"x\" : \"y\"\n  const sign = direction === \"right\" || direction === \"down\" ? -1 : 1\n  const defaultVariants: Variants = {\n    hidden: { [axis]: sign * offset, opacity: 0, filter: `blur(${blur})` },\n    visible: { [axis]: 0, opacity: 1, filter: \"blur(0px)\" },\n  }\n  const combinedVariants = (variant as Variants | undefined) ?? defaultVariants\n\n  return (\n    <AnimatePresence>\n      <motion.div\n        ref={ref}\n        initial=\"hidden\"\n        animate={isInView ? \"visible\" : \"hidden\"}\n        exit=\"hidden\"\n        variants={combinedVariants}\n        transition={{ delay: 0.04 + delay, duration, ease: \"easeOut\" }}\n        className={cn(className)}\n      >\n        {children}\n      </motion.div>\n    </AnimatePresence>\n  )\n}\n",
+      "type": "registry:ui"
+    }
+  ],
+  "categories": [
+    "animations"
+  ],
+  "type": "registry:ui"
+}

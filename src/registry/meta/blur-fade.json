@@ -1,0 +1,87 @@
+{
+  "name": "blur-fade",
+  "title": "Blur Fade",
+  "description": "Blur fade in and out animation. Used to smoothly fade in and out content.",
+  "category": "animations",
+  "exports": [
+    "BlurFade"
+  ],
+  "dependencies": [
+    "motion"
+  ],
+  "usage": "import { BlurFade } from \"@/components/ui/blur-fade\"\n\nexport function Hello() {\n  return (\n    <BlurFade delay={0.25} inView>\n      <h2 className=\"text-3xl font-bold\">Hello world 👋</h2>\n    </BlurFade>\n  )\n}",
+  "examples": [
+    {
+      "name": "blur-fade-demo",
+      "title": "Image gallery"
+    },
+    {
+      "name": "blur-fade-text",
+      "title": "Text"
+    }
+  ],
+  "api": [
+    {
+      "name": "BlurFade",
+      "props": [
+        {
+          "name": "className",
+          "type": "string",
+          "description": "Classes for the wrapper."
+        },
+        {
+          "name": "variant",
+          "type": "{ hidden: Variant; visible: Variant }",
+          "description": "Custom hidden / visible variants."
+        },
+        {
+          "name": "duration",
+          "type": "number",
+          "default": "0.4",
+          "description": "Animation duration in seconds."
+        },
+        {
+          "name": "delay",
+          "type": "number",
+          "default": "0",
+          "description": "Delay in seconds. Combine with an index for a stagger."
+        },
+        {
+          "name": "offset",
+          "type": "number",
+          "default": "6",
+          "description": "Travel distance in pixels."
+        },
+        {
+          "name": "direction",
+          "type": "\"up\" | \"down\" | \"left\" | \"right\"",
+          "default": "\"down\"",
+          "description": "Direction the content travels from."
+        },
+        {
+          "name": "inView",
+          "type": "boolean",
+          "default": "false",
+          "description": "Animate when scrolled into view instead of on mount."
+        },
+        {
+          "name": "inViewMargin",
+          "type": "string",
+          "default": "\"-50px\"",
+          "description": "Root margin for the in-view check."
+        },
+        {
+          "name": "blur",
+          "type": "string",
+          "default": "\"6px\"",
+          "description": "Initial blur."
+        },
+        {
+          "name": "children",
+          "type": "React.ReactNode",
+          "description": "Content to animate."
+        }
+      ]
+    }
+  ]
+}

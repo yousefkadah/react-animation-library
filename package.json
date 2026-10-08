@@ -1,67 +1,101 @@
 {
-  "name": "react-gsap-animation-library",
+  "name": "@yousefkadah/react-magic-ui",
   "version": "1.0.0",
-  "description": "A React animation component library built with GSAP, similar to Aceternity UI",
-  "main": "dist/index.js",
-  "module": "dist/index.esm.js",
-  "types": "dist/index.d.ts",
+  "description": "70+ free and open-source animated components for React, built with Tailwind CSS and Motion. Copy-paste them with the shadcn CLI or install from npm.",
+  "type": "module",
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "./theme.css": "./dist/theme.css",
+    "./package.json": "./package.json"
+  },
   "files": [
     "dist"
   ],
+  "sideEffects": [
+    "*.css"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yousefkadah/react-animation-library.git"
+  },
+  "homepage": "https://yousefkadah.github.io/react-animation-library/",
+  "bugs": {
+    "url": "https://github.com/yousefkadah/react-animation-library/issues"
+  },
   "scripts": {
-    "dev": "vite",
-    "build": "vite build",
-    "build:lib": "rollup -c rollup.config.js",
+    "dev": "npm run registry:meta && vite",
+    "build": "npm run registry && npm run build:site && npm run build:lib",
+    "build:site": "vite build",
+    "build:lib": "vite build --mode lib",
+    "registry": "node scripts/build-registry.mjs --strict && shadcn build --output public/r",
+    "registry:meta": "node scripts/build-registry.mjs",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
     "preview": "vite preview",
-    "type-check": "tsc --noEmit",
-    "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist"
+    "deploy": "npm run registry && npm run build:site && gh-pages -d dist-site --dotfiles",
+    "prepublishOnly": "node scripts/build-registry.mjs --strict && npm run typecheck && npm test && npm run build:lib"
   },
   "keywords": [
     "react",
-    "gsap",
+    "nextjs",
     "animation",
+    "animated-components",
+    "motion",
+    "framer-motion",
+    "tailwindcss",
+    "shadcn",
+    "magic-ui",
+    "ui-library",
     "components",
-    "ui",
-    "library"
+    "design-engineering"
   ],
   "author": "Yousef Kadah",
   "license": "MIT",
+  "peerDependencies": {
+    "react": "^18.2.0 || ^19.0.0",
+    "react-dom": "^18.2.0 || ^19.0.0"
+  },
   "dependencies": {
-    "@types/react-syntax-highlighter": "^15.5.13",
-    "clsx": "^2.0.0",
-    "framer-motion": "^10.16.4",
-    "gsap": "^3.12.2",
-    "react": ">=16.8.0",
-    "react-dom": ">=16.8.0",
-    "react-syntax-highlighter": "^15.6.1"
+    "canvas-confetti": "^1.9.4",
+    "clsx": "^2.1.1",
+    "cobe": "^2.0.1",
+    "lucide-react": "^1.53.0",
+    "motion": "^14.0.0",
+    "rough-notation": "^0.5.1",
+    "tailwind-merge": "^3.7.0"
   },
   "devDependencies": {
-    "@rollup/plugin-commonjs": "^25.0.7",
-    "@rollup/plugin-node-resolve": "^15.2.3",
-    "@rollup/plugin-typescript": "^11.1.5",
-    "@types/react": "^18.2.37",
-    "@types/react-dom": "^18.2.15",
-    "@typescript-eslint/eslint-plugin": "^6.10.0",
-    "@typescript-eslint/parser": "^6.10.0",
-    "@vitejs/plugin-react": "^4.1.0",
-    "autoprefixer": "^10.4.16",
-    "eslint": "^8.53.0",
-    "eslint-plugin-react-hooks": "^4.6.0",
-    "eslint-plugin-react-refresh": "^0.4.4",
+    "@tailwindcss/vite": "^4.3.3",
+    "@testing-library/dom": "^10.4.2",
+    "@testing-library/react": "^16.3.3",
+    "@types/canvas-confetti": "^1.9.0",
+    "@types/node": "^22.15.0",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "@vitejs/plugin-react": "^6.1.2",
     "gh-pages": "^6.3.0",
-    "postcss": "^8.4.31",
-    "prism-react-renderer": "^2.3.1",
-    "react-router-dom": "^6.18.0",
-    "rollup": "^4.3.0",
-    "rollup-plugin-dts": "^6.1.0",
-    "tailwindcss": "^3.3.5",
-    "typescript": "^5.2.2",
-    "vite": "^4.5.0"
+    "happy-dom": "^20.14.5",
+    "react": "^19.3.0",
+    "react-dom": "^19.3.0",
+    "react-router": "^7.18.4",
+    "shadcn": "^4.0.0",
+    "shiki": "^4.5.0",
+    "tailwindcss": "^4.3.3",
+    "typescript": "~5.9.3",
+    "vite": "^8.3.4",
+    "vite-plugin-dts": "^4.5.4",
+    "vitest": "^5.0.3"
   },
-  "peerDependencies": {
-    "react": ">=16.8.0",
-    "react-dom": ">=16.8.0"
+  "publishConfig": {
+    "access": "public"
+  },
+  "engines": {
+    "node": ">=20"
   }
 }
