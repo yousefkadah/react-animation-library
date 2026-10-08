@@ -54,12 +54,12 @@ export function SiteHeader() {
         <div className="ms-auto flex items-center gap-1">
           <button
             type="button"
-            className="me-1 inline-flex h-9 items-center gap-2 rounded-md border bg-muted/40 px-3 text-sm text-muted-foreground transition-colors hover:bg-accent hover:text-foreground sm:w-56 lg:w-64"
+            className="me-1 inline-flex h-9 items-center gap-2 rounded-md border bg-muted/40 px-3 text-sm text-muted-foreground transition-colors hover:bg-accent hover:text-foreground lg:w-64"
             onClick={() => commandMenuStore.set(true)}
           >
             <Search className="size-4" />
-            <span className="hidden sm:inline">Search components...</span>
-            <kbd className="pointer-events-none ms-auto hidden h-5 items-center gap-1 rounded border bg-background px-1.5 font-mono text-[10px] font-medium sm:inline-flex">
+            <span className="hidden whitespace-nowrap lg:inline">Search components...</span>
+            <kbd className="pointer-events-none ms-auto hidden h-5 items-center gap-1 rounded border bg-background px-1.5 font-mono text-[10px] font-medium lg:inline-flex">
               {isMac ? '⌘' : 'Ctrl'} K
             </kbd>
           </button>
