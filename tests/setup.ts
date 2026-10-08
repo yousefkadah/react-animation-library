@@ -47,3 +47,16 @@ if (typeof HTMLMediaElement !== 'undefined') {
   HTMLMediaElement.prototype.play = () => Promise.resolve()
   HTMLMediaElement.prototype.pause = () => {}
 }
+
+/**
+ * Browsers mark `Animation.finished` as handled when an animation is cancelled; happy-dom
+ * rejects it unhandled, so any component unmounted mid-animation would fail the run.
+ */
+if (typeof Element !== 'undefined' && typeof Element.prototype.animate === 'function') {
+  const nativeAnimate = Element.prototype.animate
+  Element.prototype.animate = function animate(this: Element, ...args: Parameters<Element['animate']>) {
+    const animation = nativeAnimate.apply(this, args)
+    animation.finished?.catch(() => {})
+    return animation
+  }
+}
