@@ -1,0 +1,94 @@
+{
+  "name": "pulsating-button",
+  "title": "Pulsating Button",
+  "description": "An animated pulsating button useful for capturing attention of users.",
+  "category": "buttons",
+  "exports": [
+    "PulsatingButton"
+  ],
+  "dependencies": [],
+  "cssVars": {
+    "theme": {
+      "animate-pulsating": "pulsating var(--duration) ease-out infinite",
+      "animate-pulsating-ripple": "pulsating-ripple var(--duration) cubic-bezier(0.16, 1, 0.3, 1) infinite"
+    }
+  },
+  "css": {
+    "@keyframes pulsating": {
+      "0%, 100%": {
+        "box-shadow": "0 0 0 0 var(--pulse-color, oklch(from var(--bg) l c h / 0.5))"
+      },
+      "50%": {
+        "box-shadow": "0 0 0 var(--distance) var(--pulse-color, oklch(from var(--bg) l c h / 0.5))"
+      }
+    },
+    "@keyframes pulsating-ripple": {
+      "0%": {
+        "box-shadow": "0 0 0 0 oklch(from var(--pulse-color, var(--bg)) l c h / 1)"
+      },
+      "100%": {
+        "box-shadow": "0 0 0 var(--distance) oklch(from var(--pulse-color, var(--bg)) l c h / 0)"
+      }
+    }
+  },
+  "usage": "import { PulsatingButton } from \"@/components/ui/pulsating-button\"\n\nexport function Cta() {\n  return <PulsatingButton>Join Affiliate Program</PulsatingButton>\n}",
+  "examples": [
+    {
+      "name": "pulsating-button-demo",
+      "title": "Pulse"
+    },
+    {
+      "name": "pulsating-button-ripple",
+      "title": "Ripple variant"
+    },
+    {
+      "name": "pulsating-button-color",
+      "title": "Custom pulse colour"
+    }
+  ],
+  "api": [
+    {
+      "name": "PulsatingButton",
+      "props": [
+        {
+          "name": "className",
+          "type": "string",
+          "description": "Classes for the button."
+        },
+        {
+          "name": "pulseColor",
+          "type": "string",
+          "description": "Colour of the pulse. Defaults to the button's own background colour."
+        },
+        {
+          "name": "duration",
+          "type": "string",
+          "default": "\"1.5s\"",
+          "description": "Duration of one pulse."
+        },
+        {
+          "name": "distance",
+          "type": "string",
+          "default": "\"8px\"",
+          "description": "How far the pulse spreads."
+        },
+        {
+          "name": "variant",
+          "type": "\"pulse\" | \"ripple\"",
+          "default": "\"pulse\"",
+          "description": "`pulse` breathes in and out; `ripple` radiates outward and fades."
+        },
+        {
+          "name": "children",
+          "type": "React.ReactNode",
+          "description": "Button label."
+        },
+        {
+          "name": "onClick",
+          "type": "(event: React.MouseEvent<HTMLButtonElement>) => void",
+          "description": "Native click (falls through to the button)."
+        }
+      ]
+    }
+  ]
+}

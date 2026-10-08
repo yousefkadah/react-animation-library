@@ -1,0 +1,103 @@
+{
+  "name": "dotted-map",
+  "title": "Dotted Map",
+  "description": "A dotted world map rendered as SVG, with markers, optional pulses and custom marker overlays.",
+  "category": "components",
+  "exports": [
+    "DottedMap"
+  ],
+  "dependencies": [
+    "motion"
+  ],
+  "usage": "import { DottedMap } from \"@/components/ui/dotted-map\"\n\nconst markers = [\n  { lat: 40.7128, lng: -74.006, size: 0.3 },\n  { lat: 51.5072, lng: -0.1276, size: 0.3 },\n]\n\nexport function Offices() {\n  return (\n    <div className=\"relative h-[400px] w-full\">\n      <DottedMap markers={markers} pulse />\n    </div>\n  )\n}",
+  "examples": [
+    {
+      "name": "dotted-map-demo",
+      "title": "Marker overlays"
+    },
+    {
+      "name": "dotted-map-small-dots",
+      "title": "Smaller dots"
+    },
+    {
+      "name": "dotted-map-pulse",
+      "title": "Pulsing markers"
+    }
+  ],
+  "api": [
+    {
+      "name": "DottedMap",
+      "props": [
+        {
+          "name": "className",
+          "type": "string",
+          "description": "Classes for the SVG. Dots use currentColor, so a text-* class recolours them."
+        },
+        {
+          "name": "width",
+          "type": "number",
+          "default": "150",
+          "description": "Width of the SVG viewBox."
+        },
+        {
+          "name": "height",
+          "type": "number",
+          "default": "75",
+          "description": "Height of the SVG viewBox."
+        },
+        {
+          "name": "mapSamples",
+          "type": "number",
+          "default": "5000",
+          "description": "Number of grid cells sampled across the map. More samples give more, closer dots."
+        },
+        {
+          "name": "markers",
+          "type": "DottedMapMarker[]",
+          "default": "[]",
+          "description": "Markers to place: { lat, lng, size?, pulse? } plus any extra fields you want in renderMarkerOverlay."
+        },
+        {
+          "name": "dotColor",
+          "type": "string",
+          "default": "\"currentColor\"",
+          "description": "Fill of the land dots."
+        },
+        {
+          "name": "markerColor",
+          "type": "string",
+          "default": "\"#FF6900\"",
+          "description": "Fill of the markers and their pulse rings."
+        },
+        {
+          "name": "dotRadius",
+          "type": "number",
+          "default": "0.2",
+          "description": "Radius of each land dot, in viewBox units."
+        },
+        {
+          "name": "stagger",
+          "type": "boolean",
+          "default": "true",
+          "description": "Offset every other row by half a dot for a honeycomb pattern."
+        },
+        {
+          "name": "pulse",
+          "type": "boolean",
+          "default": "false",
+          "description": "Pulse every marker. A marker can opt out with pulse: false (or opt in when this is off). Disabled under reduced motion."
+        },
+        {
+          "name": "renderMarkerOverlay",
+          "type": "(scope: { marker, index, x, y, r }) => React.ReactNode",
+          "description": "Render prop drawn inside each marker's <g>, for labels, flags or icons. marker has the snapped x / y plus your own fields."
+        },
+        {
+          "name": "...props",
+          "type": "SVGProps<SVGSVGElement>",
+          "description": "Any other SVG attribute (style, aria-label, …) goes to the <svg>."
+        }
+      ]
+    }
+  ]
+}

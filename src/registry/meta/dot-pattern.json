@@ -1,0 +1,102 @@
+{
+  "name": "dot-pattern",
+  "title": "Dot Pattern",
+  "description": "A background dot pattern made with SVGs, fully customizable using Tailwind CSS.",
+  "category": "backgrounds",
+  "exports": [
+    "DotPattern"
+  ],
+  "dependencies": [],
+  "cssVars": {
+    "theme": {
+      "animate-dot-pattern-glow": "dot-pattern-glow 3s ease-in-out infinite both"
+    }
+  },
+  "css": {
+    "@keyframes dot-pattern-glow": {
+      "0%, 100%": {
+        "opacity": "0.4",
+        "transform": "scale(1)"
+      },
+      "50%": {
+        "opacity": "1",
+        "transform": "scale(1.5)"
+      }
+    }
+  },
+  "usage": "import { DotPattern } from \"@/components/ui/dot-pattern\"\n\nexport function Background() {\n  return (\n    <div className=\"relative h-[400px] w-full overflow-hidden rounded-lg border bg-background\">\n      <DotPattern className=\"[mask-image:radial-gradient(300px_circle_at_center,white,transparent)]\" />\n    </div>\n  )\n}",
+  "examples": [
+    {
+      "name": "dot-pattern-demo",
+      "title": "Radial mask"
+    },
+    {
+      "name": "dot-pattern-linear-gradient",
+      "title": "Linear gradient"
+    },
+    {
+      "name": "dot-pattern-glow",
+      "title": "With glow effect"
+    }
+  ],
+  "api": [
+    {
+      "name": "DotPattern",
+      "props": [
+        {
+          "name": "className",
+          "type": "string",
+          "description": "Classes for the SVG. Dots use the text colour."
+        },
+        {
+          "name": "width",
+          "type": "number",
+          "default": "16",
+          "description": "Horizontal spacing between dots in pixels."
+        },
+        {
+          "name": "height",
+          "type": "number",
+          "default": "16",
+          "description": "Vertical spacing between dots in pixels."
+        },
+        {
+          "name": "x",
+          "type": "number",
+          "default": "0",
+          "description": "Horizontal offset of the whole pattern."
+        },
+        {
+          "name": "y",
+          "type": "number",
+          "default": "0",
+          "description": "Vertical offset of the whole pattern."
+        },
+        {
+          "name": "cx",
+          "type": "number",
+          "default": "1",
+          "description": "Horizontal offset of each dot inside its cell."
+        },
+        {
+          "name": "cy",
+          "type": "number",
+          "default": "1",
+          "description": "Vertical offset of each dot inside its cell."
+        },
+        {
+          "name": "cr",
+          "type": "number",
+          "default": "1",
+          "description": "Radius of each dot."
+        },
+        {
+          "name": "glow",
+          "type": "boolean",
+          "default": "false",
+          "description": "Make every dot pulse with a soft glow, each on its own random rhythm."
+        }
+      ]
+    }
+  ]
+}

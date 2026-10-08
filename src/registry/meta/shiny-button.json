@@ -1,0 +1,45 @@
+{
+  "name": "shiny-button",
+  "title": "Shiny Button",
+  "description": "A shiny button component with dynamic styles in the dark mode or light mode.",
+  "category": "buttons",
+  "exports": [
+    "ShinyButton"
+  ],
+  "dependencies": [
+    "motion"
+  ],
+  "usage": "import { ShinyButton } from \"@/components/ui/shiny-button\"\n\nexport function Cta() {\n  return <ShinyButton>Shiny Button</ShinyButton>\n}",
+  "examples": [
+    {
+      "name": "shiny-button-demo",
+      "title": "Default"
+    },
+    {
+      "name": "shiny-button-custom",
+      "title": "Custom styles"
+    }
+  ],
+  "api": [
+    {
+      "name": "ShinyButton",
+      "props": [
+        {
+          "name": "className",
+          "type": "string",
+          "description": "Classes for the button. Motion props (`transition`, `animate`, `whileTap`, …) pass through to override the shine."
+        },
+        {
+          "name": "children",
+          "type": "React.ReactNode",
+          "description": "Button label."
+        },
+        {
+          "name": "onClick",
+          "type": "(event: React.MouseEvent<HTMLButtonElement>) => void",
+          "description": "Native click (falls through to the button)."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,89 @@
+{
+  "name": "code-comparison",
+  "title": "Code Comparison",
+  "description": "A component which compares two code snippets side by side. Dependency-free: plain code gets Shiki-style `[!code highlight|++|--|focus]` notations, and any highlighter (e.g. Shiki) can be plugged in.",
+  "category": "components",
+  "exports": [
+    "CodeComparison"
+  ],
+  "dependencies": [
+    "lucide-react"
+  ],
+  "usage": "import { CodeComparison } from \"@/components/ui/code-comparison\"\n\nconst beforeCode = `const a = 1 // [!code --]`\nconst afterCode = `const a = 2 // [!code ++]`\n\nexport function Diff() {\n  return <CodeComparison beforeCode={beforeCode} afterCode={afterCode} language=\"typescript\" filename=\"index.ts\" />\n}",
+  "examples": [
+    {
+      "name": "code-comparison-demo",
+      "title": "Highlight, diff and focus",
+      "description": "`// [!code highlight]`, `// [!code ++]`, `// [!code --]` and `// [!code focus]` comments style their line. Hover a side to unblur it."
+    },
+    {
+      "name": "code-comparison-diff",
+      "title": "Diff",
+      "description": "Notations work in any comment style: `//`, `#`, `/* */`, `<!-- -->`."
+    },
+    {
+      "name": "code-comparison-highlighter",
+      "title": "Custom highlighter",
+      "description": "Pass `highlighter` to colour the code — Shiki's `codeToHtml`, or anything returning the same markup."
+    }
+  ],
+  "api": [
+    {
+      "name": "CodeComparison",
+      "props": [
+        {
+          "name": "className",
+          "type": "string",
+          "description": "Classes for the wrapper."
+        },
+        {
+          "name": "beforeCode",
+          "type": "string",
+          "required": true,
+          "description": "Code shown on the “before” side."
+        },
+        {
+          "name": "afterCode",
+          "type": "string",
+          "required": true,
+          "description": "Code shown on the “after” side."
+        },
+        {
+          "name": "language",
+          "type": "string",
+          "required": true,
+          "description": "Language of the snippets (e.g. `\"typescript\"`), passed to `highlighter`."
+        },
+        {
+          "name": "filename",
+          "type": "string",
+          "required": true,
+          "description": "File name shown above both sides."
+        },
+        {
+          "name": "lightTheme",
+          "type": "string",
+          "default": "\"github-light\"",
+          "description": "Light theme name, passed to `highlighter`."
+        },
+        {
+          "name": "darkTheme",
+          "type": "string",
+          "default": "\"github-dark\"",
+          "description": "Dark theme name, passed to `highlighter`."
+        },
+        {
+          "name": "highlightColor",
+          "type": "string",
+          "default": "\"rgba(101, 117, 133, 0.16)\"",
+          "description": "Background of lines marked `[!code highlight]`."
+        },
+        {
+          "name": "highlighter",
+          "type": "(code: string, options: { language, lightTheme, darkTheme }) => string | Promise<string>",
+          "description": "Optional syntax highlighter returning Shiki-shaped HTML (`<pre><code><span class=\"line\">`). Magic UI bundles Shiki; here it's opt-in so the component has no dependencies. With Shiki: `(code, { language, lightTheme, darkTheme }) => codeToHtml(code, { lang: language, themes: { light: lightTheme, dark: darkTheme }, defaultColor: false, transformers: [transformerNotationHighlight(), transformerNotationDiff(), transformerNotationFocus()] })` — dual-theme output follows the page's `dark` class automatically. Define it outside your component (or memoise it): a new function re-highlights. Without a highlighter (or if it throws), the code is shown as plain text with the notations applied."
+        }
+      ]
+    }
+  ]
+}

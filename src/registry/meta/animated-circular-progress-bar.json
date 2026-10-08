@@ -1,0 +1,69 @@
+{
+  "name": "animated-circular-progress-bar",
+  "title": "Animated Circular Progress Bar",
+  "description": "Animated Circular Progress Bar is a component that displays a circular gauge with a percentage value.",
+  "category": "components",
+  "exports": [
+    "AnimatedCircularProgressBar"
+  ],
+  "dependencies": [],
+  "usage": "import { AnimatedCircularProgressBar } from \"@/components/ui/animated-circular-progress-bar\"\n\nexport function Progress() {\n  return (\n    <AnimatedCircularProgressBar\n      value={60}\n      gaugePrimaryColor=\"rgb(79 70 229)\"\n      gaugeSecondaryColor=\"rgba(0, 0, 0, 0.1)\"\n    />\n  )\n}",
+  "examples": [
+    {
+      "name": "animated-circular-progress-bar-demo",
+      "title": "Default"
+    },
+    {
+      "name": "animated-circular-progress-bar-controls",
+      "title": "Controlled",
+      "description": "The arc animates whenever `value` changes."
+    },
+    {
+      "name": "animated-circular-progress-bar-stats",
+      "title": "Stats",
+      "description": "Smaller gauges with a custom `max`."
+    }
+  ],
+  "api": [
+    {
+      "name": "AnimatedCircularProgressBar",
+      "props": [
+        {
+          "name": "className",
+          "type": "string",
+          "description": "Classes for the gauge. Size it with `size-*` and the number with `text-*`."
+        },
+        {
+          "name": "max",
+          "type": "number",
+          "default": "100",
+          "description": "Value at which the gauge is full."
+        },
+        {
+          "name": "min",
+          "type": "number",
+          "default": "0",
+          "description": "Value at which the gauge is empty."
+        },
+        {
+          "name": "value",
+          "type": "number",
+          "default": "0",
+          "description": "Current value. The centre shows it as a percentage of `min`–`max`."
+        },
+        {
+          "name": "gaugePrimaryColor",
+          "type": "string",
+          "required": true,
+          "description": "Colour of the filled arc (any CSS colour, including `var(--x)`)."
+        },
+        {
+          "name": "gaugeSecondaryColor",
+          "type": "string",
+          "required": true,
+          "description": "Colour of the remaining track."
+        }
+      ]
+    }
+  ]
+}

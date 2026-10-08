@@ -1,0 +1,52 @@
+{
+  "name": "comic-text",
+  "title": "Comic Text",
+  "description": "Comic-book lettering with a halftone fill, thick outline and a pop-in animation.",
+  "category": "text-animations",
+  "exports": [
+    "ComicText"
+  ],
+  "dependencies": [
+    "motion"
+  ],
+  "usage": "import { ComicText } from \"@/components/ui/comic-text\"\n\nexport function Example() {\n  return <ComicText fontSize={5}>BOOM!</ComicText>\n}",
+  "examples": [
+    {
+      "name": "comic-text-demo",
+      "title": "Boom"
+    },
+    {
+      "name": "comic-text-sizes",
+      "title": "Sizes"
+    }
+  ],
+  "api": [
+    {
+      "name": "ComicText",
+      "props": [
+        {
+          "name": "children",
+          "type": "string",
+          "required": true,
+          "description": "The text to display."
+        },
+        {
+          "name": "className",
+          "type": "string",
+          "description": "Classes for the text."
+        },
+        {
+          "name": "fontSize",
+          "type": "number",
+          "default": "5",
+          "description": "Font size in `rem`; the outline scales with it."
+        },
+        {
+          "name": "style",
+          "type": "React.CSSProperties",
+          "description": "Inline styles, merged over the comic styles. Load the 'Bangers' font for the authentic look."
+        }
+      ]
+    }
+  ]
+}

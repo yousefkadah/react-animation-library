@@ -1,0 +1,112 @@
+{
+  "name": "magic-card",
+  "title": "Magic Card",
+  "description": "A spotlight effect that follows your mouse cursor and highlights borders on hover.",
+  "category": "special-effects",
+  "exports": [
+    "MagicCard"
+  ],
+  "dependencies": [
+    "motion"
+  ],
+  "usage": "import { MagicCard } from \"@/components/ui/magic-card\"\n\nexport function Card() {\n  return (\n    <div className=\"w-full max-w-sm rounded-xl\">\n      <MagicCard className=\"p-6\">Hover me</MagicCard>\n    </div>\n  )\n}",
+  "examples": [
+    {
+      "name": "magic-card-demo",
+      "title": "Login card"
+    },
+    {
+      "name": "magic-card-orb",
+      "title": "Orb"
+    }
+  ],
+  "api": [
+    {
+      "name": "MagicCard",
+      "props": [
+        {
+          "name": "className",
+          "type": "string",
+          "description": "Classes for the card."
+        },
+        {
+          "name": "mode",
+          "type": "\"gradient\" | \"orb\"",
+          "default": "\"gradient\"",
+          "description": "`gradient`: a spotlight follows the pointer. `orb`: a blurred gradient orb follows it."
+        },
+        {
+          "name": "gradientSize",
+          "type": "number",
+          "default": "200",
+          "description": "Radius of the spotlight and border glow in pixels."
+        },
+        {
+          "name": "gradientColor",
+          "type": "string",
+          "default": "\"#262626\"",
+          "description": "Spotlight colour (gradient mode). CSS variables work, e.g. for light/dark values."
+        },
+        {
+          "name": "gradientOpacity",
+          "type": "number",
+          "default": "0.8",
+          "description": "Spotlight opacity (gradient mode)."
+        },
+        {
+          "name": "gradientFrom",
+          "type": "string",
+          "default": "\"#9E7AFF\"",
+          "description": "Start colour of the border glow."
+        },
+        {
+          "name": "gradientTo",
+          "type": "string",
+          "default": "\"#FE8BBB\"",
+          "description": "End colour of the border glow."
+        },
+        {
+          "name": "glowFrom",
+          "type": "string",
+          "default": "\"#ee4f27\"",
+          "description": "Start colour of the orb (orb mode)."
+        },
+        {
+          "name": "glowTo",
+          "type": "string",
+          "default": "\"#6b21ef\"",
+          "description": "End colour of the orb (orb mode)."
+        },
+        {
+          "name": "glowAngle",
+          "type": "number",
+          "default": "90",
+          "description": "Angle of the orb gradient in degrees (orb mode)."
+        },
+        {
+          "name": "glowSize",
+          "type": "number",
+          "default": "420",
+          "description": "Diameter of the orb in pixels (orb mode)."
+        },
+        {
+          "name": "glowBlur",
+          "type": "number",
+          "default": "60",
+          "description": "Blur of the orb in pixels (orb mode)."
+        },
+        {
+          "name": "glowOpacity",
+          "type": "number",
+          "default": "0.9",
+          "description": "Opacity of the orb while hovered (orb mode)."
+        },
+        {
+          "name": "children",
+          "type": "React.ReactNode",
+          "description": "Card content."
+        }
+      ]
+    }
+  ]
+}

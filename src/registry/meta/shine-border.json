@@ -1,0 +1,69 @@
+{
+  "name": "shine-border",
+  "title": "Shine Border",
+  "description": "Shine border is an animated background border effect.",
+  "category": "special-effects",
+  "exports": [
+    "ShineBorder"
+  ],
+  "dependencies": [],
+  "cssVars": {
+    "theme": {
+      "animate-shine": "shine var(--duration) infinite linear"
+    }
+  },
+  "css": {
+    "@keyframes shine": {
+      "0%": {
+        "background-position": "0% 0%"
+      },
+      "50%": {
+        "background-position": "100% 100%"
+      },
+      "to": {
+        "background-position": "0% 0%"
+      }
+    }
+  },
+  "usage": "import { ShineBorder } from \"@/components/ui/shine-border\"\n\nexport function Card() {\n  return (\n    <div className=\"relative overflow-hidden rounded-xl border p-6\">\n      <ShineBorder shineColor={[\"#A07CFE\", \"#FE8FB5\", \"#FFBE7B\"]} />\n      Content\n    </div>\n  )\n}",
+  "examples": [
+    {
+      "name": "shine-border-demo",
+      "title": "Login card"
+    },
+    {
+      "name": "shine-border-monotone",
+      "title": "Monotone"
+    }
+  ],
+  "api": [
+    {
+      "name": "ShineBorder",
+      "props": [
+        {
+          "name": "className",
+          "type": "string",
+          "description": "Classes for the border layer."
+        },
+        {
+          "name": "borderWidth",
+          "type": "number",
+          "default": "1",
+          "description": "Width of the border in pixels."
+        },
+        {
+          "name": "duration",
+          "type": "number",
+          "default": "14",
+          "description": "Seconds for one shine cycle."
+        },
+        {
+          "name": "shineColor",
+          "type": "string | string[]",
+          "default": "\"#000000\"",
+          "description": "One colour, or a list blended into a gradient. Any CSS colour, including `var(--foreground)`."
+        }
+      ]
+    }
+  ]
+}

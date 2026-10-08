@@ -1,0 +1,93 @@
+{
+  "name": "bento-grid",
+  "title": "Bento Grid",
+  "description": "Bento grid is a layout used to showcase the features of a product in a simple and elegant way.",
+  "category": "components",
+  "exports": [
+    "BentoGrid",
+    "BentoCard"
+  ],
+  "dependencies": [
+    "lucide-react"
+  ],
+  "usage": "import { FileText } from \"lucide-react\"\n\nimport { BentoCard, BentoGrid } from \"@/components/ui/bento-grid\"\n\nexport function Features() {\n  return (\n    <BentoGrid>\n      <BentoCard\n        Icon={FileText}\n        name=\"Save your files\"\n        description=\"We automatically save your files as you type.\"\n        href=\"#\"\n        cta=\"Learn more\"\n        className=\"col-span-3 lg:col-span-1\"\n        background={<div className=\"absolute inset-0 bg-linear-to-br from-sky-400/20 to-transparent\" />}\n      />\n    </BentoGrid>\n  )\n}",
+  "examples": [
+    {
+      "name": "bento-grid-demo",
+      "title": "Features",
+      "description": "Cards with live backgrounds: Marquee, Animated List and Orbiting Circles."
+    },
+    {
+      "name": "bento-grid-vertical",
+      "title": "Vertical",
+      "description": "Place cards on an explicit grid with `lg:row-*` / `lg:col-*` classes."
+    },
+    {
+      "name": "bento-grid-compact",
+      "title": "Compact",
+      "description": "Override the row height and column count through `className`."
+    }
+  ],
+  "api": [
+    {
+      "name": "BentoGrid",
+      "props": [
+        {
+          "name": "className",
+          "type": "string",
+          "description": "Classes for the grid. Defaults to three columns with 22rem rows (`auto-rows-[22rem] grid-cols-3`)."
+        },
+        {
+          "name": "children",
+          "type": "React.ReactNode",
+          "description": "The `BentoCard`s.",
+          "required": true
+        }
+      ]
+    },
+    {
+      "name": "BentoCard",
+      "props": [
+        {
+          "name": "className",
+          "type": "string",
+          "description": "Classes for the card — usually its `col-span-*` / `row-*` placement."
+        },
+        {
+          "name": "name",
+          "type": "string",
+          "required": true,
+          "description": "Card title."
+        },
+        {
+          "name": "description",
+          "type": "string",
+          "required": true,
+          "description": "Text under the title."
+        },
+        {
+          "name": "Icon",
+          "type": "React.ElementType",
+          "description": "Icon component, e.g. from `lucide-react`. Rendered with `className` applied."
+        },
+        {
+          "name": "href",
+          "type": "string",
+          "required": true,
+          "description": "Where the call-to-action link points."
+        },
+        {
+          "name": "cta",
+          "type": "string",
+          "required": true,
+          "description": "Call-to-action label, revealed on hover on large screens."
+        },
+        {
+          "name": "background",
+          "type": "React.ReactNode",
+          "description": "Decorative content behind the text. Position it `absolute`."
+        }
+      ]
+    }
+  ]
+}

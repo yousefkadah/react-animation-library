@@ -1,0 +1,39 @@
+{
+  "name": "morphing-text",
+  "title": "Morphing Text",
+  "description": "A dynamic text morphing component that blends smoothly from one string to the next.",
+  "category": "text-animations",
+  "exports": [
+    "MorphingText"
+  ],
+  "dependencies": [],
+  "usage": "import { MorphingText } from \"@/components/ui/morphing-text\"\n\nconst texts = [\"Hello\", \"Morphing\", \"Text\"]\n\nexport function Example() {\n  return <MorphingText texts={texts} />\n}",
+  "examples": [
+    {
+      "name": "morphing-text-demo",
+      "title": "Default"
+    },
+    {
+      "name": "morphing-text-headline",
+      "title": "Headline"
+    }
+  ],
+  "api": [
+    {
+      "name": "MorphingText",
+      "props": [
+        {
+          "name": "className",
+          "type": "string",
+          "description": "Classes for the container (sets its height and font size)."
+        },
+        {
+          "name": "texts",
+          "type": "string[]",
+          "required": true,
+          "description": "The texts to morph between, in order. Loops forever; with reduced motion the texts swap without the blur."
+        }
+      ]
+    }
+  ]
+}

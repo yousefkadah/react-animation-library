@@ -1,0 +1,57 @@
+{
+  "name": "iphone",
+  "title": "iPhone",
+  "description": "A mockup of the iPhone.",
+  "category": "device-mocks",
+  "exports": [
+    "Iphone"
+  ],
+  "dependencies": [],
+  "usage": "import { Iphone } from \"@/components/ui/iphone\"\n\nexport function Showcase() {\n  return (\n    <div className=\"w-[220px]\">\n      <Iphone src=\"https://picsum.photos/seed/phone/900/1950\" />\n    </div>\n  )\n}",
+  "examples": [
+    {
+      "name": "iphone-demo",
+      "title": "Empty screen"
+    },
+    {
+      "name": "iphone-image",
+      "title": "With image"
+    },
+    {
+      "name": "iphone-video",
+      "title": "With video"
+    }
+  ],
+  "api": [
+    {
+      "name": "Iphone",
+      "props": [
+        {
+          "name": "className",
+          "type": "string",
+          "description": "Classes for the mockup (it fills the width of its parent by default)."
+        },
+        {
+          "name": "src",
+          "type": "string",
+          "description": "Image shown on the screen."
+        },
+        {
+          "name": "videoSrc",
+          "type": "string",
+          "description": "Video shown on the screen (autoplays muted and loops). Takes precedence over src."
+        },
+        {
+          "name": "width",
+          "type": "number",
+          "description": "Width in pixels. The height follows the aspect ratio."
+        },
+        {
+          "name": "height",
+          "type": "number",
+          "description": "Height in pixels. Set it instead of width to size the phone by height."
+        }
+      ]
+    }
+  ]
+}

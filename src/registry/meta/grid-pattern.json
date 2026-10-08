@@ -1,0 +1,72 @@
+{
+  "name": "grid-pattern",
+  "title": "Grid Pattern",
+  "description": "A background grid pattern made with SVGs, fully customizable using Tailwind CSS.",
+  "category": "backgrounds",
+  "exports": [
+    "GridPattern"
+  ],
+  "dependencies": [],
+  "usage": "import { GridPattern } from \"@/components/ui/grid-pattern\"\n\nexport function Background() {\n  return (\n    <div className=\"relative h-[400px] w-full overflow-hidden rounded-lg border bg-background\">\n      <GridPattern\n        squares={[[4, 4], [5, 1], [8, 2]]}\n        className=\"[mask-image:radial-gradient(400px_circle_at_center,white,transparent)]\"\n      />\n    </div>\n  )\n}",
+  "examples": [
+    {
+      "name": "grid-pattern-demo",
+      "title": "Highlighted squares"
+    },
+    {
+      "name": "grid-pattern-linear-gradient",
+      "title": "Linear gradient"
+    },
+    {
+      "name": "grid-pattern-dashed",
+      "title": "Dashed"
+    }
+  ],
+  "api": [
+    {
+      "name": "GridPattern",
+      "props": [
+        {
+          "name": "className",
+          "type": "string",
+          "description": "Classes for the SVG. Lines use `stroke-*`, filled squares use `fill-*`."
+        },
+        {
+          "name": "width",
+          "type": "number",
+          "default": "40",
+          "description": "Width of one grid cell in pixels."
+        },
+        {
+          "name": "height",
+          "type": "number",
+          "default": "40",
+          "description": "Height of one grid cell in pixels."
+        },
+        {
+          "name": "x",
+          "type": "number",
+          "default": "-1",
+          "description": "Horizontal offset of the pattern in pixels."
+        },
+        {
+          "name": "y",
+          "type": "number",
+          "default": "-1",
+          "description": "Vertical offset of the pattern in pixels."
+        },
+        {
+          "name": "squares",
+          "type": "Array<[x: number, y: number]>",
+          "description": "[column, row] cells to fill in."
+        },
+        {
+          "name": "strokeDasharray",
+          "type": "string",
+          "default": "\"0\"",
+          "description": "SVG stroke-dasharray of the grid lines, e.g. \"4 2\" for dashes."
+        }
+      ]
+    }
+  ]
+}

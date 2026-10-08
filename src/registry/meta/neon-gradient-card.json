@@ -1,0 +1,77 @@
+{
+  "name": "neon-gradient-card",
+  "title": "Neon Gradient Card",
+  "description": "A beautiful neon card effect.",
+  "category": "special-effects",
+  "exports": [
+    "NeonGradientCard"
+  ],
+  "dependencies": [],
+  "cssVars": {
+    "theme": {
+      "animate-background-position-spin": "background-position-spin 3000ms infinite alternate"
+    }
+  },
+  "css": {
+    "@keyframes background-position-spin": {
+      "0%": {
+        "background-position": "top center"
+      },
+      "100%": {
+        "background-position": "bottom center"
+      }
+    }
+  },
+  "usage": "import { NeonGradientCard } from \"@/components/ui/neon-gradient-card\"\n\nexport function Card() {\n  return <NeonGradientCard className=\"max-w-sm\">Neon Gradient Card</NeonGradientCard>\n}",
+  "examples": [
+    {
+      "name": "neon-gradient-card-demo",
+      "title": "Default"
+    },
+    {
+      "name": "neon-gradient-card-colors",
+      "title": "Custom colours"
+    }
+  ],
+  "api": [
+    {
+      "name": "NeonGradientCard",
+      "props": [
+        {
+          "name": "className",
+          "type": "string",
+          "description": "Classes for the outer card."
+        },
+        {
+          "name": "as",
+          "type": "React.ElementType",
+          "default": "\"div\"",
+          "description": "Element to render the card as."
+        },
+        {
+          "name": "borderSize",
+          "type": "number",
+          "default": "2",
+          "description": "Width of the neon border in pixels."
+        },
+        {
+          "name": "borderRadius",
+          "type": "number",
+          "default": "20",
+          "description": "Corner radius in pixels."
+        },
+        {
+          "name": "neonColors",
+          "type": "{ firstColor: string; secondColor: string }",
+          "default": "{ firstColor: \"#ff00aa\", secondColor: \"#00FFF1\" }",
+          "description": "The two colours of the neon gradient."
+        },
+        {
+          "name": "children",
+          "type": "React.ReactNode",
+          "description": "Card content."
+        }
+      ]
+    }
+  ]
+}

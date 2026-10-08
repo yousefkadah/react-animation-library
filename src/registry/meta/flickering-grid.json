@@ -1,0 +1,77 @@
+{
+  "name": "flickering-grid",
+  "title": "Flickering Grid",
+  "description": "A flickering grid background drawn on a canvas, fully customizable using Tailwind CSS.",
+  "category": "backgrounds",
+  "exports": [
+    "FlickeringGrid"
+  ],
+  "dependencies": [],
+  "usage": "import { FlickeringGrid } from \"@/components/ui/flickering-grid\"\n\nexport function Hero() {\n  return (\n    <div className=\"relative h-[400px] w-full overflow-hidden rounded-lg border bg-background\">\n      <FlickeringGrid className=\"absolute inset-0 size-full\" color=\"#6B7280\" maxOpacity={0.5} flickerChance={0.1} />\n    </div>\n  )\n}",
+  "examples": [
+    {
+      "name": "flickering-grid-demo",
+      "title": "Default"
+    },
+    {
+      "name": "flickering-grid-rounded",
+      "title": "Radial mask"
+    },
+    {
+      "name": "flickering-grid-hero",
+      "title": "Hero section"
+    }
+  ],
+  "api": [
+    {
+      "name": "FlickeringGrid",
+      "props": [
+        {
+          "name": "className",
+          "type": "string",
+          "description": "Classes for the container (size it, e.g. `absolute inset-0 size-full`)."
+        },
+        {
+          "name": "squareSize",
+          "type": "number",
+          "default": "4",
+          "description": "Size of each square in pixels."
+        },
+        {
+          "name": "gridGap",
+          "type": "number",
+          "default": "6",
+          "description": "Gap between squares in pixels."
+        },
+        {
+          "name": "flickerChance",
+          "type": "number",
+          "default": "0.3",
+          "description": "Chance per second that a square changes its opacity."
+        },
+        {
+          "name": "color",
+          "type": "string",
+          "default": "\"rgb(0, 0, 0)\"",
+          "description": "Colour of the squares (any CSS colour)."
+        },
+        {
+          "name": "width",
+          "type": "number",
+          "description": "Fixed canvas width in pixels. Defaults to the container's width."
+        },
+        {
+          "name": "height",
+          "type": "number",
+          "description": "Fixed canvas height in pixels. Defaults to the container's height."
+        },
+        {
+          "name": "maxOpacity",
+          "type": "number",
+          "default": "0.3",
+          "description": "Highest opacity a square can reach."
+        }
+      ]
+    }
+  ]
+}

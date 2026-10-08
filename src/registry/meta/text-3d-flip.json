@@ -1,0 +1,85 @@
+{
+  "name": "text-3d-flip",
+  "title": "Text 3D Flip",
+  "description": "Letters that flip in 3D, one after another, when hovered.",
+  "category": "text-animations",
+  "exports": [
+    "Text3DFlip"
+  ],
+  "dependencies": [
+    "motion"
+  ],
+  "usage": "import { Text3DFlip } from \"@/components/ui/text-3d-flip\"\n\nexport function Example() {\n  return (\n    <Text3DFlip\n      className=\"text-5xl\"\n      textClassName=\"bg-background text-foreground\"\n      flipTextClassName=\"bg-background text-foreground\"\n      rotateDirection=\"top\"\n    >\n      Stay hungry, stay foolish\n    </Text3DFlip>\n  )\n}",
+  "examples": [
+    {
+      "name": "text-3d-flip-demo",
+      "title": "Default"
+    },
+    {
+      "name": "text-3d-flip-center",
+      "title": "Stagger from center"
+    },
+    {
+      "name": "text-3d-flip-colors",
+      "title": "Coloured back face"
+    }
+  ],
+  "api": [
+    {
+      "name": "Text3DFlip",
+      "props": [
+        {
+          "name": "children",
+          "type": "React.ReactNode",
+          "required": true,
+          "description": "The text to flip (text is read out of nested elements too)."
+        },
+        {
+          "name": "className",
+          "type": "string",
+          "description": "Classes for the wrapper."
+        },
+        {
+          "name": "as",
+          "type": "React.ElementType",
+          "default": "\"p\"",
+          "description": "Element to render."
+        },
+        {
+          "name": "textClassName",
+          "type": "string",
+          "description": "Classes for each letter's front face (visible before the flip)."
+        },
+        {
+          "name": "flipTextClassName",
+          "type": "string",
+          "description": "Classes for each letter's back face (revealed by the flip)."
+        },
+        {
+          "name": "staggerDuration",
+          "type": "number",
+          "default": "0.05",
+          "description": "Seconds between each letter starting its flip."
+        },
+        {
+          "name": "staggerFrom",
+          "type": "\"first\" | \"last\" | \"center\" | \"random\" | number",
+          "default": "\"first\"",
+          "description": "Where the stagger starts."
+        },
+        {
+          "name": "transition",
+          "type": "ValueAnimationTransition | AnimationOptions",
+          "default": "{ type: \"spring\", damping: 30, stiffness: 300 }",
+          "description": "Motion transition for the flip."
+        },
+        {
+          "name": "rotateDirection",
+          "type": "\"top\" | \"right\" | \"bottom\" | \"left\"",
+          "default": "\"right\"",
+          "description": "Direction the letters rotate towards."
+        }
+      ]
+    }
+  ]
+}

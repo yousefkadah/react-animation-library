@@ -1,0 +1,55 @@
+{
+  "name": "striped-pattern",
+  "title": "Striped Pattern",
+  "description": "A background striped pattern made with SVGs, fully customizable using Tailwind CSS.",
+  "category": "backgrounds",
+  "exports": [
+    "StripedPattern"
+  ],
+  "dependencies": [],
+  "usage": "import { StripedPattern } from \"@/components/ui/striped-pattern\"\n\nexport function Background() {\n  return (\n    <div className=\"relative h-[400px] w-full overflow-hidden rounded-lg border\">\n      <StripedPattern className=\"[mask-image:radial-gradient(300px_circle_at_center,white,transparent)]\" />\n    </div>\n  )\n}",
+  "examples": [
+    {
+      "name": "striped-pattern-demo",
+      "title": "Radial mask"
+    },
+    {
+      "name": "striped-pattern-dashed",
+      "title": "Dashed"
+    },
+    {
+      "name": "striped-pattern-right",
+      "title": "Slanted right"
+    }
+  ],
+  "api": [
+    {
+      "name": "StripedPattern",
+      "props": [
+        {
+          "name": "className",
+          "type": "string",
+          "description": "Classes for the SVG. Stripes use the text colour; set the thickness with `stroke-[…]`."
+        },
+        {
+          "name": "direction",
+          "type": "\"left\" | \"right\"",
+          "default": "\"left\"",
+          "description": "Which way the stripes lean."
+        },
+        {
+          "name": "width",
+          "type": "number | string",
+          "default": "10",
+          "description": "Width of one pattern tile in pixels (the spacing of the stripes)."
+        },
+        {
+          "name": "height",
+          "type": "number | string",
+          "default": "10",
+          "description": "Height of one pattern tile in pixels."
+        }
+      ]
+    }
+  ]
+}

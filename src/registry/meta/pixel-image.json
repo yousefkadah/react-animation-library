@@ -1,0 +1,80 @@
+{
+  "name": "pixel-image",
+  "title": "Pixel Image",
+  "description": "A component that displays an image with a pixelated effect, creating a retro aesthetic.",
+  "category": "special-effects",
+  "exports": [
+    "PixelImage"
+  ],
+  "dependencies": [],
+  "usage": "import { PixelImage } from \"@/components/ui/pixel-image\"\n\nexport function Portrait() {\n  return <PixelImage src=\"/photo.jpg\" alt=\"A mountain valley\" customGrid={{ rows: 4, cols: 6 }} grayscaleAnimation />\n}",
+  "examples": [
+    {
+      "name": "pixel-image-demo",
+      "title": "Grayscale reveal"
+    },
+    {
+      "name": "pixel-image-grid",
+      "title": "8×8 grid in colour"
+    }
+  ],
+  "api": [
+    {
+      "name": "PixelImage",
+      "props": [
+        {
+          "name": "src",
+          "type": "string",
+          "required": true,
+          "description": "The image source URL."
+        },
+        {
+          "name": "alt",
+          "type": "string",
+          "default": "\"\"",
+          "description": "Alternative text for the whole image (the pixels themselves are hidden from assistive tech). Addition."
+        },
+        {
+          "name": "className",
+          "type": "string",
+          "description": "Classes for the container (default `h-72 w-72 md:h-96 md:w-96`). Addition."
+        },
+        {
+          "name": "grid",
+          "type": "\"6x4\" | \"8x8\" | \"8x3\" | \"4x6\" | \"3x8\"",
+          "default": "\"6x4\"",
+          "description": "Predefined grid, columns × rows."
+        },
+        {
+          "name": "customGrid",
+          "type": "{ rows: number; cols: number }",
+          "description": "Custom grid with 1–16 rows and columns. Takes precedence over `grid`."
+        },
+        {
+          "name": "grayscaleAnimation",
+          "type": "boolean",
+          "default": "true",
+          "description": "Fade from grayscale to full colour."
+        },
+        {
+          "name": "pixelFadeInDuration",
+          "type": "number",
+          "default": "1000",
+          "description": "Milliseconds each pixel takes to fade in."
+        },
+        {
+          "name": "maxAnimationDelay",
+          "type": "number",
+          "default": "1200",
+          "description": "Maximum random delay, in milliseconds, before a pixel fades in."
+        },
+        {
+          "name": "colorRevealDelay",
+          "type": "number",
+          "default": "1300",
+          "description": "Milliseconds before the colour is revealed."
+        }
+      ]
+    }
+  ]
+}

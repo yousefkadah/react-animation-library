@@ -1,0 +1,56 @@
+{
+  "name": "icon-cloud",
+  "title": "Icon Cloud",
+  "description": "An interactive 3D sphere of icons or images that rotates with the pointer; click an icon to bring it to the front.",
+  "category": "components",
+  "exports": [
+    "IconCloud"
+  ],
+  "dependencies": [
+    "lucide-react",
+    "motion"
+  ],
+  "usage": "import { IconCloud } from \"@/components/ui/icon-cloud\"\n\nconst images = [\"react\", \"nextdotjs\", \"vite\", \"typescript\"].map(\n  (slug) => `https://cdn.simpleicons.org/${slug}/${slug}`\n)\n\nexport function Stack() {\n  return <IconCloud images={images} />\n}",
+  "examples": [
+    {
+      "name": "icon-cloud-demo",
+      "title": "Simple Icons"
+    },
+    {
+      "name": "icon-cloud-images",
+      "title": "Images"
+    },
+    {
+      "name": "icon-cloud-icons",
+      "title": "Icon elements and SVG"
+    }
+  ],
+  "api": [
+    {
+      "name": "IconCloud",
+      "props": [
+        {
+          "name": "className",
+          "type": "string",
+          "description": "Classes for the wrapper."
+        },
+        {
+          "name": "icons",
+          "type": "React.ReactNode[]",
+          "description": "Icons to place on the sphere: React elements (inline SVGs, Lucide icons, …) rendered with renderToString, or SVG markup strings. They are rasterised once, so currentColor renders black; pass explicit colours."
+        },
+        {
+          "name": "images",
+          "type": "string[]",
+          "description": "Image URLs to place on the sphere, cropped to circles. Used when icons is not set. The images are requested with crossOrigin=\"anonymous\"."
+        },
+        {
+          "name": "showControl",
+          "type": "boolean",
+          "default": "true",
+          "description": "Show the play / pause button (WCAG 2.2.2). Rotation also pauses under reduced motion."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,49 @@
+{
+  "name": "avatar-circles",
+  "title": "Avatar Circles",
+  "description": "Overlapping circles of avatars.",
+  "category": "components",
+  "exports": [
+    "AvatarCircles"
+  ],
+  "dependencies": [],
+  "usage": "import { AvatarCircles } from \"@/components/ui/avatar-circles\"\n\nconst avatars = [\n  { imageUrl: \"https://avatar.vercel.sh/jack\", profileUrl: \"https://github.com/jack\" },\n  { imageUrl: \"https://avatar.vercel.sh/jill\", profileUrl: \"https://github.com/jill\" },\n]\n\nexport function Team() {\n  return <AvatarCircles numPeople={99} avatarUrls={avatars} />\n}",
+  "examples": [
+    {
+      "name": "avatar-circles-demo",
+      "title": "Default"
+    },
+    {
+      "name": "avatar-circles-social-proof",
+      "title": "Social proof"
+    },
+    {
+      "name": "avatar-circles-sizes",
+      "title": "Sizes",
+      "description": "Resize the circles and overlap from `className`."
+    }
+  ],
+  "api": [
+    {
+      "name": "AvatarCircles",
+      "props": [
+        {
+          "name": "className",
+          "type": "string",
+          "description": "Classes for the row. Change the overlap with `-space-x-*`, the size with `[&_img]:size-*`."
+        },
+        {
+          "name": "numPeople",
+          "type": "number",
+          "description": "Number shown in the last circle (“+99”). The circle is hidden when this is 0 or omitted."
+        },
+        {
+          "name": "avatarUrls",
+          "type": "{ imageUrl: string; profileUrl: string }[]",
+          "required": true,
+          "description": "The avatars, each linking to its profile (opens in a new tab)."
+        }
+      ]
+    }
+  ]
+}

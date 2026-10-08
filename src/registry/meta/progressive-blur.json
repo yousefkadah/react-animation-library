@@ -1,0 +1,60 @@
+{
+  "name": "progressive-blur",
+  "title": "Progressive Blur",
+  "description": "A blur that gradually strengthens toward an edge, for fading out scrolling content or images.",
+  "category": "components",
+  "exports": [
+    "ProgressiveBlur"
+  ],
+  "dependencies": [],
+  "usage": "import { ProgressiveBlur } from \"@/components/ui/progressive-blur\"\n\nexport function List() {\n  return (\n    <div className=\"relative h-[400px] overflow-hidden\">\n      <div className=\"h-full overflow-y-auto\">{/* scrolling content */}</div>\n      <ProgressiveBlur position=\"bottom\" height=\"40%\" />\n    </div>\n  )\n}",
+  "examples": [
+    {
+      "name": "progressive-blur-demo",
+      "title": "Scroll fade"
+    },
+    {
+      "name": "progressive-blur-top",
+      "title": "Top and bottom"
+    },
+    {
+      "name": "progressive-blur-image",
+      "title": "Image caption"
+    }
+  ],
+  "api": [
+    {
+      "name": "ProgressiveBlur",
+      "props": [
+        {
+          "name": "className",
+          "type": "string",
+          "description": "Classes for the blur container."
+        },
+        {
+          "name": "height",
+          "type": "string",
+          "default": "\"30%\"",
+          "description": "Height of the blurred band. Ignored when position is \"both\"."
+        },
+        {
+          "name": "position",
+          "type": "\"top\" | \"bottom\" | \"both\"",
+          "default": "\"bottom\"",
+          "description": "Edge the blur sits on; \"both\" covers the whole container."
+        },
+        {
+          "name": "blurLevels",
+          "type": "number[]",
+          "default": "[0.5, 1, 2, 4, 8, 16, 32, 64]",
+          "description": "Blur radius in pixels of each stacked layer, from the faintest to the strongest."
+        },
+        {
+          "name": "children",
+          "type": "React.ReactNode",
+          "description": "Optional content rendered inside the blur container (it is pointer-events-none)."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,125 @@
+{
+  "name": "terminal",
+  "title": "Terminal",
+  "description": "An implementation of the MacOS terminal. Useful for showcasing a command line interface.",
+  "category": "components",
+  "exports": [
+    "Terminal",
+    "AnimatedSpan",
+    "TerminalTypingAnimation"
+  ],
+  "dependencies": [
+    "motion"
+  ],
+  "usage": "import { AnimatedSpan, Terminal, TerminalTypingAnimation } from \"@/components/ui/terminal\"\n\nexport function Install() {\n  return (\n    <Terminal>\n      <TerminalTypingAnimation>npx shadcn@latest init</TerminalTypingAnimation>\n      <AnimatedSpan>✔ Preflight checks.</AnimatedSpan>\n      <AnimatedSpan>✔ Validating Tailwind CSS.</AnimatedSpan>\n      <TerminalTypingAnimation>Success! Project initialization completed.</TerminalTypingAnimation>\n    </Terminal>\n  )\n}",
+  "examples": [
+    {
+      "name": "terminal-demo",
+      "title": "Sequenced",
+      "description": "Each line starts when the previous one finishes — no delays needed."
+    },
+    {
+      "name": "terminal-delays",
+      "title": "Custom delays",
+      "description": "Turn `sequence` off and give every line its own `delay`."
+    }
+  ],
+  "api": [
+    {
+      "name": "Terminal",
+      "props": [
+        {
+          "name": "className",
+          "type": "string",
+          "description": "Classes for the terminal window."
+        },
+        {
+          "name": "sequence",
+          "type": "boolean",
+          "default": "true",
+          "description": "Play the lines one after another: each `TerminalTypingAnimation` / `AnimatedSpan` starts when the previous one finishes."
+        },
+        {
+          "name": "startOnView",
+          "type": "boolean",
+          "default": "true",
+          "description": "Start the sequence when the terminal scrolls into view."
+        },
+        {
+          "name": "children",
+          "type": "React.ReactNode",
+          "description": "The terminal lines: `TerminalTypingAnimation` and `AnimatedSpan` components, in order.",
+          "required": true
+        }
+      ]
+    },
+    {
+      "name": "AnimatedSpan",
+      "props": [
+        {
+          "name": "className",
+          "type": "string",
+          "description": "Classes for the line."
+        },
+        {
+          "name": "delay",
+          "type": "number",
+          "default": "0",
+          "description": "Milliseconds before the line fades in. Only used when the terminal's `sequence` is off."
+        },
+        {
+          "name": "startOnView",
+          "type": "boolean",
+          "default": "false",
+          "description": "Wait until the line is in view. Only used when the terminal's `sequence` is off."
+        },
+        {
+          "name": "children",
+          "type": "React.ReactNode",
+          "description": "Content to fade in.",
+          "required": true
+        }
+      ]
+    },
+    {
+      "name": "TerminalTypingAnimation",
+      "props": [
+        {
+          "name": "className",
+          "type": "string",
+          "description": "Classes for the line."
+        },
+        {
+          "name": "duration",
+          "type": "number",
+          "default": "60",
+          "description": "Milliseconds per character."
+        },
+        {
+          "name": "delay",
+          "type": "number",
+          "default": "0",
+          "description": "Milliseconds before typing starts. Only used when the terminal's `sequence` is off."
+        },
+        {
+          "name": "as",
+          "type": "\"span\" | \"div\" | \"p\" | \"li\" | \"h1\"–\"h6\" | \"article\" | \"section\"",
+          "default": "\"span\"",
+          "description": "Element to render."
+        },
+        {
+          "name": "startOnView",
+          "type": "boolean",
+          "default": "true",
+          "description": "Wait until the line is in view. Only used when the terminal's `sequence` is off."
+        },
+        {
+          "name": "children",
+          "type": "string",
+          "description": "The text to type (a plain string). Named `TypingAnimation` in Magic UI; renamed so it doesn't clash with the standalone Typing Animation component.",
+          "required": true
+        }
+      ]
+    }
+  ]
+}

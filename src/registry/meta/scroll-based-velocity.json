@@ -1,0 +1,80 @@
+{
+  "name": "scroll-based-velocity",
+  "title": "Scroll Based Velocity",
+  "description": "Scrolling rows of content whose speed and direction follow the page scroll velocity.",
+  "category": "text-animations",
+  "exports": [
+    "ScrollVelocityContainer",
+    "ScrollVelocityRow"
+  ],
+  "dependencies": [
+    "motion"
+  ],
+  "usage": "import { ScrollVelocityContainer, ScrollVelocityRow } from \"@/components/ui/scroll-based-velocity\"\n\nexport function Example() {\n  return (\n    <ScrollVelocityContainer className=\"text-4xl font-bold md:text-7xl\">\n      <ScrollVelocityRow baseVelocity={20} direction={1}>\n        Velocity Scroll\n      </ScrollVelocityRow>\n      <ScrollVelocityRow baseVelocity={20} direction={-1}>\n        Velocity Scroll\n      </ScrollVelocityRow>\n    </ScrollVelocityContainer>\n  )\n}",
+  "examples": [
+    {
+      "name": "scroll-based-velocity-demo",
+      "title": "Text",
+      "description": "Scroll the page to speed the rows up or flip their direction."
+    },
+    {
+      "name": "scroll-based-velocity-images",
+      "title": "Images"
+    },
+    {
+      "name": "scroll-based-velocity-tags",
+      "title": "Standalone rows"
+    }
+  ],
+  "api": [
+    {
+      "name": "ScrollVelocityContainer",
+      "props": [
+        {
+          "name": "children",
+          "type": "React.ReactNode",
+          "description": "One or more `ScrollVelocityRow`s, which share one scroll-velocity value."
+        },
+        {
+          "name": "className",
+          "type": "string",
+          "description": "Classes for the container."
+        }
+      ]
+    },
+    {
+      "name": "ScrollVelocityRow",
+      "props": [
+        {
+          "name": "children",
+          "type": "React.ReactNode",
+          "required": true,
+          "description": "Content to repeat and scroll. Copies are added until the row is filled."
+        },
+        {
+          "name": "className",
+          "type": "string",
+          "description": "Classes for the row."
+        },
+        {
+          "name": "baseVelocity",
+          "type": "number",
+          "default": "5",
+          "description": "Base speed, as a percentage of the content width per second. Rows stay still when the user prefers reduced motion."
+        },
+        {
+          "name": "direction",
+          "type": "1 | -1",
+          "default": "1",
+          "description": "`1` moves the content to the left, `-1` to the right. Scrolling up flips it."
+        },
+        {
+          "name": "scrollReactivity",
+          "type": "boolean",
+          "default": "true",
+          "description": "Speed up (up to 6×) and flip direction with the page scroll velocity."
+        }
+      ]
+    }
+  ]
+}

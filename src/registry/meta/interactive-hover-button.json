@@ -1,0 +1,45 @@
+{
+  "name": "interactive-hover-button",
+  "title": "Interactive Hover Button",
+  "description": "Interactive hover button: a dot grows to fill the button and the label slides out for an arrow.",
+  "category": "buttons",
+  "exports": [
+    "InteractiveHoverButton"
+  ],
+  "dependencies": [
+    "lucide-react"
+  ],
+  "usage": "import { InteractiveHoverButton } from \"@/components/ui/interactive-hover-button\"\n\nexport function Cta() {\n  return <InteractiveHoverButton>Hover Me</InteractiveHoverButton>\n}",
+  "examples": [
+    {
+      "name": "interactive-hover-button-demo",
+      "title": "Default"
+    },
+    {
+      "name": "interactive-hover-button-custom",
+      "title": "Custom styles"
+    }
+  ],
+  "api": [
+    {
+      "name": "InteractiveHoverButton",
+      "props": [
+        {
+          "name": "className",
+          "type": "string",
+          "description": "Classes for the button."
+        },
+        {
+          "name": "children",
+          "type": "React.ReactNode",
+          "description": "Button label (rendered twice: at rest and in the hover state)."
+        },
+        {
+          "name": "onClick",
+          "type": "(event: React.MouseEvent<HTMLButtonElement>) => void",
+          "description": "Native click (falls through to the button)."
+        }
+      ]
+    }
+  ]
+}

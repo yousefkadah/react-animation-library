@@ -1,0 +1,89 @@
+{
+  "name": "animated-grid-pattern",
+  "title": "Animated Grid Pattern",
+  "description": "An animated background grid pattern made with SVGs, fully customizable using Tailwind CSS.",
+  "category": "backgrounds",
+  "exports": [
+    "AnimatedGridPattern"
+  ],
+  "dependencies": [
+    "motion"
+  ],
+  "usage": "import { AnimatedGridPattern } from \"@/components/ui/animated-grid-pattern\"\n\nexport function Hero() {\n  return (\n    <div className=\"relative h-[400px] w-full overflow-hidden rounded-lg border bg-background\">\n      <AnimatedGridPattern\n        numSquares={30}\n        maxOpacity={0.1}\n        className=\"[mask-image:radial-gradient(500px_circle_at_center,white,transparent)]\"\n      />\n    </div>\n  )\n}",
+  "examples": [
+    {
+      "name": "animated-grid-pattern-demo",
+      "title": "Skewed"
+    },
+    {
+      "name": "animated-grid-pattern-linear-gradient",
+      "title": "Linear gradient"
+    }
+  ],
+  "api": [
+    {
+      "name": "AnimatedGridPattern",
+      "props": [
+        {
+          "name": "className",
+          "type": "string",
+          "description": "Classes for the SVG. Grid lines use `stroke-*`/`fill-*`, lit squares use the text colour."
+        },
+        {
+          "name": "width",
+          "type": "number",
+          "default": "40",
+          "description": "Width of one grid cell in pixels."
+        },
+        {
+          "name": "height",
+          "type": "number",
+          "default": "40",
+          "description": "Height of one grid cell in pixels."
+        },
+        {
+          "name": "x",
+          "type": "number",
+          "default": "-1",
+          "description": "Horizontal offset of the pattern in pixels."
+        },
+        {
+          "name": "y",
+          "type": "number",
+          "default": "-1",
+          "description": "Vertical offset of the pattern in pixels."
+        },
+        {
+          "name": "strokeDasharray",
+          "type": "number | string",
+          "default": "0",
+          "description": "SVG stroke-dasharray of the grid lines."
+        },
+        {
+          "name": "numSquares",
+          "type": "number",
+          "default": "50",
+          "description": "Number of squares lit up at any time."
+        },
+        {
+          "name": "maxOpacity",
+          "type": "number",
+          "default": "0.5",
+          "description": "Opacity a square fades up to."
+        },
+        {
+          "name": "duration",
+          "type": "number",
+          "default": "4",
+          "description": "Seconds a square takes to fade in (and again to fade out)."
+        },
+        {
+          "name": "repeatDelay",
+          "type": "number",
+          "default": "0.5",
+          "description": "Seconds a square stays lit before fading out."
+        }
+      ]
+    }
+  ]
+}

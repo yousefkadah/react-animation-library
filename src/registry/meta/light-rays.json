@@ -1,0 +1,70 @@
+{
+  "name": "light-rays",
+  "title": "Light Rays",
+  "description": "A component with animated light rays which shine down from above.",
+  "category": "backgrounds",
+  "exports": [
+    "LightRays"
+  ],
+  "dependencies": [
+    "motion"
+  ],
+  "usage": "import { LightRays } from \"@/components/ui/light-rays\"\n\nexport function Hero() {\n  return (\n    <div className=\"relative h-[400px] w-full overflow-hidden rounded-lg border\">\n      <div className=\"relative z-10 flex h-full items-center justify-center\">\n        <h1 className=\"text-5xl font-bold\">Light Rays</h1>\n      </div>\n      <LightRays />\n    </div>\n  )\n}",
+  "examples": [
+    {
+      "name": "light-rays-demo",
+      "title": "Default"
+    },
+    {
+      "name": "light-rays-warm",
+      "title": "Warm and fast"
+    }
+  ],
+  "api": [
+    {
+      "name": "LightRays",
+      "props": [
+        {
+          "name": "className",
+          "type": "string",
+          "description": "Classes for the container (absolutely positioned to fill its parent)."
+        },
+        {
+          "name": "count",
+          "type": "number",
+          "default": "7",
+          "description": "Number of rays."
+        },
+        {
+          "name": "color",
+          "type": "string",
+          "default": "\"rgba(160, 210, 255, 0.2)\"",
+          "description": "Colour of the rays and the ambient glow (any CSS colour; include some transparency)."
+        },
+        {
+          "name": "blur",
+          "type": "number",
+          "default": "36",
+          "description": "Blur of each ray in pixels."
+        },
+        {
+          "name": "speed",
+          "type": "number",
+          "default": "14",
+          "description": "Seconds for one swing of a ray. Lower is faster."
+        },
+        {
+          "name": "length",
+          "type": "string",
+          "default": "\"70vh\"",
+          "description": "Length of each ray, e.g. \"70vh\" or \"500px\"."
+        },
+        {
+          "name": "ref",
+          "type": "React.Ref<HTMLDivElement>",
+          "description": "Ref to the container element."
+        }
+      ]
+    }
+  ]
+}

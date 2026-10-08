@@ -1,0 +1,56 @@
+{
+  "name": "interactive-grid-pattern",
+  "title": "Interactive Grid Pattern",
+  "description": "An interactive background grid pattern made with SVGs, fully customizable using Tailwind CSS.",
+  "category": "backgrounds",
+  "exports": [
+    "InteractiveGridPattern"
+  ],
+  "dependencies": [],
+  "usage": "import { InteractiveGridPattern } from \"@/components/ui/interactive-grid-pattern\"\n\nexport function Background() {\n  return (\n    <div className=\"relative h-[400px] w-full overflow-hidden rounded-lg border bg-background\">\n      <InteractiveGridPattern className=\"[mask-image:radial-gradient(400px_circle_at_center,white,transparent)]\" />\n    </div>\n  )\n}",
+  "examples": [
+    {
+      "name": "interactive-grid-pattern-demo",
+      "title": "Skewed"
+    },
+    {
+      "name": "interactive-grid-pattern-small",
+      "title": "Small squares"
+    }
+  ],
+  "api": [
+    {
+      "name": "InteractiveGridPattern",
+      "props": [
+        {
+          "name": "className",
+          "type": "string",
+          "description": "Classes for the SVG."
+        },
+        {
+          "name": "width",
+          "type": "number",
+          "default": "40",
+          "description": "Width of one square in pixels."
+        },
+        {
+          "name": "height",
+          "type": "number",
+          "default": "40",
+          "description": "Height of one square in pixels."
+        },
+        {
+          "name": "squares",
+          "type": "[horizontal: number, vertical: number]",
+          "default": "[24, 24]",
+          "description": "Number of squares horizontally and vertically."
+        },
+        {
+          "name": "squaresClassName",
+          "type": "string",
+          "description": "Classes for every square, e.g. \"hover:fill-blue-500\"."
+        }
+      ]
+    }
+  ]
+}

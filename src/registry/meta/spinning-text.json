@@ -1,0 +1,78 @@
+{
+  "name": "spinning-text",
+  "title": "Spinning Text",
+  "description": "Text laid out around a circle that rotates continuously.",
+  "category": "text-animations",
+  "exports": [
+    "SpinningText"
+  ],
+  "dependencies": [
+    "motion"
+  ],
+  "usage": "import { SpinningText } from \"@/components/ui/spinning-text\"\n\nexport function Example() {\n  return <SpinningText>learn more • earn more • grow more •</SpinningText>\n}",
+  "examples": [
+    {
+      "name": "spinning-text-demo",
+      "title": "Basic"
+    },
+    {
+      "name": "spinning-text-reverse",
+      "title": "Reverse"
+    },
+    {
+      "name": "spinning-text-badge",
+      "title": "Badge"
+    }
+  ],
+  "api": [
+    {
+      "name": "SpinningText",
+      "props": [
+        {
+          "name": "children",
+          "type": "string | string[]",
+          "required": true,
+          "description": "The text to place around the circle."
+        },
+        {
+          "name": "className",
+          "type": "string",
+          "description": "Classes for the rotating container."
+        },
+        {
+          "name": "duration",
+          "type": "number",
+          "default": "10",
+          "description": "Seconds for one full rotation. The text stays still when the user prefers reduced motion."
+        },
+        {
+          "name": "reverse",
+          "type": "boolean",
+          "default": "false",
+          "description": "Rotate counter-clockwise."
+        },
+        {
+          "name": "radius",
+          "type": "number",
+          "default": "5",
+          "description": "Radius of the circle, in `ch`."
+        },
+        {
+          "name": "transition",
+          "type": "Transition",
+          "description": "Overrides for the rotation transition."
+        },
+        {
+          "name": "variants",
+          "type": "{ container?: Variants; item?: Variants }",
+          "description": "Custom variants for the container and for each letter."
+        },
+        {
+          "name": "style",
+          "type": "React.CSSProperties",
+          "description": "Inline styles for the rotating container."
+        }
+      ]
+    }
+  ]
+}

@@ -4,6 +4,779 @@
   "homepage": "https://yousefkadah.github.io/react-animation-library",
   "items": [
     {
+      "name": "android",
+      "type": "registry:ui",
+      "title": "Android",
+      "description": "A mockup of an Android device.",
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "src/registry/ui/android.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "categories": [
+        "device-mocks"
+      ]
+    },
+    {
+      "name": "android-demo",
+      "type": "registry:example",
+      "title": "Android — Empty screen",
+      "registryDependencies": [
+        "https://yousefkadah.github.io/react-animation-library/r/android.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/examples/android-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "android-image",
+      "type": "registry:example",
+      "title": "Android — With image",
+      "registryDependencies": [
+        "https://yousefkadah.github.io/react-animation-library/r/android.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/examples/android-image.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "android-video",
+      "type": "registry:example",
+      "title": "Android — With video",
+      "registryDependencies": [
+        "https://yousefkadah.github.io/react-animation-library/r/android.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/examples/android-video.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "animated-beam",
+      "type": "registry:ui",
+      "title": "Animated Beam",
+      "description": "An animated beam of light which travels along a path. Useful for showcasing the integration features of a website.",
+      "dependencies": [
+        "motion"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "src/registry/ui/animated-beam.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "categories": [
+        "special-effects"
+      ]
+    },
+    {
+      "name": "animated-beam-demo",
+      "type": "registry:example",
+      "title": "Animated Beam — Integrations hub",
+      "registryDependencies": [
+        "https://yousefkadah.github.io/react-animation-library/r/animated-beam.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/examples/animated-beam-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "animated-beam-unidirectional",
+      "type": "registry:example",
+      "title": "Animated Beam — Uni-directional",
+      "registryDependencies": [
+        "https://yousefkadah.github.io/react-animation-library/r/animated-beam.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/examples/animated-beam-unidirectional.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "animated-beam-bidirectional",
+      "type": "registry:example",
+      "title": "Animated Beam — Bi-directional",
+      "registryDependencies": [
+        "https://yousefkadah.github.io/react-animation-library/r/animated-beam.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/examples/animated-beam-bidirectional.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "animated-beam-multiple-inputs",
+      "type": "registry:example",
+      "title": "Animated Beam — Multiple inputs",
+      "registryDependencies": [
+        "https://yousefkadah.github.io/react-animation-library/r/animated-beam.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/examples/animated-beam-multiple-inputs.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "animated-beam-multiple-outputs",
+      "type": "registry:example",
+      "title": "Animated Beam — Multiple outputs",
+      "registryDependencies": [
+        "https://yousefkadah.github.io/react-animation-library/r/animated-beam.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/examples/animated-beam-multiple-outputs.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "animated-circular-progress-bar",
+      "type": "registry:ui",
+      "title": "Animated Circular Progress Bar",
+      "description": "Animated Circular Progress Bar is a component that displays a circular gauge with a percentage value.",
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "src/registry/ui/animated-circular-progress-bar.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "categories": [
+        "components"
+      ]
+    },
+    {
+      "name": "animated-circular-progress-bar-demo",
+      "type": "registry:example",
+      "title": "Animated Circular Progress Bar — Default",
+      "registryDependencies": [
+        "https://yousefkadah.github.io/react-animation-library/r/animated-circular-progress-bar.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/examples/animated-circular-progress-bar-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "animated-circular-progress-bar-controls",
+      "type": "registry:example",
+      "title": "Animated Circular Progress Bar — Controlled",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "https://yousefkadah.github.io/react-animation-library/r/animated-circular-progress-bar.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/examples/animated-circular-progress-bar-controls.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "animated-circular-progress-bar-stats",
+      "type": "registry:example",
+      "title": "Animated Circular Progress Bar — Stats",
+      "registryDependencies": [
+        "https://yousefkadah.github.io/react-animation-library/r/animated-circular-progress-bar.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/examples/animated-circular-progress-bar-stats.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "animated-gradient-text",
+      "type": "registry:ui",
+      "title": "Animated Gradient Text",
+      "description": "An animated gradient background which transitions between colors for text.",
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "src/registry/ui/animated-gradient-text.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "cssVars": {
+        "theme": {
+          "animate-gradient": "gradient 8s linear infinite"
+        }
+      },
+      "css": {
+        "@keyframes gradient": {
+          "to": {
+            "background-position": "var(--bg-size, 300%) 0"
+          }
+        }
+      },
+      "categories": [
+        "text-animations"
+      ]
+    },
+    {
+      "name": "animated-gradient-text-demo",
+      "type": "registry:example",
+      "title": "Animated Gradient Text — Announcement pill",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "https://yousefkadah.github.io/react-animation-library/r/animated-gradient-text.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/examples/animated-gradient-text-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "animated-gradient-text-speed",
+      "type": "registry:example",
+      "title": "Animated Gradient Text — Custom colours and speed",
+      "registryDependencies": [
+        "https://yousefkadah.github.io/react-animation-library/r/animated-gradient-text.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/examples/animated-gradient-text-speed.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "animated-grid-pattern",
+      "type": "registry:ui",
+      "title": "Animated Grid Pattern",
+      "description": "An animated background grid pattern made with SVGs, fully customizable using Tailwind CSS.",
+      "dependencies": [
+        "motion"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "src/registry/ui/animated-grid-pattern.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "categories": [
+        "backgrounds"
+      ]
+    },
+    {
+      "name": "animated-grid-pattern-demo",
+      "type": "registry:example",
+      "title": "Animated Grid Pattern — Skewed",
+      "registryDependencies": [
+        "https://yousefkadah.github.io/react-animation-library/r/animated-grid-pattern.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/examples/animated-grid-pattern-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "animated-grid-pattern-linear-gradient",
+      "type": "registry:example",
+      "title": "Animated Grid Pattern — Linear gradient",
+      "registryDependencies": [
+        "https://yousefkadah.github.io/react-animation-library/r/animated-grid-pattern.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/examples/animated-grid-pattern-linear-gradient.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "animated-list",
+      "type": "registry:ui",
+      "title": "Animated List",
+      "description": "A list that animates each item in sequence with a delay. Used to showcase notifications or events on your landing page.",
+      "dependencies": [
+        "motion"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "src/registry/ui/animated-list.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "categories": [
+        "components"
+      ]
+    },
+    {
+      "name": "animated-list-demo",
+      "type": "registry:example",
+      "title": "Animated List — Notifications",
+      "registryDependencies": [
+        "https://yousefkadah.github.io/react-animation-library/r/animated-list.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/examples/animated-list-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "animated-list-activity",
+      "type": "registry:example",
+      "title": "Animated List — Activity feed",
+      "registryDependencies": [
+        "https://yousefkadah.github.io/react-animation-library/r/animated-list.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/examples/animated-list-activity.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "animated-shiny-text",
+      "type": "registry:ui",
+      "title": "Animated Shiny Text",
+      "description": "A light glare effect which pans across text making it appear as if it is shimmering.",
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "src/registry/ui/animated-shiny-text.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "cssVars": {
+        "theme": {
+          "animate-shiny-text": "shiny-text 8s infinite"
+        }
+      },
+      "css": {
+        "@keyframes shiny-text": {
+          "0%, 90%, 100%": {
+            "background-position": "calc(-100% - var(--shiny-width)) 0"
+          },
+          "30%, 60%": {
+            "background-position": "calc(100% + var(--shiny-width)) 0"
+          }
+        }
+      },
+      "categories": [
+        "text-animations"
+      ]
+    },
+    {
+      "name": "animated-shiny-text-demo",
+      "type": "registry:example",
+      "title": "Animated Shiny Text — Announcement pill",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "https://yousefkadah.github.io/react-animation-library/r/animated-shiny-text.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/examples/animated-shiny-text-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "animated-shiny-text-heading",
+      "type": "registry:example",
+      "title": "Animated Shiny Text — Wide glare",
+      "registryDependencies": [
+        "https://yousefkadah.github.io/react-animation-library/r/animated-shiny-text.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/examples/animated-shiny-text-heading.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "animated-theme-toggler",
+      "type": "registry:ui",
+      "title": "Theme Toggler",
+      "description": "A light / dark toggle that reveals the new theme with a View Transition, as a circle, polygon or star growing from the button.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "src/registry/ui/animated-theme-toggler.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "categories": [
+        "special-effects"
+      ]
+    },
+    {
+      "name": "animated-theme-toggler-demo",
+      "type": "registry:example",
+      "title": "Theme Toggler — Circle",
+      "registryDependencies": [
+        "https://yousefkadah.github.io/react-animation-library/r/animated-theme-toggler.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/examples/animated-theme-toggler-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "animated-theme-toggler-variants",
+      "type": "registry:example",
+      "title": "Theme Toggler — Shapes",
+      "registryDependencies": [
+        "https://yousefkadah.github.io/react-animation-library/r/animated-theme-toggler.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/examples/animated-theme-toggler-variants.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "animated-theme-toggler-from-center",
+      "type": "registry:example",
+      "title": "Theme Toggler — From the centre",
+      "registryDependencies": [
+        "https://yousefkadah.github.io/react-animation-library/r/animated-theme-toggler.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/examples/animated-theme-toggler-from-center.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "aurora-text",
+      "type": "registry:ui",
+      "title": "Aurora Text",
+      "description": "A beautiful aurora text effect.",
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "src/registry/ui/aurora-text.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "cssVars": {
+        "theme": {
+          "animate-aurora": "aurora 8s ease-in-out infinite alternate"
+        }
+      },
+      "css": {
+        "@keyframes aurora": {
+          "0%": {
+            "background-position": "0% 50%",
+            "transform": "rotate(-5deg) scale(0.9)"
+          },
+          "25%": {
+            "background-position": "50% 100%",
+            "transform": "rotate(5deg) scale(1.1)"
+          },
+          "50%": {
+            "background-position": "100% 50%",
+            "transform": "rotate(-3deg) scale(0.95)"
+          },
+          "75%": {
+            "background-position": "50% 0%",
+            "transform": "rotate(3deg) scale(1.05)"
+          },
+          "100%": {
+            "background-position": "0% 50%",
+            "transform": "rotate(-5deg) scale(0.9)"
+          }
+        }
+      },
+      "categories": [
+        "text-animations"
+      ]
+    },
+    {
+      "name": "aurora-text-demo",
+      "type": "registry:example",
+      "title": "Aurora Text — Ship beautiful",
+      "registryDependencies": [
+        "https://yousefkadah.github.io/react-animation-library/r/aurora-text.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/examples/aurora-text-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "aurora-text-colors",
+      "type": "registry:example",
+      "title": "Aurora Text — Custom colours and speed",
+      "registryDependencies": [
+        "https://yousefkadah.github.io/react-animation-library/r/aurora-text.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/examples/aurora-text-colors.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "avatar-circles",
+      "type": "registry:ui",
+      "title": "Avatar Circles",
+      "description": "Overlapping circles of avatars.",
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "src/registry/ui/avatar-circles.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "categories": [
+        "components"
+      ]
+    },
+    {
+      "name": "avatar-circles-demo",
+      "type": "registry:example",
+      "title": "Avatar Circles — Default",
+      "registryDependencies": [
+        "https://yousefkadah.github.io/react-animation-library/r/avatar-circles.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/examples/avatar-circles-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "avatar-circles-social-proof",
+      "type": "registry:example",
+      "title": "Avatar Circles — Social proof",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "https://yousefkadah.github.io/react-animation-library/r/avatar-circles.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/examples/avatar-circles-social-proof.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "avatar-circles-sizes",
+      "type": "registry:example",
+      "title": "Avatar Circles — Sizes",
+      "registryDependencies": [
+        "https://yousefkadah.github.io/react-animation-library/r/avatar-circles.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/examples/avatar-circles-sizes.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "backlight",
+      "type": "registry:ui",
+      "title": "Backlight",
+      "description": "A backlight glow effect for videos, images, and SVGs.",
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "src/registry/ui/backlight.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "categories": [
+        "special-effects"
+      ]
+    },
+    {
+      "name": "backlight-demo",
+      "type": "registry:example",
+      "title": "Backlight — Image",
+      "registryDependencies": [
+        "https://yousefkadah.github.io/react-animation-library/r/backlight.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/examples/backlight-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "backlight-video",
+      "type": "registry:example",
+      "title": "Backlight — Video",
+      "registryDependencies": [
+        "https://yousefkadah.github.io/react-animation-library/r/backlight.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/examples/backlight-video.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "backlight-svg",
+      "type": "registry:example",
+      "title": "Backlight — SVG",
+      "registryDependencies": [
+        "https://yousefkadah.github.io/react-animation-library/r/backlight.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/examples/backlight-svg.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "bento-grid",
+      "type": "registry:ui",
+      "title": "Bento Grid",
+      "description": "Bento grid is a layout used to showcase the features of a product in a simple and elegant way.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "src/registry/ui/bento-grid.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "categories": [
+        "components"
+      ]
+    },
+    {
+      "name": "bento-grid-demo",
+      "type": "registry:example",
+      "title": "Bento Grid — Features",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "https://yousefkadah.github.io/react-animation-library/r/bento-grid.json",
+        "https://yousefkadah.github.io/react-animation-library/r/animated-list.json",
+        "https://yousefkadah.github.io/react-animation-library/r/marquee.json",
+        "https://yousefkadah.github.io/react-animation-library/r/orbiting-circles.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/examples/bento-grid-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "bento-grid-vertical",
+      "type": "registry:example",
+      "title": "Bento Grid — Vertical",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "https://yousefkadah.github.io/react-animation-library/r/bento-grid.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/examples/bento-grid-vertical.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "bento-grid-compact",
+      "type": "registry:example",
+      "title": "Bento Grid — Compact",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "https://yousefkadah.github.io/react-animation-library/r/bento-grid.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/examples/bento-grid-compact.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
       "name": "blur-fade",
       "type": "registry:ui",
       "title": "Blur Fade",
@@ -130,6 +903,1679 @@
       ]
     },
     {
+      "name": "code-comparison",
+      "type": "registry:ui",
+      "title": "Code Comparison",
+      "description": "A component which compares two code snippets side by side. Dependency-free: plain code gets Shiki-style `[!code highlight|++|--|focus]` notations, and any highlighter (e.g. Shiki) can be plugged in.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "src/registry/ui/code-comparison.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "categories": [
+        "components"
+      ]
+    },
+    {
+      "name": "code-comparison-demo",
+      "type": "registry:example",
+      "title": "Code Comparison — Highlight, diff and focus",
+      "registryDependencies": [
+        "https://yousefkadah.github.io/react-animation-library/r/code-comparison.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/examples/code-comparison-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "code-comparison-diff",
+      "type": "registry:example",
+      "title": "Code Comparison — Diff",
+      "dependencies": [
+        "tailwindcss"
+      ],
+      "registryDependencies": [
+        "https://yousefkadah.github.io/react-animation-library/r/code-comparison.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/examples/code-comparison-diff.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "code-comparison-highlighter",
+      "type": "registry:example",
+      "title": "Code Comparison — Custom highlighter",
+      "registryDependencies": [
+        "https://yousefkadah.github.io/react-animation-library/r/code-comparison.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/examples/code-comparison-highlighter.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "comic-text",
+      "type": "registry:ui",
+      "title": "Comic Text",
+      "description": "Comic-book lettering with a halftone fill, thick outline and a pop-in animation.",
+      "dependencies": [
+        "motion"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "src/registry/ui/comic-text.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "categories": [
+        "text-animations"
+      ]
+    },
+    {
+      "name": "comic-text-demo",
+      "type": "registry:example",
+      "title": "Comic Text — Boom",
+      "registryDependencies": [
+        "https://yousefkadah.github.io/react-animation-library/r/comic-text.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/examples/comic-text-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "comic-text-sizes",
+      "type": "registry:example",
+      "title": "Comic Text — Sizes",
+      "registryDependencies": [
+        "https://yousefkadah.github.io/react-animation-library/r/comic-text.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/examples/comic-text-sizes.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "confetti",
+      "type": "registry:ui",
+      "title": "Confetti",
+      "description": "Confetti animations are best used to delight your users when something special happens.",
+      "dependencies": [
+        "canvas-confetti",
+        "@types/canvas-confetti"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "src/registry/ui/confetti.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "categories": [
+        "special-effects"
+      ]
+    },
+    {
+      "name": "confetti-demo",
+      "type": "registry:example",
+      "title": "Confetti — Canvas",
+      "registryDependencies": [
+        "https://yousefkadah.github.io/react-animation-library/r/confetti.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/examples/confetti-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "confetti-button",
+      "type": "registry:example",
+      "title": "Confetti — Basic",
+      "registryDependencies": [
+        "https://yousefkadah.github.io/react-animation-library/r/confetti.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/examples/confetti-button.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "confetti-random-direction",
+      "type": "registry:example",
+      "title": "Confetti — Random direction",
+      "registryDependencies": [
+        "https://yousefkadah.github.io/react-animation-library/r/confetti.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/examples/confetti-random-direction.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "confetti-fireworks",
+      "type": "registry:example",
+      "title": "Confetti — Fireworks",
+      "dependencies": [
+        "canvas-confetti"
+      ],
+      "registryDependencies": [
+        "https://yousefkadah.github.io/react-animation-library/r/confetti.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/examples/confetti-fireworks.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "confetti-side-cannons",
+      "type": "registry:example",
+      "title": "Confetti — Side cannons",
+      "dependencies": [
+        "canvas-confetti"
+      ],
+      "registryDependencies": [
+        "https://yousefkadah.github.io/react-animation-library/r/confetti.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/examples/confetti-side-cannons.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "confetti-stars",
+      "type": "registry:example",
+      "title": "Confetti — Stars",
+      "dependencies": [
+        "canvas-confetti"
+      ],
+      "registryDependencies": [
+        "https://yousefkadah.github.io/react-animation-library/r/confetti.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/examples/confetti-stars.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "confetti-custom-shapes",
+      "type": "registry:example",
+      "title": "Confetti — Custom shapes",
+      "dependencies": [
+        "canvas-confetti"
+      ],
+      "registryDependencies": [
+        "https://yousefkadah.github.io/react-animation-library/r/confetti.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/examples/confetti-custom-shapes.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "confetti-emoji",
+      "type": "registry:example",
+      "title": "Confetti — Emoji",
+      "dependencies": [
+        "canvas-confetti"
+      ],
+      "registryDependencies": [
+        "https://yousefkadah.github.io/react-animation-library/r/confetti.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/examples/confetti-emoji.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "cool-mode",
+      "type": "registry:ui",
+      "title": "Cool Mode",
+      "description": "Sprays playful particles — circles, images or emoji — from the pointer while you press the wrapped element.",
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "src/registry/ui/cool-mode.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "categories": [
+        "special-effects"
+      ]
+    },
+    {
+      "name": "cool-mode-demo",
+      "type": "registry:example",
+      "title": "Cool Mode — Default",
+      "registryDependencies": [
+        "https://yousefkadah.github.io/react-animation-library/r/cool-mode.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/examples/cool-mode-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "cool-mode-custom",
+      "type": "registry:example",
+      "title": "Cool Mode — Image particle",
+      "registryDependencies": [
+        "https://yousefkadah.github.io/react-animation-library/r/cool-mode.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/examples/cool-mode-custom.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "cool-mode-emoji",
+      "type": "registry:example",
+      "title": "Cool Mode — Emoji",
+      "registryDependencies": [
+        "https://yousefkadah.github.io/react-animation-library/r/cool-mode.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/examples/cool-mode-emoji.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "dia-text-reveal",
+      "type": "registry:ui",
+      "title": "Dia Text Reveal",
+      "description": "A colourful gradient band that sweeps across text to reveal it, inspired by the Dia browser.",
+      "dependencies": [
+        "motion"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "src/registry/ui/dia-text-reveal.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "categories": [
+        "text-animations"
+      ]
+    },
+    {
+      "name": "dia-text-reveal-demo",
+      "type": "registry:example",
+      "title": "Dia Text Reveal — Default",
+      "registryDependencies": [
+        "https://yousefkadah.github.io/react-animation-library/r/dia-text-reveal.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/examples/dia-text-reveal-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "dia-text-reveal-colors",
+      "type": "registry:example",
+      "title": "Dia Text Reveal — Custom colours",
+      "registryDependencies": [
+        "https://yousefkadah.github.io/react-animation-library/r/dia-text-reveal.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/examples/dia-text-reveal-colors.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "dia-text-reveal-repeat",
+      "type": "registry:example",
+      "title": "Dia Text Reveal — Rotating phrases",
+      "registryDependencies": [
+        "https://yousefkadah.github.io/react-animation-library/r/dia-text-reveal.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/examples/dia-text-reveal-repeat.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "dia-text-reveal-timing",
+      "type": "registry:example",
+      "title": "Dia Text Reveal — Duration and delay",
+      "registryDependencies": [
+        "https://yousefkadah.github.io/react-animation-library/r/dia-text-reveal.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/examples/dia-text-reveal-timing.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "dock",
+      "type": "registry:ui",
+      "title": "Dock",
+      "description": "An implementation of the MacOS dock using React, Tailwind CSS and Motion.",
+      "dependencies": [
+        "motion"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "src/registry/ui/dock.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "categories": [
+        "components"
+      ]
+    },
+    {
+      "name": "dock-demo",
+      "type": "registry:example",
+      "title": "Dock — Navigation dock",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "https://yousefkadah.github.io/react-animation-library/r/dock.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/examples/dock-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "dock-direction",
+      "type": "registry:example",
+      "title": "Dock — Custom direction",
+      "registryDependencies": [
+        "https://yousefkadah.github.io/react-animation-library/r/dock.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/examples/dock-direction.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "dock-magnification",
+      "type": "registry:example",
+      "title": "Dock — Custom magnification",
+      "registryDependencies": [
+        "https://yousefkadah.github.io/react-animation-library/r/dock.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/examples/dock-magnification.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "dot-pattern",
+      "type": "registry:ui",
+      "title": "Dot Pattern",
+      "description": "A background dot pattern made with SVGs, fully customizable using Tailwind CSS.",
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "src/registry/ui/dot-pattern.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "cssVars": {
+        "theme": {
+          "animate-dot-pattern-glow": "dot-pattern-glow 3s ease-in-out infinite both"
+        }
+      },
+      "css": {
+        "@keyframes dot-pattern-glow": {
+          "0%, 100%": {
+            "opacity": "0.4",
+            "transform": "scale(1)"
+          },
+          "50%": {
+            "opacity": "1",
+            "transform": "scale(1.5)"
+          }
+        }
+      },
+      "categories": [
+        "backgrounds"
+      ]
+    },
+    {
+      "name": "dot-pattern-demo",
+      "type": "registry:example",
+      "title": "Dot Pattern — Radial mask",
+      "registryDependencies": [
+        "https://yousefkadah.github.io/react-animation-library/r/dot-pattern.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/examples/dot-pattern-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "dot-pattern-linear-gradient",
+      "type": "registry:example",
+      "title": "Dot Pattern — Linear gradient",
+      "registryDependencies": [
+        "https://yousefkadah.github.io/react-animation-library/r/dot-pattern.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/examples/dot-pattern-linear-gradient.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "dot-pattern-glow",
+      "type": "registry:example",
+      "title": "Dot Pattern — With glow effect",
+      "registryDependencies": [
+        "https://yousefkadah.github.io/react-animation-library/r/dot-pattern.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/examples/dot-pattern-glow.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "dotted-map",
+      "type": "registry:ui",
+      "title": "Dotted Map",
+      "description": "A dotted world map rendered as SVG, with markers, optional pulses and custom marker overlays.",
+      "dependencies": [
+        "motion"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "src/registry/ui/dotted-map.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "categories": [
+        "components"
+      ]
+    },
+    {
+      "name": "dotted-map-demo",
+      "type": "registry:example",
+      "title": "Dotted Map — Marker overlays",
+      "registryDependencies": [
+        "https://yousefkadah.github.io/react-animation-library/r/dotted-map.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/examples/dotted-map-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "dotted-map-small-dots",
+      "type": "registry:example",
+      "title": "Dotted Map — Smaller dots",
+      "registryDependencies": [
+        "https://yousefkadah.github.io/react-animation-library/r/dotted-map.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/examples/dotted-map-small-dots.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "dotted-map-pulse",
+      "type": "registry:example",
+      "title": "Dotted Map — Pulsing markers",
+      "registryDependencies": [
+        "https://yousefkadah.github.io/react-animation-library/r/dotted-map.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/examples/dotted-map-pulse.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "file-tree",
+      "type": "registry:ui",
+      "title": "File Tree",
+      "description": "A component used to showcase the folder and file structure of a directory.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "src/registry/ui/file-tree.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "categories": [
+        "components"
+      ]
+    },
+    {
+      "name": "file-tree-demo",
+      "type": "registry:example",
+      "title": "File Tree — From data",
+      "registryDependencies": [
+        "https://yousefkadah.github.io/react-animation-library/r/file-tree.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/examples/file-tree-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "file-tree-composed",
+      "type": "registry:example",
+      "title": "File Tree — Composed",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "https://yousefkadah.github.io/react-animation-library/r/file-tree.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/examples/file-tree-composed.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "file-tree-icons",
+      "type": "registry:example",
+      "title": "File Tree — Custom icons",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "https://yousefkadah.github.io/react-animation-library/r/file-tree.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/examples/file-tree-icons.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "flickering-grid",
+      "type": "registry:ui",
+      "title": "Flickering Grid",
+      "description": "A flickering grid background drawn on a canvas, fully customizable using Tailwind CSS.",
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "src/registry/ui/flickering-grid.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "categories": [
+        "backgrounds"
+      ]
+    },
+    {
+      "name": "flickering-grid-demo",
+      "type": "registry:example",
+      "title": "Flickering Grid — Default",
+      "registryDependencies": [
+        "https://yousefkadah.github.io/react-animation-library/r/flickering-grid.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/examples/flickering-grid-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "flickering-grid-rounded",
+      "type": "registry:example",
+      "title": "Flickering Grid — Radial mask",
+      "registryDependencies": [
+        "https://yousefkadah.github.io/react-animation-library/r/flickering-grid.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/examples/flickering-grid-rounded.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "flickering-grid-hero",
+      "type": "registry:example",
+      "title": "Flickering Grid — Hero section",
+      "registryDependencies": [
+        "https://yousefkadah.github.io/react-animation-library/r/flickering-grid.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/examples/flickering-grid-hero.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "glare-hover",
+      "type": "registry:ui",
+      "title": "Glare Hover",
+      "description": "A diagonal glare that sweeps across its content on hover, driven by CSS variables (angle, size, duration, colour).",
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "src/registry/ui/glare-hover.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "categories": [
+        "special-effects"
+      ]
+    },
+    {
+      "name": "glare-hover-demo",
+      "type": "registry:example",
+      "title": "Glare Hover — Pricing card",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "https://yousefkadah.github.io/react-animation-library/r/glare-hover.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/examples/glare-hover-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "glare-hover-cta",
+      "type": "registry:example",
+      "title": "Glare Hover — Call to action",
+      "registryDependencies": [
+        "https://yousefkadah.github.io/react-animation-library/r/glare-hover.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/examples/glare-hover-cta.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "glare-hover-alerts",
+      "type": "registry:example",
+      "title": "Glare Hover — Alerts",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "https://yousefkadah.github.io/react-animation-library/r/glare-hover.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/examples/glare-hover-alerts.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "globe",
+      "type": "registry:ui",
+      "title": "Globe",
+      "description": "An autorotating, interactive and highly performant globe made using WebGL.",
+      "dependencies": [
+        "cobe",
+        "motion"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "src/registry/ui/globe.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "categories": [
+        "components"
+      ]
+    },
+    {
+      "name": "globe-demo",
+      "type": "registry:example",
+      "title": "Globe — Default",
+      "registryDependencies": [
+        "https://yousefkadah.github.io/react-animation-library/r/globe.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/examples/globe-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "globe-arcs",
+      "type": "registry:example",
+      "title": "Globe — Dark with arcs",
+      "dependencies": [
+        "cobe"
+      ],
+      "registryDependencies": [
+        "https://yousefkadah.github.io/react-animation-library/r/globe.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/examples/globe-arcs.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "grid-pattern",
+      "type": "registry:ui",
+      "title": "Grid Pattern",
+      "description": "A background grid pattern made with SVGs, fully customizable using Tailwind CSS.",
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "src/registry/ui/grid-pattern.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "categories": [
+        "backgrounds"
+      ]
+    },
+    {
+      "name": "grid-pattern-demo",
+      "type": "registry:example",
+      "title": "Grid Pattern — Highlighted squares",
+      "registryDependencies": [
+        "https://yousefkadah.github.io/react-animation-library/r/grid-pattern.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/examples/grid-pattern-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "grid-pattern-linear-gradient",
+      "type": "registry:example",
+      "title": "Grid Pattern — Linear gradient",
+      "registryDependencies": [
+        "https://yousefkadah.github.io/react-animation-library/r/grid-pattern.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/examples/grid-pattern-linear-gradient.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "grid-pattern-dashed",
+      "type": "registry:example",
+      "title": "Grid Pattern — Dashed",
+      "registryDependencies": [
+        "https://yousefkadah.github.io/react-animation-library/r/grid-pattern.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/examples/grid-pattern-dashed.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "hero-video-dialog",
+      "type": "registry:ui",
+      "title": "Hero Video Dialog",
+      "description": "A hero video thumbnail with a play button that opens the video in an animated dialog.",
+      "dependencies": [
+        "motion",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "src/registry/ui/hero-video-dialog.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "categories": [
+        "components"
+      ]
+    },
+    {
+      "name": "hero-video-dialog-demo",
+      "type": "registry:example",
+      "title": "Hero Video Dialog — From center",
+      "registryDependencies": [
+        "https://yousefkadah.github.io/react-animation-library/r/hero-video-dialog.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/examples/hero-video-dialog-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "hero-video-dialog-top-in-bottom-out",
+      "type": "registry:example",
+      "title": "Hero Video Dialog — Top in, bottom out",
+      "registryDependencies": [
+        "https://yousefkadah.github.io/react-animation-library/r/hero-video-dialog.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/examples/hero-video-dialog-top-in-bottom-out.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "hero-video-dialog-styles",
+      "type": "registry:example",
+      "title": "Hero Video Dialog — All animation styles",
+      "registryDependencies": [
+        "https://yousefkadah.github.io/react-animation-library/r/hero-video-dialog.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/examples/hero-video-dialog-styles.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "hexagon-pattern",
+      "type": "registry:ui",
+      "title": "Hexagon Pattern",
+      "description": "A background hexagon pattern made with SVGs, fully customizable using Tailwind CSS.",
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "src/registry/ui/hexagon-pattern.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "categories": [
+        "backgrounds"
+      ]
+    },
+    {
+      "name": "hexagon-pattern-demo",
+      "type": "registry:example",
+      "title": "Hexagon Pattern — Highlighted hexagons",
+      "registryDependencies": [
+        "https://yousefkadah.github.io/react-animation-library/r/hexagon-pattern.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/examples/hexagon-pattern-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "hexagon-pattern-linear-gradient",
+      "type": "registry:example",
+      "title": "Hexagon Pattern — Linear gradient",
+      "registryDependencies": [
+        "https://yousefkadah.github.io/react-animation-library/r/hexagon-pattern.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/examples/hexagon-pattern-linear-gradient.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "hexagon-pattern-dashed",
+      "type": "registry:example",
+      "title": "Hexagon Pattern — Dashed",
+      "registryDependencies": [
+        "https://yousefkadah.github.io/react-animation-library/r/hexagon-pattern.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/examples/hexagon-pattern-dashed.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "hexagon-pattern-spacing",
+      "type": "registry:example",
+      "title": "Hexagon Pattern — Spacing",
+      "registryDependencies": [
+        "https://yousefkadah.github.io/react-animation-library/r/hexagon-pattern.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/examples/hexagon-pattern-spacing.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "highlighter",
+      "type": "registry:ui",
+      "title": "Highlighter",
+      "description": "A hand-drawn highlight, underline, box or circle that animates around inline text.",
+      "dependencies": [
+        "motion",
+        "rough-notation"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "src/registry/ui/highlighter.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "categories": [
+        "text-animations"
+      ]
+    },
+    {
+      "name": "highlighter-demo",
+      "type": "registry:example",
+      "title": "Highlighter — Default",
+      "registryDependencies": [
+        "https://yousefkadah.github.io/react-animation-library/r/highlighter.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/examples/highlighter-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "highlighter-actions",
+      "type": "registry:example",
+      "title": "Highlighter — All actions",
+      "registryDependencies": [
+        "https://yousefkadah.github.io/react-animation-library/r/highlighter.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/examples/highlighter-actions.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "highlighter-in-view",
+      "type": "registry:example",
+      "title": "Highlighter — Draw when in view",
+      "registryDependencies": [
+        "https://yousefkadah.github.io/react-animation-library/r/highlighter.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/examples/highlighter-in-view.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "hyper-text",
+      "type": "registry:ui",
+      "title": "Hyper Text",
+      "description": "A text animation that scrambles letters before revealing the final text.",
+      "dependencies": [
+        "motion"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "src/registry/ui/hyper-text.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "categories": [
+        "text-animations"
+      ]
+    },
+    {
+      "name": "hyper-text-demo",
+      "type": "registry:example",
+      "title": "Hyper Text — Hover me",
+      "registryDependencies": [
+        "https://yousefkadah.github.io/react-animation-library/r/hyper-text.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/examples/hyper-text-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "hyper-text-characters",
+      "type": "registry:example",
+      "title": "Hyper Text — Custom character sets",
+      "registryDependencies": [
+        "https://yousefkadah.github.io/react-animation-library/r/hyper-text.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/examples/hyper-text-characters.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "hyper-text-start-on-view",
+      "type": "registry:example",
+      "title": "Hyper Text — Start on view",
+      "registryDependencies": [
+        "https://yousefkadah.github.io/react-animation-library/r/hyper-text.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/examples/hyper-text-start-on-view.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "icon-cloud",
+      "type": "registry:ui",
+      "title": "Icon Cloud",
+      "description": "An interactive 3D sphere of icons or images that rotates with the pointer; click an icon to bring it to the front.",
+      "dependencies": [
+        "lucide-react",
+        "motion"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "src/registry/ui/icon-cloud.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "categories": [
+        "components"
+      ]
+    },
+    {
+      "name": "icon-cloud-demo",
+      "type": "registry:example",
+      "title": "Icon Cloud — Simple Icons",
+      "registryDependencies": [
+        "https://yousefkadah.github.io/react-animation-library/r/icon-cloud.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/examples/icon-cloud-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "icon-cloud-images",
+      "type": "registry:example",
+      "title": "Icon Cloud — Images",
+      "registryDependencies": [
+        "https://yousefkadah.github.io/react-animation-library/r/icon-cloud.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/examples/icon-cloud-images.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "icon-cloud-icons",
+      "type": "registry:example",
+      "title": "Icon Cloud — Icon elements and SVG",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "https://yousefkadah.github.io/react-animation-library/r/icon-cloud.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/examples/icon-cloud-icons.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "interactive-grid-pattern",
+      "type": "registry:ui",
+      "title": "Interactive Grid Pattern",
+      "description": "An interactive background grid pattern made with SVGs, fully customizable using Tailwind CSS.",
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "src/registry/ui/interactive-grid-pattern.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "categories": [
+        "backgrounds"
+      ]
+    },
+    {
+      "name": "interactive-grid-pattern-demo",
+      "type": "registry:example",
+      "title": "Interactive Grid Pattern — Skewed",
+      "registryDependencies": [
+        "https://yousefkadah.github.io/react-animation-library/r/interactive-grid-pattern.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/examples/interactive-grid-pattern-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "interactive-grid-pattern-small",
+      "type": "registry:example",
+      "title": "Interactive Grid Pattern — Small squares",
+      "registryDependencies": [
+        "https://yousefkadah.github.io/react-animation-library/r/interactive-grid-pattern.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/examples/interactive-grid-pattern-small.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "interactive-hover-button",
+      "type": "registry:ui",
+      "title": "Interactive Hover Button",
+      "description": "Interactive hover button: a dot grows to fill the button and the label slides out for an arrow.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "src/registry/ui/interactive-hover-button.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "categories": [
+        "buttons"
+      ]
+    },
+    {
+      "name": "interactive-hover-button-demo",
+      "type": "registry:example",
+      "title": "Interactive Hover Button — Default",
+      "registryDependencies": [
+        "https://yousefkadah.github.io/react-animation-library/r/interactive-hover-button.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/examples/interactive-hover-button-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "interactive-hover-button-custom",
+      "type": "registry:example",
+      "title": "Interactive Hover Button — Custom styles",
+      "registryDependencies": [
+        "https://yousefkadah.github.io/react-animation-library/r/interactive-hover-button.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/examples/interactive-hover-button-custom.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "iphone",
+      "type": "registry:ui",
+      "title": "iPhone",
+      "description": "A mockup of the iPhone.",
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "src/registry/ui/iphone.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "categories": [
+        "device-mocks"
+      ]
+    },
+    {
+      "name": "iphone-demo",
+      "type": "registry:example",
+      "title": "iPhone — Empty screen",
+      "registryDependencies": [
+        "https://yousefkadah.github.io/react-animation-library/r/iphone.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/examples/iphone-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "iphone-image",
+      "type": "registry:example",
+      "title": "iPhone — With image",
+      "registryDependencies": [
+        "https://yousefkadah.github.io/react-animation-library/r/iphone.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/examples/iphone-image.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "iphone-video",
+      "type": "registry:example",
+      "title": "iPhone — With video",
+      "registryDependencies": [
+        "https://yousefkadah.github.io/react-animation-library/r/iphone.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/examples/iphone-video.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "kinetic-text",
+      "type": "registry:ui",
+      "title": "Kinetic Text",
+      "description": "Letters that swell in weight and spacing as the pointer passes over them, with a ripple into their neighbours.",
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "src/registry/ui/kinetic-text.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "categories": [
+        "text-animations"
+      ]
+    },
+    {
+      "name": "kinetic-text-demo",
+      "type": "registry:example",
+      "title": "Kinetic Text — Default",
+      "registryDependencies": [
+        "https://yousefkadah.github.io/react-animation-library/r/kinetic-text.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/examples/kinetic-text-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "kinetic-text-heading",
+      "type": "registry:example",
+      "title": "Kinetic Text — Headings",
+      "registryDependencies": [
+        "https://yousefkadah.github.io/react-animation-library/r/kinetic-text.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/examples/kinetic-text-heading.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "lens",
+      "type": "registry:ui",
+      "title": "Lens",
+      "description": "A lens that magnifies whatever is under the pointer, or sits at a fixed position.",
+      "dependencies": [
+        "motion"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "src/registry/ui/lens.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "categories": [
+        "components"
+      ]
+    },
+    {
+      "name": "lens-demo",
+      "type": "registry:example",
+      "title": "Lens — Follows the pointer",
+      "registryDependencies": [
+        "https://yousefkadah.github.io/react-animation-library/r/lens.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/examples/lens-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "lens-static",
+      "type": "registry:example",
+      "title": "Lens — Static",
+      "registryDependencies": [
+        "https://yousefkadah.github.io/react-animation-library/r/lens.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/examples/lens-static.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "lens-default-position",
+      "type": "registry:example",
+      "title": "Lens — Default position",
+      "registryDependencies": [
+        "https://yousefkadah.github.io/react-animation-library/r/lens.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/examples/lens-default-position.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "light-rays",
+      "type": "registry:ui",
+      "title": "Light Rays",
+      "description": "A component with animated light rays which shine down from above.",
+      "dependencies": [
+        "motion"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "src/registry/ui/light-rays.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "categories": [
+        "backgrounds"
+      ]
+    },
+    {
+      "name": "light-rays-demo",
+      "type": "registry:example",
+      "title": "Light Rays — Default",
+      "registryDependencies": [
+        "https://yousefkadah.github.io/react-animation-library/r/light-rays.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/examples/light-rays-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "light-rays-warm",
+      "type": "registry:example",
+      "title": "Light Rays — Warm and fast",
+      "registryDependencies": [
+        "https://yousefkadah.github.io/react-animation-library/r/light-rays.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/examples/light-rays-warm.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "line-shadow-text",
+      "type": "registry:ui",
+      "title": "Line Shadow Text",
+      "description": "A text component with a moving line shadow.",
+      "dependencies": [
+        "motion"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "src/registry/ui/line-shadow-text.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "cssVars": {
+        "theme": {
+          "animate-line-shadow": "line-shadow 15s linear infinite"
+        }
+      },
+      "css": {
+        "@keyframes line-shadow": {
+          "0%": {
+            "background-position": "0 0"
+          },
+          "100%": {
+            "background-position": "100% -100%"
+          }
+        }
+      },
+      "categories": [
+        "text-animations"
+      ]
+    },
+    {
+      "name": "line-shadow-text-demo",
+      "type": "registry:example",
+      "title": "Line Shadow Text — Ship fast",
+      "registryDependencies": [
+        "https://yousefkadah.github.io/react-animation-library/r/line-shadow-text.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/examples/line-shadow-text-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "line-shadow-text-colors",
+      "type": "registry:example",
+      "title": "Line Shadow Text — Custom colour",
+      "registryDependencies": [
+        "https://yousefkadah.github.io/react-animation-library/r/line-shadow-text.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/examples/line-shadow-text-colors.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "magic-card",
+      "type": "registry:ui",
+      "title": "Magic Card",
+      "description": "A spotlight effect that follows your mouse cursor and highlights borders on hover.",
+      "dependencies": [
+        "motion"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "src/registry/ui/magic-card.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "categories": [
+        "special-effects"
+      ]
+    },
+    {
+      "name": "magic-card-demo",
+      "type": "registry:example",
+      "title": "Magic Card — Login card",
+      "registryDependencies": [
+        "https://yousefkadah.github.io/react-animation-library/r/magic-card.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/examples/magic-card-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "magic-card-orb",
+      "type": "registry:example",
+      "title": "Magic Card — Orb",
+      "registryDependencies": [
+        "https://yousefkadah.github.io/react-animation-library/r/magic-card.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/examples/magic-card-orb.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
       "name": "marquee",
       "type": "registry:ui",
       "title": "Marquee",
@@ -228,6 +2674,1161 @@
       ]
     },
     {
+      "name": "meteors",
+      "type": "registry:ui",
+      "title": "Meteors",
+      "description": "A meteor shower effect.",
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "src/registry/ui/meteors.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "cssVars": {
+        "theme": {
+          "animate-meteor": "meteor 5s linear infinite"
+        }
+      },
+      "css": {
+        "@keyframes meteor": {
+          "0%": {
+            "transform": "rotate(var(--angle)) translateX(0)",
+            "opacity": "1"
+          },
+          "70%": {
+            "opacity": "1"
+          },
+          "100%": {
+            "transform": "rotate(var(--angle)) translateX(-500px)",
+            "opacity": "0"
+          }
+        }
+      },
+      "categories": [
+        "special-effects"
+      ]
+    },
+    {
+      "name": "meteors-demo",
+      "type": "registry:example",
+      "title": "Meteors — Meteor shower",
+      "registryDependencies": [
+        "https://yousefkadah.github.io/react-animation-library/r/meteors.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/examples/meteors-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "meteors-card",
+      "type": "registry:example",
+      "title": "Meteors — Card background",
+      "registryDependencies": [
+        "https://yousefkadah.github.io/react-animation-library/r/meteors.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/examples/meteors-card.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "morphing-text",
+      "type": "registry:ui",
+      "title": "Morphing Text",
+      "description": "A dynamic text morphing component that blends smoothly from one string to the next.",
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "src/registry/ui/morphing-text.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "categories": [
+        "text-animations"
+      ]
+    },
+    {
+      "name": "morphing-text-demo",
+      "type": "registry:example",
+      "title": "Morphing Text — Default",
+      "registryDependencies": [
+        "https://yousefkadah.github.io/react-animation-library/r/morphing-text.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/examples/morphing-text-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "morphing-text-headline",
+      "type": "registry:example",
+      "title": "Morphing Text — Headline",
+      "registryDependencies": [
+        "https://yousefkadah.github.io/react-animation-library/r/morphing-text.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/examples/morphing-text-headline.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "neon-gradient-card",
+      "type": "registry:ui",
+      "title": "Neon Gradient Card",
+      "description": "A beautiful neon card effect.",
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "src/registry/ui/neon-gradient-card.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "cssVars": {
+        "theme": {
+          "animate-background-position-spin": "background-position-spin 3000ms infinite alternate"
+        }
+      },
+      "css": {
+        "@keyframes background-position-spin": {
+          "0%": {
+            "background-position": "top center"
+          },
+          "100%": {
+            "background-position": "bottom center"
+          }
+        }
+      },
+      "categories": [
+        "special-effects"
+      ]
+    },
+    {
+      "name": "neon-gradient-card-demo",
+      "type": "registry:example",
+      "title": "Neon Gradient Card — Default",
+      "registryDependencies": [
+        "https://yousefkadah.github.io/react-animation-library/r/neon-gradient-card.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/examples/neon-gradient-card-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "neon-gradient-card-colors",
+      "type": "registry:example",
+      "title": "Neon Gradient Card — Custom colours",
+      "registryDependencies": [
+        "https://yousefkadah.github.io/react-animation-library/r/neon-gradient-card.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/examples/neon-gradient-card-colors.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "noise-texture",
+      "type": "registry:ui",
+      "title": "Noise Texture",
+      "description": "An SVG fractal noise layer using feTurbulence, desaturation, and contrast controls for subtle texture overlays.",
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "src/registry/ui/noise-texture.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "categories": [
+        "backgrounds"
+      ]
+    },
+    {
+      "name": "noise-texture-demo",
+      "type": "registry:example",
+      "title": "Noise Texture — Radial mask",
+      "registryDependencies": [
+        "https://yousefkadah.github.io/react-animation-library/r/noise-texture.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/examples/noise-texture-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "noise-texture-card",
+      "type": "registry:example",
+      "title": "Noise Texture — Newsletter card",
+      "registryDependencies": [
+        "https://yousefkadah.github.io/react-animation-library/r/noise-texture.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/examples/noise-texture-card.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "noise-texture-button",
+      "type": "registry:example",
+      "title": "Noise Texture — Button",
+      "registryDependencies": [
+        "https://yousefkadah.github.io/react-animation-library/r/noise-texture.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/examples/noise-texture-button.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "noise-texture-input",
+      "type": "registry:example",
+      "title": "Noise Texture — Input",
+      "registryDependencies": [
+        "https://yousefkadah.github.io/react-animation-library/r/noise-texture.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/examples/noise-texture-input.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "number-ticker",
+      "type": "registry:ui",
+      "title": "Number Ticker",
+      "description": "Animate numbers to count up or down to a target number.",
+      "dependencies": [
+        "motion"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "src/registry/ui/number-ticker.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "categories": [
+        "text-animations"
+      ]
+    },
+    {
+      "name": "number-ticker-demo",
+      "type": "registry:example",
+      "title": "Number Ticker — Default",
+      "registryDependencies": [
+        "https://yousefkadah.github.io/react-animation-library/r/number-ticker.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/examples/number-ticker-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "number-ticker-decimal",
+      "type": "registry:example",
+      "title": "Number Ticker — Decimal",
+      "registryDependencies": [
+        "https://yousefkadah.github.io/react-animation-library/r/number-ticker.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/examples/number-ticker-decimal.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "number-ticker-start-value",
+      "type": "registry:example",
+      "title": "Number Ticker — Start value",
+      "registryDependencies": [
+        "https://yousefkadah.github.io/react-animation-library/r/number-ticker.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/examples/number-ticker-start-value.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "number-ticker-stats",
+      "type": "registry:example",
+      "title": "Number Ticker — Stats with locales and count-down",
+      "registryDependencies": [
+        "https://yousefkadah.github.io/react-animation-library/r/number-ticker.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/examples/number-ticker-stats.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "orbiting-circles",
+      "type": "registry:ui",
+      "title": "Orbiting Circles",
+      "description": "A collection of circles which move in orbit along a circular path.",
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "src/registry/ui/orbiting-circles.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "cssVars": {
+        "theme": {
+          "animate-orbit": "orbit calc(var(--duration) * 1s) linear infinite"
+        }
+      },
+      "css": {
+        "@keyframes orbit": {
+          "0%": {
+            "transform": "rotate(calc(var(--angle) * 1deg)) translateY(calc(var(--radius) * 1px)) rotate(calc(var(--angle) * -1deg))"
+          },
+          "100%": {
+            "transform": "rotate(calc(var(--angle) * 1deg + 360deg)) translateY(calc(var(--radius) * 1px)) rotate(calc((var(--angle) * -1deg) - 360deg))"
+          }
+        }
+      },
+      "categories": [
+        "components"
+      ]
+    },
+    {
+      "name": "orbiting-circles-demo",
+      "type": "registry:example",
+      "title": "Orbiting Circles — Integrations",
+      "registryDependencies": [
+        "https://yousefkadah.github.io/react-animation-library/r/orbiting-circles.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/examples/orbiting-circles-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "orbiting-circles-icons",
+      "type": "registry:example",
+      "title": "Orbiting Circles — Icons",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "https://yousefkadah.github.io/react-animation-library/r/orbiting-circles.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/examples/orbiting-circles-icons.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "orbiting-circles-avatars",
+      "type": "registry:example",
+      "title": "Orbiting Circles — Avatars",
+      "registryDependencies": [
+        "https://yousefkadah.github.io/react-animation-library/r/orbiting-circles.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/examples/orbiting-circles-avatars.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "particles",
+      "type": "registry:ui",
+      "title": "Particles",
+      "description": "A canvas of drifting particles that are gently attracted to the pointer, for backgrounds with some depth.",
+      "dependencies": [
+        "motion"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "src/registry/ui/particles.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "categories": [
+        "special-effects"
+      ]
+    },
+    {
+      "name": "particles-demo",
+      "type": "registry:example",
+      "title": "Particles — Theme-aware",
+      "registryDependencies": [
+        "https://yousefkadah.github.io/react-animation-library/r/particles.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/examples/particles-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "particles-colored",
+      "type": "registry:example",
+      "title": "Particles — Coloured",
+      "registryDependencies": [
+        "https://yousefkadah.github.io/react-animation-library/r/particles.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/examples/particles-colored.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "particles-drift",
+      "type": "registry:example",
+      "title": "Particles — Drift",
+      "registryDependencies": [
+        "https://yousefkadah.github.io/react-animation-library/r/particles.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/examples/particles-drift.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "pixel-image",
+      "type": "registry:ui",
+      "title": "Pixel Image",
+      "description": "A component that displays an image with a pixelated effect, creating a retro aesthetic.",
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "src/registry/ui/pixel-image.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "categories": [
+        "special-effects"
+      ]
+    },
+    {
+      "name": "pixel-image-demo",
+      "type": "registry:example",
+      "title": "Pixel Image — Grayscale reveal",
+      "registryDependencies": [
+        "https://yousefkadah.github.io/react-animation-library/r/pixel-image.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/examples/pixel-image-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "pixel-image-grid",
+      "type": "registry:example",
+      "title": "Pixel Image — 8×8 grid in colour",
+      "registryDependencies": [
+        "https://yousefkadah.github.io/react-animation-library/r/pixel-image.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/examples/pixel-image-grid.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "pointer",
+      "type": "registry:ui",
+      "title": "Pointer",
+      "description": "Replaces the cursor with a custom animated pointer while hovering a container.",
+      "dependencies": [
+        "motion"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "src/registry/ui/pointer.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "categories": [
+        "components"
+      ]
+    },
+    {
+      "name": "pointer-demo",
+      "type": "registry:example",
+      "title": "Pointer — Pointers",
+      "dependencies": [
+        "motion"
+      ],
+      "registryDependencies": [
+        "https://yousefkadah.github.io/react-animation-library/r/pointer.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/examples/pointer-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "pointer-custom",
+      "type": "registry:example",
+      "title": "Pointer — Name tag",
+      "registryDependencies": [
+        "https://yousefkadah.github.io/react-animation-library/r/pointer.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/examples/pointer-custom.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "progressive-blur",
+      "type": "registry:ui",
+      "title": "Progressive Blur",
+      "description": "A blur that gradually strengthens toward an edge, for fading out scrolling content or images.",
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "src/registry/ui/progressive-blur.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "categories": [
+        "components"
+      ]
+    },
+    {
+      "name": "progressive-blur-demo",
+      "type": "registry:example",
+      "title": "Progressive Blur — Scroll fade",
+      "registryDependencies": [
+        "https://yousefkadah.github.io/react-animation-library/r/progressive-blur.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/examples/progressive-blur-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "progressive-blur-top",
+      "type": "registry:example",
+      "title": "Progressive Blur — Top and bottom",
+      "registryDependencies": [
+        "https://yousefkadah.github.io/react-animation-library/r/progressive-blur.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/examples/progressive-blur-top.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "progressive-blur-image",
+      "type": "registry:example",
+      "title": "Progressive Blur — Image caption",
+      "registryDependencies": [
+        "https://yousefkadah.github.io/react-animation-library/r/progressive-blur.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/examples/progressive-blur-image.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "pulsating-button",
+      "type": "registry:ui",
+      "title": "Pulsating Button",
+      "description": "An animated pulsating button useful for capturing attention of users.",
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "src/registry/ui/pulsating-button.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "cssVars": {
+        "theme": {
+          "animate-pulsating": "pulsating var(--duration) ease-out infinite",
+          "animate-pulsating-ripple": "pulsating-ripple var(--duration) cubic-bezier(0.16, 1, 0.3, 1) infinite"
+        }
+      },
+      "css": {
+        "@keyframes pulsating": {
+          "0%, 100%": {
+            "box-shadow": "0 0 0 0 var(--pulse-color, oklch(from var(--bg) l c h / 0.5))"
+          },
+          "50%": {
+            "box-shadow": "0 0 0 var(--distance) var(--pulse-color, oklch(from var(--bg) l c h / 0.5))"
+          }
+        },
+        "@keyframes pulsating-ripple": {
+          "0%": {
+            "box-shadow": "0 0 0 0 oklch(from var(--pulse-color, var(--bg)) l c h / 1)"
+          },
+          "100%": {
+            "box-shadow": "0 0 0 var(--distance) oklch(from var(--pulse-color, var(--bg)) l c h / 0)"
+          }
+        }
+      },
+      "categories": [
+        "buttons"
+      ]
+    },
+    {
+      "name": "pulsating-button-demo",
+      "type": "registry:example",
+      "title": "Pulsating Button — Pulse",
+      "registryDependencies": [
+        "https://yousefkadah.github.io/react-animation-library/r/pulsating-button.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/examples/pulsating-button-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "pulsating-button-ripple",
+      "type": "registry:example",
+      "title": "Pulsating Button — Ripple variant",
+      "registryDependencies": [
+        "https://yousefkadah.github.io/react-animation-library/r/pulsating-button.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/examples/pulsating-button-ripple.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "pulsating-button-color",
+      "type": "registry:example",
+      "title": "Pulsating Button — Custom pulse colour",
+      "registryDependencies": [
+        "https://yousefkadah.github.io/react-animation-library/r/pulsating-button.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/examples/pulsating-button-color.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "rainbow-button",
+      "type": "registry:ui",
+      "title": "Rainbow Button",
+      "description": "An animated button with a rainbow effect.",
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "src/registry/ui/rainbow-button.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "cssVars": {
+        "theme": {
+          "animate-rainbow": "rainbow var(--speed, 2s) infinite linear"
+        }
+      },
+      "css": {
+        "@keyframes rainbow": {
+          "0%": {
+            "background-position": "0%"
+          },
+          "100%": {
+            "background-position": "200%"
+          }
+        }
+      },
+      "categories": [
+        "buttons"
+      ]
+    },
+    {
+      "name": "rainbow-button-demo",
+      "type": "registry:example",
+      "title": "Rainbow Button — Default",
+      "registryDependencies": [
+        "https://yousefkadah.github.io/react-animation-library/r/rainbow-button.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/examples/rainbow-button-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "rainbow-button-outline",
+      "type": "registry:example",
+      "title": "Rainbow Button — Outline",
+      "registryDependencies": [
+        "https://yousefkadah.github.io/react-animation-library/r/rainbow-button.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/examples/rainbow-button-outline.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "rainbow-button-sizes",
+      "type": "registry:example",
+      "title": "Rainbow Button — Sizes",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "https://yousefkadah.github.io/react-animation-library/r/rainbow-button.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/examples/rainbow-button-sizes.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "retro-grid",
+      "type": "registry:ui",
+      "title": "Retro Grid",
+      "description": "An animated scrolling retro grid effect, rendered with WebGL and a CSS fallback.",
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "src/registry/ui/retro-grid.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "cssVars": {
+        "theme": {
+          "animate-retro-grid": "retro-grid 15s linear infinite"
+        }
+      },
+      "css": {
+        "@keyframes retro-grid": {
+          "from": {
+            "transform": "translateY(-50%)"
+          },
+          "to": {
+            "transform": "translateY(0)"
+          }
+        }
+      },
+      "categories": [
+        "backgrounds"
+      ]
+    },
+    {
+      "name": "retro-grid-demo",
+      "type": "registry:example",
+      "title": "Retro Grid — Default",
+      "registryDependencies": [
+        "https://yousefkadah.github.io/react-animation-library/r/retro-grid.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/examples/retro-grid-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "retro-grid-colors",
+      "type": "registry:example",
+      "title": "Retro Grid — Custom colours",
+      "registryDependencies": [
+        "https://yousefkadah.github.io/react-animation-library/r/retro-grid.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/examples/retro-grid-colors.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "ripple",
+      "type": "registry:ui",
+      "title": "Ripple",
+      "description": "An animated ripple effect typically used behind elements to emphasize them.",
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "src/registry/ui/ripple.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "cssVars": {
+        "theme": {
+          "animate-ripple": "ripple var(--duration,2s) ease calc(var(--i, 0)*.2s) infinite"
+        }
+      },
+      "css": {
+        "@keyframes ripple": {
+          "0%, 100%": {
+            "transform": "translate(-50%, -50%) scale(1)"
+          },
+          "50%": {
+            "transform": "translate(-50%, -50%) scale(0.9)"
+          }
+        }
+      },
+      "categories": [
+        "backgrounds"
+      ]
+    },
+    {
+      "name": "ripple-demo",
+      "type": "registry:example",
+      "title": "Ripple — Default",
+      "registryDependencies": [
+        "https://yousefkadah.github.io/react-animation-library/r/ripple.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/examples/ripple-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "ripple-avatar",
+      "type": "registry:example",
+      "title": "Ripple — Incoming call",
+      "registryDependencies": [
+        "https://yousefkadah.github.io/react-animation-library/r/ripple.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/examples/ripple-avatar.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "ripple-button",
+      "type": "registry:ui",
+      "title": "Ripple Button",
+      "description": "An animated button with ripple useful for user engagement.",
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "src/registry/ui/ripple-button.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "cssVars": {
+        "theme": {
+          "animate-rippling": "rippling var(--duration) ease-out"
+        }
+      },
+      "css": {
+        "@keyframes rippling": {
+          "0%": {
+            "opacity": "1"
+          },
+          "100%": {
+            "transform": "scale(2)",
+            "opacity": "0"
+          }
+        }
+      },
+      "categories": [
+        "buttons"
+      ]
+    },
+    {
+      "name": "ripple-button-demo",
+      "type": "registry:example",
+      "title": "Ripple Button — Default",
+      "registryDependencies": [
+        "https://yousefkadah.github.io/react-animation-library/r/ripple-button.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/examples/ripple-button-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "ripple-button-custom",
+      "type": "registry:example",
+      "title": "Ripple Button — Custom colour and speed",
+      "registryDependencies": [
+        "https://yousefkadah.github.io/react-animation-library/r/ripple-button.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/examples/ripple-button-custom.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "safari",
+      "type": "registry:ui",
+      "title": "Safari",
+      "description": "A Safari browser mockup to showcase your website.",
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "src/registry/ui/safari.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "categories": [
+        "device-mocks"
+      ]
+    },
+    {
+      "name": "safari-demo",
+      "type": "registry:example",
+      "title": "Safari — Empty window",
+      "registryDependencies": [
+        "https://yousefkadah.github.io/react-animation-library/r/safari.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/examples/safari-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "safari-image",
+      "type": "registry:example",
+      "title": "Safari — With image",
+      "registryDependencies": [
+        "https://yousefkadah.github.io/react-animation-library/r/safari.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/examples/safari-image.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "safari-simple",
+      "type": "registry:example",
+      "title": "Safari — Simple mode",
+      "registryDependencies": [
+        "https://yousefkadah.github.io/react-animation-library/r/safari.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/examples/safari-simple.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "safari-video",
+      "type": "registry:example",
+      "title": "Safari — With video",
+      "registryDependencies": [
+        "https://yousefkadah.github.io/react-animation-library/r/safari.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/examples/safari-video.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "scroll-based-velocity",
+      "type": "registry:ui",
+      "title": "Scroll Based Velocity",
+      "description": "Scrolling rows of content whose speed and direction follow the page scroll velocity.",
+      "dependencies": [
+        "motion"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "src/registry/ui/scroll-based-velocity.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "categories": [
+        "text-animations"
+      ]
+    },
+    {
+      "name": "scroll-based-velocity-demo",
+      "type": "registry:example",
+      "title": "Scroll Based Velocity — Text",
+      "registryDependencies": [
+        "https://yousefkadah.github.io/react-animation-library/r/scroll-based-velocity.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/examples/scroll-based-velocity-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "scroll-based-velocity-images",
+      "type": "registry:example",
+      "title": "Scroll Based Velocity — Images",
+      "registryDependencies": [
+        "https://yousefkadah.github.io/react-animation-library/r/scroll-based-velocity.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/examples/scroll-based-velocity-images.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "scroll-based-velocity-tags",
+      "type": "registry:example",
+      "title": "Scroll Based Velocity — Standalone rows",
+      "registryDependencies": [
+        "https://yousefkadah.github.io/react-animation-library/r/scroll-based-velocity.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/examples/scroll-based-velocity-tags.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "scroll-progress",
+      "type": "registry:ui",
+      "title": "Scroll Progress",
+      "description": "Animated scroll progress bar for your pages.",
+      "dependencies": [
+        "motion"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "src/registry/ui/scroll-progress.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "categories": [
+        "components"
+      ]
+    },
+    {
+      "name": "scroll-progress-demo",
+      "type": "registry:example",
+      "title": "Scroll Progress — Page",
+      "registryDependencies": [
+        "https://yousefkadah.github.io/react-animation-library/r/scroll-progress.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/examples/scroll-progress-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "scroll-progress-container",
+      "type": "registry:example",
+      "title": "Scroll Progress — Scroll container",
+      "registryDependencies": [
+        "https://yousefkadah.github.io/react-animation-library/r/scroll-progress.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/examples/scroll-progress-container.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
       "name": "shimmer-button",
       "type": "registry:ui",
       "title": "Shimmer Button",
@@ -282,6 +3883,858 @@
       "files": [
         {
           "path": "src/registry/examples/shimmer-button-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "shine-border",
+      "type": "registry:ui",
+      "title": "Shine Border",
+      "description": "Shine border is an animated background border effect.",
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "src/registry/ui/shine-border.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "cssVars": {
+        "theme": {
+          "animate-shine": "shine var(--duration) infinite linear"
+        }
+      },
+      "css": {
+        "@keyframes shine": {
+          "0%": {
+            "background-position": "0% 0%"
+          },
+          "50%": {
+            "background-position": "100% 100%"
+          },
+          "to": {
+            "background-position": "0% 0%"
+          }
+        }
+      },
+      "categories": [
+        "special-effects"
+      ]
+    },
+    {
+      "name": "shine-border-demo",
+      "type": "registry:example",
+      "title": "Shine Border — Login card",
+      "registryDependencies": [
+        "https://yousefkadah.github.io/react-animation-library/r/shine-border.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/examples/shine-border-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "shine-border-monotone",
+      "type": "registry:example",
+      "title": "Shine Border — Monotone",
+      "registryDependencies": [
+        "https://yousefkadah.github.io/react-animation-library/r/shine-border.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/examples/shine-border-monotone.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "shiny-button",
+      "type": "registry:ui",
+      "title": "Shiny Button",
+      "description": "A shiny button component with dynamic styles in the dark mode or light mode.",
+      "dependencies": [
+        "motion"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "src/registry/ui/shiny-button.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "categories": [
+        "buttons"
+      ]
+    },
+    {
+      "name": "shiny-button-demo",
+      "type": "registry:example",
+      "title": "Shiny Button — Default",
+      "registryDependencies": [
+        "https://yousefkadah.github.io/react-animation-library/r/shiny-button.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/examples/shiny-button-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "shiny-button-custom",
+      "type": "registry:example",
+      "title": "Shiny Button — Custom styles",
+      "registryDependencies": [
+        "https://yousefkadah.github.io/react-animation-library/r/shiny-button.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/examples/shiny-button-custom.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "smooth-cursor",
+      "type": "registry:ui",
+      "title": "Smooth Cursor",
+      "description": "A page-wide custom cursor that follows the pointer on a spring and leans into the direction of travel.",
+      "dependencies": [
+        "motion"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "src/registry/ui/smooth-cursor.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "categories": [
+        "components"
+      ]
+    },
+    {
+      "name": "smooth-cursor-demo",
+      "type": "registry:example",
+      "title": "Smooth Cursor — Default",
+      "registryDependencies": [
+        "https://yousefkadah.github.io/react-animation-library/r/smooth-cursor.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/examples/smooth-cursor-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "smooth-cursor-custom",
+      "type": "registry:example",
+      "title": "Smooth Cursor — Custom cursor",
+      "registryDependencies": [
+        "https://yousefkadah.github.io/react-animation-library/r/smooth-cursor.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/examples/smooth-cursor-custom.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "sparkles-text",
+      "type": "registry:ui",
+      "title": "Sparkles Text",
+      "description": "A dynamic text that generates continuous sparkles with smooth transitions, perfect for highlighting text with animated stars.",
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "src/registry/ui/sparkles-text.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "cssVars": {
+        "theme": {
+          "animate-sparkles-text-star": "sparkles-text-star 0.8s ease-in-out infinite"
+        }
+      },
+      "css": {
+        "@keyframes sparkles-text-star": {
+          "0%": {
+            "opacity": "0",
+            "transform": "scale(0) rotate(75deg)"
+          },
+          "50%": {
+            "opacity": "1",
+            "transform": "scale(var(--sparkle-scale, 1)) rotate(120deg)"
+          },
+          "100%": {
+            "opacity": "0",
+            "transform": "scale(0) rotate(150deg)"
+          }
+        }
+      },
+      "categories": [
+        "text-animations"
+      ]
+    },
+    {
+      "name": "sparkles-text-demo",
+      "type": "registry:example",
+      "title": "Sparkles Text — Default",
+      "registryDependencies": [
+        "https://yousefkadah.github.io/react-animation-library/r/sparkles-text.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/examples/sparkles-text-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "sparkles-text-colors",
+      "type": "registry:example",
+      "title": "Sparkles Text — Custom colours",
+      "registryDependencies": [
+        "https://yousefkadah.github.io/react-animation-library/r/sparkles-text.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/examples/sparkles-text-colors.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "spinning-text",
+      "type": "registry:ui",
+      "title": "Spinning Text",
+      "description": "Text laid out around a circle that rotates continuously.",
+      "dependencies": [
+        "motion"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "src/registry/ui/spinning-text.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "categories": [
+        "text-animations"
+      ]
+    },
+    {
+      "name": "spinning-text-demo",
+      "type": "registry:example",
+      "title": "Spinning Text — Basic",
+      "registryDependencies": [
+        "https://yousefkadah.github.io/react-animation-library/r/spinning-text.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/examples/spinning-text-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "spinning-text-reverse",
+      "type": "registry:example",
+      "title": "Spinning Text — Reverse",
+      "registryDependencies": [
+        "https://yousefkadah.github.io/react-animation-library/r/spinning-text.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/examples/spinning-text-reverse.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "spinning-text-badge",
+      "type": "registry:example",
+      "title": "Spinning Text — Badge",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "https://yousefkadah.github.io/react-animation-library/r/spinning-text.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/examples/spinning-text-badge.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "striped-pattern",
+      "type": "registry:ui",
+      "title": "Striped Pattern",
+      "description": "A background striped pattern made with SVGs, fully customizable using Tailwind CSS.",
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "src/registry/ui/striped-pattern.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "categories": [
+        "backgrounds"
+      ]
+    },
+    {
+      "name": "striped-pattern-demo",
+      "type": "registry:example",
+      "title": "Striped Pattern — Radial mask",
+      "registryDependencies": [
+        "https://yousefkadah.github.io/react-animation-library/r/striped-pattern.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/examples/striped-pattern-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "striped-pattern-dashed",
+      "type": "registry:example",
+      "title": "Striped Pattern — Dashed",
+      "registryDependencies": [
+        "https://yousefkadah.github.io/react-animation-library/r/striped-pattern.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/examples/striped-pattern-dashed.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "striped-pattern-right",
+      "type": "registry:example",
+      "title": "Striped Pattern — Slanted right",
+      "registryDependencies": [
+        "https://yousefkadah.github.io/react-animation-library/r/striped-pattern.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/examples/striped-pattern-right.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "terminal",
+      "type": "registry:ui",
+      "title": "Terminal",
+      "description": "An implementation of the MacOS terminal. Useful for showcasing a command line interface.",
+      "dependencies": [
+        "motion"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "src/registry/ui/terminal.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "categories": [
+        "components"
+      ]
+    },
+    {
+      "name": "terminal-demo",
+      "type": "registry:example",
+      "title": "Terminal — Sequenced",
+      "registryDependencies": [
+        "https://yousefkadah.github.io/react-animation-library/r/terminal.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/examples/terminal-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "terminal-delays",
+      "type": "registry:example",
+      "title": "Terminal — Custom delays",
+      "registryDependencies": [
+        "https://yousefkadah.github.io/react-animation-library/r/terminal.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/examples/terminal-delays.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "text-3d-flip",
+      "type": "registry:ui",
+      "title": "Text 3D Flip",
+      "description": "Letters that flip in 3D, one after another, when hovered.",
+      "dependencies": [
+        "motion"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "src/registry/ui/text-3d-flip.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "categories": [
+        "text-animations"
+      ]
+    },
+    {
+      "name": "text-3d-flip-demo",
+      "type": "registry:example",
+      "title": "Text 3D Flip — Default",
+      "registryDependencies": [
+        "https://yousefkadah.github.io/react-animation-library/r/text-3d-flip.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/examples/text-3d-flip-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "text-3d-flip-center",
+      "type": "registry:example",
+      "title": "Text 3D Flip — Stagger from center",
+      "registryDependencies": [
+        "https://yousefkadah.github.io/react-animation-library/r/text-3d-flip.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/examples/text-3d-flip-center.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "text-3d-flip-colors",
+      "type": "registry:example",
+      "title": "Text 3D Flip — Coloured back face",
+      "registryDependencies": [
+        "https://yousefkadah.github.io/react-animation-library/r/text-3d-flip.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/examples/text-3d-flip-colors.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "text-animate",
+      "type": "registry:ui",
+      "title": "Text Animate",
+      "description": "A text animation component that animates text using a variety of different animations.",
+      "dependencies": [
+        "motion"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "src/registry/ui/text-animate.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "categories": [
+        "text-animations"
+      ]
+    },
+    {
+      "name": "text-animate-demo",
+      "type": "registry:example",
+      "title": "Text Animate — Blur in by character",
+      "registryDependencies": [
+        "https://yousefkadah.github.io/react-animation-library/r/text-animate.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/examples/text-animate-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "text-animate-slide-up",
+      "type": "registry:example",
+      "title": "Text Animate — Slide up by word",
+      "registryDependencies": [
+        "https://yousefkadah.github.io/react-animation-library/r/text-animate.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/examples/text-animate-slide-up.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "text-animate-by-line",
+      "type": "registry:example",
+      "title": "Text Animate — Fade in by line",
+      "registryDependencies": [
+        "https://yousefkadah.github.io/react-animation-library/r/text-animate.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/examples/text-animate-by-line.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "text-animate-custom-variants",
+      "type": "registry:example",
+      "title": "Text Animate — Custom motion variants",
+      "dependencies": [
+        "motion"
+      ],
+      "registryDependencies": [
+        "https://yousefkadah.github.io/react-animation-library/r/text-animate.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/examples/text-animate-custom-variants.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "text-reveal",
+      "type": "registry:ui",
+      "title": "Text Reveal",
+      "description": "Fade in text as you scroll down the page.",
+      "dependencies": [
+        "motion"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "src/registry/ui/text-reveal.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "categories": [
+        "text-animations"
+      ]
+    },
+    {
+      "name": "text-reveal-demo",
+      "type": "registry:example",
+      "title": "Text Reveal — Inside a scroll area",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "https://yousefkadah.github.io/react-animation-library/r/text-reveal.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/examples/text-reveal-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "text-reveal-card",
+      "type": "registry:example",
+      "title": "Text Reveal — Card with slot text",
+      "registryDependencies": [
+        "https://yousefkadah.github.io/react-animation-library/r/text-reveal.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/examples/text-reveal-card.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "typing-animation",
+      "type": "registry:ui",
+      "title": "Typing Animation",
+      "description": "Characters appearing in typed animation.",
+      "dependencies": [
+        "motion"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "src/registry/ui/typing-animation.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "cssVars": {
+        "theme": {
+          "animate-blink-cursor": "blink-cursor 1.2s step-end infinite"
+        }
+      },
+      "css": {
+        "@keyframes blink-cursor": {
+          "0%, 49%": {
+            "opacity": "1"
+          },
+          "50%, 100%": {
+            "opacity": "0"
+          }
+        }
+      },
+      "categories": [
+        "text-animations"
+      ]
+    },
+    {
+      "name": "typing-animation-demo",
+      "type": "registry:example",
+      "title": "Typing Animation — Basic usage",
+      "registryDependencies": [
+        "https://yousefkadah.github.io/react-animation-library/r/typing-animation.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/examples/typing-animation-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "typing-animation-words",
+      "type": "registry:example",
+      "title": "Typing Animation — Multiple words with loop",
+      "registryDependencies": [
+        "https://yousefkadah.github.io/react-animation-library/r/typing-animation.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/examples/typing-animation-words.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "typing-animation-speed",
+      "type": "registry:example",
+      "title": "Typing Animation — Custom speed",
+      "registryDependencies": [
+        "https://yousefkadah.github.io/react-animation-library/r/typing-animation.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/examples/typing-animation-speed.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "typing-animation-cursor-styles",
+      "type": "registry:example",
+      "title": "Typing Animation — Cursor styles",
+      "registryDependencies": [
+        "https://yousefkadah.github.io/react-animation-library/r/typing-animation.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/examples/typing-animation-cursor-styles.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "video-text",
+      "type": "registry:ui",
+      "title": "Video Text",
+      "description": "A component that displays text with a video playing in the background.",
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "src/registry/ui/video-text.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "categories": [
+        "text-animations"
+      ]
+    },
+    {
+      "name": "video-text-demo",
+      "type": "registry:example",
+      "title": "Video Text — Default",
+      "registryDependencies": [
+        "https://yousefkadah.github.io/react-animation-library/r/video-text.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/examples/video-text-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "video-text-typography",
+      "type": "registry:example",
+      "title": "Video Text — Custom typography",
+      "registryDependencies": [
+        "https://yousefkadah.github.io/react-animation-library/r/video-text.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/examples/video-text-typography.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "warp-background",
+      "type": "registry:ui",
+      "title": "Warp Background",
+      "description": "A card with a time warping background effect.",
+      "dependencies": [
+        "motion"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "src/registry/ui/warp-background.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "categories": [
+        "special-effects"
+      ]
+    },
+    {
+      "name": "warp-background-demo",
+      "type": "registry:example",
+      "title": "Warp Background — Card",
+      "registryDependencies": [
+        "https://yousefkadah.github.io/react-animation-library/r/warp-background.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/examples/warp-background-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "warp-background-tunnel",
+      "type": "registry:example",
+      "title": "Warp Background — Deep tunnel",
+      "registryDependencies": [
+        "https://yousefkadah.github.io/react-animation-library/r/warp-background.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/examples/warp-background-tunnel.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "word-rotate",
+      "type": "registry:ui",
+      "title": "Word Rotate",
+      "description": "A vertical rotation of words.",
+      "dependencies": [
+        "motion"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "src/registry/ui/word-rotate.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "categories": [
+        "text-animations"
+      ]
+    },
+    {
+      "name": "word-rotate-demo",
+      "type": "registry:example",
+      "title": "Word Rotate — Default",
+      "registryDependencies": [
+        "https://yousefkadah.github.io/react-animation-library/r/word-rotate.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/examples/word-rotate-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "word-rotate-sentence",
+      "type": "registry:example",
+      "title": "Word Rotate — In a sentence",
+      "registryDependencies": [
+        "https://yousefkadah.github.io/react-animation-library/r/word-rotate.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/examples/word-rotate-sentence.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "word-rotate-blur",
+      "type": "registry:example",
+      "title": "Word Rotate — Custom motion",
+      "dependencies": [
+        "motion"
+      ],
+      "registryDependencies": [
+        "https://yousefkadah.github.io/react-animation-library/r/word-rotate.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/examples/word-rotate-blur.tsx",
           "type": "registry:example"
         }
       ]

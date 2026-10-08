@@ -1,0 +1,66 @@
+{
+  "name": "ripple",
+  "title": "Ripple",
+  "description": "An animated ripple effect typically used behind elements to emphasize them.",
+  "category": "backgrounds",
+  "exports": [
+    "Ripple"
+  ],
+  "dependencies": [],
+  "cssVars": {
+    "theme": {
+      "animate-ripple": "ripple var(--duration,2s) ease calc(var(--i, 0)*.2s) infinite"
+    }
+  },
+  "css": {
+    "@keyframes ripple": {
+      "0%, 100%": {
+        "transform": "translate(-50%, -50%) scale(1)"
+      },
+      "50%": {
+        "transform": "translate(-50%, -50%) scale(0.9)"
+      }
+    }
+  },
+  "usage": "import { Ripple } from \"@/components/ui/ripple\"\n\nexport function Hero() {\n  return (\n    <div className=\"relative flex h-[400px] w-full items-center justify-center overflow-hidden rounded-lg border bg-background\">\n      <p className=\"z-10 text-5xl font-medium tracking-tighter\">Ripple</p>\n      <Ripple />\n    </div>\n  )\n}",
+  "examples": [
+    {
+      "name": "ripple-demo",
+      "title": "Default"
+    },
+    {
+      "name": "ripple-avatar",
+      "title": "Incoming call"
+    }
+  ],
+  "api": [
+    {
+      "name": "Ripple",
+      "props": [
+        {
+          "name": "className",
+          "type": "string",
+          "description": "Classes for the container (it fades to the bottom with a mask by default)."
+        },
+        {
+          "name": "mainCircleSize",
+          "type": "number",
+          "default": "210",
+          "description": "Diameter of the innermost circle in pixels. Each further circle is 70px wider."
+        },
+        {
+          "name": "mainCircleOpacity",
+          "type": "number",
+          "default": "0.24",
+          "description": "Opacity of the innermost circle. Each further circle is 0.03 more transparent."
+        },
+        {
+          "name": "numCircles",
+          "type": "number",
+          "default": "8",
+          "description": "Number of circles."
+        }
+      ]
+    }
+  ]
+}

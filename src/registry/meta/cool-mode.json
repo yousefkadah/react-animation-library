@@ -1,0 +1,77 @@
+{
+  "name": "cool-mode",
+  "title": "Cool Mode",
+  "description": "Sprays playful particles — circles, images or emoji — from the pointer while you press the wrapped element.",
+  "category": "special-effects",
+  "exports": [
+    "CoolMode"
+  ],
+  "dependencies": [],
+  "usage": "import { CoolMode } from \"@/components/ui/cool-mode\"\n\nexport function LikeButton() {\n  return (\n    <CoolMode>\n      <button>Click Me!</button>\n    </CoolMode>\n  )\n}",
+  "examples": [
+    {
+      "name": "cool-mode-demo",
+      "title": "Default"
+    },
+    {
+      "name": "cool-mode-custom",
+      "title": "Image particle"
+    },
+    {
+      "name": "cool-mode-emoji",
+      "title": "Emoji"
+    }
+  ],
+  "api": [
+    {
+      "name": "CoolMode",
+      "props": [
+        {
+          "name": "className",
+          "type": "string",
+          "description": "Classes for the wrapping span (any other span attribute is forwarded too)."
+        },
+        {
+          "name": "options",
+          "type": "CoolModeOptions",
+          "description": "{ particle?, size?, particleCount?, speedHorz?, speedUp? } — see below. Changing their values restarts the effect."
+        },
+        {
+          "name": "options.particle",
+          "type": "string",
+          "default": "\"circle\"",
+          "description": "\"circle\" for random-coloured dots, an image URL (http… or /…), or any text or emoji."
+        },
+        {
+          "name": "options.size",
+          "type": "number",
+          "default": "random 15–45",
+          "description": "Particle size in pixels."
+        },
+        {
+          "name": "options.particleCount",
+          "type": "number",
+          "default": "45",
+          "description": "Most particles alive at once."
+        },
+        {
+          "name": "options.speedHorz",
+          "type": "number",
+          "default": "random 0–10",
+          "description": "Horizontal speed."
+        },
+        {
+          "name": "options.speedUp",
+          "type": "number",
+          "default": "random 0–25",
+          "description": "Initial upward speed."
+        },
+        {
+          "name": "children",
+          "type": "React.ReactNode",
+          "description": "The element that emits particles while pressed (usually a button)."
+        }
+      ]
+    }
+  ]
+}

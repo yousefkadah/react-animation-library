@@ -1,0 +1,82 @@
+{
+  "name": "hexagon-pattern",
+  "title": "Hexagon Pattern",
+  "description": "A background hexagon pattern made with SVGs, fully customizable using Tailwind CSS.",
+  "category": "backgrounds",
+  "exports": [
+    "HexagonPattern"
+  ],
+  "dependencies": [],
+  "usage": "import { HexagonPattern } from \"@/components/ui/hexagon-pattern\"\n\nexport function Background() {\n  return (\n    <div className=\"relative h-[400px] w-full overflow-hidden rounded-lg border bg-background\">\n      <HexagonPattern\n        hexagons={[[1, 1], [2, 2], [4, 4]]}\n        className=\"[mask-image:radial-gradient(420px_circle_at_center,white,transparent)]\"\n      />\n    </div>\n  )\n}",
+  "examples": [
+    {
+      "name": "hexagon-pattern-demo",
+      "title": "Highlighted hexagons"
+    },
+    {
+      "name": "hexagon-pattern-linear-gradient",
+      "title": "Linear gradient"
+    },
+    {
+      "name": "hexagon-pattern-dashed",
+      "title": "Dashed"
+    },
+    {
+      "name": "hexagon-pattern-spacing",
+      "title": "Spacing"
+    }
+  ],
+  "api": [
+    {
+      "name": "HexagonPattern",
+      "props": [
+        {
+          "name": "className",
+          "type": "string",
+          "description": "Classes for the SVG. Outlines use `stroke-*`, filled hexagons use `fill-*`."
+        },
+        {
+          "name": "radius",
+          "type": "number",
+          "default": "40",
+          "description": "Radius of each hexagon (centre to vertex) in pixels."
+        },
+        {
+          "name": "gap",
+          "type": "number",
+          "default": "0",
+          "description": "Spacing in pixels between neighbouring hexagons."
+        },
+        {
+          "name": "x",
+          "type": "number",
+          "default": "-1",
+          "description": "Horizontal offset of the pattern in pixels."
+        },
+        {
+          "name": "y",
+          "type": "number",
+          "default": "-1",
+          "description": "Vertical offset of the pattern in pixels."
+        },
+        {
+          "name": "direction",
+          "type": "\"horizontal\" | \"vertical\"",
+          "default": "\"horizontal\"",
+          "description": "horizontal: flat-top hexagons. vertical: pointy-top hexagons."
+        },
+        {
+          "name": "strokeDasharray",
+          "type": "string",
+          "default": "\"0\"",
+          "description": "SVG stroke-dasharray of the outlines, e.g. \"4 2\" for dashes."
+        },
+        {
+          "name": "hexagons",
+          "type": "Array<[col: number, row: number]>",
+          "description": "[column, row] hexagons to fill in."
+        }
+      ]
+    }
+  ]
+}

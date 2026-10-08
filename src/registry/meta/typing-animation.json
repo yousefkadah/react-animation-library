@@ -1,0 +1,134 @@
+{
+  "name": "typing-animation",
+  "title": "Typing Animation",
+  "description": "Characters appearing in typed animation.",
+  "category": "text-animations",
+  "exports": [
+    "TypingAnimation"
+  ],
+  "dependencies": [
+    "motion"
+  ],
+  "cssVars": {
+    "theme": {
+      "animate-blink-cursor": "blink-cursor 1.2s step-end infinite"
+    }
+  },
+  "css": {
+    "@keyframes blink-cursor": {
+      "0%, 49%": {
+        "opacity": "1"
+      },
+      "50%, 100%": {
+        "opacity": "0"
+      }
+    }
+  },
+  "usage": "import { TypingAnimation } from \"@/components/ui/typing-animation\"\n\nexport function Greeting() {\n  return (\n    <>\n      <TypingAnimation>Hello World! 👋</TypingAnimation>\n      <TypingAnimation words={[\"Design\", \"Build\", \"Ship\"]} loop />\n    </>\n  )\n}",
+  "examples": [
+    {
+      "name": "typing-animation-demo",
+      "title": "Basic usage"
+    },
+    {
+      "name": "typing-animation-words",
+      "title": "Multiple words with loop"
+    },
+    {
+      "name": "typing-animation-speed",
+      "title": "Custom speed"
+    },
+    {
+      "name": "typing-animation-cursor-styles",
+      "title": "Cursor styles"
+    }
+  ],
+  "api": [
+    {
+      "name": "TypingAnimation",
+      "props": [
+        {
+          "name": "children",
+          "type": "string",
+          "description": "A single string to type."
+        },
+        {
+          "name": "words",
+          "type": "string[]",
+          "description": "Strings to type and delete in sequence. Takes precedence over `children`."
+        },
+        {
+          "name": "className",
+          "type": "string",
+          "description": "Classes for the rendered element."
+        },
+        {
+          "name": "duration",
+          "type": "number",
+          "default": "100",
+          "description": "Milliseconds per character; the typing speed when `typeSpeed` is not set."
+        },
+        {
+          "name": "typeSpeed",
+          "type": "number",
+          "default": "duration",
+          "description": "Milliseconds per typed character."
+        },
+        {
+          "name": "deleteSpeed",
+          "type": "number",
+          "default": "typeSpeed / 2",
+          "description": "Milliseconds per deleted character."
+        },
+        {
+          "name": "delay",
+          "type": "number",
+          "default": "0",
+          "description": "Milliseconds to wait before typing starts."
+        },
+        {
+          "name": "pauseDelay",
+          "type": "number",
+          "default": "1000",
+          "description": "Milliseconds to pause on a finished word before deleting it."
+        },
+        {
+          "name": "loop",
+          "type": "boolean",
+          "default": "false",
+          "description": "Keep cycling through the words forever."
+        },
+        {
+          "name": "as",
+          "type": "\"article\" | \"div\" | \"h1\" | \"h2\" | \"h3\" | \"h4\" | \"h5\" | \"h6\" | \"li\" | \"p\" | \"section\" | \"span\"",
+          "default": "\"span\"",
+          "description": "Element to render."
+        },
+        {
+          "name": "startOnView",
+          "type": "boolean",
+          "default": "true",
+          "description": "Wait until 30% of the element is in view before typing."
+        },
+        {
+          "name": "showCursor",
+          "type": "boolean",
+          "default": "true",
+          "description": "Show the typing cursor."
+        },
+        {
+          "name": "blinkCursor",
+          "type": "boolean",
+          "default": "true",
+          "description": "Blink the cursor (paused for reduced motion)."
+        },
+        {
+          "name": "cursorStyle",
+          "type": "\"line\" | \"block\" | \"underscore\"",
+          "default": "\"line\"",
+          "description": "Cursor glyph: `|`, `▌` or `_`."
+        }
+      ]
+    }
+  ]
+}

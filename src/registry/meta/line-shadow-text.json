@@ -1,0 +1,68 @@
+{
+  "name": "line-shadow-text",
+  "title": "Line Shadow Text",
+  "description": "A text component with a moving line shadow.",
+  "category": "text-animations",
+  "exports": [
+    "LineShadowText"
+  ],
+  "dependencies": [
+    "motion"
+  ],
+  "cssVars": {
+    "theme": {
+      "animate-line-shadow": "line-shadow 15s linear infinite"
+    }
+  },
+  "css": {
+    "@keyframes line-shadow": {
+      "0%": {
+        "background-position": "0 0"
+      },
+      "100%": {
+        "background-position": "100% -100%"
+      }
+    }
+  },
+  "usage": "import { LineShadowText } from \"@/components/ui/line-shadow-text\"\n\nexport function Headline() {\n  return (\n    <h1 className=\"text-6xl font-semibold tracking-tighter\">\n      Ship{\" \"}\n      <LineShadowText className=\"italic\" shadowColor=\"var(--foreground)\">\n        Fast\n      </LineShadowText>\n    </h1>\n  )\n}",
+  "examples": [
+    {
+      "name": "line-shadow-text-demo",
+      "title": "Ship fast"
+    },
+    {
+      "name": "line-shadow-text-colors",
+      "title": "Custom colour"
+    }
+  ],
+  "api": [
+    {
+      "name": "LineShadowText",
+      "props": [
+        {
+          "name": "children",
+          "type": "string",
+          "required": true,
+          "description": "The text to render; the shadow copy is drawn from it via `attr(data-text)`."
+        },
+        {
+          "name": "className",
+          "type": "string",
+          "description": "Classes for the rendered element."
+        },
+        {
+          "name": "shadowColor",
+          "type": "string",
+          "default": "\"black\"",
+          "description": "Colour of the moving line shadow. Pass a theme variable such as `var(--foreground)` to follow light / dark mode."
+        },
+        {
+          "name": "as",
+          "type": "\"article\" | \"div\" | \"h1\" | \"h2\" | \"h3\" | \"h4\" | \"h5\" | \"h6\" | \"li\" | \"p\" | \"section\" | \"span\"",
+          "default": "\"span\"",
+          "description": "Element to render. Motion props such as `initial` and `animate` are passed through to it."
+        }
+      ]
+    }
+  ]
+}

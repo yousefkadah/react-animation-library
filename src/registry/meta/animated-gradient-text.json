@@ -1,0 +1,68 @@
+{
+  "name": "animated-gradient-text",
+  "title": "Animated Gradient Text",
+  "description": "An animated gradient background which transitions between colors for text.",
+  "category": "text-animations",
+  "exports": [
+    "AnimatedGradientText"
+  ],
+  "dependencies": [],
+  "cssVars": {
+    "theme": {
+      "animate-gradient": "gradient 8s linear infinite"
+    }
+  },
+  "css": {
+    "@keyframes gradient": {
+      "to": {
+        "background-position": "var(--bg-size, 300%) 0"
+      }
+    }
+  },
+  "usage": "import { AnimatedGradientText } from \"@/components/ui/animated-gradient-text\"\n\nexport function Announcement() {\n  return <AnimatedGradientText className=\"text-4xl font-semibold\">Introducing React Magic UI</AnimatedGradientText>\n}",
+  "examples": [
+    {
+      "name": "animated-gradient-text-demo",
+      "title": "Announcement pill"
+    },
+    {
+      "name": "animated-gradient-text-speed",
+      "title": "Custom colours and speed"
+    }
+  ],
+  "api": [
+    {
+      "name": "AnimatedGradientText",
+      "props": [
+        {
+          "name": "children",
+          "type": "React.ReactNode",
+          "description": "The text to paint with the gradient."
+        },
+        {
+          "name": "className",
+          "type": "string",
+          "description": "Classes for the text element."
+        },
+        {
+          "name": "speed",
+          "type": "number",
+          "default": "1",
+          "description": "Speed multiplier. The gradient is `speed × 300%` wide, so it travels further each loop."
+        },
+        {
+          "name": "colorFrom",
+          "type": "string",
+          "default": "\"#ffaa40\"",
+          "description": "Gradient start (and end) colour."
+        },
+        {
+          "name": "colorTo",
+          "type": "string",
+          "default": "\"#9c40ff\"",
+          "description": "Gradient middle colour."
+        }
+      ]
+    }
+  ]
+}

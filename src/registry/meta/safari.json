@@ -1,0 +1,72 @@
+{
+  "name": "safari",
+  "title": "Safari",
+  "description": "A Safari browser mockup to showcase your website.",
+  "category": "device-mocks",
+  "exports": [
+    "Safari"
+  ],
+  "dependencies": [],
+  "usage": "import { Safari } from \"@/components/ui/safari\"\n\nexport function Showcase() {\n  return (\n    <div className=\"w-full max-w-3xl\">\n      <Safari url=\"example.com\" imageSrc=\"https://picsum.photos/seed/site/1200/700\" />\n    </div>\n  )\n}",
+  "examples": [
+    {
+      "name": "safari-demo",
+      "title": "Empty window"
+    },
+    {
+      "name": "safari-image",
+      "title": "With image"
+    },
+    {
+      "name": "safari-simple",
+      "title": "Simple mode"
+    },
+    {
+      "name": "safari-video",
+      "title": "With video"
+    }
+  ],
+  "api": [
+    {
+      "name": "Safari",
+      "props": [
+        {
+          "name": "className",
+          "type": "string",
+          "description": "Classes for the mockup (it fills the width of its parent by default)."
+        },
+        {
+          "name": "url",
+          "type": "string",
+          "description": "Text shown in the address bar."
+        },
+        {
+          "name": "imageSrc",
+          "type": "string",
+          "description": "Screenshot shown in the window."
+        },
+        {
+          "name": "videoSrc",
+          "type": "string",
+          "description": "Video shown in the window (autoplays muted and loops). Takes precedence over imageSrc."
+        },
+        {
+          "name": "mode",
+          "type": "\"default\" | \"simple\"",
+          "default": "\"default\"",
+          "description": "simple hides the toolbar buttons."
+        },
+        {
+          "name": "width",
+          "type": "number",
+          "description": "Width in pixels. The height follows the aspect ratio."
+        },
+        {
+          "name": "height",
+          "type": "number",
+          "description": "Height in pixels. Set it instead of width to size the mockup by height."
+        }
+      ]
+    }
+  ]
+}

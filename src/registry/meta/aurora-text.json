@@ -1,0 +1,80 @@
+{
+  "name": "aurora-text",
+  "title": "Aurora Text",
+  "description": "A beautiful aurora text effect.",
+  "category": "text-animations",
+  "exports": [
+    "AuroraText"
+  ],
+  "dependencies": [],
+  "cssVars": {
+    "theme": {
+      "animate-aurora": "aurora 8s ease-in-out infinite alternate"
+    }
+  },
+  "css": {
+    "@keyframes aurora": {
+      "0%": {
+        "background-position": "0% 50%",
+        "transform": "rotate(-5deg) scale(0.9)"
+      },
+      "25%": {
+        "background-position": "50% 100%",
+        "transform": "rotate(5deg) scale(1.1)"
+      },
+      "50%": {
+        "background-position": "100% 50%",
+        "transform": "rotate(-3deg) scale(0.95)"
+      },
+      "75%": {
+        "background-position": "50% 0%",
+        "transform": "rotate(3deg) scale(1.05)"
+      },
+      "100%": {
+        "background-position": "0% 50%",
+        "transform": "rotate(-5deg) scale(0.9)"
+      }
+    }
+  },
+  "usage": "import { AuroraText } from \"@/components/ui/aurora-text\"\n\nexport function Headline() {\n  return (\n    <h1 className=\"text-4xl font-bold tracking-tighter md:text-5xl lg:text-7xl\">\n      Ship <AuroraText>beautiful</AuroraText>\n    </h1>\n  )\n}",
+  "examples": [
+    {
+      "name": "aurora-text-demo",
+      "title": "Ship beautiful"
+    },
+    {
+      "name": "aurora-text-colors",
+      "title": "Custom colours and speed"
+    }
+  ],
+  "api": [
+    {
+      "name": "AuroraText",
+      "props": [
+        {
+          "name": "children",
+          "type": "React.ReactNode",
+          "required": true,
+          "description": "The text to paint with the aurora. Rendered twice: once visibly (aria-hidden) and once for screen readers."
+        },
+        {
+          "name": "className",
+          "type": "string",
+          "description": "Classes for the outer wrapper."
+        },
+        {
+          "name": "colors",
+          "type": "string[]",
+          "default": "[\"#FF0080\", \"#7928CA\", \"#0070F3\", \"#38bdf8\"]",
+          "description": "Colours of the aurora gradient."
+        },
+        {
+          "name": "speed",
+          "type": "number",
+          "default": "1",
+          "description": "Animation speed multiplier (1 is the default, 2 is twice as fast)."
+        }
+      ]
+    }
+  ]
+}

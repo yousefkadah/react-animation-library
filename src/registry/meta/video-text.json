@@ -1,0 +1,105 @@
+{
+  "name": "video-text",
+  "title": "Video Text",
+  "description": "A component that displays text with a video playing in the background.",
+  "category": "text-animations",
+  "exports": [
+    "VideoText"
+  ],
+  "dependencies": [],
+  "usage": "import { VideoText } from \"@/components/ui/video-text\"\n\nexport function Hero() {\n  return (\n    <div className=\"relative h-[200px] w-full overflow-hidden\">\n      <VideoText src=\"https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.webm\">BLOOM</VideoText>\n    </div>\n  )\n}",
+  "examples": [
+    {
+      "name": "video-text-demo",
+      "title": "Default"
+    },
+    {
+      "name": "video-text-typography",
+      "title": "Custom typography"
+    }
+  ],
+  "api": [
+    {
+      "name": "VideoText",
+      "props": [
+        {
+          "name": "src",
+          "type": "string",
+          "required": true,
+          "description": "The video source URL."
+        },
+        {
+          "name": "children",
+          "type": "React.ReactNode",
+          "required": true,
+          "description": "Plain text to cut out of the video (joined into one string for the SVG mask)."
+        },
+        {
+          "name": "className",
+          "type": "string",
+          "description": "Classes for the container. It fills its parent (`size-full`), so size the parent."
+        },
+        {
+          "name": "autoPlay",
+          "type": "boolean",
+          "default": "true",
+          "description": "Start playing as soon as possible."
+        },
+        {
+          "name": "muted",
+          "type": "boolean",
+          "default": "true",
+          "description": "Mute the video (browsers only autoplay muted video)."
+        },
+        {
+          "name": "loop",
+          "type": "boolean",
+          "default": "true",
+          "description": "Restart the video when it ends."
+        },
+        {
+          "name": "preload",
+          "type": "\"auto\" | \"metadata\" | \"none\"",
+          "default": "\"auto\"",
+          "description": "How much of the video to preload."
+        },
+        {
+          "name": "fontSize",
+          "type": "string | number",
+          "default": "20",
+          "description": "Font size of the text mask. Numbers are read as `vw`, relative to the mask box."
+        },
+        {
+          "name": "fontWeight",
+          "type": "string | number",
+          "default": "\"bold\"",
+          "description": "Font weight of the text mask."
+        },
+        {
+          "name": "textAnchor",
+          "type": "string",
+          "default": "\"middle\"",
+          "description": "SVG `text-anchor` of the text mask."
+        },
+        {
+          "name": "dominantBaseline",
+          "type": "string",
+          "default": "\"middle\"",
+          "description": "SVG `dominant-baseline` of the text mask."
+        },
+        {
+          "name": "fontFamily",
+          "type": "string",
+          "default": "\"sans-serif\"",
+          "description": "Font family of the text mask."
+        },
+        {
+          "name": "as",
+          "type": "React.ElementType",
+          "default": "\"div\"",
+          "description": "Element to render."
+        }
+      ]
+    }
+  ]
+}

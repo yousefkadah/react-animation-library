@@ -1,0 +1,77 @@
+{
+  "name": "sparkles-text",
+  "title": "Sparkles Text",
+  "description": "A dynamic text that generates continuous sparkles with smooth transitions, perfect for highlighting text with animated stars.",
+  "category": "text-animations",
+  "exports": [
+    "SparklesText"
+  ],
+  "dependencies": [],
+  "cssVars": {
+    "theme": {
+      "animate-sparkles-text-star": "sparkles-text-star 0.8s ease-in-out infinite"
+    }
+  },
+  "css": {
+    "@keyframes sparkles-text-star": {
+      "0%": {
+        "opacity": "0",
+        "transform": "scale(0) rotate(75deg)"
+      },
+      "50%": {
+        "opacity": "1",
+        "transform": "scale(var(--sparkle-scale, 1)) rotate(120deg)"
+      },
+      "100%": {
+        "opacity": "0",
+        "transform": "scale(0) rotate(150deg)"
+      }
+    }
+  },
+  "usage": "import { SparklesText } from \"@/components/ui/sparkles-text\"\n\nexport function Example() {\n  return <SparklesText>Magic UI</SparklesText>\n}",
+  "examples": [
+    {
+      "name": "sparkles-text-demo",
+      "title": "Default"
+    },
+    {
+      "name": "sparkles-text-colors",
+      "title": "Custom colours"
+    }
+  ],
+  "api": [
+    {
+      "name": "SparklesText",
+      "props": [
+        {
+          "name": "children",
+          "type": "React.ReactNode",
+          "description": "The text to sparkle (rendered inside a `<strong>`)."
+        },
+        {
+          "name": "className",
+          "type": "string",
+          "description": "Classes for the wrapper."
+        },
+        {
+          "name": "as",
+          "type": "React.ElementType",
+          "default": "\"div\"",
+          "description": "Element to render."
+        },
+        {
+          "name": "sparklesCount",
+          "type": "number",
+          "default": "10",
+          "description": "How many sparkles are on the text at once. Sparkles are hidden when the user prefers reduced motion."
+        },
+        {
+          "name": "colors",
+          "type": "{ first: string; second: string }",
+          "default": "{ first: '#9E7AFF', second: '#FE8BBB' }",
+          "description": "The two colours sparkles are picked from."
+        }
+      ]
+    }
+  ]
+}

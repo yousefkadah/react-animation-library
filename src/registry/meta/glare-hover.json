@@ -1,0 +1,94 @@
+{
+  "name": "glare-hover",
+  "title": "Glare Hover",
+  "description": "A diagonal glare that sweeps across its content on hover, driven by CSS variables (angle, size, duration, colour).",
+  "category": "special-effects",
+  "exports": [
+    "GlareHover"
+  ],
+  "dependencies": [],
+  "usage": "import { GlareHover } from \"@/components/ui/glare-hover\"\n\nexport function Card() {\n  return (\n    <GlareHover className=\"rounded-xl\" duration={600}>\n      <div className=\"rounded-xl border bg-card p-6\">Hover me</div>\n    </GlareHover>\n  )\n}",
+  "examples": [
+    {
+      "name": "glare-hover-demo",
+      "title": "Pricing card"
+    },
+    {
+      "name": "glare-hover-cta",
+      "title": "Call to action"
+    },
+    {
+      "name": "glare-hover-alerts",
+      "title": "Alerts"
+    }
+  ],
+  "api": [
+    {
+      "name": "GlareHover",
+      "props": [
+        {
+          "name": "className",
+          "type": "string",
+          "description": "Classes for the wrapper (use `rounded-*` to match the content)."
+        },
+        {
+          "name": "background",
+          "type": "string",
+          "default": "\"#000\"",
+          "description": "Background colour of the wrapper."
+        },
+        {
+          "name": "color",
+          "type": "string",
+          "default": "\"#ffffff\"",
+          "description": "Glare colour as `#rgb` or `#rrggbb`."
+        },
+        {
+          "name": "opacity",
+          "type": "number",
+          "default": "0.5",
+          "description": "Opacity of the glare colour, 0–1."
+        },
+        {
+          "name": "angle",
+          "type": "number",
+          "default": "-45",
+          "description": "Angle of the glare in degrees."
+        },
+        {
+          "name": "size",
+          "type": "number",
+          "default": "250",
+          "description": "Size of the glare tile as a percentage of the element."
+        },
+        {
+          "name": "duration",
+          "type": "number",
+          "default": "650",
+          "description": "Duration of the sweep in milliseconds."
+        },
+        {
+          "name": "playOnce",
+          "type": "boolean",
+          "default": "false",
+          "description": "Only animate while hovered — the glare snaps back instead of sweeping out."
+        },
+        {
+          "name": "width",
+          "type": "string",
+          "description": "Optional CSS width of the wrapper."
+        },
+        {
+          "name": "height",
+          "type": "string",
+          "description": "Optional CSS height of the wrapper."
+        },
+        {
+          "name": "children",
+          "type": "React.ReactNode",
+          "description": "Content the glare sweeps across."
+        }
+      ]
+    }
+  ]
+}

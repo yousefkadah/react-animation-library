@@ -1,0 +1,72 @@
+{
+  "name": "animated-theme-toggler",
+  "title": "Theme Toggler",
+  "description": "A light / dark toggle that reveals the new theme with a View Transition, as a circle, polygon or star growing from the button.",
+  "category": "special-effects",
+  "exports": [
+    "AnimatedThemeToggler"
+  ],
+  "dependencies": [
+    "lucide-react"
+  ],
+  "usage": "import { AnimatedThemeToggler } from \"@/components/ui/animated-theme-toggler\"\n\nexport function Header() {\n  return <AnimatedThemeToggler />\n}",
+  "examples": [
+    {
+      "name": "animated-theme-toggler-demo",
+      "title": "Circle"
+    },
+    {
+      "name": "animated-theme-toggler-variants",
+      "title": "Shapes"
+    },
+    {
+      "name": "animated-theme-toggler-from-center",
+      "title": "From the centre"
+    }
+  ],
+  "api": [
+    {
+      "name": "AnimatedThemeToggler",
+      "props": [
+        {
+          "name": "className",
+          "type": "string",
+          "description": "Classes for the button."
+        },
+        {
+          "name": "duration",
+          "type": "number",
+          "default": "400",
+          "description": "Length of the reveal in milliseconds."
+        },
+        {
+          "name": "variant",
+          "type": "\"circle\" | \"square\" | \"triangle\" | \"diamond\" | \"hexagon\" | \"rectangle\" | \"star\"",
+          "default": "\"circle\"",
+          "description": "Shape of the reveal."
+        },
+        {
+          "name": "fromCenter",
+          "type": "boolean",
+          "default": "false",
+          "description": "Grow the reveal from the centre of the viewport instead of from the button."
+        },
+        {
+          "name": "theme",
+          "type": "\"light\" | \"dark\"",
+          "description": "Controlled theme (e.g. from next-themes). When set, the component does not write to localStorage; pair it with onThemeChange."
+        },
+        {
+          "name": "onThemeChange",
+          "type": "(theme: \"light\" | \"dark\") => void",
+          "description": "Called on every toggle with the new theme."
+        },
+        {
+          "name": "...props",
+          "type": "ComponentPropsWithoutRef<\"button\">",
+          "description": "Any other button attribute. A custom onClick runs first; call event.preventDefault() to skip the toggle."
+        }
+      ]
+    }
+  ]
+}

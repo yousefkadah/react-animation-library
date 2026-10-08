@@ -1,0 +1,50 @@
+{
+  "name": "pointer",
+  "title": "Pointer",
+  "description": "Replaces the cursor with a custom animated pointer while hovering a container.",
+  "category": "components",
+  "exports": [
+    "Pointer"
+  ],
+  "dependencies": [
+    "motion"
+  ],
+  "usage": "import { Pointer } from \"@/components/ui/pointer\"\n\nexport function Card() {\n  return (\n    <div className=\"relative rounded-xl border p-8\">\n      Hover me\n      <Pointer className=\"fill-blue-500\" />\n    </div>\n  )\n}",
+  "examples": [
+    {
+      "name": "pointer-demo",
+      "title": "Pointers"
+    },
+    {
+      "name": "pointer-custom",
+      "title": "Name tag"
+    }
+  ],
+  "api": [
+    {
+      "name": "Pointer",
+      "props": [
+        {
+          "name": "className",
+          "type": "string",
+          "description": "Classes for the default arrow, e.g. fill-blue-500."
+        },
+        {
+          "name": "style",
+          "type": "MotionStyle",
+          "description": "Extra styles for the floating pointer element."
+        },
+        {
+          "name": "children",
+          "type": "React.ReactNode",
+          "description": "Custom pointer content. Defaults to an arrow. The real cursor is hidden only over the Pointer's parent element."
+        },
+        {
+          "name": "...props",
+          "type": "HTMLMotionProps<\"div\">",
+          "description": "Every other prop (initial, animate, exit, transition, …) is forwarded to the motion element that follows the cursor."
+        }
+      ]
+    }
+  ]
+}

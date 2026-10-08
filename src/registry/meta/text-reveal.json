@@ -1,0 +1,46 @@
+{
+  "name": "text-reveal",
+  "title": "Text Reveal",
+  "description": "Fade in text as you scroll down the page.",
+  "category": "text-animations",
+  "exports": [
+    "TextReveal"
+  ],
+  "dependencies": [
+    "motion"
+  ],
+  "usage": "import { TextReveal } from \"@/components/ui/text-reveal\"\n\nexport function Statement() {\n  return <TextReveal>React Magic UI will change the way you design.</TextReveal>\n}",
+  "examples": [
+    {
+      "name": "text-reveal-demo",
+      "title": "Inside a scroll area"
+    },
+    {
+      "name": "text-reveal-card",
+      "title": "Card with slot text"
+    }
+  ],
+  "api": [
+    {
+      "name": "TextReveal",
+      "props": [
+        {
+          "name": "children",
+          "type": "string",
+          "required": true,
+          "description": "The text to reveal, split on spaces."
+        },
+        {
+          "name": "className",
+          "type": "string",
+          "description": "Classes for the tall scroll section (default height `200vh`; the sticky text panel is half of it)."
+        },
+        {
+          "name": "container",
+          "type": "RefObject<HTMLElement | null>",
+          "description": "Ref to the scrolling element to track. Defaults to the page. Addition: set it when TextReveal sits inside its own `overflow-y-auto` box."
+        }
+      ]
+    }
+  ]
+}

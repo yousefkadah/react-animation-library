@@ -1,0 +1,89 @@
+{
+  "name": "meteors",
+  "title": "Meteors",
+  "description": "A meteor shower effect.",
+  "category": "special-effects",
+  "exports": [
+    "Meteors"
+  ],
+  "dependencies": [],
+  "cssVars": {
+    "theme": {
+      "animate-meteor": "meteor 5s linear infinite"
+    }
+  },
+  "css": {
+    "@keyframes meteor": {
+      "0%": {
+        "transform": "rotate(var(--angle)) translateX(0)",
+        "opacity": "1"
+      },
+      "70%": {
+        "opacity": "1"
+      },
+      "100%": {
+        "transform": "rotate(var(--angle)) translateX(-500px)",
+        "opacity": "0"
+      }
+    }
+  },
+  "usage": "import { Meteors } from \"@/components/ui/meteors\"\n\nexport function Hero() {\n  return (\n    <div className=\"relative h-64 w-full overflow-hidden rounded-lg border\">\n      <Meteors number={30} />\n    </div>\n  )\n}",
+  "examples": [
+    {
+      "name": "meteors-demo",
+      "title": "Meteor shower"
+    },
+    {
+      "name": "meteors-card",
+      "title": "Card background"
+    }
+  ],
+  "api": [
+    {
+      "name": "Meteors",
+      "props": [
+        {
+          "name": "className",
+          "type": "string",
+          "description": "Classes for every meteor."
+        },
+        {
+          "name": "number",
+          "type": "number",
+          "default": "20",
+          "description": "Number of meteors."
+        },
+        {
+          "name": "minDelay",
+          "type": "number",
+          "default": "0.2",
+          "description": "Minimum delay in seconds before a meteor starts."
+        },
+        {
+          "name": "maxDelay",
+          "type": "number",
+          "default": "1.2",
+          "description": "Maximum delay in seconds before a meteor starts."
+        },
+        {
+          "name": "minDuration",
+          "type": "number",
+          "default": "2",
+          "description": "Minimum seconds a meteor takes to fall."
+        },
+        {
+          "name": "maxDuration",
+          "type": "number",
+          "default": "10",
+          "description": "Maximum seconds a meteor takes to fall."
+        },
+        {
+          "name": "angle",
+          "type": "number",
+          "default": "215",
+          "description": "Angle of the trajectory in degrees."
+        }
+      ]
+    }
+  ]
+}

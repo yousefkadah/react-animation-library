@@ -1,0 +1,103 @@
+{
+  "name": "dia-text-reveal",
+  "title": "Dia Text Reveal",
+  "description": "A colourful gradient band that sweeps across text to reveal it, inspired by the Dia browser.",
+  "category": "text-animations",
+  "exports": [
+    "DiaTextReveal"
+  ],
+  "dependencies": [
+    "motion"
+  ],
+  "usage": "import { DiaTextReveal } from \"@/components/ui/dia-text-reveal\"\n\nexport function Example() {\n  return <DiaTextReveal className=\"text-4xl font-bold\" text=\"Magic UI\" />\n}",
+  "examples": [
+    {
+      "name": "dia-text-reveal-demo",
+      "title": "Default"
+    },
+    {
+      "name": "dia-text-reveal-colors",
+      "title": "Custom colours"
+    },
+    {
+      "name": "dia-text-reveal-repeat",
+      "title": "Rotating phrases"
+    },
+    {
+      "name": "dia-text-reveal-timing",
+      "title": "Duration and delay"
+    }
+  ],
+  "api": [
+    {
+      "name": "DiaTextReveal",
+      "props": [
+        {
+          "name": "className",
+          "type": "string",
+          "description": "Classes for the text span (typography utilities)."
+        },
+        {
+          "name": "text",
+          "type": "string | string[]",
+          "required": true,
+          "description": "Text to reveal. Pass several strings to rotate through them when `repeat` is on."
+        },
+        {
+          "name": "colors",
+          "type": "string[]",
+          "default": "[\"#c679c4\", \"#fa3d1d\", \"#ffb005\", \"#e1e1fe\", \"#0358f7\"]",
+          "description": "Colours sampled across the moving gradient band."
+        },
+        {
+          "name": "textColor",
+          "type": "string",
+          "default": "\"var(--foreground)\"",
+          "description": "Colour of the text once revealed (follows your theme by default)."
+        },
+        {
+          "name": "duration",
+          "type": "number",
+          "default": "1.5",
+          "description": "Seconds one sweep takes."
+        },
+        {
+          "name": "delay",
+          "type": "number",
+          "default": "0",
+          "description": "Seconds to wait before the sweep starts."
+        },
+        {
+          "name": "repeat",
+          "type": "boolean",
+          "default": "false",
+          "description": "Replay the sweep, advancing to the next string after each pass."
+        },
+        {
+          "name": "repeatDelay",
+          "type": "number",
+          "default": "0.5",
+          "description": "Seconds to pause between cycles when `repeat` is on."
+        },
+        {
+          "name": "startOnView",
+          "type": "boolean",
+          "default": "true",
+          "description": "Start the sweep when the element scrolls into view."
+        },
+        {
+          "name": "once",
+          "type": "boolean",
+          "default": "true",
+          "description": "Only play the first time the element comes into view."
+        },
+        {
+          "name": "fixedWidth",
+          "type": "boolean",
+          "default": "false",
+          "description": "With several strings, reserve the widest string's width instead of animating the width."
+        }
+      ]
+    }
+  ]
+}

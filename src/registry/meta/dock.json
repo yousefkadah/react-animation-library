@@ -1,0 +1,122 @@
+{
+  "name": "dock",
+  "title": "Dock",
+  "description": "An implementation of the MacOS dock using React, Tailwind CSS and Motion.",
+  "category": "components",
+  "exports": [
+    "Dock",
+    "DockIcon"
+  ],
+  "dependencies": [
+    "motion"
+  ],
+  "usage": "import { House, Search, Settings } from \"lucide-react\"\n\nimport { Dock, DockIcon } from \"@/components/ui/dock\"\n\nexport function AppDock() {\n  return (\n    <Dock>\n      <DockIcon>\n        <House className=\"size-5\" />\n      </DockIcon>\n      <DockIcon>\n        <Settings className=\"size-5\" />\n      </DockIcon>\n      <DockIcon>\n        <Search className=\"size-5\" />\n      </DockIcon>\n    </Dock>\n  )\n}",
+  "examples": [
+    {
+      "name": "dock-demo",
+      "title": "Navigation dock",
+      "description": "Links with tooltips and a separator."
+    },
+    {
+      "name": "dock-direction",
+      "title": "Custom direction",
+      "description": "`direction` aligns the icons to the top, middle or bottom of the dock as they grow."
+    },
+    {
+      "name": "dock-magnification",
+      "title": "Custom magnification"
+    }
+  ],
+  "api": [
+    {
+      "name": "Dock",
+      "props": [
+        {
+          "name": "className",
+          "type": "string",
+          "description": "Classes for the dock. Other props are passed to the underlying `motion.div`."
+        },
+        {
+          "name": "iconSize",
+          "type": "number",
+          "default": "40",
+          "description": "Resting size of every icon in pixels."
+        },
+        {
+          "name": "iconMagnification",
+          "type": "number",
+          "default": "60",
+          "description": "Size an icon grows to when the pointer is right over it."
+        },
+        {
+          "name": "iconDistance",
+          "type": "number",
+          "default": "140",
+          "description": "Distance in pixels from the pointer within which icons grow."
+        },
+        {
+          "name": "direction",
+          "type": "\"top\" | \"middle\" | \"bottom\"",
+          "default": "\"middle\"",
+          "description": "Vertical alignment of the icons inside the dock."
+        },
+        {
+          "name": "disableMagnification",
+          "type": "boolean",
+          "default": "false",
+          "description": "Turn the magnification effect off."
+        },
+        {
+          "name": "children",
+          "type": "React.ReactNode",
+          "description": "`DockIcon`s, plus anything else (e.g. a separator), rendered in order.",
+          "required": true
+        }
+      ]
+    },
+    {
+      "name": "DockIcon",
+      "props": [
+        {
+          "name": "className",
+          "type": "string",
+          "description": "Classes for the icon bubble. Other props are passed to the underlying `motion.div`."
+        },
+        {
+          "name": "size",
+          "type": "number",
+          "default": "dock's iconSize",
+          "description": "Resting size in pixels. Overrides the dock's `iconSize` for this icon."
+        },
+        {
+          "name": "magnification",
+          "type": "number",
+          "default": "dock's iconMagnification",
+          "description": "Size when the pointer is right over the icon."
+        },
+        {
+          "name": "distance",
+          "type": "number",
+          "default": "dock's iconDistance",
+          "description": "Distance in pixels within which the icon grows."
+        },
+        {
+          "name": "disableMagnification",
+          "type": "boolean",
+          "default": "dock's disableMagnification",
+          "description": "Turn magnification off for this icon."
+        },
+        {
+          "name": "mouseX",
+          "type": "MotionValue<number>",
+          "description": "Pointer X position to react to. Provided automatically inside a `Dock`; pass one to use an icon on its own."
+        },
+        {
+          "name": "children",
+          "type": "React.ReactNode",
+          "description": "The icon, link or button."
+        }
+      ]
+    }
+  ]
+}

@@ -144,13 +144,15 @@ for (const meta of metas) {
     categories: [meta.category],
   }))
   for (const example of meta.examples) {
-    items.push({
+    const imports = scanImports(join(examplesDir, `${example.name}${CONFIG.exampleExtension}`))
+    items.push(clean({
       name: example.name,
       type: 'registry:example',
       title: `${meta.title} — ${example.title}`,
-      registryDependencies: [itemUrl(meta.name)],
+      dependencies: imports.packages,
+      registryDependencies: [...new Set([meta.name, ...imports.components])].map(itemUrl),
       files: [{ path: `src/registry/examples/${example.name}${CONFIG.exampleExtension}`, type: 'registry:example' }],
-    })
+    }))
   }
 }
 
@@ -207,6 +209,31 @@ writeFileSync(
 )
 
 console.log(`✔ Registry: ${metas.length} components, ${items.length - metas.length} examples`)
+
+/**
+ * An example may use several registry components and npm packages; its registry item must
+ * pull all of them in, or `add <example>` leaves broken imports behind.
+ */
+function scanImports(file) {
+  const source = readFileSync(file, 'utf8')
+  const specifiers = [...source.matchAll(/(?:import|export)[^'"]*?from\s*['"]([^'"]+)['"]|import\s*['"]([^'"]+)['"]/g)].map(
+    (match) => match[1] ?? match[2],
+  )
+  const components = []
+  const packages = []
+  const peers = new Set(['vue', 'react', 'react-dom', 'react/jsx-runtime'])
+  for (const specifier of specifiers) {
+    const component = specifier.match(/^@\/components\/ui\/([^/]+)/)
+    if (component) {
+      if (allSlugs.includes(component[1])) components.push(component[1])
+      else fail(`example ${file.split('/').pop()}`, `imports unknown component "${component[1]}"`)
+    } else if (!specifier.startsWith('.') && !specifier.startsWith('@/')) {
+      const name = specifier.startsWith('@') ? specifier.split('/').slice(0, 2).join('/') : specifier.split('/')[0]
+      if (!peers.has(name) && !packages.includes(name)) packages.push(name)
+    }
+  }
+  return { components, packages }
+}
 
 function writeJson(path, value) {
   writeFileSync(join(root, path), `${JSON.stringify(value, null, 2)}\n`)

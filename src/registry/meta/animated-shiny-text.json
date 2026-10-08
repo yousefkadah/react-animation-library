@@ -1,0 +1,59 @@
+{
+  "name": "animated-shiny-text",
+  "title": "Animated Shiny Text",
+  "description": "A light glare effect which pans across text making it appear as if it is shimmering.",
+  "category": "text-animations",
+  "exports": [
+    "AnimatedShinyText"
+  ],
+  "dependencies": [],
+  "cssVars": {
+    "theme": {
+      "animate-shiny-text": "shiny-text 8s infinite"
+    }
+  },
+  "css": {
+    "@keyframes shiny-text": {
+      "0%, 90%, 100%": {
+        "background-position": "calc(-100% - var(--shiny-width)) 0"
+      },
+      "30%, 60%": {
+        "background-position": "calc(100% + var(--shiny-width)) 0"
+      }
+    }
+  },
+  "usage": "import { AnimatedShinyText } from \"@/components/ui/animated-shiny-text\"\n\nexport function Announcement() {\n  return <AnimatedShinyText>✨ Introducing React Magic UI</AnimatedShinyText>\n}",
+  "examples": [
+    {
+      "name": "animated-shiny-text-demo",
+      "title": "Announcement pill"
+    },
+    {
+      "name": "animated-shiny-text-heading",
+      "title": "Wide glare"
+    }
+  ],
+  "api": [
+    {
+      "name": "AnimatedShinyText",
+      "props": [
+        {
+          "name": "children",
+          "type": "React.ReactNode",
+          "description": "The text (and inline icons) to shimmer."
+        },
+        {
+          "name": "className",
+          "type": "string",
+          "description": "Classes for the text element."
+        },
+        {
+          "name": "shimmerWidth",
+          "type": "number",
+          "default": "100",
+          "description": "Width of the light glare in pixels."
+        }
+      ]
+    }
+  ]
+}

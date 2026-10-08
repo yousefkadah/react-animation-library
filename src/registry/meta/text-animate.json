@@ -1,0 +1,107 @@
+{
+  "name": "text-animate",
+  "title": "Text Animate",
+  "description": "A text animation component that animates text using a variety of different animations.",
+  "category": "text-animations",
+  "exports": [
+    "TextAnimate"
+  ],
+  "dependencies": [
+    "motion"
+  ],
+  "usage": "import { TextAnimate } from \"@/components/ui/text-animate\"\n\nexport function Hero() {\n  return (\n    <TextAnimate animation=\"blurInUp\" by=\"character\" once>\n      Blur in by character\n    </TextAnimate>\n  )\n}",
+  "examples": [
+    {
+      "name": "text-animate-demo",
+      "title": "Blur in by character"
+    },
+    {
+      "name": "text-animate-slide-up",
+      "title": "Slide up by word"
+    },
+    {
+      "name": "text-animate-by-line",
+      "title": "Fade in by line"
+    },
+    {
+      "name": "text-animate-custom-variants",
+      "title": "Custom motion variants"
+    }
+  ],
+  "api": [
+    {
+      "name": "TextAnimate",
+      "props": [
+        {
+          "name": "children",
+          "type": "string",
+          "required": true,
+          "description": "The text to animate."
+        },
+        {
+          "name": "className",
+          "type": "string",
+          "description": "Classes for the wrapping element."
+        },
+        {
+          "name": "segmentClassName",
+          "type": "string",
+          "description": "Classes applied to every animated segment."
+        },
+        {
+          "name": "delay",
+          "type": "number",
+          "default": "0",
+          "description": "Seconds to wait before the first segment animates."
+        },
+        {
+          "name": "duration",
+          "type": "number",
+          "default": "0.3",
+          "description": "Seconds over which the segments are staggered in."
+        },
+        {
+          "name": "variants",
+          "type": "Variants",
+          "description": "Custom `hidden` / `show` / `exit` variants for each segment. Each segment receives `index * stagger` as its `custom` value. Replaces the `animation` preset."
+        },
+        {
+          "name": "as",
+          "type": "\"article\" | \"div\" | \"h1\" | \"h2\" | \"h3\" | \"h4\" | \"h5\" | \"h6\" | \"li\" | \"p\" | \"section\" | \"span\"",
+          "default": "\"p\"",
+          "description": "Element to render."
+        },
+        {
+          "name": "by",
+          "type": "\"text\" | \"word\" | \"character\" | \"line\"",
+          "default": "\"word\"",
+          "description": "How the text is split into animated segments."
+        },
+        {
+          "name": "startOnView",
+          "type": "boolean",
+          "default": "true",
+          "description": "Wait until the element scrolls into view before animating."
+        },
+        {
+          "name": "once",
+          "type": "boolean",
+          "default": "false",
+          "description": "Only animate the first time the element enters the viewport."
+        },
+        {
+          "name": "animation",
+          "type": "\"fadeIn\" | \"blurIn\" | \"blurInUp\" | \"blurInDown\" | \"slideUp\" | \"slideDown\" | \"slideLeft\" | \"slideRight\" | \"scaleUp\" | \"scaleDown\"",
+          "default": "\"fadeIn\"",
+          "description": "The animation preset to use."
+        },
+        {
+          "name": "accessible",
+          "type": "boolean",
+          "default": "true",
+          "description": "Render the full string for screen readers (`aria-label` + `sr-only` copy) and hide the split segments from them."
+        }
+      ]
+    }
+  ]
+}

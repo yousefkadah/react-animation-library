@@ -1,0 +1,87 @@
+{
+  "name": "particles",
+  "title": "Particles",
+  "description": "A canvas of drifting particles that are gently attracted to the pointer, for backgrounds with some depth.",
+  "category": "special-effects",
+  "exports": [
+    "Particles"
+  ],
+  "dependencies": [
+    "motion"
+  ],
+  "usage": "import { Particles } from \"@/components/ui/particles\"\n\nexport function Hero() {\n  return (\n    <div className=\"relative h-[400px] overflow-hidden\">\n      <Particles className=\"absolute inset-0\" color=\"#000000\" />\n    </div>\n  )\n}",
+  "examples": [
+    {
+      "name": "particles-demo",
+      "title": "Theme-aware"
+    },
+    {
+      "name": "particles-colored",
+      "title": "Coloured"
+    },
+    {
+      "name": "particles-drift",
+      "title": "Drift"
+    }
+  ],
+  "api": [
+    {
+      "name": "Particles",
+      "props": [
+        {
+          "name": "className",
+          "type": "string",
+          "description": "Classes for the wrapper. The canvas fills it and follows its size."
+        },
+        {
+          "name": "quantity",
+          "type": "number",
+          "default": "100",
+          "description": "Number of particles."
+        },
+        {
+          "name": "staticity",
+          "type": "number",
+          "default": "50",
+          "description": "How strongly particles resist the pointer; lower values follow it more."
+        },
+        {
+          "name": "ease",
+          "type": "number",
+          "default": "50",
+          "description": "Smoothing of the pointer attraction; higher values react more slowly."
+        },
+        {
+          "name": "size",
+          "type": "number",
+          "default": "0.4",
+          "description": "Base particle radius in pixels (each particle adds a random 0–1px)."
+        },
+        {
+          "name": "refresh",
+          "type": "boolean",
+          "default": "false",
+          "description": "Toggle to regenerate every particle."
+        },
+        {
+          "name": "color",
+          "type": "string",
+          "default": "\"#ffffff\"",
+          "description": "Particle colour as a hex string. Changes apply live."
+        },
+        {
+          "name": "vx",
+          "type": "number",
+          "default": "0",
+          "description": "Constant horizontal drift in pixels per frame."
+        },
+        {
+          "name": "vy",
+          "type": "number",
+          "default": "0",
+          "description": "Constant vertical drift in pixels per frame."
+        }
+      ]
+    }
+  ]
+}

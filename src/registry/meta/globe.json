@@ -1,0 +1,42 @@
+{
+  "name": "globe",
+  "title": "Globe",
+  "description": "An autorotating, interactive and highly performant globe made using WebGL.",
+  "category": "components",
+  "exports": [
+    "Globe"
+  ],
+  "dependencies": [
+    "cobe",
+    "motion"
+  ],
+  "usage": "import { Globe } from \"@/components/ui/globe\"\n\nexport function Hero() {\n  return (\n    <div className=\"relative h-[400px] w-full overflow-hidden\">\n      <Globe className=\"top-28\" />\n    </div>\n  )\n}",
+  "examples": [
+    {
+      "name": "globe-demo",
+      "title": "Default"
+    },
+    {
+      "name": "globe-arcs",
+      "title": "Dark with arcs"
+    }
+  ],
+  "api": [
+    {
+      "name": "Globe",
+      "props": [
+        {
+          "name": "className",
+          "type": "string",
+          "description": "Classes for the wrapper. It is absolutely positioned and square, so place it in a relative container and offset it (e.g. top-28)."
+        },
+        {
+          "name": "config",
+          "type": "Partial<COBEOptions>",
+          "default": "Magic UI's white globe with 10 markers",
+          "description": "cobe options (colours, markers, arcs, theta, dark, …) merged over the defaults. width, height and phi are managed by the component. See cobe.vercel.app."
+        }
+      ]
+    }
+  ]
+}

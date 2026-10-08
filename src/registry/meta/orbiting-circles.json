@@ -1,0 +1,100 @@
+{
+  "name": "orbiting-circles",
+  "title": "Orbiting Circles",
+  "description": "A collection of circles which move in orbit along a circular path.",
+  "category": "components",
+  "exports": [
+    "OrbitingCircles"
+  ],
+  "dependencies": [],
+  "cssVars": {
+    "theme": {
+      "animate-orbit": "orbit calc(var(--duration) * 1s) linear infinite"
+    }
+  },
+  "css": {
+    "@keyframes orbit": {
+      "0%": {
+        "transform": "rotate(calc(var(--angle) * 1deg)) translateY(calc(var(--radius) * 1px)) rotate(calc(var(--angle) * -1deg))"
+      },
+      "100%": {
+        "transform": "rotate(calc(var(--angle) * 1deg + 360deg)) translateY(calc(var(--radius) * 1px)) rotate(calc((var(--angle) * -1deg) - 360deg))"
+      }
+    }
+  },
+  "usage": "import { File, Search, Settings } from \"lucide-react\"\n\nimport { OrbitingCircles } from \"@/components/ui/orbiting-circles\"\n\nexport function Orbit() {\n  return (\n    <div className=\"relative flex h-[500px] w-full items-center justify-center overflow-hidden\">\n      <OrbitingCircles>\n        <File />\n        <Settings />\n        <File />\n      </OrbitingCircles>\n      <OrbitingCircles radius={100} reverse>\n        <File />\n        <Settings />\n        <File />\n        <Search />\n      </OrbitingCircles>\n    </div>\n  )\n}",
+  "examples": [
+    {
+      "name": "orbiting-circles-demo",
+      "title": "Integrations"
+    },
+    {
+      "name": "orbiting-circles-icons",
+      "title": "Icons",
+      "description": "Style every orbiting item through `className`."
+    },
+    {
+      "name": "orbiting-circles-avatars",
+      "title": "Avatars"
+    }
+  ],
+  "api": [
+    {
+      "name": "OrbitingCircles",
+      "props": [
+        {
+          "name": "className",
+          "type": "string",
+          "description": "Classes applied to every orbiting item (each child is wrapped in its own circle). Other div props (`style`, `data-*`, …) are applied to every item too."
+        },
+        {
+          "name": "reverse",
+          "type": "boolean",
+          "default": "false",
+          "description": "Orbit counter-clockwise."
+        },
+        {
+          "name": "duration",
+          "type": "number",
+          "default": "20",
+          "description": "Seconds for one full orbit."
+        },
+        {
+          "name": "delay",
+          "type": "number",
+          "default": "0",
+          "description": "Seconds to offset the starting position along the orbit (applied as a negative animation-delay)."
+        },
+        {
+          "name": "radius",
+          "type": "number",
+          "default": "160",
+          "description": "Radius of the orbit in pixels."
+        },
+        {
+          "name": "path",
+          "type": "boolean",
+          "default": "true",
+          "description": "Draw the circular path."
+        },
+        {
+          "name": "iconSize",
+          "type": "number",
+          "default": "30",
+          "description": "Size of each orbiting item in pixels."
+        },
+        {
+          "name": "speed",
+          "type": "number",
+          "default": "1",
+          "description": "Speed multiplier (the orbit takes `duration / speed` seconds)."
+        },
+        {
+          "name": "children",
+          "type": "React.ReactNode",
+          "description": "The items to orbit. They are spread evenly around the circle. Place the component inside a `relative` container that centres its children."
+        }
+      ]
+    }
+  ]
+}

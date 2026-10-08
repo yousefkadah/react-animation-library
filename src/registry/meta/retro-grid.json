@@ -1,0 +1,78 @@
+{
+  "name": "retro-grid",
+  "title": "Retro Grid",
+  "description": "An animated scrolling retro grid effect, rendered with WebGL and a CSS fallback.",
+  "category": "backgrounds",
+  "exports": [
+    "RetroGrid"
+  ],
+  "dependencies": [],
+  "cssVars": {
+    "theme": {
+      "animate-retro-grid": "retro-grid 15s linear infinite"
+    }
+  },
+  "css": {
+    "@keyframes retro-grid": {
+      "from": {
+        "transform": "translateY(-50%)"
+      },
+      "to": {
+        "transform": "translateY(0)"
+      }
+    }
+  },
+  "usage": "import { RetroGrid } from \"@/components/ui/retro-grid\"\n\nexport function Hero() {\n  return (\n    <div className=\"relative flex h-[400px] w-full items-center justify-center overflow-hidden rounded-lg border bg-background\">\n      <span className=\"z-10 text-6xl font-bold tracking-tighter\">Retro Grid</span>\n      <RetroGrid />\n    </div>\n  )\n}",
+  "examples": [
+    {
+      "name": "retro-grid-demo",
+      "title": "Default"
+    },
+    {
+      "name": "retro-grid-colors",
+      "title": "Custom colours"
+    }
+  ],
+  "api": [
+    {
+      "name": "RetroGrid",
+      "props": [
+        {
+          "name": "className",
+          "type": "string",
+          "description": "Classes for the grid container."
+        },
+        {
+          "name": "angle",
+          "type": "number",
+          "default": "65",
+          "description": "Tilt of the grid in degrees (1–89)."
+        },
+        {
+          "name": "cellSize",
+          "type": "number",
+          "default": "60",
+          "description": "Size of one grid cell in pixels."
+        },
+        {
+          "name": "opacity",
+          "type": "number",
+          "default": "0.5",
+          "description": "Opacity of the whole grid."
+        },
+        {
+          "name": "lightLineColor",
+          "type": "string",
+          "default": "\"gray\"",
+          "description": "Line colour in light mode (any CSS colour)."
+        },
+        {
+          "name": "darkLineColor",
+          "type": "string",
+          "default": "\"gray\"",
+          "description": "Line colour in dark mode (any CSS colour)."
+        }
+      ]
+    }
+  ]
+}

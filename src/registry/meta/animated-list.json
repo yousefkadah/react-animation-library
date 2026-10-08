@@ -1,0 +1,65 @@
+{
+  "name": "animated-list",
+  "title": "Animated List",
+  "description": "A list that animates each item in sequence with a delay. Used to showcase notifications or events on your landing page.",
+  "category": "components",
+  "exports": [
+    "AnimatedList",
+    "AnimatedListItem"
+  ],
+  "dependencies": [
+    "motion"
+  ],
+  "usage": "import { AnimatedList } from \"@/components/ui/animated-list\"\n\nexport function Feed() {\n  return (\n    <AnimatedList>\n      {[\"Item 1\", \"Item 2\", \"Item 3\"].map((item) => (\n        <p key={item}>{item}</p>\n      ))}\n    </AnimatedList>\n  )\n}",
+  "examples": [
+    {
+      "name": "animated-list-demo",
+      "title": "Notifications"
+    },
+    {
+      "name": "animated-list-activity",
+      "title": "Activity feed",
+      "description": "A slower `delay` and denser rows."
+    }
+  ],
+  "api": [
+    {
+      "name": "AnimatedList",
+      "props": [
+        {
+          "name": "className",
+          "type": "string",
+          "description": "Classes for the list container."
+        },
+        {
+          "name": "delay",
+          "type": "number",
+          "default": "1000",
+          "description": "Milliseconds between two items appearing."
+        },
+        {
+          "name": "children",
+          "type": "React.ReactNode",
+          "description": "The items, in order. They appear one at a time, newest on top. Give each a stable `key` so it animates in exactly once.",
+          "required": true
+        }
+      ]
+    },
+    {
+      "name": "AnimatedListItem",
+      "props": [
+        {
+          "name": "className",
+          "type": "string",
+          "description": "Classes for the item wrapper."
+        },
+        {
+          "name": "children",
+          "type": "React.ReactNode",
+          "description": "Item content. Used internally by `AnimatedList`; exported so you can reuse the pop-in animation.",
+          "required": true
+        }
+      ]
+    }
+  ]
+}

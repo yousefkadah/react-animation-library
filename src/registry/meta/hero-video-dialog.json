@@ -1,0 +1,75 @@
+{
+  "name": "hero-video-dialog",
+  "title": "Hero Video Dialog",
+  "description": "A hero video thumbnail with a play button that opens the video in an animated dialog.",
+  "category": "components",
+  "exports": [
+    "HeroVideoDialog"
+  ],
+  "dependencies": [
+    "motion",
+    "lucide-react"
+  ],
+  "usage": "import { HeroVideoDialog } from \"@/components/ui/hero-video-dialog\"\n\nexport function Hero() {\n  return (\n    <HeroVideoDialog\n      animationStyle=\"from-center\"\n      videoSrc=\"https://www.youtube.com/embed/8pDqJVdNa44\"\n      thumbnailSrc=\"https://i.ytimg.com/vi/8pDqJVdNa44/maxresdefault.jpg\"\n      thumbnailAlt=\"Hero video\"\n    />\n  )\n}",
+  "examples": [
+    {
+      "name": "hero-video-dialog-demo",
+      "title": "From center"
+    },
+    {
+      "name": "hero-video-dialog-top-in-bottom-out",
+      "title": "Top in, bottom out"
+    },
+    {
+      "name": "hero-video-dialog-styles",
+      "title": "All animation styles",
+      "description": "Pick a style, then open the video."
+    }
+  ],
+  "api": [
+    {
+      "name": "HeroVideoDialog",
+      "props": [
+        {
+          "name": "className",
+          "type": "string",
+          "description": "Classes for the wrapper."
+        },
+        {
+          "name": "animationStyle",
+          "type": "\"from-center\" | \"from-bottom\" | \"from-top\" | \"from-left\" | \"from-right\" | \"fade\" | \"top-in-bottom-out\" | \"left-in-right-out\"",
+          "default": "\"from-center\"",
+          "description": "How the dialog enters and leaves. `top-in-bottom-out` and `left-in-right-out` exit on the opposite side."
+        },
+        {
+          "name": "videoSrc",
+          "type": "string",
+          "required": true,
+          "description": "URL of the video, loaded in an iframe. For YouTube use the embed URL (`https://www.youtube.com/embed/<id>`)."
+        },
+        {
+          "name": "thumbnailSrc",
+          "type": "string",
+          "required": true,
+          "description": "URL of the thumbnail image (for YouTube: `https://i.ytimg.com/vi/<id>/maxresdefault.jpg`)."
+        },
+        {
+          "name": "thumbnailAlt",
+          "type": "string",
+          "default": "\"Video thumbnail\"",
+          "description": "Alt text for the thumbnail; also labels the dialog."
+        },
+        {
+          "name": "onOpen",
+          "type": "() => void",
+          "description": "Called when the dialog opens. Not in Magic UI."
+        },
+        {
+          "name": "onClose",
+          "type": "() => void",
+          "description": "Called when the dialog closes (close button, Escape or a click on the backdrop). Not in Magic UI."
+        }
+      ]
+    }
+  ]
+}

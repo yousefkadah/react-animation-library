@@ -1,0 +1,82 @@
+{
+  "name": "warp-background",
+  "title": "Warp Background",
+  "description": "A card with a time warping background effect.",
+  "category": "special-effects",
+  "exports": [
+    "WarpBackground"
+  ],
+  "dependencies": [
+    "motion"
+  ],
+  "usage": "import { WarpBackground } from \"@/components/ui/warp-background\"\n\nexport function Hero() {\n  return (\n    <WarpBackground>\n      <div className=\"w-80 rounded-xl border bg-card p-4\">Content</div>\n    </WarpBackground>\n  )\n}",
+  "examples": [
+    {
+      "name": "warp-background-demo",
+      "title": "Card"
+    },
+    {
+      "name": "warp-background-tunnel",
+      "title": "Deep tunnel"
+    }
+  ],
+  "api": [
+    {
+      "name": "WarpBackground",
+      "props": [
+        {
+          "name": "className",
+          "type": "string",
+          "description": "Classes for the outer container."
+        },
+        {
+          "name": "perspective",
+          "type": "number",
+          "default": "100",
+          "description": "CSS perspective of the tunnel in pixels."
+        },
+        {
+          "name": "beamsPerSide",
+          "type": "number",
+          "default": "3",
+          "description": "Number of beams on each of the four walls."
+        },
+        {
+          "name": "beamSize",
+          "type": "number",
+          "default": "5",
+          "description": "Size of a beam and of a grid cell, as a percentage of the wall."
+        },
+        {
+          "name": "beamDelayMax",
+          "type": "number",
+          "default": "3",
+          "description": "Maximum random delay in seconds before a beam starts."
+        },
+        {
+          "name": "beamDelayMin",
+          "type": "number",
+          "default": "0",
+          "description": "Minimum random delay in seconds before a beam starts."
+        },
+        {
+          "name": "beamDuration",
+          "type": "number",
+          "default": "3",
+          "description": "Seconds a beam takes to travel a wall."
+        },
+        {
+          "name": "gridColor",
+          "type": "string",
+          "default": "\"var(--border)\"",
+          "description": "Colour of the grid lines."
+        },
+        {
+          "name": "children",
+          "type": "React.ReactNode",
+          "description": "Content shown in the middle of the tunnel."
+        }
+      ]
+    }
+  ]
+}

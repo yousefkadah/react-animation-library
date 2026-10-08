@@ -1,0 +1,48 @@
+{
+  "name": "backlight",
+  "title": "Backlight",
+  "description": "A backlight glow effect for videos, images, and SVGs.",
+  "category": "special-effects",
+  "exports": [
+    "Backlight"
+  ],
+  "dependencies": [],
+  "usage": "import { Backlight } from \"@/components/ui/backlight\"\n\nexport function Cover() {\n  return (\n    <Backlight blur={20}>\n      <img src=\"/cover.jpg\" alt=\"\" className=\"rounded-xl\" />\n    </Backlight>\n  )\n}",
+  "examples": [
+    {
+      "name": "backlight-demo",
+      "title": "Image"
+    },
+    {
+      "name": "backlight-video",
+      "title": "Video"
+    },
+    {
+      "name": "backlight-svg",
+      "title": "SVG"
+    }
+  ],
+  "api": [
+    {
+      "name": "Backlight",
+      "props": [
+        {
+          "name": "children",
+          "type": "React.ReactNode",
+          "description": "The video, image or SVG that casts the glow. A blurred, saturated copy is drawn behind it by an SVG filter."
+        },
+        {
+          "name": "className",
+          "type": "string",
+          "description": "Classes for the wrapper."
+        },
+        {
+          "name": "blur",
+          "type": "number",
+          "default": "20",
+          "description": "Blur radius of the glow (SVG `stdDeviation`)."
+        }
+      ]
+    }
+  ]
+}

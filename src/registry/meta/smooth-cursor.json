@@ -1,0 +1,42 @@
+{
+  "name": "smooth-cursor",
+  "title": "Smooth Cursor",
+  "description": "A page-wide custom cursor that follows the pointer on a spring and leans into the direction of travel.",
+  "category": "components",
+  "exports": [
+    "SmoothCursor"
+  ],
+  "dependencies": [
+    "motion"
+  ],
+  "usage": "import { SmoothCursor } from \"@/components/ui/smooth-cursor\"\n\nexport function Layout({ children }: { children: React.ReactNode }) {\n  return (\n    <>\n      {children}\n      <SmoothCursor />\n    </>\n  )\n}",
+  "examples": [
+    {
+      "name": "smooth-cursor-demo",
+      "title": "Default"
+    },
+    {
+      "name": "smooth-cursor-custom",
+      "title": "Custom cursor"
+    }
+  ],
+  "api": [
+    {
+      "name": "SmoothCursor",
+      "props": [
+        {
+          "name": "cursor",
+          "type": "React.ReactNode",
+          "default": "<DefaultCursorSVG />",
+          "description": "Custom cursor element. Defaults to an arrow with a soft shadow."
+        },
+        {
+          "name": "springConfig",
+          "type": "{ damping: number; stiffness: number; mass: number; restDelta: number }",
+          "default": "{ damping: 45, stiffness: 400, mass: 1, restDelta: 0.001 }",
+          "description": "Spring used to follow the pointer. Rotation and scale use stiffer variants of it."
+        }
+      ]
+    }
+  ]
+}
