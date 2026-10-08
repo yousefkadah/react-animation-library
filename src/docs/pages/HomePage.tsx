@@ -8,18 +8,18 @@ import { runCommand, site } from '../site'
 
 /** Live demos shown on the landing page, in order. Missing ones are skipped. */
 const featuredExamples = [
-  { example: 'globe-demo', span: 'md:col-span-2 md:row-span-2' },
-  { example: 'animated-beam-multiple-outputs', span: 'md:col-span-2' },
-  { example: 'border-beam-demo', span: '' },
-  { example: 'shimmer-button-demo', span: '' },
-  { example: 'animated-list-demo', span: 'md:row-span-2' },
-  { example: 'number-ticker-demo', span: '' },
-  { example: 'hyper-text-demo', span: '' },
-  { example: 'dock-demo', span: 'md:col-span-2' },
-  { example: 'marquee-demo', span: 'md:col-span-2' },
-  { example: 'flickering-grid-demo', span: 'md:col-span-2' },
-  { example: 'blur-fade-text', span: '' },
-  { example: 'confetti-demo', span: '' },
+  { example: 'globe-demo', span: 'md:col-span-2 md:row-span-2', zoom: 0.85 },
+  { example: 'animated-beam-multiple-outputs', span: 'md:col-span-2', zoom: 0.7 },
+  { example: 'border-beam-demo', span: '', zoom: 0.6 },
+  { example: 'shimmer-button-demo', span: '', zoom: 0.9 },
+  { example: 'animated-list-demo', span: 'md:row-span-2', zoom: 0.75 },
+  { example: 'number-ticker-demo', span: '', zoom: 0.8 },
+  { example: 'hyper-text-demo', span: '', zoom: 0.7 },
+  { example: 'confetti-demo', span: '', zoom: 0.55 },
+  { example: 'dock-demo', span: 'md:col-span-2', zoom: 0.7 },
+  { example: 'blur-fade-text', span: '', zoom: 0.6 },
+  { example: 'marquee-demo', span: 'md:col-span-2', zoom: 0.75 },
+  { example: 'flickering-grid-demo', span: 'md:col-span-2', zoom: 1 },
 ]
 
 const available = new Set(exampleNames())
@@ -108,13 +108,15 @@ export default function HomePage() {
           <h2 className="text-3xl font-semibold tracking-tight sm:text-4xl">Live, not screenshots</h2>
           <p className="max-w-xl text-muted-foreground">Every tile below is a real component running on this page.</p>
         </div>
-        <div className="grid auto-rows-[260px] gap-4 md:grid-cols-4">
-          {featured.map(({ example, span, component, View }) => (
+        <div className="grid auto-rows-[260px] gap-4 md:grid-flow-dense md:grid-cols-4">
+          {featured.map(({ example, span, zoom, component, View }) => (
             <div key={example} className={cn('group relative flex flex-col overflow-hidden rounded-2xl border bg-card transition-shadow hover:shadow-xl', span)}>
-              <div className="flex min-h-0 flex-1 items-center justify-center overflow-hidden p-4 [&>*]:max-h-full [&>*]:max-w-full">
-                <Suspense fallback={null}>
-                  <View />
-                </Suspense>
+              <div className="flex min-h-0 flex-1 items-center justify-center overflow-hidden p-4">
+                <div className="flex w-full items-center justify-center" style={{ zoom }}>
+                  <Suspense fallback={null}>
+                    <View />
+                  </Suspense>
+                </div>
               </div>
               <Link to={`/docs/components/${component?.name}`} className="flex items-center justify-between border-t bg-background/80 px-4 py-2.5 text-sm backdrop-blur">
                 <span className="font-medium">{component?.title}</span>
