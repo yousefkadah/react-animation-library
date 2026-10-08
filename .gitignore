@@ -6,3 +6,4 @@ dist-site
 .vscode/
 .idea/
 *.tsbuildinfo
+public/r

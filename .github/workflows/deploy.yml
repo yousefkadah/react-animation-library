@@ -1,44 +1,44 @@
-name: Deploy to GitHub Pages
+name: Docs
 
 on:
   push:
-    branches: [ main ]
+    branches: [main]
   pull_request:
-    branches: [ main ]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: docs-${{ github.ref }}
+  cancel-in-progress: true
 
 jobs:
-  build-and-deploy:
+  build:
     runs-on: ubuntu-latest
-    
-    permissions:
-      contents: read
-      pages: write
-      id-token: write
-
     steps:
-    - name: Checkout
-      uses: actions/checkout@v4
+      - uses: actions/checkout@v4
 
-    - name: Setup Node.js
-      uses: actions/setup-node@v4
-      with:
-        node-version: '18'
-        cache: 'npm'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
 
-    - name: Install dependencies
-      run: npm ci
+      - run: npm ci
+      - name: Validate and build the registry
+        run: npm run registry
+      - run: npm run typecheck
+      - run: npm test
+      - name: Build the npm package
+        run: npm run build:lib
+      - name: Build the docs site
+        run: npm run build:site
 
-    - name: Build
-      run: npm run build
-
-    - name: Setup Pages
-      uses: actions/configure-pages@v4
-
-    - name: Upload artifact
-      uses: actions/upload-pages-artifact@v3
-      with:
-        path: ./dist
-
-    - name: Deploy to GitHub Pages
-      id: deployment
-      uses: actions/deploy-pages@v4
+      # GitHub Pages serves the gh-pages branch (Settings → Pages → Deploy from a branch).
+      - name: Deploy to GitHub Pages
+        if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          folder: dist-site
+          branch: gh-pages
+          clean: true
