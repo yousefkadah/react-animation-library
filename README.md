@@ -92,7 +92,7 @@ import { BorderBeam, Marquee, NumberTicker } from "@yousefkadah/react-magic-ui"
 
 ```bash
 npm install
-npm run dev        # docs site at http://localhost:5173
+npm run dev        # docs site at http://localhost:5174
 npm test           # renders every example and fails on any React error or warning
 npm run build      # registry JSON + docs site + npm package
 ```
