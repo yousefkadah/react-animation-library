@@ -1,0 +1,1 @@
+import{o as e}from"./index-BfC-87tD.js";import{t}from"./android-CTTVLoeo.js";var n=e();function r(){return(0,n.jsx)(t,{width:200,height:437})}export{r as default};

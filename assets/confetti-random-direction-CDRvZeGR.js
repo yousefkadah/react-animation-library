@@ -1,0 +1,1 @@
+import{o as e}from"./index-BfC-87tD.js";import{n as t}from"./confetti-CLAn7P7S.js";var n=e(),r={get angle(){return Math.random()*360}};function i(){return(0,n.jsx)(`div`,{className:`relative`,children:(0,n.jsx)(t,{options:r,children:`Random Confetti 🎉`})})}export{i as default};

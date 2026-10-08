@@ -1,1 +1,0 @@
-import{o as e}from"./index-Bg9Yv0sK.js";import{t}from"./number-ticker-CVAtJSS8.js";var n=e();function r(){return(0,n.jsx)(t,{value:100,className:`text-8xl font-medium tracking-tighter whitespace-pre-wrap`})}export{r as default};

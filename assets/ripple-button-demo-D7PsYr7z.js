@@ -1,0 +1,1 @@
+import{o as e}from"./index-BfC-87tD.js";import{t}from"./ripple-button-DuvGuR2Y.js";var n=e();function r(){return(0,n.jsx)(t,{rippleColor:`#ADD8E6`,children:`Click me`})}export{r as default};

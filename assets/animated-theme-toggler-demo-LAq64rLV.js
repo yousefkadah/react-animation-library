@@ -1,0 +1,1 @@
+import{o as e}from"./index-BfC-87tD.js";import{t}from"./animated-theme-toggler-BzPhvGIQ.js";var n=e();function r(){return(0,n.jsx)(`div`,{className:`flex justify-center p-6`,children:(0,n.jsx)(t,{})})}export{r as default};

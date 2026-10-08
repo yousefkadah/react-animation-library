@@ -1,0 +1,1 @@
+import{o as e}from"./index-BfC-87tD.js";import{t}from"./text-animate-S1d08Zii.js";var n=e();function r(){return(0,n.jsx)(t,{animation:`blurInUp`,by:`character`,once:!0,className:`text-4xl font-semibold tracking-tight sm:text-5xl`,children:`Blur in by character`})}export{r as default};

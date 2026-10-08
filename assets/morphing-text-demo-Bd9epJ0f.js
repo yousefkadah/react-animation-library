@@ -1,0 +1,1 @@
+import{o as e}from"./index-BfC-87tD.js";import{t}from"./morphing-text-D5esZqfJ.js";var n=e(),r=[`Hello`,`Morphing`,`Text`,`Animation`,`React`,`Component`,`Smooth`,`Transition`,`Engaging`];function i(){return(0,n.jsx)(t,{texts:r})}export{i as default};

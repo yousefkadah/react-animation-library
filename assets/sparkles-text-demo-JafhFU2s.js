@@ -1,0 +1,1 @@
+import{o as e}from"./index-BfC-87tD.js";import{t}from"./sparkles-text-j5Wkedlc.js";var n=e();function r(){return(0,n.jsx)(t,{children:`Magic UI`})}export{r as default};

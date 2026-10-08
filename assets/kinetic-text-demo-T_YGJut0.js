@@ -1,1 +1,0 @@
-import{o as e}from"./index-Bg9Yv0sK.js";import{t}from"./kinetic-text-Cge3wagc.js";var n=e();function r(){return(0,n.jsx)(`div`,{className:`relative justify-center`,children:(0,n.jsx)(t,{text:`Nostalgia`,className:`text-[6rem] tracking-[-0.05em] [font-optical-sizing:auto]`})})}export{r as default};

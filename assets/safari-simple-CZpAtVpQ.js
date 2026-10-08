@@ -1,0 +1,1 @@
+import{o as e}from"./index-BfC-87tD.js";import{t}from"./safari-DYS11T9m.js";var n=e();function r(){return(0,n.jsx)(`div`,{className:`w-full max-w-[600px]`,children:(0,n.jsx)(t,{url:`picsum.photos`,mode:`simple`,imageSrc:`https://picsum.photos/seed/safari/1200/700`})})}export{r as default};

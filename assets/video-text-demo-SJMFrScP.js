@@ -1,0 +1,1 @@
+import{o as e}from"./index-BfC-87tD.js";import{t}from"./video-text-RsHs-S6n.js";var n=e();function r(){return(0,n.jsx)(`div`,{className:`relative h-[200px] w-full overflow-hidden`,children:(0,n.jsx)(t,{src:`https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.webm`,children:`BLOOM`})})}export{r as default};

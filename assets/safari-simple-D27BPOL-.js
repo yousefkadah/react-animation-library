@@ -1,1 +1,0 @@
-import{o as e}from"./index-Bg9Yv0sK.js";import{t}from"./safari-n2FJS4Tl.js";var n=e();function r(){return(0,n.jsx)(`div`,{className:`w-full max-w-[600px]`,children:(0,n.jsx)(t,{url:`picsum.photos`,mode:`simple`,imageSrc:`https://picsum.photos/seed/safari/1200/700`})})}export{r as default};

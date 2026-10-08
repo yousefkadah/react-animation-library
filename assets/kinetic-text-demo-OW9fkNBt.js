@@ -1,0 +1,1 @@
+import{o as e}from"./index-BfC-87tD.js";import{t}from"./kinetic-text-D1osD5kG.js";var n=e();function r(){return(0,n.jsx)(`div`,{className:`relative justify-center`,children:(0,n.jsx)(t,{text:`Nostalgia`,className:`text-[6rem] tracking-[-0.05em] [font-optical-sizing:auto]`})})}export{r as default};

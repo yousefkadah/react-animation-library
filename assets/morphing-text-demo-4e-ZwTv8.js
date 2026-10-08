@@ -1,1 +1,0 @@
-import{o as e}from"./index-Bg9Yv0sK.js";import{t}from"./morphing-text-DVlHo1yR.js";var n=e(),r=[`Hello`,`Morphing`,`Text`,`Animation`,`React`,`Component`,`Smooth`,`Transition`,`Engaging`];function i(){return(0,n.jsx)(t,{texts:r})}export{i as default};

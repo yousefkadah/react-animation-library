@@ -1,0 +1,1 @@
+import{o as e}from"./index-BfC-87tD.js";import{t}from"./shiny-button-BQJta0ha.js";var n=e();function r(){return(0,n.jsx)(t,{children:`Shiny Button`})}export{r as default};

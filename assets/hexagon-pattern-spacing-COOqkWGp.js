@@ -1,0 +1,1 @@
+import{o as e}from"./index-BfC-87tD.js";import{t}from"./hexagon-pattern-DjDRA8FW.js";var n=e();function r(){return(0,n.jsx)(`div`,{className:`relative flex h-[400px] w-full items-center justify-center overflow-hidden rounded-lg border bg-background p-20`,children:(0,n.jsx)(t,{gap:20,radius:40,x:-1,y:-1})})}export{r as default};

@@ -1,0 +1,1 @@
+import{o as e}from"./index-BfC-87tD.js";import{t}from"./number-ticker-De6vZo_V.js";var n=e();function r(){return(0,n.jsx)(t,{value:100,className:`text-8xl font-medium tracking-tighter whitespace-pre-wrap`})}export{r as default};

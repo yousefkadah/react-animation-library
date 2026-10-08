@@ -1,1 +1,0 @@
-import{o as e}from"./index-Bg9Yv0sK.js";import{t}from"./shiny-button-DlyotLSc.js";var n=e();function r(){return(0,n.jsx)(t,{children:`Shiny Button`})}export{r as default};

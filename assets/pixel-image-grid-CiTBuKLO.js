@@ -1,1 +1,0 @@
-import{o as e}from"./index-Bg9Yv0sK.js";import{t}from"./pixel-image-K3GQsr3B.js";var n=e();function r(){return(0,n.jsx)(t,{src:`https://picsum.photos/seed/react-magic-ui/800/800`,alt:`Random stock photo`,grid:`8x8`,grayscaleAnimation:!1,pixelFadeInDuration:600,maxAnimationDelay:1600,className:`size-64 md:size-80`})}export{r as default};

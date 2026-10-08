@@ -1,1 +1,0 @@
-import{o as e}from"./index-Bg9Yv0sK.js";import{t}from"./word-rotate-DNs4Y_kh.js";var n=e();function r(){return(0,n.jsx)(t,{className:`text-4xl font-bold text-black dark:text-white`,words:[`Word`,`Rotate`]})}export{r as default};

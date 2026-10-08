@@ -1,0 +1,1 @@
+import{o as e}from"./index-BfC-87tD.js";import{t}from"./rainbow-button-IyWuHZpb.js";var n=e();function r(){return(0,n.jsx)(t,{variant:`outline`,children:`Get Unlimited Access`})}export{r as default};

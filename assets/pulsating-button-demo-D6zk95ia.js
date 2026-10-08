@@ -1,0 +1,1 @@
+import{o as e}from"./index-BfC-87tD.js";import{t}from"./pulsating-button-PAo4AoND.js";var n=e();function r(){return(0,n.jsx)(t,{children:`Join Affiliate Program`})}export{r as default};

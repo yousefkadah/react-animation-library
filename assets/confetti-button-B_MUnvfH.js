@@ -1,1 +1,0 @@
-import{o as e}from"./index-Bg9Yv0sK.js";import{n as t}from"./confetti-ikBY25d7.js";var n=e();function r(){return(0,n.jsx)(`div`,{className:`relative`,children:(0,n.jsx)(t,{children:`Confetti 🎉`})})}export{r as default};

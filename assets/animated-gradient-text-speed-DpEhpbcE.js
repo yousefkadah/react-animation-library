@@ -1,1 +1,0 @@
-import{o as e}from"./index-Bg9Yv0sK.js";import{t}from"./animated-gradient-text-BIsLEkbZ.js";var n=e();function r(){return(0,n.jsx)(t,{speed:2,colorFrom:`#4ade80`,colorTo:`#06b6d4`,className:`text-4xl font-semibold tracking-tight`,children:`Fast Gradient`})}export{r as default};

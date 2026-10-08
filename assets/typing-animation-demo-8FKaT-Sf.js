@@ -1,0 +1,1 @@
+import{o as e}from"./index-BfC-87tD.js";import{t}from"./typing-animation-gk_arV8z.js";var n=e();function r(){return(0,n.jsx)(t,{className:`text-4xl font-bold sm:text-5xl`,children:`Hello World! 👋`})}export{r as default};

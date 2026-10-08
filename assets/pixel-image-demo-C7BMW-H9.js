@@ -1,1 +1,0 @@
-import{o as e}from"./index-Bg9Yv0sK.js";import{t}from"./pixel-image-K3GQsr3B.js";var n=e();function r(){return(0,n.jsx)(t,{src:`https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=800&h=800&q=80&auto=format&fit=crop`,alt:`A misty mountain valley at sunrise`,customGrid:{rows:4,cols:6},grayscaleAnimation:!0})}export{r as default};

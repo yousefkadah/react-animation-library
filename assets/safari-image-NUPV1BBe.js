@@ -1,0 +1,1 @@
+import{o as e}from"./index-BfC-87tD.js";import{t}from"./safari-DYS11T9m.js";var n=e();function r(){return(0,n.jsx)(`div`,{className:`w-full max-w-[600px]`,children:(0,n.jsx)(t,{url:`unsplash.com`,imageSrc:`https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=1600&auto=format&fit=crop`})})}export{r as default};

@@ -1,1 +1,0 @@
-import{o as e}from"./index-Bg9Yv0sK.js";import{t}from"./iphone-B_rI0Pq4.js";var n=e();function r(){return(0,n.jsx)(`div`,{className:`w-[200px]`,children:(0,n.jsx)(t,{videoSrc:`https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.webm`})})}export{r as default};

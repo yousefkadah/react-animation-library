@@ -1,1 +1,0 @@
-import{o as e}from"./index-Bg9Yv0sK.js";import{t}from"./hyper-text-Dht1WnoU.js";var n=e();function r(){return(0,n.jsx)(t,{children:`Hover Me!`})}export{r as default};

@@ -1,1 +1,0 @@
-import{o as e}from"./index-Bg9Yv0sK.js";import{t}from"./typing-animation-68_girql.js";var n=e();function r(){return(0,n.jsx)(t,{words:[`Fast typing`,`Slow delete`],typeSpeed:50,deleteSpeed:150,pauseDelay:2e3,loop:!0,className:`font-mono text-3xl font-semibold sm:text-4xl`})}export{r as default};

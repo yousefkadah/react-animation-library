@@ -1,0 +1,1 @@
+import{o as e}from"./index-BfC-87tD.js";import{t}from"./pulsating-button-PAo4AoND.js";var n=e();function r(){return(0,n.jsx)(t,{pulseColor:`#f43f5e80`,duration:`2s`,distance:`12px`,className:`rounded-full bg-rose-500 px-6 text-white`,children:`Go live`})}export{r as default};

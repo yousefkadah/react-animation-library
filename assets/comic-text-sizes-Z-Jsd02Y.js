@@ -1,1 +1,0 @@
-import{o as e}from"./index-Bg9Yv0sK.js";import{t}from"./comic-text-9MNSHL8N.js";var n=e();function r(){return(0,n.jsxs)(`div`,{className:`flex flex-wrap items-end justify-center gap-x-10 gap-y-6`,children:[(0,n.jsx)(t,{fontSize:2.5,children:`Zap!`}),(0,n.jsx)(t,{fontSize:4,children:`Pow!`}),(0,n.jsx)(t,{fontSize:3,children:`Wham!`})]})}export{r as default};

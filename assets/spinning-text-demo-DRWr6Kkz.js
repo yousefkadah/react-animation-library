@@ -1,0 +1,1 @@
+import{o as e}from"./index-BfC-87tD.js";import{t}from"./spinning-text-LKUzM-Mx.js";var n=e();function r(){return(0,n.jsx)(t,{children:`learn more • earn more • grow more •`})}export{r as default};
