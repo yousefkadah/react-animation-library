@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "code-comparison-demo",
+  "title": "Code Comparison — Highlight, diff and focus",
+  "registryDependencies": [
+    "https://yousefkadah.github.io/react-animation-library/r/code-comparison.json"
+  ],
+  "files": [
+    {
+      "path": "src/registry/examples/code-comparison-demo.tsx",
+      "content": "import { CodeComparison } from \"@/components/ui/code-comparison\"\n\nconst beforeCode = `import { Component } from \"react\"\n\nexport class Counter extends Component {\n  state = { count: 0 } // [!code highlight]\n\n  get double() { // [!code highlight]\n    return this.state.count * 2 // [!code highlight]\n  } // [!code highlight]\n\n  increment = () => {\n    this.setState(({ count }) => ({ count: count + 1 }))\n  }\n\n  componentDidMount() {\n    console.log(\\`count is \\${this.state.count}\\`)\n  }\n\n  render() {\n    return (\n      <button onClick={this.increment}>\n        {this.state.count} × 2 = {this.double}\n      </button>\n    )\n  }\n}`\n\nconst afterCode = `import { useEffect, useState } from \"react\" // [!code ++]\nimport { Component } from \"react\" // [!code --]\n\nexport function Counter() {\n  const [count, setCount] = useState(0) // [!code focus]\n  const double = count * 2 // [!code focus]\n  const increment = () => setCount((value) => value + 1)\n\n  useEffect(() => {\n    console.log(\\`count is \\${count}\\`)\n  }, [])\n\n  return (\n    <button onClick={increment}>\n      {count} × 2 = {double}\n    </button>\n  )\n}`\n\nexport default function CodeComparisonDemo() {\n  return (\n    <CodeComparison\n      beforeCode={beforeCode}\n      afterCode={afterCode}\n      language=\"tsx\"\n      filename=\"counter.tsx\"\n      lightTheme=\"github-light\"\n      darkTheme=\"github-dark\"\n      highlightColor=\"rgba(101, 117, 133, 0.16)\"\n    />\n  )\n}\n",
+      "type": "registry:example"
+    }
+  ],
+  "type": "registry:example"
+}

@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "avatar-circles-social-proof",
+  "title": "Avatar Circles — Social proof",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "https://yousefkadah.github.io/react-animation-library/r/avatar-circles.json"
+  ],
+  "files": [
+    {
+      "path": "src/registry/examples/avatar-circles-social-proof.tsx",
+      "content": "import { Star } from \"lucide-react\"\n\nimport { AvatarCircles } from \"@/components/ui/avatar-circles\"\n\nconst avatars = [\"ava\", \"liam\", \"noah\", \"emma\", \"mia\"].map((name) => ({\n  imageUrl: `https://avatar.vercel.sh/${name}`,\n  profileUrl: \"#\",\n}))\n\nexport default function AvatarCirclesSocialProof() {\n  return (\n    <div className=\"flex flex-col items-center gap-3 sm:flex-row sm:gap-4\">\n      <AvatarCircles numPeople={2400} avatarUrls={avatars} className=\"[&_span]:w-auto [&_span]:px-2\" />\n      <div className=\"flex flex-col items-center sm:items-start\">\n        <div className=\"flex gap-0.5 text-amber-500\" aria-label=\"Rated 5 out of 5\">\n          {Array.from({ length: 5 }, (_, index) => (\n            <Star key={index} className=\"size-4 fill-current\" aria-hidden=\"true\" />\n          ))}\n        </div>\n        <p className=\"text-sm text-muted-foreground\">\n          Loved by <span className=\"font-semibold text-foreground\">2,400+</span> developers\n        </p>\n      </div>\n    </div>\n  )\n}\n",
+      "type": "registry:example"
+    }
+  ],
+  "type": "registry:example"
+}

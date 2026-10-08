@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "typing-animation-cursor-styles",
+  "title": "Typing Animation — Cursor styles",
+  "registryDependencies": [
+    "https://yousefkadah.github.io/react-animation-library/r/typing-animation.json"
+  ],
+  "files": [
+    {
+      "path": "src/registry/examples/typing-animation-cursor-styles.tsx",
+      "content": "import { TypingAnimation } from \"@/components/ui/typing-animation\"\n\nconst cursors = [\n  { style: \"line\", label: \"Line cursor (default)\" },\n  { style: \"block\", label: \"Block cursor (VS Code style)\" },\n  { style: \"underscore\", label: \"Underscore cursor\" },\n] as const\n\nexport default function TypingAnimationCursorStyles() {\n  return (\n    <div className=\"flex w-full max-w-md flex-col gap-4\">\n      {cursors.map((cursor) => (\n        <div key={cursor.style}>\n          <p className=\"text-sm text-muted-foreground\">{cursor.label}</p>\n          <TypingAnimation\n            words={[cursor.label.split(\" (\")[0]]}\n            cursorStyle={cursor.style}\n            loop\n            className=\"text-3xl leading-tight font-bold\"\n          />\n        </div>\n      ))}\n    </div>\n  )\n}\n",
+      "type": "registry:example"
+    }
+  ],
+  "type": "registry:example"
+}

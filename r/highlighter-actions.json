@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "highlighter-actions",
+  "title": "Highlighter — All actions",
+  "registryDependencies": [
+    "https://yousefkadah.github.io/react-animation-library/r/highlighter.json"
+  ],
+  "files": [
+    {
+      "path": "src/registry/examples/highlighter-actions.tsx",
+      "content": "import { Highlighter } from \"@/components/ui/highlighter\"\n\nexport default function HighlighterActions() {\n  return (\n    <p className=\"max-w-md text-center text-lg leading-loose\">\n      You can{\" \"}\n      <Highlighter action=\"box\" color=\"#8B5CF6\">\n        box\n      </Highlighter>{\" \"}\n      a word,{\" \"}\n      <Highlighter action=\"circle\" color=\"#F43F5E\" padding={6}>\n        circle\n      </Highlighter>{\" \"}\n      it,{\" \"}\n      <Highlighter action=\"strike-through\" color=\"#EF4444\">\n        strike it out\n      </Highlighter>\n      ,{\" \"}\n      <Highlighter action=\"crossed-off\" color=\"#F97316\">\n        cross it off\n      </Highlighter>\n      ,{\" \"}\n      <Highlighter action=\"underline\" color=\"#10B981\" strokeWidth={2}>\n        underline\n      </Highlighter>{\" \"}\n      it or{\" \"}\n      <Highlighter action=\"bracket\" color=\"#0EA5E9\" padding={4}>\n        bracket\n      </Highlighter>{\" \"}\n      a whole thought.\n    </p>\n  )\n}\n",
+      "type": "registry:example"
+    }
+  ],
+  "type": "registry:example"
+}

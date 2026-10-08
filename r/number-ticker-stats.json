@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "number-ticker-stats",
+  "title": "Number Ticker — Stats with locales and count-down",
+  "registryDependencies": [
+    "https://yousefkadah.github.io/react-animation-library/r/number-ticker.json"
+  ],
+  "files": [
+    {
+      "path": "src/registry/examples/number-ticker-stats.tsx",
+      "content": "import { NumberTicker } from \"@/components/ui/number-ticker\"\n\nconst stats = [\n  { label: \"Downloads\", value: 1284503, prefix: \"\", suffix: \"\" },\n  { label: \"Uptime\", value: 99.98, decimalPlaces: 2, prefix: \"\", suffix: \"%\" },\n  { label: \"Revenue\", value: 48250.5, decimalPlaces: 2, prefix: \"\", suffix: \" €\", locale: \"de-DE\" },\n]\n\nexport default function NumberTickerStats() {\n  return (\n    <div className=\"grid w-full max-w-2xl grid-cols-1 gap-4 sm:grid-cols-3\">\n      {stats.map((stat, index) => (\n        <div key={stat.label} className=\"rounded-xl border bg-card p-5 text-card-foreground shadow-sm\">\n          <p className=\"text-sm text-muted-foreground\">{stat.label}</p>\n          <p className=\"mt-1 text-3xl font-semibold tracking-tight\">\n            {stat.prefix}\n            <NumberTicker\n              value={stat.value}\n              decimalPlaces={stat.decimalPlaces ?? 0}\n              locale={stat.locale}\n              delay={index * 0.15}\n              className=\"tracking-tight\"\n            />\n            {stat.suffix}\n          </p>\n        </div>\n      ))}\n      <div className=\"rounded-xl border border-dashed p-5 sm:col-span-3\">\n        <p className=\"text-sm text-muted-foreground\">Seats left — counts down</p>\n        <NumberTicker value={250} startValue={12} direction=\"down\" className=\"mt-1 text-3xl font-semibold tracking-tight\" />\n      </div>\n    </div>\n  )\n}\n",
+      "type": "registry:example"
+    }
+  ],
+  "type": "registry:example"
+}

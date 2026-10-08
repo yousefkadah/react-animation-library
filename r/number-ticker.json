@@ -1,0 +1,23 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "number-ticker",
+  "title": "Number Ticker",
+  "description": "Animate numbers to count up or down to a target number.",
+  "dependencies": [
+    "motion"
+  ],
+  "registryDependencies": [
+    "utils"
+  ],
+  "files": [
+    {
+      "path": "src/registry/ui/number-ticker.tsx",
+      "content": "\"use client\"\n\nimport { useEffect, useMemo, useRef, useState, type ComponentPropsWithoutRef } from \"react\"\nimport { useInView, useMotionValue, useSpring } from \"motion/react\"\n\nimport { cn } from \"@/lib/utils\"\n\nexport interface NumberTickerProps extends ComponentPropsWithoutRef<\"span\"> {\n  /** The value to count to (or from, when counting down). */\n  value: number\n  /** The value to count from (or to, when counting down). */\n  startValue?: number\n  /** Count up from `startValue` to `value`, or down from `value` to `startValue`. */\n  direction?: \"up\" | \"down\"\n  /** Seconds to wait after the number scrolls into view. */\n  delay?: number\n  /** Number of decimal places to show. */\n  decimalPlaces?: number\n  /** BCP 47 locale passed to `Intl.NumberFormat` (grouping and decimal separators). */\n  locale?: string\n}\n\nexport function NumberTicker({\n  value,\n  startValue = 0,\n  direction = \"up\",\n  delay = 0,\n  className,\n  decimalPlaces = 0,\n  locale = \"en-US\",\n  ...props\n}: NumberTickerProps) {\n  const ref = useRef<HTMLSpanElement>(null)\n  const motionValue = useMotionValue(direction === \"down\" ? value : startValue)\n  const springValue = useSpring(motionValue, { damping: 60, stiffness: 100 })\n  const isInView = useInView(ref, { once: true, margin: \"0px\" })\n\n  const formatter = useMemo(\n    () =>\n      new Intl.NumberFormat(locale, {\n        minimumFractionDigits: decimalPlaces,\n        maximumFractionDigits: decimalPlaces,\n      }),\n    [locale, decimalPlaces]\n  )\n\n  // Rendered once; afterwards the spring writes straight to the DOM so React never resets it mid-count.\n  const [initialText] = useState(() => formatter.format(direction === \"down\" ? value : startValue))\n\n  useEffect(() => {\n    if (!isInView) return\n    const timer = setTimeout(() => {\n      motionValue.set(direction === \"down\" ? startValue : value)\n    }, delay * 1000)\n    return () => clearTimeout(timer)\n  }, [motionValue, isInView, delay, value, direction, startValue])\n\n  useEffect(() => {\n    const render = (latest: number) => {\n      if (ref.current) ref.current.textContent = formatter.format(Number(latest.toFixed(decimalPlaces)))\n    }\n    render(springValue.get())\n    return springValue.on(\"change\", render)\n  }, [springValue, formatter, decimalPlaces])\n\n  return (\n    <span ref={ref} className={cn(\"inline-block tracking-wider text-foreground tabular-nums\", className)} {...props}>\n      {initialText}\n    </span>\n  )\n}\n",
+      "type": "registry:ui"
+    }
+  ],
+  "categories": [
+    "text-animations"
+  ],
+  "type": "registry:ui"
+}

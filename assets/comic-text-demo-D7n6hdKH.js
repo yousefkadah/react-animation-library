@@ -1,0 +1,1 @@
+import{o as e}from"./index-Bg9Yv0sK.js";import{t}from"./comic-text-9MNSHL8N.js";var n=e();function r(){return(0,n.jsx)(`div`,{className:`space-y-8 text-center`,children:(0,n.jsx)(t,{fontSize:5,children:`BOOM!`})})}export{r as default};

@@ -1,0 +1,49 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "aurora-text",
+  "title": "Aurora Text",
+  "description": "A beautiful aurora text effect.",
+  "registryDependencies": [
+    "utils"
+  ],
+  "files": [
+    {
+      "path": "src/registry/ui/aurora-text.tsx",
+      "content": "import { memo, type CSSProperties, type ReactNode } from \"react\"\n\nimport { cn } from \"@/lib/utils\"\n\nexport interface AuroraTextProps {\n  children: ReactNode\n  className?: string\n  /** Colours of the aurora gradient. The first colour is repeated at the end for a seamless loop. */\n  colors?: string[]\n  /** Animation speed multiplier: 2 is twice as fast. */\n  speed?: number\n}\n\nconst defaultColors = [\"#FF0080\", \"#7928CA\", \"#0070F3\", \"#38bdf8\"]\n\nexport const AuroraText = memo(function AuroraText({\n  children,\n  className,\n  colors = defaultColors,\n  speed = 1,\n}: AuroraTextProps) {\n  const gradientStyle: CSSProperties = {\n    backgroundImage: `linear-gradient(135deg, ${colors.join(\", \")}, ${colors[0]})`,\n    WebkitBackgroundClip: \"text\",\n    WebkitTextFillColor: \"transparent\",\n    animationDuration: `${10 / speed}s`,\n  }\n\n  return (\n    <span className={cn(\"relative inline-block\", className)}>\n      <span className=\"sr-only\">{children}</span>\n      <span\n        className=\"animate-aurora relative bg-size-[200%_auto] bg-clip-text text-transparent motion-reduce:animate-none\"\n        style={gradientStyle}\n        aria-hidden=\"true\"\n      >\n        {children}\n      </span>\n    </span>\n  )\n})\n",
+      "type": "registry:ui"
+    }
+  ],
+  "cssVars": {
+    "theme": {
+      "animate-aurora": "aurora 8s ease-in-out infinite alternate"
+    }
+  },
+  "css": {
+    "@keyframes aurora": {
+      "0%": {
+        "background-position": "0% 50%",
+        "transform": "rotate(-5deg) scale(0.9)"
+      },
+      "25%": {
+        "background-position": "50% 100%",
+        "transform": "rotate(5deg) scale(1.1)"
+      },
+      "50%": {
+        "background-position": "100% 50%",
+        "transform": "rotate(-3deg) scale(0.95)"
+      },
+      "75%": {
+        "background-position": "50% 0%",
+        "transform": "rotate(3deg) scale(1.05)"
+      },
+      "100%": {
+        "background-position": "0% 50%",
+        "transform": "rotate(-5deg) scale(0.9)"
+      }
+    }
+  },
+  "categories": [
+    "text-animations"
+  ],
+  "type": "registry:ui"
+}

@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "particles-colored",
+  "title": "Particles — Coloured",
+  "registryDependencies": [
+    "https://yousefkadah.github.io/react-animation-library/r/particles.json"
+  ],
+  "files": [
+    {
+      "path": "src/registry/examples/particles-colored.tsx",
+      "content": "import { Particles } from \"@/components/ui/particles\"\n\nexport default function ParticlesColored() {\n  return (\n    <div className=\"relative flex h-[320px] w-full flex-col items-center justify-center gap-2 overflow-hidden rounded-lg border bg-background\">\n      <h3 className=\"z-10 bg-linear-to-br from-violet-500 to-fuchsia-500 bg-clip-text text-5xl font-semibold tracking-tight text-transparent\">\n        Stay curious\n      </h3>\n      <p className=\"z-10 text-sm text-muted-foreground\">Move your pointer — the particles lean toward it.</p>\n      <Particles className=\"absolute inset-0\" quantity={160} staticity={30} ease={60} size={0.6} color=\"#a855f7\" />\n    </div>\n  )\n}\n",
+      "type": "registry:example"
+    }
+  ],
+  "type": "registry:example"
+}

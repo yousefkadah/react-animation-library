@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "grid-pattern",
+  "title": "Grid Pattern",
+  "description": "A background grid pattern made with SVGs, fully customizable using Tailwind CSS.",
+  "registryDependencies": [
+    "utils"
+  ],
+  "files": [
+    {
+      "path": "src/registry/ui/grid-pattern.tsx",
+      "content": "\"use client\"\n\nimport { useId, type ComponentPropsWithoutRef } from \"react\"\n\nimport { cn } from \"@/lib/utils\"\n\nexport interface GridPatternProps extends ComponentPropsWithoutRef<\"svg\"> {\n  /** Width of one grid cell in pixels. */\n  width?: number\n  /** Height of one grid cell in pixels. */\n  height?: number\n  /** Horizontal offset of the pattern in pixels. */\n  x?: number\n  /** Vertical offset of the pattern in pixels. */\n  y?: number\n  /** `[column, row]` cells to fill in. */\n  squares?: Array<[x: number, y: number]>\n  /** SVG `stroke-dasharray` of the grid lines, e.g. `4 2` for dashes. */\n  strokeDasharray?: string\n}\n\nexport function GridPattern({\n  width = 40,\n  height = 40,\n  x = -1,\n  y = -1,\n  strokeDasharray = \"0\",\n  squares,\n  className,\n  ...props\n}: GridPatternProps) {\n  const id = useId()\n\n  return (\n    <svg\n      aria-hidden=\"true\"\n      {...props}\n      className={cn(\"pointer-events-none absolute inset-0 h-full w-full fill-gray-400/30 stroke-gray-400/30\", className)}\n    >\n      <defs>\n        <pattern id={id} width={width} height={height} patternUnits=\"userSpaceOnUse\" x={x} y={y}>\n          <path d={`M.5 ${height}V.5H${width}`} fill=\"none\" strokeDasharray={strokeDasharray} />\n        </pattern>\n      </defs>\n      <rect width=\"100%\" height=\"100%\" strokeWidth={0} fill={`url(#${id})`} />\n      {squares && squares.length > 0 && (\n        <svg x={x} y={y} className=\"overflow-visible\">\n          {squares.map(([squareX, squareY], index) => (\n            <rect\n              key={`${index}-${squareX}-${squareY}`}\n              strokeWidth=\"0\"\n              width={width - 1}\n              height={height - 1}\n              x={squareX * width + 1}\n              y={squareY * height + 1}\n            />\n          ))}\n        </svg>\n      )}\n    </svg>\n  )\n}\n",
+      "type": "registry:ui"
+    }
+  ],
+  "categories": [
+    "backgrounds"
+  ],
+  "type": "registry:ui"
+}

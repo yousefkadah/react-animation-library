@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "typing-animation-speed",
+  "title": "Typing Animation — Custom speed",
+  "registryDependencies": [
+    "https://yousefkadah.github.io/react-animation-library/r/typing-animation.json"
+  ],
+  "files": [
+    {
+      "path": "src/registry/examples/typing-animation-speed.tsx",
+      "content": "import { TypingAnimation } from \"@/components/ui/typing-animation\"\n\nexport default function TypingAnimationSpeed() {\n  return (\n    <TypingAnimation\n      words={[\"Fast typing\", \"Slow delete\"]}\n      typeSpeed={50}\n      deleteSpeed={150}\n      pauseDelay={2000}\n      loop\n      className=\"font-mono text-3xl font-semibold sm:text-4xl\"\n    />\n  )\n}\n",
+      "type": "registry:example"
+    }
+  ],
+  "type": "registry:example"
+}

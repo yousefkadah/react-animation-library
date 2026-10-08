@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "text-animate-by-line",
+  "title": "Text Animate — Fade in by line",
+  "registryDependencies": [
+    "https://yousefkadah.github.io/react-animation-library/r/text-animate.json"
+  ],
+  "files": [
+    {
+      "path": "src/registry/examples/text-animate-by-line.tsx",
+      "content": "import { TextAnimate } from \"@/components/ui/text-animate\"\n\nconst poem = `Fade in by line, one at a time.\nEach line is its own segment,\nso long copy reads like a story.`\n\nexport default function TextAnimateByLine() {\n  return (\n    <TextAnimate animation=\"fadeIn\" by=\"line\" duration={0.9} className=\"text-center text-2xl leading-relaxed font-medium\">\n      {poem}\n    </TextAnimate>\n  )\n}\n",
+      "type": "registry:example"
+    }
+  ],
+  "type": "registry:example"
+}

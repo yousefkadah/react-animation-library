@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "backlight-svg",
+  "title": "Backlight — SVG",
+  "registryDependencies": [
+    "https://yousefkadah.github.io/react-animation-library/r/backlight.json"
+  ],
+  "files": [
+    {
+      "path": "src/registry/examples/backlight-svg.tsx",
+      "content": "import { Backlight } from \"@/components/ui/backlight\"\n\nexport default function BacklightSvg() {\n  return (\n    <Backlight blur={5} className=\"flex items-center justify-center py-8\">\n      <div className=\"flex items-center gap-8\">\n        {/* React logo */}\n        <svg viewBox=\"-11.5 -10.23 23 20.46\" className=\"size-20\" role=\"img\" aria-label=\"React\">\n          <circle r=\"2.05\" fill=\"#61dafb\" />\n          <g fill=\"none\" stroke=\"#61dafb\" strokeWidth=\"1\">\n            <ellipse rx=\"11\" ry=\"4.2\" />\n            <ellipse rx=\"11\" ry=\"4.2\" transform=\"rotate(60)\" />\n            <ellipse rx=\"11\" ry=\"4.2\" transform=\"rotate(120)\" />\n          </g>\n        </svg>\n        {/* Spark */}\n        <svg viewBox=\"0 0 24 24\" className=\"size-20\" role=\"img\" aria-label=\"Spark\">\n          <path d=\"M12 2l2.6 6.4L21 11l-6.4 2.6L12 20l-2.6-6.4L3 11l6.4-2.6z\" fill=\"#f59e0b\" />\n        </svg>\n        {/* Rings */}\n        <svg viewBox=\"0 0 48 48\" className=\"size-20\" role=\"img\" aria-label=\"Rings\">\n          <circle cx=\"18\" cy=\"24\" r=\"12\" fill=\"none\" stroke=\"#ec4899\" strokeWidth=\"5\" />\n          <circle cx=\"30\" cy=\"24\" r=\"12\" fill=\"none\" stroke=\"#3b82f6\" strokeWidth=\"5\" />\n        </svg>\n      </div>\n    </Backlight>\n  )\n}\n",
+      "type": "registry:example"
+    }
+  ],
+  "type": "registry:example"
+}

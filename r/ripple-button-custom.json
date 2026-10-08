@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "ripple-button-custom",
+  "title": "Ripple Button — Custom colour and speed",
+  "registryDependencies": [
+    "https://yousefkadah.github.io/react-animation-library/r/ripple-button.json"
+  ],
+  "files": [
+    {
+      "path": "src/registry/examples/ripple-button-custom.tsx",
+      "content": "\"use client\"\n\nimport { useState } from \"react\"\n\nimport { RippleButton } from \"@/components/ui/ripple-button\"\n\nexport default function RippleButtonCustom() {\n  const [clicks, setClicks] = useState(0)\n\n  return (\n    <div className=\"flex flex-col items-center gap-3\">\n      <RippleButton\n        rippleColor=\"#a855f7\"\n        duration=\"1s\"\n        className=\"rounded-full border-violet-500/40 px-6 py-2.5 font-medium text-violet-700 dark:text-violet-300\"\n        onClick={() => setClicks((count) => count + 1)}\n      >\n        Slow purple ripple\n      </RippleButton>\n      <p className=\"text-sm text-muted-foreground\" aria-live=\"polite\">\n        Clicked {clicks} {clicks === 1 ? \"time\" : \"times\"}\n      </p>\n    </div>\n  )\n}\n",
+      "type": "registry:example"
+    }
+  ],
+  "type": "registry:example"
+}

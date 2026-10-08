@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "spinning-text-badge",
+  "title": "Spinning Text — Badge",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "https://yousefkadah.github.io/react-animation-library/r/spinning-text.json"
+  ],
+  "files": [
+    {
+      "path": "src/registry/examples/spinning-text-badge.tsx",
+      "content": "import { ArrowUpRight } from \"lucide-react\"\n\nimport { SpinningText } from \"@/components/ui/spinning-text\"\n\nexport default function SpinningTextBadge() {\n  return (\n    <a\n      href=\"#\"\n      onClick={(event) => event.preventDefault()}\n      className=\"group relative flex size-36 items-center justify-center rounded-full border bg-card text-card-foreground shadow-sm transition-colors hover:bg-accent\"\n    >\n      <SpinningText duration={14} radius={8} className=\"absolute inset-0 text-xs font-semibold tracking-[0.2em] uppercase\">\n        get in touch • get in touch •\n      </SpinningText>\n      <span className=\"flex size-12 items-center justify-center rounded-full bg-primary text-primary-foreground transition-transform group-hover:rotate-45\">\n        <ArrowUpRight className=\"size-5\" />\n      </span>\n    </a>\n  )\n}\n",
+      "type": "registry:example"
+    }
+  ],
+  "type": "registry:example"
+}

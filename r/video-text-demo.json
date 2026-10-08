@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "video-text-demo",
+  "title": "Video Text — Default",
+  "registryDependencies": [
+    "https://yousefkadah.github.io/react-animation-library/r/video-text.json"
+  ],
+  "files": [
+    {
+      "path": "src/registry/examples/video-text-demo.tsx",
+      "content": "import { VideoText } from \"@/components/ui/video-text\"\n\nexport default function VideoTextDemo() {\n  return (\n    <div className=\"relative h-[200px] w-full overflow-hidden\">\n      <VideoText src=\"https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.webm\">BLOOM</VideoText>\n    </div>\n  )\n}\n",
+      "type": "registry:example"
+    }
+  ],
+  "type": "registry:example"
+}

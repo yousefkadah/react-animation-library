@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "animated-shiny-text-heading",
+  "title": "Animated Shiny Text — Wide glare",
+  "registryDependencies": [
+    "https://yousefkadah.github.io/react-animation-library/r/animated-shiny-text.json"
+  ],
+  "files": [
+    {
+      "path": "src/registry/examples/animated-shiny-text-heading.tsx",
+      "content": "import { AnimatedShinyText } from \"@/components/ui/animated-shiny-text\"\n\nexport default function AnimatedShinyTextHeading() {\n  return (\n    <div className=\"flex flex-col items-center gap-3 text-center\">\n      <AnimatedShinyText shimmerWidth={240} className=\"text-4xl font-bold tracking-tight sm:text-5xl\">\n        Shimmering headline\n      </AnimatedShinyText>\n      <p className=\"max-w-sm text-balance text-sm text-muted-foreground\">\n        A wider <code className=\"font-mono text-foreground\">shimmerWidth</code> gives big type a broader glare.\n      </p>\n    </div>\n  )\n}\n",
+      "type": "registry:example"
+    }
+  ],
+  "type": "registry:example"
+}

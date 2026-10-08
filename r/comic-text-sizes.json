@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "comic-text-sizes",
+  "title": "Comic Text — Sizes",
+  "registryDependencies": [
+    "https://yousefkadah.github.io/react-animation-library/r/comic-text.json"
+  ],
+  "files": [
+    {
+      "path": "src/registry/examples/comic-text-sizes.tsx",
+      "content": "import { ComicText } from \"@/components/ui/comic-text\"\n\nexport default function ComicTextSizes() {\n  return (\n    <div className=\"flex flex-wrap items-end justify-center gap-x-10 gap-y-6\">\n      <ComicText fontSize={2.5}>Zap!</ComicText>\n      <ComicText fontSize={4}>Pow!</ComicText>\n      <ComicText fontSize={3}>Wham!</ComicText>\n    </div>\n  )\n}\n",
+      "type": "registry:example"
+    }
+  ],
+  "type": "registry:example"
+}

@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "animated-list-activity",
+  "title": "Animated List — Activity feed",
+  "registryDependencies": [
+    "https://yousefkadah.github.io/react-animation-library/r/animated-list.json"
+  ],
+  "files": [
+    {
+      "path": "src/registry/examples/animated-list-activity.tsx",
+      "content": "\"use client\"\n\nimport { AnimatedList } from \"@/components/ui/animated-list\"\n\nconst events = [\n  { user: \"sarah\", action: \"merged\", target: \"feat: dark mode toggle\", time: \"just now\" },\n  { user: \"evan\", action: \"opened\", target: \"fix: hydration warning in Dock\", time: \"1m ago\" },\n  { user: \"anthony\", action: \"reviewed\", target: \"refactor: motion presets\", time: \"3m ago\" },\n  { user: \"daniel\", action: \"released\", target: \"v2.1.0\", time: \"8m ago\" },\n  { user: \"maya\", action: \"commented on\", target: \"docs: install guide\", time: \"12m ago\" },\n  { user: \"leo\", action: \"merged\", target: \"perf: lazy examples\", time: \"20m ago\" },\n]\n\nexport default function AnimatedListActivity() {\n  return (\n    <div className=\"relative h-[320px] w-full max-w-sm overflow-hidden\">\n      <AnimatedList delay={1500} className=\"gap-2\">\n        {events.map((event) => (\n          <div\n            key={event.target}\n            className=\"flex w-full items-center gap-3 rounded-xl border bg-card px-3 py-2.5 text-card-foreground shadow-xs\"\n          >\n            <img src={`https://avatar.vercel.sh/${event.user}`} alt=\"\" className=\"size-8 shrink-0 rounded-full\" />\n            <p className=\"min-w-0 flex-1 truncate text-sm\">\n              <span className=\"font-medium\">@{event.user}</span>\n              <span className=\"text-muted-foreground\"> {event.action} </span>\n              <span className=\"font-medium\">{event.target}</span>\n            </p>\n            <span className=\"shrink-0 text-xs text-muted-foreground\">{event.time}</span>\n          </div>\n        ))}\n      </AnimatedList>\n      <div className=\"pointer-events-none absolute inset-x-0 bottom-0 h-1/3 bg-linear-to-t from-background\" />\n    </div>\n  )\n}\n",
+      "type": "registry:example"
+    }
+  ],
+  "type": "registry:example"
+}

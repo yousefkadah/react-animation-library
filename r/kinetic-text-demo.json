@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "kinetic-text-demo",
+  "title": "Kinetic Text — Default",
+  "registryDependencies": [
+    "https://yousefkadah.github.io/react-animation-library/r/kinetic-text.json"
+  ],
+  "files": [
+    {
+      "path": "src/registry/examples/kinetic-text-demo.tsx",
+      "content": "import { KineticText } from \"@/components/ui/kinetic-text\"\n\nexport default function KineticTextDemo() {\n  return (\n    <div className=\"relative justify-center\">\n      <KineticText text=\"Nostalgia\" className=\"text-[6rem] tracking-[-0.05em] [font-optical-sizing:auto]\" />\n    </div>\n  )\n}\n",
+      "type": "registry:example"
+    }
+  ],
+  "type": "registry:example"
+}

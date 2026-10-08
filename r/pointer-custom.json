@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "pointer-custom",
+  "title": "Pointer — Name tag",
+  "registryDependencies": [
+    "https://yousefkadah.github.io/react-animation-library/r/pointer.json"
+  ],
+  "files": [
+    {
+      "path": "src/registry/examples/pointer-custom.tsx",
+      "content": "import { Pointer } from \"@/components/ui/pointer\"\n\nexport default function PointerCustom() {\n  return (\n    <div className=\"relative flex h-64 w-full max-w-lg flex-col items-center justify-center gap-2 overflow-hidden rounded-xl border bg-background\">\n      <p className=\"text-2xl font-semibold tracking-tight\">Hover me</p>\n      <p className=\"text-sm text-muted-foreground\">The cursor is replaced only inside this card.</p>\n      <Pointer transition={{ type: \"spring\", stiffness: 400, damping: 20 }}>\n        <div className=\"flex items-center gap-1.5\">\n          <span className=\"size-3 rounded-full bg-emerald-500 ring-4 ring-emerald-500/30\" />\n          <span className=\"rounded-full bg-emerald-500 px-2 py-0.5 text-xs font-medium text-white shadow-sm\">You</span>\n        </div>\n      </Pointer>\n    </div>\n  )\n}\n",
+      "type": "registry:example"
+    }
+  ],
+  "type": "registry:example"
+}

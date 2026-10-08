@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "globe-demo",
+  "title": "Globe — Default",
+  "registryDependencies": [
+    "https://yousefkadah.github.io/react-animation-library/r/globe.json"
+  ],
+  "files": [
+    {
+      "path": "src/registry/examples/globe-demo.tsx",
+      "content": "import { Globe } from \"@/components/ui/globe\"\n\nexport default function GlobeDemo() {\n  return (\n    <div className=\"relative flex h-[380px] w-full max-w-lg items-start justify-center overflow-hidden rounded-lg border bg-background pt-8\">\n      <span className=\"pointer-events-none bg-linear-to-b from-black to-gray-300/80 bg-clip-text text-center text-8xl leading-none font-semibold whitespace-pre-wrap text-transparent dark:from-white dark:to-slate-900/10\">\n        Globe\n      </span>\n      <Globe className=\"top-28\" />\n      <div className=\"pointer-events-none absolute inset-0 h-full bg-[radial-gradient(circle_at_50%_200%,rgba(0,0,0,0.2),rgba(255,255,255,0))]\" />\n    </div>\n  )\n}\n",
+      "type": "registry:example"
+    }
+  ],
+  "type": "registry:example"
+}

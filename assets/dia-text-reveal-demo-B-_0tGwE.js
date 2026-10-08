@@ -1,0 +1,1 @@
+import{o as e}from"./index-Bg9Yv0sK.js";import{t}from"./dia-text-reveal-C7jopjDs.js";var n=e();function r(){return(0,n.jsx)(`div`,{className:`flex min-h-64 items-center justify-center p-8`,children:(0,n.jsx)(t,{className:`text-4xl font-bold tracking-tight`,text:`Magic UI`,colors:[`#A97CF8`,`#F38CB8`,`#FDCC92`]})})}export{r as default};

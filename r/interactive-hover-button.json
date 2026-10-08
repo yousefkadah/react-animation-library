@@ -1,0 +1,23 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "interactive-hover-button",
+  "title": "Interactive Hover Button",
+  "description": "Interactive hover button: a dot grows to fill the button and the label slides out for an arrow.",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "utils"
+  ],
+  "files": [
+    {
+      "path": "src/registry/ui/interactive-hover-button.tsx",
+      "content": "import type { ComponentProps } from \"react\"\nimport { ArrowRight } from \"lucide-react\"\n\nimport { cn } from \"@/lib/utils\"\n\nexport type InteractiveHoverButtonProps = ComponentProps<\"button\">\n\nexport function InteractiveHoverButton({ children, className, ...props }: InteractiveHoverButtonProps) {\n  return (\n    <button\n      className={cn(\n        \"group relative w-auto cursor-pointer overflow-hidden rounded-full border bg-background p-2 px-6 text-center font-semibold\",\n        className\n      )}\n      {...props}\n    >\n      <span className=\"flex items-center justify-center gap-2\">\n        <span className=\"size-2 rounded-full bg-primary transition-all duration-300 group-hover:scale-[100.8]\" />\n        <span className=\"inline-block transition-all duration-300 group-hover:translate-x-12 group-hover:opacity-0\">\n          {children}\n        </span>\n      </span>\n      <span\n        aria-hidden=\"true\"\n        className=\"absolute top-0 z-10 flex size-full translate-x-12 items-center justify-center gap-2 text-primary-foreground opacity-0 transition-all duration-300 group-hover:-translate-x-5 group-hover:opacity-100\"\n      >\n        <span>{children}</span>\n        <ArrowRight />\n      </span>\n    </button>\n  )\n}\n",
+      "type": "registry:ui"
+    }
+  ],
+  "categories": [
+    "buttons"
+  ],
+  "type": "registry:ui"
+}

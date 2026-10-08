@@ -1,0 +1,1 @@
+import{o as e}from"./index-Bg9Yv0sK.js";import{t}from"./avatar-circles-BJ4fEBNg.js";var n=e(),r=[`jack`,`jill`,`john`,`jane`,`jenny`,`james`].map(e=>({imageUrl:`https://avatar.vercel.sh/${e}`,profileUrl:`#`}));function i(){return(0,n.jsx)(t,{numPeople:99,avatarUrls:r})}export{i as default};

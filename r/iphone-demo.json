@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "iphone-demo",
+  "title": "iPhone — Empty screen",
+  "registryDependencies": [
+    "https://yousefkadah.github.io/react-animation-library/r/iphone.json"
+  ],
+  "files": [
+    {
+      "path": "src/registry/examples/iphone-demo.tsx",
+      "content": "import { Iphone } from \"@/components/ui/iphone\"\n\nexport default function IphoneDemo() {\n  return (\n    <div className=\"w-[200px]\">\n      <Iphone />\n    </div>\n  )\n}\n",
+      "type": "registry:example"
+    }
+  ],
+  "type": "registry:example"
+}

@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "scroll-based-velocity-images",
+  "title": "Scroll Based Velocity — Images",
+  "registryDependencies": [
+    "https://yousefkadah.github.io/react-animation-library/r/scroll-based-velocity.json"
+  ],
+  "files": [
+    {
+      "path": "src/registry/examples/scroll-based-velocity-images.tsx",
+      "content": "import { ScrollVelocityContainer, ScrollVelocityRow } from \"@/components/ui/scroll-based-velocity\"\n\nconst rowA = [10, 11, 12, 13, 14].map((id) => `https://picsum.photos/seed/velocity-${id}/480/320`)\nconst rowB = [20, 21, 22, 23, 24].map((id) => `https://picsum.photos/seed/velocity-${id}/480/320`)\n\nfunction Images({ sources }: { sources: string[] }) {\n  return sources.map((src) => (\n    <img\n      key={src}\n      src={src}\n      alt=\"\"\n      width={240}\n      height={160}\n      loading=\"lazy\"\n      decoding=\"async\"\n      className=\"mx-2 inline-block h-28 w-44 rounded-lg object-cover shadow-sm sm:h-36 sm:w-56\"\n    />\n  ))\n}\n\nexport default function ScrollBasedVelocityImages() {\n  return (\n    <div className=\"relative flex w-full flex-col items-center justify-center overflow-hidden py-4\">\n      <ScrollVelocityContainer className=\"w-full\">\n        <ScrollVelocityRow baseVelocity={6} direction={1} className=\"py-2\">\n          <Images sources={rowA} />\n        </ScrollVelocityRow>\n        <ScrollVelocityRow baseVelocity={6} direction={-1} className=\"py-2\">\n          <Images sources={rowB} />\n        </ScrollVelocityRow>\n      </ScrollVelocityContainer>\n      <div className=\"pointer-events-none absolute inset-y-0 left-0 w-1/4 bg-linear-to-r from-background\" />\n      <div className=\"pointer-events-none absolute inset-y-0 right-0 w-1/4 bg-linear-to-l from-background\" />\n    </div>\n  )\n}\n",
+      "type": "registry:example"
+    }
+  ],
+  "type": "registry:example"
+}

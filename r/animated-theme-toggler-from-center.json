@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "animated-theme-toggler-from-center",
+  "title": "Theme Toggler — From the centre",
+  "registryDependencies": [
+    "https://yousefkadah.github.io/react-animation-library/r/animated-theme-toggler.json"
+  ],
+  "files": [
+    {
+      "path": "src/registry/examples/animated-theme-toggler-from-center.tsx",
+      "content": "import { AnimatedThemeToggler } from \"@/components/ui/animated-theme-toggler\"\n\nexport default function AnimatedThemeTogglerFromCenter() {\n  return (\n    <div className=\"flex flex-col items-center gap-3 p-6\">\n      <AnimatedThemeToggler\n        fromCenter\n        variant=\"star\"\n        duration={700}\n        className=\"inline-flex h-10 items-center justify-center gap-2 rounded-full bg-primary px-5 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90 [&_svg]:size-4\"\n      />\n      <p className=\"text-sm text-muted-foreground\">A slower star reveal that grows from the centre of the screen.</p>\n    </div>\n  )\n}\n",
+      "type": "registry:example"
+    }
+  ],
+  "type": "registry:example"
+}

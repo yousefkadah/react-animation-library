@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "noise-texture-card",
+  "title": "Noise Texture — Newsletter card",
+  "registryDependencies": [
+    "https://yousefkadah.github.io/react-animation-library/r/noise-texture.json"
+  ],
+  "files": [
+    {
+      "path": "src/registry/examples/noise-texture-card.tsx",
+      "content": "import { NoiseTexture } from \"@/components/ui/noise-texture\"\n\nexport default function NoiseTextureCard() {\n  return (\n    <div className=\"relative w-full max-w-md overflow-hidden rounded-xl border bg-card/80 text-card-foreground shadow-sm\">\n      <NoiseTexture noiseOpacity={0.45} />\n      <div className=\"relative z-10 space-y-1.5 p-6 pb-4\">\n        <h3 className=\"text-xl font-semibold\">The weekly digest</h3>\n        <p className=\"text-sm text-muted-foreground\">\n          One email on Sundays: new components, tips and changelog highlights. No spam, unsubscribe anytime.\n        </p>\n      </div>\n      <form className=\"relative z-10 space-y-4 px-6 pb-6\" onSubmit={(event) => event.preventDefault()}>\n        <label className=\"grid gap-2 text-sm font-medium\">\n          Email\n          <input\n            type=\"email\"\n            autoComplete=\"email\"\n            placeholder=\"you@company.com\"\n            className=\"h-9 rounded-md border bg-background/60 px-3 text-sm font-normal outline-none focus-visible:ring-2 focus-visible:ring-ring/50\"\n          />\n        </label>\n        <button\n          type=\"submit\"\n          className=\"h-9 w-full rounded-md bg-primary px-4 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90\"\n        >\n          Subscribe\n        </button>\n      </form>\n    </div>\n  )\n}\n",
+      "type": "registry:example"
+    }
+  ],
+  "type": "registry:example"
+}

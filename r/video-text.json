@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "video-text",
+  "title": "Video Text",
+  "description": "A component that displays text with a video playing in the background.",
+  "registryDependencies": [
+    "utils"
+  ],
+  "files": [
+    {
+      "path": "src/registry/ui/video-text.tsx",
+      "content": "\"use client\"\n\nimport { Children, useMemo, type CSSProperties, type ElementType, type ReactNode } from \"react\"\n\nimport { cn } from \"@/lib/utils\"\n\nexport interface VideoTextProps {\n  /** The video source URL. */\n  src: string\n  /** The text the video plays inside (plain text). */\n  children: ReactNode\n  className?: string\n  /** Start playing as soon as possible. */\n  autoPlay?: boolean\n  /** Mute the video (required by browsers for autoplay). */\n  muted?: boolean\n  /** Restart the video when it ends. */\n  loop?: boolean\n  /** How much of the video to preload. */\n  preload?: \"auto\" | \"metadata\" | \"none\"\n  /** Font size of the text mask. Numbers are read as `vw` of the mask box. */\n  fontSize?: string | number\n  /** Font weight of the text mask. */\n  fontWeight?: string | number\n  /** SVG `text-anchor` of the text mask. */\n  textAnchor?: string\n  /** SVG `dominant-baseline` of the text mask. */\n  dominantBaseline?: string\n  /** Font family of the text mask. */\n  fontFamily?: string\n  /** Element to render. */\n  as?: ElementType\n}\n\nconst escapeXml = (value: string | number) => String(value).replace(/[&<>'\"]/g, (char) => `&#${char.charCodeAt(0)};`)\n\nexport function VideoText({\n  src,\n  children,\n  className,\n  autoPlay = true,\n  muted = true,\n  loop = true,\n  preload = \"auto\",\n  fontSize = 20,\n  fontWeight = \"bold\",\n  textAnchor = \"middle\",\n  dominantBaseline = \"middle\",\n  fontFamily = \"sans-serif\",\n  as: Component = \"div\",\n}: VideoTextProps) {\n  const content = Children.toArray(children).join(\"\")\n\n  const maskStyle = useMemo<CSSProperties>(() => {\n    const size = typeof fontSize === \"number\" ? `${fontSize}vw` : fontSize\n    const svg =\n      `<svg xmlns='http://www.w3.org/2000/svg' width='100%' height='100%'>` +\n      `<text x='50%' y='50%' font-size='${escapeXml(size)}' font-weight='${escapeXml(fontWeight)}' ` +\n      `text-anchor='${escapeXml(textAnchor)}' dominant-baseline='${escapeXml(dominantBaseline)}' ` +\n      `font-family='${escapeXml(fontFamily)}'>${escapeXml(content)}</text></svg>`\n    const mask = `url(\"data:image/svg+xml,${encodeURIComponent(svg)}\")`\n    // The SVG has no intrinsic size, so it is stretched to exactly the box (`contain` left the\n    // fit to the browser's guess of an aspect ratio).\n    return {\n      maskImage: mask,\n      WebkitMaskImage: mask,\n      maskSize: \"100% 100%\",\n      WebkitMaskSize: \"100% 100%\",\n      maskRepeat: \"no-repeat\",\n      WebkitMaskRepeat: \"no-repeat\",\n      maskPosition: \"center\",\n      WebkitMaskPosition: \"center\",\n    }\n  }, [content, fontSize, fontWeight, textAnchor, dominantBaseline, fontFamily])\n\n  return (\n    <Component className={cn(\"relative size-full\", className)}>\n      {/*\n        The video is only visible through the text-shaped mask. p-px keeps it 1px inside the mask\n        box: Chrome snaps the mask tile and the video layer to device pixels independently, which\n        could otherwise leave a 1px unmasked row of video at the top and bottom edges. The glyphs\n        never reach the edges, so nothing visible is lost.\n      */}\n      <div className=\"absolute inset-0 flex items-center justify-center p-px\" style={maskStyle}>\n        <video\n          className=\"h-full w-full object-cover\"\n          autoPlay={autoPlay}\n          muted={muted}\n          loop={loop}\n          preload={preload}\n          playsInline\n          aria-hidden=\"true\"\n        >\n          <source src={src} />\n          Your browser does not support the video tag.\n        </video>\n      </div>\n      <span className=\"sr-only\">{content}</span>\n    </Component>\n  )\n}\n",
+      "type": "registry:ui"
+    }
+  ],
+  "categories": [
+    "text-animations"
+  ],
+  "type": "registry:ui"
+}

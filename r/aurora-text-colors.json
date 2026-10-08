@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "aurora-text-colors",
+  "title": "Aurora Text — Custom colours and speed",
+  "registryDependencies": [
+    "https://yousefkadah.github.io/react-animation-library/r/aurora-text.json"
+  ],
+  "files": [
+    {
+      "path": "src/registry/examples/aurora-text-colors.tsx",
+      "content": "import { AuroraText } from \"@/components/ui/aurora-text\"\n\nexport default function AuroraTextColors() {\n  return (\n    <div className=\"flex flex-col items-center gap-4 text-center\">\n      <h2 className=\"text-4xl font-bold tracking-tighter sm:text-6xl\">\n        <AuroraText colors={[\"#22c55e\", \"#14b8a6\", \"#06b6d4\", \"#a3e635\"]} speed={2}>\n          Northern lights\n        </AuroraText>\n      </h2>\n      <p className=\"max-w-sm text-balance text-muted-foreground\">\n        Pick your own palette with <code className=\"font-mono text-foreground\">colors</code> and double the pace with{\" \"}\n        <code className=\"font-mono text-foreground\">speed</code>.\n      </p>\n    </div>\n  )\n}\n",
+      "type": "registry:example"
+    }
+  ],
+  "type": "registry:example"
+}

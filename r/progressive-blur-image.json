@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "progressive-blur-image",
+  "title": "Progressive Blur — Image caption",
+  "registryDependencies": [
+    "https://yousefkadah.github.io/react-animation-library/r/progressive-blur.json"
+  ],
+  "files": [
+    {
+      "path": "src/registry/examples/progressive-blur-image.tsx",
+      "content": "import { ProgressiveBlur } from \"@/components/ui/progressive-blur\"\n\nexport default function ProgressiveBlurImage() {\n  return (\n    <figure className=\"relative h-[320px] w-full max-w-sm overflow-hidden rounded-2xl border shadow-sm\">\n      <img\n        src=\"https://images.unsplash.com/photo-1506905925346-21bda4d32df4?q=80&w=1200&auto=format&fit=crop\"\n        alt=\"Mountain peaks above a sea of clouds\"\n        className=\"size-full object-cover\"\n      />\n      <ProgressiveBlur position=\"bottom\" height=\"50%\" blurLevels={[0.5, 1, 2, 4, 8, 16, 24, 32]} />\n      <figcaption className=\"absolute inset-x-0 bottom-0 z-20 p-5 text-white\">\n        <p className=\"text-lg font-semibold\">Above the clouds</p>\n        <p className=\"text-sm text-white/80\">Sunrise over the peaks</p>\n      </figcaption>\n    </figure>\n  )\n}\n",
+      "type": "registry:example"
+    }
+  ],
+  "type": "registry:example"
+}

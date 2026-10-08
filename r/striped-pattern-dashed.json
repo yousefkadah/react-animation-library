@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "striped-pattern-dashed",
+  "title": "Striped Pattern — Dashed",
+  "registryDependencies": [
+    "https://yousefkadah.github.io/react-animation-library/r/striped-pattern.json"
+  ],
+  "files": [
+    {
+      "path": "src/registry/examples/striped-pattern-dashed.tsx",
+      "content": "import { StripedPattern } from \"@/components/ui/striped-pattern\"\n\nexport default function StripedPatternDashed() {\n  return (\n    <div className=\"relative flex h-[300px] w-full flex-col items-center justify-center overflow-hidden rounded-lg border bg-background\">\n      <StripedPattern className=\"stroke-[0.3] [stroke-dasharray:8,4]\" />\n    </div>\n  )\n}\n",
+      "type": "registry:example"
+    }
+  ],
+  "type": "registry:example"
+}

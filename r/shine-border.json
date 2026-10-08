@@ -1,0 +1,38 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "shine-border",
+  "title": "Shine Border",
+  "description": "Shine border is an animated background border effect.",
+  "registryDependencies": [
+    "utils"
+  ],
+  "files": [
+    {
+      "path": "src/registry/ui/shine-border.tsx",
+      "content": "import type { ComponentPropsWithoutRef, CSSProperties } from \"react\"\n\nimport { cn } from \"@/lib/utils\"\n\nexport interface ShineBorderProps extends ComponentPropsWithoutRef<\"div\"> {\n  /** Width of the border in pixels. */\n  borderWidth?: number\n  /** Seconds for one full shine cycle. */\n  duration?: number\n  /** Colour of the shine — one colour or a list that is blended into a gradient. */\n  shineColor?: string | string[]\n}\n\n/** An animated gradient border. Place it inside a `relative` element with rounded corners. */\nexport function ShineBorder({\n  borderWidth = 1,\n  duration = 14,\n  shineColor = \"#000000\",\n  className,\n  style,\n  ...props\n}: ShineBorderProps) {\n  const colors = Array.isArray(shineColor) ? shineColor.join(\",\") : shineColor\n  return (\n    <div\n      aria-hidden=\"true\"\n      style={\n        {\n          \"--border-width\": `${borderWidth}px`,\n          \"--duration\": `${duration}s`,\n          backgroundImage: `radial-gradient(transparent,transparent, ${colors},transparent,transparent)`,\n          backgroundSize: \"300% 300%\",\n          mask: \"linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)\",\n          WebkitMask: \"linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)\",\n          WebkitMaskComposite: \"xor\",\n          maskComposite: \"exclude\",\n          padding: \"var(--border-width)\",\n          ...style,\n        } as CSSProperties\n      }\n      className={cn(\n        \"pointer-events-none absolute inset-0 size-full rounded-[inherit] will-change-[background-position] motion-safe:animate-shine\",\n        className\n      )}\n      {...props}\n    />\n  )\n}\n",
+      "type": "registry:ui"
+    }
+  ],
+  "cssVars": {
+    "theme": {
+      "animate-shine": "shine var(--duration) infinite linear"
+    }
+  },
+  "css": {
+    "@keyframes shine": {
+      "0%": {
+        "background-position": "0% 0%"
+      },
+      "50%": {
+        "background-position": "100% 100%"
+      },
+      "to": {
+        "background-position": "0% 0%"
+      }
+    }
+  },
+  "categories": [
+    "special-effects"
+  ],
+  "type": "registry:ui"
+}

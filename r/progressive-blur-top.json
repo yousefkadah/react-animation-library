@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "progressive-blur-top",
+  "title": "Progressive Blur — Top and bottom",
+  "registryDependencies": [
+    "https://yousefkadah.github.io/react-animation-library/r/progressive-blur.json"
+  ],
+  "files": [
+    {
+      "path": "src/registry/examples/progressive-blur-top.tsx",
+      "content": "import { ProgressiveBlur } from \"@/components/ui/progressive-blur\"\n\nconst messages = [\n  \"Shipped the new onboarding flow\",\n  \"Fixed the flaky checkout test\",\n  \"Dark mode is live for everyone\",\n  \"Cut bundle size by 18%\",\n  \"Added keyboard shortcuts to search\",\n  \"Moved image uploads to the edge\",\n  \"Rewrote the billing emails\",\n  \"Launched the public changelog\",\n  \"Improved table virtualisation\",\n  \"Localised the app into Hebrew\",\n]\n\nexport default function ProgressiveBlurTop() {\n  return (\n    <div className=\"relative h-[320px] w-full max-w-md overflow-hidden rounded-xl border bg-background\">\n      <ul className=\"h-full space-y-3 overflow-y-auto px-4 py-16\">\n        {messages.map((message, index) => (\n          <li key={message} className=\"flex items-center gap-3 rounded-lg border bg-card p-3 text-sm\">\n            <span className=\"flex size-8 shrink-0 items-center justify-center rounded-full bg-muted text-xs font-medium text-muted-foreground\">\n              {index + 1}\n            </span>\n            {message}\n          </li>\n        ))}\n      </ul>\n      <ProgressiveBlur position=\"top\" height=\"25%\" />\n      <ProgressiveBlur position=\"bottom\" height=\"25%\" />\n    </div>\n  )\n}\n",
+      "type": "registry:example"
+    }
+  ],
+  "type": "registry:example"
+}

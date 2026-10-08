@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "word-rotate-sentence",
+  "title": "Word Rotate — In a sentence",
+  "registryDependencies": [
+    "https://yousefkadah.github.io/react-animation-library/r/word-rotate.json"
+  ],
+  "files": [
+    {
+      "path": "src/registry/examples/word-rotate-sentence.tsx",
+      "content": "import { WordRotate } from \"@/components/ui/word-rotate\"\n\nconst words = [\"beautiful\", \"accessible\", \"fast\", \"delightful\"]\n\nexport default function WordRotateSentence() {\n  return (\n    <div className=\"flex flex-wrap items-center justify-center gap-x-2.5 text-3xl font-bold tracking-tight sm:text-4xl\">\n      <span>Build something</span>\n      <WordRotate\n        words={words}\n        duration={2000}\n        className=\"bg-linear-to-r from-violet-500 to-pink-500 bg-clip-text text-transparent\"\n      />\n    </div>\n  )\n}\n",
+      "type": "registry:example"
+    }
+  ],
+  "type": "registry:example"
+}

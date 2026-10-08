@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "icon-cloud-demo",
+  "title": "Icon Cloud — Simple Icons",
+  "registryDependencies": [
+    "https://yousefkadah.github.io/react-animation-library/r/icon-cloud.json"
+  ],
+  "files": [
+    {
+      "path": "src/registry/examples/icon-cloud-demo.tsx",
+      "content": "import { IconCloud } from \"@/components/ui/icon-cloud\"\n\nconst slugs = [\n  \"typescript\",\n  \"javascript\",\n  \"dart\",\n  \"react\",\n  \"nextdotjs\",\n  \"flutter\",\n  \"android\",\n  \"html5\",\n  \"css\",\n  \"nodedotjs\",\n  \"express\",\n  \"vite\",\n  \"prisma\",\n  \"redis\",\n  \"postgresql\",\n  \"firebase\",\n  \"nginx\",\n  \"vercel\",\n  \"testinglibrary\",\n  \"vitest\",\n  \"cypress\",\n  \"docker\",\n  \"git\",\n  \"jira\",\n  \"github\",\n  \"gitlab\",\n  \"tailwindcss\",\n  \"androidstudio\",\n  \"graphql\",\n  \"figma\",\n]\n\nconst images = slugs.map((slug) => `https://cdn.simpleicons.org/${slug}/${slug}`)\n\nexport default function IconCloudDemo() {\n  return (\n    <div className=\"relative flex size-full items-center justify-center overflow-hidden\">\n      <IconCloud images={images} />\n    </div>\n  )\n}\n",
+      "type": "registry:example"
+    }
+  ],
+  "type": "registry:example"
+}

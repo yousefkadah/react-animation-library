@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "backlight",
+  "title": "Backlight",
+  "description": "A backlight glow effect for videos, images, and SVGs.",
+  "registryDependencies": [
+    "utils"
+  ],
+  "files": [
+    {
+      "path": "src/registry/ui/backlight.tsx",
+      "content": "\"use client\"\n\nimport { useId, type ReactNode } from \"react\"\n\nimport { cn } from \"@/lib/utils\"\n\nexport interface BacklightProps {\n  /** The video, image or SVG that casts the glow. */\n  children?: ReactNode\n  className?: string\n  /** Blur radius (SVG `stdDeviation`) of the glow. */\n  blur?: number\n}\n\nexport function Backlight({ blur = 20, children, className }: BacklightProps) {\n  // React ids contain characters such as \":\" or \"«\" that would break the url(#…) reference.\n  const id = `backlight-${useId().replace(/[^\\w-]/g, \"\")}`\n\n  return (\n    <div className={cn(className)}>\n      <svg width=\"0\" height=\"0\" aria-hidden=\"true\" className=\"pointer-events-none absolute\">\n        <filter id={id} y=\"-50%\" x=\"-50%\" width=\"200%\" height=\"200%\">\n          <feGaussianBlur in=\"SourceGraphic\" stdDeviation={blur} result=\"blurred\" />\n          <feColorMatrix type=\"saturate\" in=\"blurred\" values=\"4\" />\n          <feComposite in=\"SourceGraphic\" operator=\"over\" />\n        </filter>\n      </svg>\n\n      <div style={{ filter: `url(#${id})` }}>{children}</div>\n    </div>\n  )\n}\n",
+      "type": "registry:ui"
+    }
+  ],
+  "categories": [
+    "special-effects"
+  ],
+  "type": "registry:ui"
+}

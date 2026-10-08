@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "orbiting-circles-avatars",
+  "title": "Orbiting Circles — Avatars",
+  "registryDependencies": [
+    "https://yousefkadah.github.io/react-animation-library/r/orbiting-circles.json"
+  ],
+  "files": [
+    {
+      "path": "src/registry/examples/orbiting-circles-avatars.tsx",
+      "content": "import { OrbitingCircles } from \"@/components/ui/orbiting-circles\"\n\nconst outer = [\"jack\", \"jill\", \"john\", \"jane\", \"jenny\", \"james\"]\nconst inner = [\"jade\", \"jules\", \"joe\"]\n\nexport default function OrbitingCirclesAvatars() {\n  return (\n    <div className=\"relative flex h-[400px] w-full items-center justify-center overflow-hidden\">\n      <div className=\"z-10 flex size-16 items-center justify-center rounded-full bg-primary text-sm font-semibold text-primary-foreground shadow-lg\">\n        Team\n      </div>\n      <OrbitingCircles iconSize={44} radius={150} duration={30}>\n        {outer.map((name) => (\n          <img\n            key={name}\n            src={`https://avatar.vercel.sh/${name}`}\n            alt={name}\n            className=\"size-full rounded-full border-2 border-background shadow-md\"\n          />\n        ))}\n      </OrbitingCircles>\n      <OrbitingCircles iconSize={36} radius={85} duration={20} reverse>\n        {inner.map((name) => (\n          <img\n            key={name}\n            src={`https://avatar.vercel.sh/${name}`}\n            alt={name}\n            className=\"size-full rounded-full border-2 border-background shadow-md\"\n          />\n        ))}\n      </OrbitingCircles>\n    </div>\n  )\n}\n",
+      "type": "registry:example"
+    }
+  ],
+  "type": "registry:example"
+}

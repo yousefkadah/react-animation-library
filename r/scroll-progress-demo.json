@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "scroll-progress-demo",
+  "title": "Scroll Progress — Page",
+  "registryDependencies": [
+    "https://yousefkadah.github.io/react-animation-library/r/scroll-progress.json"
+  ],
+  "files": [
+    {
+      "path": "src/registry/examples/scroll-progress-demo.tsx",
+      "content": "import { ScrollProgress } from \"@/components/ui/scroll-progress\"\n\nexport default function ScrollProgressDemo() {\n  return (\n    <div className=\"z-10 rounded-lg p-4\">\n      <ScrollProgress className=\"top-14\" />\n      <h2 className=\"pb-4 text-center font-bold\">Note: The scroll progress is shown below the navbar of the page.</h2>\n      <p className=\"text-center text-sm text-muted-foreground\">Scroll this page to see it fill up.</p>\n    </div>\n  )\n}\n",
+      "type": "registry:example"
+    }
+  ],
+  "type": "registry:example"
+}

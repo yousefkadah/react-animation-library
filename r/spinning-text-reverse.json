@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "spinning-text-reverse",
+  "title": "Spinning Text — Reverse",
+  "registryDependencies": [
+    "https://yousefkadah.github.io/react-animation-library/r/spinning-text.json"
+  ],
+  "files": [
+    {
+      "path": "src/registry/examples/spinning-text-reverse.tsx",
+      "content": "import { SpinningText } from \"@/components/ui/spinning-text\"\n\nexport default function SpinningTextReverse() {\n  return (\n    <SpinningText reverse className=\"text-4xl\" duration={4} radius={6}>\n      learn more • earn more • grow more •\n    </SpinningText>\n  )\n}\n",
+      "type": "registry:example"
+    }
+  ],
+  "type": "registry:example"
+}

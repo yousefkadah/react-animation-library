@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "border-beam-reverse",
+  "title": "Border Beam — Reverse",
+  "registryDependencies": [
+    "https://yousefkadah.github.io/react-animation-library/r/border-beam.json"
+  ],
+  "files": [
+    {
+      "path": "src/registry/examples/border-beam-reverse.tsx",
+      "content": "import { BorderBeam } from \"@/components/ui/border-beam\"\n\nexport default function BorderBeamReverse() {\n  return (\n    <div className=\"relative flex h-48 w-[350px] flex-col items-center justify-center overflow-hidden rounded-xl border bg-card shadow-sm\">\n      <p className=\"text-lg font-semibold\">Counter-clockwise</p>\n      <p className=\"text-sm text-muted-foreground\">The beam travels in reverse.</p>\n      <BorderBeam duration={4} size={300} reverse className=\"from-transparent via-green-500 to-transparent\" />\n    </div>\n  )\n}\n",
+      "type": "registry:example"
+    }
+  ],
+  "type": "registry:example"
+}

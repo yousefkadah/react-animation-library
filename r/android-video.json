@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "android-video",
+  "title": "Android — With video",
+  "registryDependencies": [
+    "https://yousefkadah.github.io/react-animation-library/r/android.json"
+  ],
+  "files": [
+    {
+      "path": "src/registry/examples/android-video.tsx",
+      "content": "import { Android } from \"@/components/ui/android\"\n\nexport default function AndroidVideo() {\n  return <Android width={200} height={437} videoSrc=\"https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.webm\" />\n}\n",
+      "type": "registry:example"
+    }
+  ],
+  "type": "registry:example"
+}

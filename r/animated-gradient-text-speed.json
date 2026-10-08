@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "animated-gradient-text-speed",
+  "title": "Animated Gradient Text — Custom colours and speed",
+  "registryDependencies": [
+    "https://yousefkadah.github.io/react-animation-library/r/animated-gradient-text.json"
+  ],
+  "files": [
+    {
+      "path": "src/registry/examples/animated-gradient-text-speed.tsx",
+      "content": "import { AnimatedGradientText } from \"@/components/ui/animated-gradient-text\"\n\nexport default function AnimatedGradientTextSpeed() {\n  return (\n    <AnimatedGradientText speed={2} colorFrom=\"#4ade80\" colorTo=\"#06b6d4\" className=\"text-4xl font-semibold tracking-tight\">\n      Fast Gradient\n    </AnimatedGradientText>\n  )\n}\n",
+      "type": "registry:example"
+    }
+  ],
+  "type": "registry:example"
+}

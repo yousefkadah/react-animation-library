@@ -1,0 +1,35 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "ripple",
+  "title": "Ripple",
+  "description": "An animated ripple effect typically used behind elements to emphasize them.",
+  "registryDependencies": [
+    "utils"
+  ],
+  "files": [
+    {
+      "path": "src/registry/ui/ripple.tsx",
+      "content": "import type { ComponentPropsWithoutRef, CSSProperties } from \"react\"\n\nimport { cn } from \"@/lib/utils\"\n\nexport interface RippleProps extends ComponentPropsWithoutRef<\"div\"> {\n  /** Diameter of the innermost circle in pixels. Each further circle is 70px wider. */\n  mainCircleSize?: number\n  /** Opacity of the innermost circle. Each further circle is 0.03 more transparent. */\n  mainCircleOpacity?: number\n  /** Number of circles. */\n  numCircles?: number\n}\n\nexport function Ripple({ mainCircleSize = 210, mainCircleOpacity = 0.24, numCircles = 8, className, ...props }: RippleProps) {\n  return (\n    <div\n      aria-hidden=\"true\"\n      {...props}\n      className={cn(\n        \"pointer-events-none absolute inset-0 [mask-image:linear-gradient(to_bottom,white,transparent)] select-none\",\n        className\n      )}\n    >\n      {Array.from({ length: numCircles }, (_, index) => {\n        const size = mainCircleSize + index * 70\n        return (\n          <div\n            key={index}\n            className=\"animate-ripple absolute rounded-full border bg-foreground/25 shadow-xl motion-reduce:animate-none\"\n            style={\n              {\n                \"--i\": index,\n                width: `${size}px`,\n                height: `${size}px`,\n                opacity: mainCircleOpacity - index * 0.03,\n                animationDelay: `${index * 0.06}s`,\n                borderStyle: \"solid\",\n                borderWidth: \"1px\",\n                borderColor: \"var(--foreground)\",\n                top: \"50%\",\n                left: \"50%\",\n                transform: \"translate(-50%, -50%) scale(1)\",\n              } as CSSProperties\n            }\n          />\n        )\n      })}\n    </div>\n  )\n}\n",
+      "type": "registry:ui"
+    }
+  ],
+  "cssVars": {
+    "theme": {
+      "animate-ripple": "ripple var(--duration,2s) ease calc(var(--i, 0)*.2s) infinite"
+    }
+  },
+  "css": {
+    "@keyframes ripple": {
+      "0%, 100%": {
+        "transform": "translate(-50%, -50%) scale(1)"
+      },
+      "50%": {
+        "transform": "translate(-50%, -50%) scale(0.9)"
+      }
+    }
+  },
+  "categories": [
+    "backgrounds"
+  ],
+  "type": "registry:ui"
+}

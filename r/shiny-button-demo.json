@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "shiny-button-demo",
+  "title": "Shiny Button — Default",
+  "registryDependencies": [
+    "https://yousefkadah.github.io/react-animation-library/r/shiny-button.json"
+  ],
+  "files": [
+    {
+      "path": "src/registry/examples/shiny-button-demo.tsx",
+      "content": "import { ShinyButton } from \"@/components/ui/shiny-button\"\n\nexport default function ShinyButtonDemo() {\n  return <ShinyButton>Shiny Button</ShinyButton>\n}\n",
+      "type": "registry:example"
+    }
+  ],
+  "type": "registry:example"
+}

@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "orbiting-circles-icons",
+  "title": "Orbiting Circles — Icons",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "https://yousefkadah.github.io/react-animation-library/r/orbiting-circles.json"
+  ],
+  "files": [
+    {
+      "path": "src/registry/examples/orbiting-circles-icons.tsx",
+      "content": "import { Cloud, Database, FileText, Search, Settings, Sparkles, Terminal } from \"lucide-react\"\n\nimport { OrbitingCircles } from \"@/components/ui/orbiting-circles\"\n\nexport default function OrbitingCirclesIcons() {\n  return (\n    <div className=\"relative flex h-[400px] w-full flex-col items-center justify-center overflow-hidden\">\n      <span className=\"pointer-events-none bg-linear-to-b from-black to-gray-300/80 bg-clip-text text-center text-6xl leading-none font-semibold whitespace-pre-wrap text-transparent dark:from-white dark:to-slate-900/10\">\n        Circles\n      </span>\n      <OrbitingCircles iconSize={36} radius={150} className=\"border bg-background text-foreground shadow-sm\">\n        <FileText className=\"size-4\" />\n        <Settings className=\"size-4\" />\n        <Cloud className=\"size-4\" />\n        <Database className=\"size-4\" />\n      </OrbitingCircles>\n      <OrbitingCircles iconSize={32} radius={90} reverse duration={15} className=\"border bg-background text-muted-foreground\">\n        <Search className=\"size-4\" />\n        <Terminal className=\"size-4\" />\n        <Sparkles className=\"size-4\" />\n      </OrbitingCircles>\n    </div>\n  )\n}\n",
+      "type": "registry:example"
+    }
+  ],
+  "type": "registry:example"
+}

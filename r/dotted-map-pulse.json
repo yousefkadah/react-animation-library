@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "dotted-map-pulse",
+  "title": "Dotted Map — Pulsing markers",
+  "registryDependencies": [
+    "https://yousefkadah.github.io/react-animation-library/r/dotted-map.json"
+  ],
+  "files": [
+    {
+      "path": "src/registry/examples/dotted-map-pulse.tsx",
+      "content": "import { DottedMap, type DottedMapMarker } from \"@/components/ui/dotted-map\"\n\nconst markers: DottedMapMarker[] = [\n  { lat: 37.5665, lng: 126.978, size: 0.3 },\n  { lat: 40.7128, lng: -74.006, size: 0.3, pulse: false },\n  { lat: 51.5072, lng: -0.1276, size: 0.3 },\n  { lat: -33.8688, lng: 151.2093, size: 0.3 },\n]\n\nexport default function DottedMapPulse() {\n  return (\n    <div className=\"relative h-[320px] w-full overflow-hidden rounded-lg border\">\n      <div className=\"absolute inset-0 bg-radial from-transparent to-background to-200%\" />\n      <DottedMap markers={markers} pulse />\n    </div>\n  )\n}\n",
+      "type": "registry:example"
+    }
+  ],
+  "type": "registry:example"
+}

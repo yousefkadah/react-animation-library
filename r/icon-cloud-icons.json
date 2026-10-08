@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "icon-cloud-icons",
+  "title": "Icon Cloud — Icon elements and SVG",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "https://yousefkadah.github.io/react-animation-library/r/icon-cloud.json"
+  ],
+  "files": [
+    {
+      "path": "src/registry/examples/icon-cloud-icons.tsx",
+      "content": "import { Anchor, Bell, Bike, Camera, Cloud, Code, Coffee, Flame, Gem, Gift, Heart, Leaf, Moon, Music, Palette, Rocket, Star, Sun, Zap } from \"lucide-react\"\n\nimport { IconCloud } from \"@/components/ui/icon-cloud\"\n\nconst palette = [\"#ef4444\", \"#f97316\", \"#eab308\", \"#22c55e\", \"#06b6d4\", \"#3b82f6\", \"#8b5cf6\", \"#ec4899\"]\nconst lucide = [Heart, Rocket, Coffee, Music, Camera, Zap, Leaf, Flame, Gem, Gift, Anchor, Bell, Code, Cloud, Star, Sun, Moon, Bike, Palette]\n\n// React elements and raw SVG strings both work.\nconst googleDrive = `<svg width=\"100\" height=\"100\" viewBox=\"0 0 87.3 78\" xmlns=\"http://www.w3.org/2000/svg\">\n  <path d=\"m6.6 66.85 3.85 6.65c.8 1.4 1.95 2.5 3.3 3.3l13.75-23.8h-27.5c0 1.55.4 3.1 1.2 4.5z\" fill=\"#0066da\"/>\n  <path d=\"m43.65 25-13.75-23.8c-1.35.8-2.5 1.9-3.3 3.3l-25.4 44a9.06 9.06 0 0 0 -1.2 4.5h27.5z\" fill=\"#00ac47\"/>\n  <path d=\"m73.55 76.8c1.35-.8 2.5-1.9 3.3-3.3l1.6-2.75 7.65-13.25c.8-1.4 1.2-2.95 1.2-4.5h-27.502l5.852 11.5z\" fill=\"#ea4335\"/>\n  <path d=\"m43.65 25 13.75-23.8c-1.35-.8-2.9-1.2-4.5-1.2h-18.5c-1.6 0-3.15.45-4.5 1.2z\" fill=\"#00832d\"/>\n  <path d=\"m59.8 53h-32.3l-13.75 23.8c1.35.8 2.9 1.2 4.5 1.2h50.8c1.6 0 3.15-.45 4.5-1.2z\" fill=\"#2684fc\"/>\n  <path d=\"m73.4 26.5-12.7-22c-.8-1.4-1.95-2.5-3.3-3.3l-13.75 23.8 16.15 28h27.45c0-1.55-.4-3.1-1.2-4.5z\" fill=\"#ffba00\"/>\n</svg>`\n\nconst icons = [\n  ...lucide.map((Icon, index) => <Icon size={100} color={palette[index % palette.length]} strokeWidth={2.25} />),\n  googleDrive,\n]\n\nexport default function IconCloudIcons() {\n  return (\n    <div className=\"relative flex size-full max-w-lg items-center justify-center overflow-hidden rounded-lg border bg-background\">\n      <IconCloud icons={icons} />\n    </div>\n  )\n}\n",
+      "type": "registry:example"
+    }
+  ],
+  "type": "registry:example"
+}

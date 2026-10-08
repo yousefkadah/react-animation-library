@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "ripple-avatar",
+  "title": "Ripple — Incoming call",
+  "registryDependencies": [
+    "https://yousefkadah.github.io/react-animation-library/r/ripple.json"
+  ],
+  "files": [
+    {
+      "path": "src/registry/examples/ripple-avatar.tsx",
+      "content": "import { Ripple } from \"@/components/ui/ripple\"\n\nexport default function RippleAvatar() {\n  return (\n    <div className=\"relative flex h-[400px] w-full flex-col items-center justify-center gap-6 overflow-hidden rounded-lg border bg-background\">\n      <div className=\"relative size-24\">\n        <Ripple mainCircleSize={130} mainCircleOpacity={0.2} numCircles={6} className=\"[mask-image:none]\" />\n        <img\n          src=\"https://avatar.vercel.sh/jane\"\n          alt=\"Jane Cooper\"\n          width={96}\n          height={96}\n          className=\"relative z-10 size-24 rounded-full border-4 border-background shadow-lg\"\n        />\n      </div>\n      <div className=\"z-10 text-center\">\n        <p className=\"text-lg font-semibold\">Jane Cooper</p>\n        <p className=\"text-sm text-muted-foreground\">Calling…</p>\n      </div>\n    </div>\n  )\n}\n",
+      "type": "registry:example"
+    }
+  ],
+  "type": "registry:example"
+}

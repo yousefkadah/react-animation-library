@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "file-tree-composed",
+  "title": "File Tree — Composed",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "https://yousefkadah.github.io/react-animation-library/r/file-tree.json"
+  ],
+  "files": [
+    {
+      "path": "src/registry/examples/file-tree-composed.tsx",
+      "content": "import { ChevronsDownUp } from \"lucide-react\"\n\nimport { CollapseButton, File, Folder, Tree, type TreeViewElement } from \"@/components/ui/file-tree\"\n\n// Only used by CollapseButton to know which folders exist.\nconst ELEMENTS: TreeViewElement[] = [\n  {\n    id: \"1\",\n    name: \"my-app\",\n    children: [\n      { id: \"2\", name: \".github\", children: [{ id: \"3\", name: \"workflows\", children: [{ id: \"4\", name: \"ci.yml\" }] }] },\n      {\n        id: \"5\",\n        name: \"src\",\n        children: [\n          { id: \"6\", name: \"components\", children: [{ id: \"7\", name: \"Dock.tsx\" }, { id: \"8\", name: \"Marquee.tsx\" }] },\n          { id: \"9\", name: \"App.tsx\" },\n        ],\n      },\n      { id: \"10\", name: \"package.json\" },\n    ],\n  },\n]\n\nexport default function FileTreeComposed() {\n  return (\n    <div className=\"relative flex h-[300px] w-full max-w-sm flex-col overflow-hidden rounded-lg border bg-background\">\n      <Tree className=\"p-2\" initialSelectedId=\"7\" initialExpandedItems={[\"1\", \"5\", \"6\"]} elements={ELEMENTS}>\n        <Folder element=\"my-app\" value=\"1\">\n          <Folder element=\".github\" value=\"2\">\n            <Folder element=\"workflows\" value=\"3\">\n              <File value=\"4\">\n                <span>ci.yml</span>\n              </File>\n            </Folder>\n          </Folder>\n          <Folder element=\"src\" value=\"5\">\n            <Folder element=\"components\" value=\"6\">\n              <File value=\"7\">\n                <span>Dock.tsx</span>\n              </File>\n              <File value=\"8\">\n                <span>Marquee.tsx</span>\n              </File>\n              <File value=\"locked\" isSelectable={false}>\n                <span>Secret.tsx</span>\n              </File>\n            </Folder>\n            <File value=\"9\">\n              <span>App.tsx</span>\n            </File>\n          </Folder>\n          <File value=\"10\">\n            <span>package.json</span>\n          </File>\n        </Folder>\n        <CollapseButton elements={ELEMENTS}>\n          <ChevronsDownUp className=\"size-4\" />\n        </CollapseButton>\n      </Tree>\n    </div>\n  )\n}\n",
+      "type": "registry:example"
+    }
+  ],
+  "type": "registry:example"
+}

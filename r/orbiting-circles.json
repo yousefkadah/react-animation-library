@@ -1,0 +1,35 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "orbiting-circles",
+  "title": "Orbiting Circles",
+  "description": "A collection of circles which move in orbit along a circular path.",
+  "registryDependencies": [
+    "utils"
+  ],
+  "files": [
+    {
+      "path": "src/registry/ui/orbiting-circles.tsx",
+      "content": "import { Children, type ComponentPropsWithoutRef, type CSSProperties } from \"react\"\n\nimport { cn } from \"@/lib/utils\"\n\nexport interface OrbitingCirclesProps extends ComponentPropsWithoutRef<\"div\"> {\n  /** Orbit counter-clockwise. */\n  reverse?: boolean\n  /** Seconds for one full orbit (divided by `speed`). */\n  duration?: number\n  /** Seconds to offset the starting position along the orbit. */\n  delay?: number\n  /** Radius of the orbit in pixels. */\n  radius?: number\n  /** Draw the circular path. */\n  path?: boolean\n  /** Size of each orbiting item in pixels. */\n  iconSize?: number\n  /** Speed multiplier. */\n  speed?: number\n}\n\nexport function OrbitingCircles({\n  className,\n  children,\n  reverse = false,\n  duration = 20,\n  delay = 0,\n  radius = 160,\n  path = true,\n  iconSize = 30,\n  speed = 1,\n  style,\n  ...props\n}: OrbitingCirclesProps) {\n  const calculatedDuration = duration / speed\n  const items = Children.toArray(children)\n\n  return (\n    <>\n      {path && (\n        <svg\n          xmlns=\"http://www.w3.org/2000/svg\"\n          version=\"1.1\"\n          className=\"pointer-events-none absolute inset-0 size-full\"\n          aria-hidden=\"true\"\n        >\n          <circle className=\"stroke-black/10 stroke-1 dark:stroke-white/10\" cx=\"50%\" cy=\"50%\" r={radius} fill=\"none\" />\n        </svg>\n      )}\n      {items.map((child, index) => {\n        const angle = (360 / items.length) * index\n        return (\n          <div\n            key={index}\n            {...props}\n            style={\n              {\n                \"--duration\": calculatedDuration,\n                \"--radius\": radius,\n                \"--angle\": angle,\n                \"--icon-size\": `${iconSize}px`,\n                animationDelay: delay ? `${-delay}s` : undefined,\n                ...style,\n              } as CSSProperties\n            }\n            className={cn(\n              \"animate-orbit absolute flex size-(--icon-size) transform-gpu items-center justify-center rounded-full motion-reduce:[animation-play-state:paused]\",\n              reverse && \"[animation-direction:reverse]\",\n              className\n            )}\n          >\n            {child}\n          </div>\n        )\n      })}\n    </>\n  )\n}\n",
+      "type": "registry:ui"
+    }
+  ],
+  "cssVars": {
+    "theme": {
+      "animate-orbit": "orbit calc(var(--duration) * 1s) linear infinite"
+    }
+  },
+  "css": {
+    "@keyframes orbit": {
+      "0%": {
+        "transform": "rotate(calc(var(--angle) * 1deg)) translateY(calc(var(--radius) * 1px)) rotate(calc(var(--angle) * -1deg))"
+      },
+      "100%": {
+        "transform": "rotate(calc(var(--angle) * 1deg + 360deg)) translateY(calc(var(--radius) * 1px)) rotate(calc((var(--angle) * -1deg) - 360deg))"
+      }
+    }
+  },
+  "categories": [
+    "components"
+  ],
+  "type": "registry:ui"
+}

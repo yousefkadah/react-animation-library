@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "particles-demo",
+  "title": "Particles — Theme-aware",
+  "registryDependencies": [
+    "https://yousefkadah.github.io/react-animation-library/r/particles.json"
+  ],
+  "files": [
+    {
+      "path": "src/registry/examples/particles-demo.tsx",
+      "content": "\"use client\"\n\nimport { useEffect, useState } from \"react\"\n\nimport { Particles } from \"@/components/ui/particles\"\n\nexport default function ParticlesDemo() {\n  // White particles in dark mode, black in light mode.\n  const [color, setColor] = useState(\"#ffffff\")\n\n  useEffect(() => {\n    const root = document.documentElement\n    const sync = () => setColor(root.classList.contains(\"dark\") ? \"#ffffff\" : \"#000000\")\n    sync()\n    const observer = new MutationObserver(sync)\n    observer.observe(root, { attributes: true, attributeFilter: [\"class\"] })\n    return () => observer.disconnect()\n  }, [])\n\n  return (\n    <div className=\"relative flex h-[320px] w-full flex-col items-center justify-center overflow-hidden rounded-lg border bg-background\">\n      <span className=\"pointer-events-none z-10 text-center text-8xl leading-none font-semibold whitespace-pre-wrap\">Particles</span>\n      <Particles className=\"absolute inset-0 z-0\" quantity={100} ease={80} color={color} refresh />\n    </div>\n  )\n}\n",
+      "type": "registry:example"
+    }
+  ],
+  "type": "registry:example"
+}

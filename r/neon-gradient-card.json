@@ -1,0 +1,35 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "neon-gradient-card",
+  "title": "Neon Gradient Card",
+  "description": "A beautiful neon card effect.",
+  "registryDependencies": [
+    "utils"
+  ],
+  "files": [
+    {
+      "path": "src/registry/ui/neon-gradient-card.tsx",
+      "content": "\"use client\"\n\nimport { useEffect, useRef, useState, type CSSProperties, type ElementType, type HTMLAttributes } from \"react\"\n\nimport { cn } from \"@/lib/utils\"\n\nexport interface NeonColorsProps {\n  firstColor: string\n  secondColor: string\n}\n\nexport interface NeonGradientCardProps extends HTMLAttributes<HTMLElement> {\n  /** Element to render the card as. */\n  as?: ElementType\n  /** Width of the neon border in pixels. */\n  borderSize?: number\n  /** Corner radius in pixels. */\n  borderRadius?: number\n  /** The two colours of the neon gradient. */\n  neonColors?: NeonColorsProps\n}\n\n/** Static classes for the inner surface and its two neon layers (`before` = border, `after` = glow). */\nconst innerClass = [\n  \"relative size-full min-h-[inherit] rounded-(--card-content-radius) bg-gray-100 p-6\",\n  \"before:absolute before:-top-(--border-size) before:-left-(--border-size) before:-z-10 before:block\",\n  \"before:h-(--pseudo-element-height) before:w-(--pseudo-element-width) before:rounded-(--border-radius)\",\n  \"before:bg-[linear-gradient(0deg,var(--neon-first-color),var(--neon-second-color))] before:bg-size-[100%_200%]\",\n  \"before:animate-background-position-spin motion-reduce:before:animate-none\",\n  \"after:absolute after:-top-(--border-size) after:-left-(--border-size) after:-z-10 after:block\",\n  \"after:h-(--pseudo-element-height) after:w-(--pseudo-element-width) after:rounded-(--border-radius) after:blur-(--after-blur)\",\n  \"after:bg-[linear-gradient(0deg,var(--neon-first-color),var(--neon-second-color))] after:bg-size-[100%_200%] after:opacity-80\",\n  \"after:animate-background-position-spin motion-reduce:after:animate-none\",\n  \"dark:bg-neutral-900\",\n  \"wrap-break-word\",\n].join(\" \")\n\nconst defaultNeonColors: NeonColorsProps = { firstColor: \"#ff00aa\", secondColor: \"#00FFF1\" }\n\nexport function NeonGradientCard({\n  as: Component = \"div\",\n  className,\n  children,\n  style,\n  borderSize = 2,\n  borderRadius = 20,\n  neonColors = defaultNeonColors,\n  ...props\n}: NeonGradientCardProps) {\n  const containerRef = useRef<HTMLElement>(null)\n  const [dimensions, setDimensions] = useState({ width: 0, height: 0 })\n\n  useEffect(() => {\n    const container = containerRef.current\n    if (!container) return\n    const updateDimensions = () => {\n      setDimensions({ width: container.offsetWidth, height: container.offsetHeight })\n    }\n    updateDimensions()\n    const resizeObserver = new ResizeObserver(updateDimensions)\n    resizeObserver.observe(container)\n    return () => resizeObserver.disconnect()\n  }, [])\n\n  const { width, height } = dimensions\n  const { firstColor, secondColor } = neonColors\n\n  return (\n    <Component\n      {...props}\n      ref={containerRef}\n      style={\n        {\n          \"--border-size\": `${borderSize}px`,\n          \"--border-radius\": `${borderRadius}px`,\n          \"--neon-first-color\": firstColor,\n          \"--neon-second-color\": secondColor,\n          \"--card-width\": `${width}px`,\n          \"--card-height\": `${height}px`,\n          \"--card-content-radius\": `${borderRadius - borderSize}px`,\n          \"--pseudo-element-background-image\": `linear-gradient(0deg, ${firstColor}, ${secondColor})`,\n          \"--pseudo-element-width\": `${width + borderSize * 2}px`,\n          \"--pseudo-element-height\": `${height + borderSize * 2}px`,\n          \"--after-blur\": `${width / 3}px`,\n          ...style,\n        } as CSSProperties\n      }\n      className={cn(\"relative z-10 size-full rounded-(--border-radius)\", className)}\n    >\n      <div className={innerClass}>{children}</div>\n    </Component>\n  )\n}\n",
+      "type": "registry:ui"
+    }
+  ],
+  "cssVars": {
+    "theme": {
+      "animate-background-position-spin": "background-position-spin 3000ms infinite alternate"
+    }
+  },
+  "css": {
+    "@keyframes background-position-spin": {
+      "0%": {
+        "background-position": "top center"
+      },
+      "100%": {
+        "background-position": "bottom center"
+      }
+    }
+  },
+  "categories": [
+    "special-effects"
+  ],
+  "type": "registry:ui"
+}

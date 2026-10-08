@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "hexagon-pattern-demo",
+  "title": "Hexagon Pattern — Highlighted hexagons",
+  "registryDependencies": [
+    "https://yousefkadah.github.io/react-animation-library/r/hexagon-pattern.json"
+  ],
+  "files": [
+    {
+      "path": "src/registry/examples/hexagon-pattern-demo.tsx",
+      "content": "import { HexagonPattern } from \"@/components/ui/hexagon-pattern\"\n\nconst hexagons: Array<[number, number]> = [\n  [1, 1],\n  [4, 4],\n  [2, 2],\n  [3, 4],\n  [5, 4],\n  [8, 2],\n  [6, 3],\n  [8, 5],\n  [10, 10],\n]\n\nexport default function HexagonPatternDemo() {\n  return (\n    <div className=\"relative flex h-[400px] w-full flex-col items-center justify-center overflow-hidden rounded-lg border bg-background\">\n      <HexagonPattern\n        hexagons={hexagons}\n        className=\"inset-0 skew-y-6 [mask-image:radial-gradient(420px_circle_at_center,white,transparent)]\"\n      />\n    </div>\n  )\n}\n",
+      "type": "registry:example"
+    }
+  ],
+  "type": "registry:example"
+}

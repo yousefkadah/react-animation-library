@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "safari-image",
+  "title": "Safari — With image",
+  "registryDependencies": [
+    "https://yousefkadah.github.io/react-animation-library/r/safari.json"
+  ],
+  "files": [
+    {
+      "path": "src/registry/examples/safari-image.tsx",
+      "content": "import { Safari } from \"@/components/ui/safari\"\n\nexport default function SafariImage() {\n  return (\n    <div className=\"w-full max-w-[600px]\">\n      <Safari\n        url=\"unsplash.com\"\n        imageSrc=\"https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=1600&auto=format&fit=crop\"\n      />\n    </div>\n  )\n}\n",
+      "type": "registry:example"
+    }
+  ],
+  "type": "registry:example"
+}

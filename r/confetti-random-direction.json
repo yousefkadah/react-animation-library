@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "confetti-random-direction",
+  "title": "Confetti — Random direction",
+  "registryDependencies": [
+    "https://yousefkadah.github.io/react-animation-library/r/confetti.json"
+  ],
+  "files": [
+    {
+      "path": "src/registry/examples/confetti-random-direction.tsx",
+      "content": "import { ConfettiButton } from \"@/components/ui/confetti\"\n\n// A getter is read on every click, so each burst flies in a new direction.\nconst options = {\n  get angle() {\n    return Math.random() * 360\n  },\n}\n\nexport default function ConfettiRandomDirection() {\n  return (\n    <div className=\"relative\">\n      <ConfettiButton options={options}>Random Confetti 🎉</ConfettiButton>\n    </div>\n  )\n}\n",
+      "type": "registry:example"
+    }
+  ],
+  "type": "registry:example"
+}

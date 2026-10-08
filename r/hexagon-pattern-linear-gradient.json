@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "hexagon-pattern-linear-gradient",
+  "title": "Hexagon Pattern — Linear gradient",
+  "registryDependencies": [
+    "https://yousefkadah.github.io/react-animation-library/r/hexagon-pattern.json"
+  ],
+  "files": [
+    {
+      "path": "src/registry/examples/hexagon-pattern-linear-gradient.tsx",
+      "content": "import { HexagonPattern } from \"@/components/ui/hexagon-pattern\"\n\nexport default function HexagonPatternLinearGradient() {\n  return (\n    <div className=\"relative flex h-[400px] w-full items-center justify-center overflow-hidden rounded-lg border bg-background p-20\">\n      <HexagonPattern\n        radius={40}\n        x={-1}\n        y={-1}\n        className=\"[mask-image:linear-gradient(to_bottom_right,white,transparent,transparent)]\"\n      />\n    </div>\n  )\n}\n",
+      "type": "registry:example"
+    }
+  ],
+  "type": "registry:example"
+}

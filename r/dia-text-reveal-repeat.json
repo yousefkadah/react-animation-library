@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "dia-text-reveal-repeat",
+  "title": "Dia Text Reveal — Rotating phrases",
+  "registryDependencies": [
+    "https://yousefkadah.github.io/react-animation-library/r/dia-text-reveal.json"
+  ],
+  "files": [
+    {
+      "path": "src/registry/examples/dia-text-reveal-repeat.tsx",
+      "content": "import { DiaTextReveal } from \"@/components/ui/dia-text-reveal\"\n\nexport default function DiaTextRevealRepeat() {\n  return (\n    <div className=\"flex min-h-64 items-center justify-center p-8 text-foreground\">\n      <h1 className=\"text-center text-3xl font-semibold tracking-tight md:text-4xl\">\n        Learn to <DiaTextReveal repeat repeatDelay={1.2} text={[\"build faster\", \"ship smarter\", \"scale easier\"]} />\n      </h1>\n    </div>\n  )\n}\n",
+      "type": "registry:example"
+    }
+  ],
+  "type": "registry:example"
+}

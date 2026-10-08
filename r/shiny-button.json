@@ -1,0 +1,23 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "shiny-button",
+  "title": "Shiny Button",
+  "description": "A shiny button component with dynamic styles in the dark mode or light mode.",
+  "dependencies": [
+    "motion"
+  ],
+  "registryDependencies": [
+    "utils"
+  ],
+  "files": [
+    {
+      "path": "src/registry/ui/shiny-button.tsx",
+      "content": "\"use client\"\n\nimport type { ReactNode } from \"react\"\nimport { motion, useReducedMotion, type HTMLMotionProps, type MotionProps } from \"motion/react\"\n\nimport { cn } from \"@/lib/utils\"\n\nconst animationProps: MotionProps = {\n  initial: { \"--x\": \"100%\", scale: 0.8 },\n  animate: { \"--x\": \"-100%\", scale: 1 },\n  whileTap: { scale: 0.95 },\n  transition: {\n    repeat: Infinity,\n    repeatType: \"loop\",\n    repeatDelay: 1,\n    type: \"spring\",\n    stiffness: 20,\n    damping: 15,\n    mass: 2,\n    scale: { type: \"spring\", stiffness: 200, damping: 5, mass: 0.5 },\n  },\n}\n\nconst labelMask =\n  \"linear-gradient(-75deg, var(--primary) calc(var(--x) + 20%), transparent calc(var(--x) + 30%), var(--primary) calc(var(--x) + 100%))\"\nconst borderMask = \"linear-gradient(rgb(0,0,0), rgb(0,0,0)) content-box exclude, linear-gradient(rgb(0,0,0), rgb(0,0,0))\"\nconst tint = (amount: number) => `color-mix(in oklab, var(--primary) ${amount}%, transparent)`\nconst borderShine = `linear-gradient(-75deg, ${tint(10)} calc(var(--x) + 20%), ${tint(50)} calc(var(--x) + 25%), ${tint(10)} calc(var(--x) + 100%))`\n\nexport interface ShinyButtonProps extends HTMLMotionProps<\"button\"> {\n  children?: ReactNode\n  className?: string\n}\n\n/** A button with a light that sweeps across its label. Motion props (`transition`, `animate`, …) override the shine. */\nexport function ShinyButton({ children, className, ...props }: ShinyButtonProps) {\n  const reducedMotion = useReducedMotion()\n  return (\n    <motion.button\n      className={cn(\n        \"relative cursor-pointer rounded-lg border px-6 py-2 font-medium backdrop-blur-xl transition-shadow duration-300 ease-in-out hover:shadow dark:bg-[radial-gradient(circle_at_50%_0%,color-mix(in_oklab,var(--primary)_10%,transparent)_0%,transparent_60%)] dark:hover:shadow-[0_0_20px_color-mix(in_oklab,var(--primary)_10%,transparent)]\",\n        className\n      )}\n      {...animationProps}\n      {...(reducedMotion ? { transition: { duration: 0 } } : {})}\n      {...props}\n    >\n      <span\n        className=\"relative block size-full text-sm tracking-wide text-[rgb(0,0,0,65%)] uppercase dark:font-light dark:text-[rgb(255,255,255,90%)]\"\n        style={{ maskImage: labelMask, WebkitMaskImage: labelMask }}\n      >\n        {children}\n      </span>\n      <span\n        aria-hidden=\"true\"\n        className=\"absolute inset-0 z-10 block rounded-[inherit] p-px\"\n        style={{ mask: borderMask, WebkitMask: borderMask, backgroundImage: borderShine }}\n      />\n    </motion.button>\n  )\n}\n",
+      "type": "registry:ui"
+    }
+  ],
+  "categories": [
+    "buttons"
+  ],
+  "type": "registry:ui"
+}

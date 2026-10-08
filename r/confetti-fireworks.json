@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "confetti-fireworks",
+  "title": "Confetti — Fireworks",
+  "dependencies": [
+    "canvas-confetti"
+  ],
+  "registryDependencies": [
+    "https://yousefkadah.github.io/react-animation-library/r/confetti.json"
+  ],
+  "files": [
+    {
+      "path": "src/registry/examples/confetti-fireworks.tsx",
+      "content": "\"use client\"\n\nimport { useEffect, useRef } from \"react\"\nimport confetti from \"canvas-confetti\"\n\nexport default function ConfettiFireworks() {\n  const interval = useRef<ReturnType<typeof setInterval> | undefined>(undefined)\n  useEffect(() => () => clearInterval(interval.current), [])\n\n  const handleClick = () => {\n    const duration = 5 * 1000\n    const animationEnd = Date.now() + duration\n    const defaults = { startVelocity: 30, spread: 360, ticks: 60, zIndex: 0 }\n    const randomInRange = (min: number, max: number) => Math.random() * (max - min) + min\n\n    clearInterval(interval.current)\n    interval.current = setInterval(() => {\n      const timeLeft = animationEnd - Date.now()\n      if (timeLeft <= 0) return clearInterval(interval.current)\n\n      const particleCount = 50 * (timeLeft / duration)\n      confetti({ ...defaults, particleCount, origin: { x: randomInRange(0.1, 0.3), y: Math.random() - 0.2 } })\n      confetti({ ...defaults, particleCount, origin: { x: randomInRange(0.7, 0.9), y: Math.random() - 0.2 } })\n    }, 250)\n  }\n\n  return (\n    <div className=\"relative\">\n      <button type=\"button\" className=\"inline-flex h-9 items-center justify-center rounded-md bg-primary px-4 text-sm font-medium text-primary-foreground shadow-xs transition-colors hover:bg-primary/90\" onClick={handleClick}>\n        Trigger Fireworks\n      </button>\n    </div>\n  )\n}\n",
+      "type": "registry:example"
+    }
+  ],
+  "type": "registry:example"
+}

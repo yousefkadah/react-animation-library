@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "animated-theme-toggler-variants",
+  "title": "Theme Toggler — Shapes",
+  "registryDependencies": [
+    "https://yousefkadah.github.io/react-animation-library/r/animated-theme-toggler.json"
+  ],
+  "files": [
+    {
+      "path": "src/registry/examples/animated-theme-toggler-variants.tsx",
+      "content": "import { AnimatedThemeToggler, type ThemeTransitionVariant } from \"@/components/ui/animated-theme-toggler\"\n\nconst variants: ThemeTransitionVariant[] = [\"circle\", \"square\", \"diamond\", \"rectangle\", \"hexagon\", \"triangle\", \"star\"]\n\nexport default function AnimatedThemeTogglerVariants() {\n  return (\n    <div className=\"grid grid-cols-4 gap-3 sm:grid-cols-7\">\n      {variants.map((variant) => (\n        <div key={variant} className=\"flex flex-col items-center gap-2\">\n          <AnimatedThemeToggler\n            variant={variant}\n            className=\"inline-flex size-12 items-center justify-center rounded-full border bg-background shadow-xs transition-colors hover:bg-accent [&_svg]:size-5\"\n          />\n          <span className=\"text-xs text-muted-foreground capitalize\">{variant}</span>\n        </div>\n      ))}\n    </div>\n  )\n}\n",
+      "type": "registry:example"
+    }
+  ],
+  "type": "registry:example"
+}

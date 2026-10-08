@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "safari-video",
+  "title": "Safari — With video",
+  "registryDependencies": [
+    "https://yousefkadah.github.io/react-animation-library/r/safari.json"
+  ],
+  "files": [
+    {
+      "path": "src/registry/examples/safari-video.tsx",
+      "content": "import { Safari } from \"@/components/ui/safari\"\n\nexport default function SafariVideo() {\n  return (\n    <div className=\"w-full max-w-[600px]\">\n      <Safari url=\"developer.mozilla.org\" videoSrc=\"https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.webm\" />\n    </div>\n  )\n}\n",
+      "type": "registry:example"
+    }
+  ],
+  "type": "registry:example"
+}

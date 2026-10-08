@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "hyper-text-start-on-view",
+  "title": "Hyper Text — Start on view",
+  "registryDependencies": [
+    "https://yousefkadah.github.io/react-animation-library/r/hyper-text.json"
+  ],
+  "files": [
+    {
+      "path": "src/registry/examples/hyper-text-start-on-view.tsx",
+      "content": "import { HyperText } from \"@/components/ui/hyper-text\"\n\nconst digits = \"0123456789\".split(\"\")\n\nconst stats = [\n  { label: \"Uptime\", value: \"99.99%\" },\n  { label: \"Regions\", value: \"32\" },\n  { label: \"Latency\", value: \"14 ms\" },\n]\n\nexport default function HyperTextStartOnView() {\n  return (\n    <div className=\"grid w-full max-w-md grid-cols-3 gap-3\">\n      {stats.map((stat, index) => (\n        <div key={stat.label} className=\"rounded-xl border bg-card p-4 text-card-foreground shadow-sm\">\n          <p className=\"text-xs font-medium text-muted-foreground\">{stat.label}</p>\n          <HyperText startOnView delay={index * 200} characterSet={digits} className=\"py-1 text-xl sm:text-2xl\">\n            {stat.value}\n          </HyperText>\n        </div>\n      ))}\n    </div>\n  )\n}\n",
+      "type": "registry:example"
+    }
+  ],
+  "type": "registry:example"
+}

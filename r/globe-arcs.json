@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "globe-arcs",
+  "title": "Globe — Dark with arcs",
+  "dependencies": [
+    "cobe"
+  ],
+  "registryDependencies": [
+    "https://yousefkadah.github.io/react-animation-library/r/globe.json"
+  ],
+  "files": [
+    {
+      "path": "src/registry/examples/globe-arcs.tsx",
+      "content": "import type { COBEOptions } from \"cobe\"\n\nimport { Globe } from \"@/components/ui/globe\"\n\nconst cities = {\n  sanFrancisco: [37.7595, -122.4367],\n  newYork: [40.7128, -74.006],\n  london: [51.5072, -0.1276],\n  telAviv: [32.0853, 34.7818],\n  mumbai: [19.076, 72.8777],\n  tokyo: [35.6762, 139.6503],\n  saoPaulo: [-23.5505, -46.6333],\n} satisfies Record<string, [number, number]>\n\nconst config: Partial<COBEOptions> = {\n  dark: 1,\n  diffuse: 1.2,\n  mapBrightness: 6,\n  baseColor: [0.3, 0.3, 0.3],\n  glowColor: [0.25, 0.25, 0.3],\n  markerColor: [0.1, 0.8, 1],\n  arcColor: [0.1, 0.8, 1],\n  arcWidth: 0.6,\n  markers: Object.values(cities).map((location) => ({ location, size: 0.05 })),\n  arcs: [\n    { from: cities.sanFrancisco, to: cities.tokyo },\n    { from: cities.newYork, to: cities.london },\n    { from: cities.london, to: cities.telAviv },\n    { from: cities.telAviv, to: cities.mumbai },\n    { from: cities.newYork, to: cities.saoPaulo },\n  ],\n}\n\nexport default function GlobeArcs() {\n  return (\n    <div className=\"relative flex h-[380px] w-full max-w-lg items-start justify-center overflow-hidden rounded-lg border bg-neutral-950 pt-8\">\n      <span className=\"pointer-events-none z-10 bg-linear-to-b from-white to-neutral-500 bg-clip-text text-center text-6xl leading-none font-semibold tracking-tight text-transparent\">\n        Connected\n      </span>\n      <Globe className=\"top-24\" config={config} />\n    </div>\n  )\n}\n",
+      "type": "registry:example"
+    }
+  ],
+  "type": "registry:example"
+}

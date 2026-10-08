@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "comic-text-demo",
+  "title": "Comic Text — Boom",
+  "registryDependencies": [
+    "https://yousefkadah.github.io/react-animation-library/r/comic-text.json"
+  ],
+  "files": [
+    {
+      "path": "src/registry/examples/comic-text-demo.tsx",
+      "content": "import { ComicText } from \"@/components/ui/comic-text\"\n\nexport default function ComicTextDemo() {\n  return (\n    <div className=\"space-y-8 text-center\">\n      <ComicText fontSize={5}>BOOM!</ComicText>\n    </div>\n  )\n}\n",
+      "type": "registry:example"
+    }
+  ],
+  "type": "registry:example"
+}

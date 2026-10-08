@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "text-animate-custom-variants",
+  "title": "Text Animate — Custom motion variants",
+  "dependencies": [
+    "motion"
+  ],
+  "registryDependencies": [
+    "https://yousefkadah.github.io/react-animation-library/r/text-animate.json"
+  ],
+  "files": [
+    {
+      "path": "src/registry/examples/text-animate-custom-variants.tsx",
+      "content": "import type { Variants } from \"motion/react\"\n\nimport { TextAnimate } from \"@/components/ui/text-animate\"\n\nconst variants: Variants = {\n  hidden: { opacity: 0, y: 30, rotate: 45, scale: 0.5 },\n  show: (i: number) => ({\n    opacity: 1,\n    y: 0,\n    rotate: 0,\n    scale: 1,\n    transition: {\n      delay: i * 0.1,\n      duration: 0.4,\n      y: { type: \"spring\", damping: 12, stiffness: 200, mass: 0.8 },\n      rotate: { type: \"spring\", damping: 8, stiffness: 150 },\n      scale: { type: \"spring\", damping: 10, stiffness: 300 },\n    },\n  }),\n  exit: (i: number) => ({\n    opacity: 0,\n    y: 30,\n    rotate: 45,\n    scale: 0.5,\n    transition: { delay: i * 0.1, duration: 0.4 },\n  }),\n}\n\nexport default function TextAnimateCustomVariants() {\n  return (\n    <TextAnimate variants={variants} by=\"character\" className=\"text-5xl font-bold tracking-tight\">\n      Wavy Motion!\n    </TextAnimate>\n  )\n}\n",
+      "type": "registry:example"
+    }
+  ],
+  "type": "registry:example"
+}

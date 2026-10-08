@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "cool-mode-demo",
+  "title": "Cool Mode — Default",
+  "registryDependencies": [
+    "https://yousefkadah.github.io/react-animation-library/r/cool-mode.json"
+  ],
+  "files": [
+    {
+      "path": "src/registry/examples/cool-mode-demo.tsx",
+      "content": "import { CoolMode } from \"@/components/ui/cool-mode\"\n\nexport default function CoolModeDemo() {\n  return (\n    <div className=\"relative justify-center\">\n      <CoolMode>\n        <button type=\"button\" className=\"inline-flex h-9 items-center justify-center rounded-md bg-primary px-4 text-sm font-medium text-primary-foreground shadow-xs transition-colors hover:bg-primary/90\">\n          Click Me!\n        </button>\n      </CoolMode>\n    </div>\n  )\n}\n",
+      "type": "registry:example"
+    }
+  ],
+  "type": "registry:example"
+}

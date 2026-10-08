@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "line-shadow-text-demo",
+  "title": "Line Shadow Text — Ship fast",
+  "registryDependencies": [
+    "https://yousefkadah.github.io/react-animation-library/r/line-shadow-text.json"
+  ],
+  "files": [
+    {
+      "path": "src/registry/examples/line-shadow-text-demo.tsx",
+      "content": "import { LineShadowText } from \"@/components/ui/line-shadow-text\"\n\nexport default function LineShadowTextDemo() {\n  return (\n    <h1 className=\"text-5xl leading-none font-semibold tracking-tighter text-balance sm:text-6xl md:text-7xl lg:text-8xl\">\n      Ship{\" \"}\n      <LineShadowText className=\"italic\" shadowColor=\"var(--foreground)\">\n        Fast\n      </LineShadowText>\n    </h1>\n  )\n}\n",
+      "type": "registry:example"
+    }
+  ],
+  "type": "registry:example"
+}

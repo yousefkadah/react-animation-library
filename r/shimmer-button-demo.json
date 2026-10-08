@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "shimmer-button-demo",
+  "title": "Shimmer Button — Default",
+  "registryDependencies": [
+    "https://yousefkadah.github.io/react-animation-library/r/shimmer-button.json"
+  ],
+  "files": [
+    {
+      "path": "src/registry/examples/shimmer-button-demo.tsx",
+      "content": "import { ShimmerButton } from \"@/components/ui/shimmer-button\"\n\nexport default function ShimmerButtonDemo() {\n  return (\n    <ShimmerButton className=\"shadow-2xl\">\n      <span className=\"text-center text-sm leading-none font-medium tracking-tight whitespace-pre-wrap text-white lg:text-lg dark:from-white dark:to-slate-900/10\">\n        Shimmer Button\n      </span>\n    </ShimmerButton>\n  )\n}\n",
+      "type": "registry:example"
+    }
+  ],
+  "type": "registry:example"
+}

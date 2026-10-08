@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "text-reveal-demo",
+  "title": "Text Reveal — Inside a scroll area",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "https://yousefkadah.github.io/react-animation-library/r/text-reveal.json"
+  ],
+  "files": [
+    {
+      "path": "src/registry/examples/text-reveal-demo.tsx",
+      "content": "\"use client\"\n\nimport { useRef } from \"react\"\nimport { ChevronsDown } from \"lucide-react\"\n\nimport { TextReveal } from \"@/components/ui/text-reveal\"\n\nexport default function TextRevealDemo() {\n  const scroller = useRef<HTMLDivElement>(null)\n\n  return (\n    <div className=\"relative w-full\">\n      {/* The preview box is short, so TextReveal tracks this scroll area instead of the page. */}\n      <div ref={scroller} className=\"h-[350px] w-full overflow-y-auto\">\n        <TextReveal container={scroller} className=\"h-[700px]\">\n          React Magic UI will change the way you design.\n        </TextReveal>\n      </div>\n      <div className=\"pointer-events-none absolute inset-x-0 bottom-2 flex items-center justify-center gap-1 text-xs text-muted-foreground\">\n        Scroll\n        <ChevronsDown className=\"size-3.5 animate-bounce motion-reduce:animate-none\" />\n      </div>\n    </div>\n  )\n}\n",
+      "type": "registry:example"
+    }
+  ],
+  "type": "registry:example"
+}

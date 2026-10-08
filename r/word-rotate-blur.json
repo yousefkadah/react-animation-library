@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "word-rotate-blur",
+  "title": "Word Rotate — Custom motion",
+  "dependencies": [
+    "motion"
+  ],
+  "registryDependencies": [
+    "https://yousefkadah.github.io/react-animation-library/r/word-rotate.json"
+  ],
+  "files": [
+    {
+      "path": "src/registry/examples/word-rotate-blur.tsx",
+      "content": "import type { MotionProps } from \"motion/react\"\n\nimport { WordRotate } from \"@/components/ui/word-rotate\"\n\nconst words = [\"Design\", \"Prototype\", \"Ship\", \"Repeat\"]\n\nconst blurIn: MotionProps = {\n  initial: { opacity: 0, filter: \"blur(10px)\", scale: 0.92 },\n  animate: { opacity: 1, filter: \"blur(0px)\", scale: 1 },\n  exit: { opacity: 0, filter: \"blur(10px)\", scale: 1.08 },\n  transition: { duration: 0.4, ease: \"easeInOut\" },\n}\n\nexport default function WordRotateBlur() {\n  return <WordRotate className=\"text-5xl font-semibold tracking-tighter text-foreground\" words={words} motionProps={blurIn} />\n}\n",
+      "type": "registry:example"
+    }
+  ],
+  "type": "registry:example"
+}

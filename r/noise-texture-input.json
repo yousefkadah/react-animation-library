@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "noise-texture-input",
+  "title": "Noise Texture — Input",
+  "registryDependencies": [
+    "https://yousefkadah.github.io/react-animation-library/r/noise-texture.json"
+  ],
+  "files": [
+    {
+      "path": "src/registry/examples/noise-texture-input.tsx",
+      "content": "import { NoiseTexture } from \"@/components/ui/noise-texture\"\n\nexport default function NoiseTextureInput() {\n  return (\n    <div className=\"flex w-full max-w-sm flex-col gap-3\">\n      <label htmlFor=\"noise-input-demo\" className=\"text-sm font-medium text-muted-foreground\">\n        Search with texture\n      </label>\n      <div className=\"relative overflow-hidden rounded-lg border bg-muted/30\">\n        <NoiseTexture noiseOpacity={0.45} />\n        <input\n          id=\"noise-input-demo\"\n          type=\"search\"\n          placeholder=\"Try typing…\"\n          className=\"relative z-10 h-10 w-full bg-transparent px-3 text-sm outline-none focus-visible:ring-2 focus-visible:ring-ring/50\"\n        />\n      </div>\n    </div>\n  )\n}\n",
+      "type": "registry:example"
+    }
+  ],
+  "type": "registry:example"
+}

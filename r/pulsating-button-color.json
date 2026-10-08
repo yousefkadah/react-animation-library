@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "pulsating-button-color",
+  "title": "Pulsating Button — Custom pulse colour",
+  "registryDependencies": [
+    "https://yousefkadah.github.io/react-animation-library/r/pulsating-button.json"
+  ],
+  "files": [
+    {
+      "path": "src/registry/examples/pulsating-button-color.tsx",
+      "content": "import { PulsatingButton } from \"@/components/ui/pulsating-button\"\n\nexport default function PulsatingButtonColor() {\n  return (\n    <PulsatingButton\n      pulseColor=\"#f43f5e80\"\n      duration=\"2s\"\n      distance=\"12px\"\n      className=\"rounded-full bg-rose-500 px-6 text-white\"\n    >\n      Go live\n    </PulsatingButton>\n  )\n}\n",
+      "type": "registry:example"
+    }
+  ],
+  "type": "registry:example"
+}

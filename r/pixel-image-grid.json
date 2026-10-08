@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "pixel-image-grid",
+  "title": "Pixel Image — 8×8 grid in colour",
+  "registryDependencies": [
+    "https://yousefkadah.github.io/react-animation-library/r/pixel-image.json"
+  ],
+  "files": [
+    {
+      "path": "src/registry/examples/pixel-image-grid.tsx",
+      "content": "import { PixelImage } from \"@/components/ui/pixel-image\"\n\nexport default function PixelImageGrid() {\n  return (\n    <PixelImage\n      src=\"https://picsum.photos/seed/react-magic-ui/800/800\"\n      alt=\"Random stock photo\"\n      grid=\"8x8\"\n      grayscaleAnimation={false}\n      pixelFadeInDuration={600}\n      maxAnimationDelay={1600}\n      className=\"size-64 md:size-80\"\n    />\n  )\n}\n",
+      "type": "registry:example"
+    }
+  ],
+  "type": "registry:example"
+}

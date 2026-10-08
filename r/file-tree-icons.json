@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "file-tree-icons",
+  "title": "File Tree — Custom icons",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "https://yousefkadah.github.io/react-animation-library/r/file-tree.json"
+  ],
+  "files": [
+    {
+      "path": "src/registry/examples/file-tree-icons.tsx",
+      "content": "\"use client\"\n\nimport { useState } from \"react\"\nimport { FileCode2, FileJson, FolderClosed, FolderGit2 } from \"lucide-react\"\n\nimport { File, Folder, Tree } from \"@/components/ui/file-tree\"\n\nconst codeIcon = <FileCode2 className=\"size-4\" aria-hidden=\"true\" />\nconst jsonIcon = <FileJson className=\"size-4\" aria-hidden=\"true\" />\n\nexport default function FileTreeIcons() {\n  const [selected, setSelected] = useState(\"app\")\n\n  return (\n    <div className=\"flex w-full max-w-sm flex-col gap-2\">\n      <div className=\"h-[260px] overflow-hidden rounded-lg border bg-background\">\n        <Tree\n          className=\"p-2\"\n          initialSelectedId=\"app\"\n          initialExpandedItems={[\"root\", \"src\"]}\n          openIcon={<FolderGit2 className=\"size-4\" aria-hidden=\"true\" />}\n          closeIcon={<FolderClosed className=\"size-4\" aria-hidden=\"true\" />}\n          indicator={false}\n          onSelect={setSelected}\n        >\n          <Folder element=\"react-magic-ui\" value=\"root\">\n            <Folder element=\"src\" value=\"src\">\n              <File value=\"app\" fileIcon={codeIcon}>\n                <span>App.tsx</span>\n              </File>\n              <File value=\"main\" fileIcon={codeIcon}>\n                <span>main.tsx</span>\n              </File>\n            </Folder>\n            <Folder element=\"public\" value=\"public\">\n              <File value=\"favicon\">\n                <span>favicon.svg</span>\n              </File>\n            </Folder>\n            <File value=\"package\" fileIcon={jsonIcon}>\n              <span>package.json</span>\n            </File>\n            <File value=\"tsconfig\" fileIcon={jsonIcon}>\n              <span>tsconfig.json</span>\n            </File>\n          </Folder>\n        </Tree>\n      </div>\n      <p className=\"text-center text-xs text-muted-foreground\">\n        Selected: <code className=\"rounded bg-muted px-1 py-0.5 font-mono\">{selected}</code>\n      </p>\n    </div>\n  )\n}\n",
+      "type": "registry:example"
+    }
+  ],
+  "type": "registry:example"
+}

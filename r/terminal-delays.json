@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "terminal-delays",
+  "title": "Terminal — Custom delays",
+  "registryDependencies": [
+    "https://yousefkadah.github.io/react-animation-library/r/terminal.json"
+  ],
+  "files": [
+    {
+      "path": "src/registry/examples/terminal-delays.tsx",
+      "content": "import { AnimatedSpan, Terminal, TerminalTypingAnimation } from \"@/components/ui/terminal\"\n\nexport default function TerminalDelays() {\n  return (\n    // With `sequence` off, every line runs on its own `delay` (in milliseconds).\n    <Terminal sequence={false}>\n      <TerminalTypingAnimation delay={0}>$ ls</TerminalTypingAnimation>\n      <AnimatedSpan delay={800} className=\"text-blue-500\">\n        Documents Downloads Pictures\n      </AnimatedSpan>\n      <TerminalTypingAnimation delay={1600}>$ cd Documents</TerminalTypingAnimation>\n      <TerminalTypingAnimation delay={2400}>$ pwd</TerminalTypingAnimation>\n      <AnimatedSpan delay={3200} className=\"text-green-500\">\n        /home/user/Documents\n      </AnimatedSpan>\n    </Terminal>\n  )\n}\n",
+      "type": "registry:example"
+    }
+  ],
+  "type": "registry:example"
+}

@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "iphone-video",
+  "title": "iPhone — With video",
+  "registryDependencies": [
+    "https://yousefkadah.github.io/react-animation-library/r/iphone.json"
+  ],
+  "files": [
+    {
+      "path": "src/registry/examples/iphone-video.tsx",
+      "content": "import { Iphone } from \"@/components/ui/iphone\"\n\nexport default function IphoneVideo() {\n  return (\n    <div className=\"w-[200px]\">\n      <Iphone videoSrc=\"https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.webm\" />\n    </div>\n  )\n}\n",
+      "type": "registry:example"
+    }
+  ],
+  "type": "registry:example"
+}

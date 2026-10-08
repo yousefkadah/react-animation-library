@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "retro-grid-colors",
+  "title": "Retro Grid — Custom colours",
+  "registryDependencies": [
+    "https://yousefkadah.github.io/react-animation-library/r/retro-grid.json"
+  ],
+  "files": [
+    {
+      "path": "src/registry/examples/retro-grid-colors.tsx",
+      "content": "import { RetroGrid } from \"@/components/ui/retro-grid\"\n\nexport default function RetroGridColors() {\n  return (\n    <div className=\"relative flex h-[400px] w-full flex-col items-center justify-center gap-2 overflow-hidden rounded-lg border bg-background\">\n      <p className=\"z-10 text-sm font-medium tracking-[0.3em] text-muted-foreground uppercase\">Now playing</p>\n      <p className=\"z-10 text-5xl font-bold tracking-tighter text-fuchsia-600 dark:text-fuchsia-400\">Neon Nights</p>\n      <RetroGrid angle={75} cellSize={40} opacity={0.7} lightLineColor=\"#c026d3\" darkLineColor=\"#e879f9\" />\n    </div>\n  )\n}\n",
+      "type": "registry:example"
+    }
+  ],
+  "type": "registry:example"
+}

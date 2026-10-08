@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "backlight-video",
+  "title": "Backlight — Video",
+  "registryDependencies": [
+    "https://yousefkadah.github.io/react-animation-library/r/backlight.json"
+  ],
+  "files": [
+    {
+      "path": "src/registry/examples/backlight-video.tsx",
+      "content": "import { Backlight } from \"@/components/ui/backlight\"\n\nexport default function BacklightVideo() {\n  return (\n    <Backlight blur={40} className=\"w-full py-10\">\n      <video\n        className=\"mx-auto aspect-video w-full max-w-md rounded-xl object-cover\"\n        src=\"https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.webm\"\n        autoPlay\n        muted\n        loop\n        playsInline\n      />\n    </Backlight>\n  )\n}\n",
+      "type": "registry:example"
+    }
+  ],
+  "type": "registry:example"
+}

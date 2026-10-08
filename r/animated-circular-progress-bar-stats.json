@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "animated-circular-progress-bar-stats",
+  "title": "Animated Circular Progress Bar — Stats",
+  "registryDependencies": [
+    "https://yousefkadah.github.io/react-animation-library/r/animated-circular-progress-bar.json"
+  ],
+  "files": [
+    {
+      "path": "src/registry/examples/animated-circular-progress-bar-stats.tsx",
+      "content": "\"use client\"\n\nimport { useEffect, useState } from \"react\"\n\nimport { AnimatedCircularProgressBar } from \"@/components/ui/animated-circular-progress-bar\"\n\nconst stats = [\n  { label: \"CPU\", value: 72, color: \"#f43f5e\" },\n  { label: \"Memory\", value: 4.6, max: 8, color: \"#f59e0b\" },\n  { label: \"Disk\", value: 31, color: \"#0ea5e9\" },\n]\n\nexport default function AnimatedCircularProgressBarStats() {\n  // Start empty, then fill once mounted so the arcs animate in.\n  const [ready, setReady] = useState(false)\n\n  useEffect(() => {\n    const timeout = setTimeout(() => setReady(true), 150)\n    return () => clearTimeout(timeout)\n  }, [])\n\n  return (\n    <div className=\"grid grid-cols-3 gap-6 [--track:rgba(0,0,0,0.08)] dark:[--track:rgba(255,255,255,0.12)]\">\n      {stats.map((stat) => (\n        <div key={stat.label} className=\"flex flex-col items-center gap-2\">\n          <AnimatedCircularProgressBar\n            value={ready ? stat.value : 0}\n            max={stat.max}\n            gaugePrimaryColor={stat.color}\n            gaugeSecondaryColor=\"var(--track)\"\n            className=\"size-24 text-lg\"\n          />\n          <span className=\"text-sm text-muted-foreground\">{stat.label}</span>\n        </div>\n      ))}\n    </div>\n  )\n}\n",
+      "type": "registry:example"
+    }
+  ],
+  "type": "registry:example"
+}

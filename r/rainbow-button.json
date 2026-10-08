@@ -1,0 +1,35 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "rainbow-button",
+  "title": "Rainbow Button",
+  "description": "An animated button with a rainbow effect.",
+  "registryDependencies": [
+    "utils"
+  ],
+  "files": [
+    {
+      "path": "src/registry/ui/rainbow-button.tsx",
+      "content": "import { cloneElement, isValidElement, type ComponentProps, type ReactElement } from \"react\"\n\nimport { cn } from \"@/lib/utils\"\n\nexport type RainbowButtonVariant = \"default\" | \"outline\"\nexport type RainbowButtonSize = \"default\" | \"sm\" | \"lg\" | \"icon\"\n\n/** The five rainbow colours. Override any of them with a class such as `[--color-1:hotpink]`. */\nconst colors =\n  \"[--color-1:oklch(66.2%_0.225_25.9)] [--color-2:oklch(60.4%_0.26_302)] [--color-3:oklch(69.6%_0.165_251)] [--color-4:oklch(80.2%_0.134_225)] [--color-5:oklch(90.7%_0.231_133)]\"\n\nconst base = [\n  colors,\n  \"relative cursor-pointer group transition-all animate-rainbow motion-reduce:animate-none\",\n  \"inline-flex items-center justify-center gap-2 shrink-0\",\n  \"rounded-sm outline-none focus-visible:ring-[3px] aria-invalid:border-destructive\",\n  \"text-sm font-medium whitespace-nowrap\",\n  \"disabled:pointer-events-none disabled:opacity-50\",\n  \"[&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-4 [&_svg]:shrink-0\",\n].join(\" \")\n\nconst glow =\n  \"before:absolute before:bottom-[-20%] before:left-1/2 before:z-0 before:h-1/5 before:w-3/5 before:-translate-x-1/2 before:animate-rainbow motion-reduce:before:animate-none before:bg-[linear-gradient(90deg,var(--color-1),var(--color-5),var(--color-3),var(--color-4),var(--color-2))] before:bg-[length:200%] before:[filter:blur(0.75rem)]\"\n\nconst variants: Record<RainbowButtonVariant, string> = {\n  default: `border-0 bg-[linear-gradient(#121213,#121213),linear-gradient(#121213_50%,rgba(18,18,19,0.6)_80%,rgba(18,18,19,0)),linear-gradient(90deg,var(--color-1),var(--color-5),var(--color-3),var(--color-4),var(--color-2))] bg-[length:200%] text-primary-foreground [background-clip:padding-box,border-box,border-box] [background-origin:border-box] [border:calc(0.125rem)_solid_transparent] ${glow} dark:bg-[linear-gradient(#fff,#fff),linear-gradient(#fff_50%,rgba(255,255,255,0.6)_80%,rgba(0,0,0,0)),linear-gradient(90deg,var(--color-1),var(--color-5),var(--color-3),var(--color-4),var(--color-2))]`,\n  outline: `border border-input border-b-transparent bg-[linear-gradient(#ffffff,#ffffff),linear-gradient(#ffffff_50%,rgba(18,18,19,0.6)_80%,rgba(18,18,19,0)),linear-gradient(90deg,var(--color-1),var(--color-5),var(--color-3),var(--color-4),var(--color-2))] bg-[length:200%] text-accent-foreground [background-clip:padding-box,border-box,border-box] [background-origin:border-box] ${glow} dark:bg-[linear-gradient(#0a0a0a,#0a0a0a),linear-gradient(#0a0a0a_50%,rgba(255,255,255,0.6)_80%,rgba(0,0,0,0)),linear-gradient(90deg,var(--color-1),var(--color-5),var(--color-3),var(--color-4),var(--color-2))]`,\n}\n\nconst sizes: Record<RainbowButtonSize, string> = {\n  default: \"h-9 px-4 py-2\",\n  sm: \"h-8 rounded-xl px-3 text-xs\",\n  lg: \"h-11 rounded-xl px-8\",\n  icon: \"size-9\",\n}\n\n/** The rainbow button's classes, for styling another element (e.g. a link) the same way. */\nexport function rainbowButtonVariants({\n  variant = \"default\",\n  size = \"default\",\n  className,\n}: { variant?: RainbowButtonVariant | null; size?: RainbowButtonSize | null; className?: string } = {}): string {\n  return cn(base, variants[variant ?? \"default\"], sizes[size ?? \"default\"], className)\n}\n\nexport interface RainbowButtonProps extends ComponentProps<\"button\"> {\n  /** `default` is solid, `outline` is light with a rainbow underline. */\n  variant?: RainbowButtonVariant\n  size?: RainbowButtonSize\n  /** Render the single child element (e.g. a link) with the button's styles instead of a `<button>`. */\n  asChild?: boolean\n}\n\nexport function RainbowButton({\n  className,\n  variant = \"default\",\n  size = \"default\",\n  asChild = false,\n  children,\n  ...props\n}: RainbowButtonProps) {\n  const classes = rainbowButtonVariants({ variant, size, className })\n\n  if (asChild && isValidElement(children)) {\n    const child = children as ReactElement<{ className?: string }>\n    return cloneElement(child, {\n      ...props,\n      \"data-slot\": \"button\",\n      className: cn(classes, child.props.className),\n    } as Partial<{ className?: string }>)\n  }\n\n  return (\n    <button data-slot=\"button\" className={classes} {...props}>\n      {children}\n    </button>\n  )\n}\n",
+      "type": "registry:ui"
+    }
+  ],
+  "cssVars": {
+    "theme": {
+      "animate-rainbow": "rainbow var(--speed, 2s) infinite linear"
+    }
+  },
+  "css": {
+    "@keyframes rainbow": {
+      "0%": {
+        "background-position": "0%"
+      },
+      "100%": {
+        "background-position": "200%"
+      }
+    }
+  },
+  "categories": [
+    "buttons"
+  ],
+  "type": "registry:ui"
+}

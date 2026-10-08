@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "confetti-side-cannons",
+  "title": "Confetti — Side cannons",
+  "dependencies": [
+    "canvas-confetti"
+  ],
+  "registryDependencies": [
+    "https://yousefkadah.github.io/react-animation-library/r/confetti.json"
+  ],
+  "files": [
+    {
+      "path": "src/registry/examples/confetti-side-cannons.tsx",
+      "content": "\"use client\"\n\nimport { useEffect, useRef } from \"react\"\nimport confetti from \"canvas-confetti\"\n\nexport default function ConfettiSideCannons() {\n  const frameId = useRef(0)\n  useEffect(() => () => cancelAnimationFrame(frameId.current), [])\n\n  const handleClick = () => {\n    const end = Date.now() + 3 * 1000\n    const colors = [\"#a786ff\", \"#fd8bbc\", \"#eca184\", \"#f8deb1\"]\n\n    const frame = () => {\n      if (Date.now() > end) return\n      confetti({ particleCount: 2, angle: 60, spread: 55, startVelocity: 60, origin: { x: 0, y: 0.5 }, colors })\n      confetti({ particleCount: 2, angle: 120, spread: 55, startVelocity: 60, origin: { x: 1, y: 0.5 }, colors })\n      frameId.current = requestAnimationFrame(frame)\n    }\n\n    cancelAnimationFrame(frameId.current)\n    frame()\n  }\n\n  return (\n    <div className=\"relative\">\n      <button type=\"button\" className=\"inline-flex h-9 items-center justify-center rounded-md bg-primary px-4 text-sm font-medium text-primary-foreground shadow-xs transition-colors hover:bg-primary/90\" onClick={handleClick}>\n        Trigger Side Cannons\n      </button>\n    </div>\n  )\n}\n",
+      "type": "registry:example"
+    }
+  ],
+  "type": "registry:example"
+}

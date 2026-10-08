@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "highlighter-in-view",
+  "title": "Highlighter — Draw when in view",
+  "registryDependencies": [
+    "https://yousefkadah.github.io/react-animation-library/r/highlighter.json"
+  ],
+  "files": [
+    {
+      "path": "src/registry/examples/highlighter-in-view.tsx",
+      "content": "import { Highlighter } from \"@/components/ui/highlighter\"\n\nexport default function HighlighterInView() {\n  return (\n    <article className=\"max-w-md space-y-3 text-left\">\n      <h3 className=\"text-xl font-semibold tracking-tight\">Release notes</h3>\n      <p className=\"leading-relaxed text-muted-foreground\">\n        This release makes the editor{\" \"}\n        <Highlighter isView action=\"highlight\" color=\"#FDE68A\" animationDuration={900} className=\"text-foreground dark:text-black\">\n          twice as fast on large documents\n        </Highlighter>{\" \"}\n        and adds{\" \"}\n        <Highlighter isView action=\"underline\" color=\"#22C55E\" iterations={3}>\n          offline support\n        </Highlighter>{\" \"}\n        for every workspace. Annotations with <code className=\"rounded bg-muted px-1 text-sm\">isView</code> wait until they\n        scroll into view.\n      </p>\n    </article>\n  )\n}\n",
+      "type": "registry:example"
+    }
+  ],
+  "type": "registry:example"
+}

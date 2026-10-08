@@ -1,0 +1,1 @@
+var e={current:null},t={current:!1},n=typeof window<`u`;function r(){if(t.current=!0,n){if(window.matchMedia){let t=window.matchMedia(`(prefers-reduced-motion)`),n=()=>e.current=t.matches;t.addEventListener(`change`,n),n()}else e.current=!1}}export{t as n,e as r,r as t};

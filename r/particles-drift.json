@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "particles-drift",
+  "title": "Particles — Drift",
+  "registryDependencies": [
+    "https://yousefkadah.github.io/react-animation-library/r/particles.json"
+  ],
+  "files": [
+    {
+      "path": "src/registry/examples/particles-drift.tsx",
+      "content": "import { Particles } from \"@/components/ui/particles\"\n\nexport default function ParticlesDrift() {\n  return (\n    <div className=\"relative flex h-[320px] w-full items-center justify-center overflow-hidden rounded-lg border bg-neutral-950\">\n      <p className=\"z-10 text-center text-4xl font-semibold tracking-tight text-white\">Let it snow</p>\n      <Particles className=\"absolute inset-0\" quantity={250} size={0.3} vy={0.6} vx={0.15} staticity={80} color=\"#ffffff\" />\n    </div>\n  )\n}\n",
+      "type": "registry:example"
+    }
+  ],
+  "type": "registry:example"
+}

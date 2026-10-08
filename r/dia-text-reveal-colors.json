@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "dia-text-reveal-colors",
+  "title": "Dia Text Reveal — Custom colours",
+  "registryDependencies": [
+    "https://yousefkadah.github.io/react-animation-library/r/dia-text-reveal.json"
+  ],
+  "files": [
+    {
+      "path": "src/registry/examples/dia-text-reveal-colors.tsx",
+      "content": "import { DiaTextReveal } from \"@/components/ui/dia-text-reveal\"\n\nexport default function DiaTextRevealColors() {\n  return (\n    <div className=\"flex min-h-56 items-center justify-center p-8\">\n      <DiaTextReveal\n        className=\"text-4xl font-bold tracking-tight\"\n        colors={[\"#22d3ee\", \"#818cf8\", \"#f472b6\", \"#34d399\"]}\n        text=\"Design systems\"\n      />\n    </div>\n  )\n}\n",
+      "type": "registry:example"
+    }
+  ],
+  "type": "registry:example"
+}

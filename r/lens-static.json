@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "lens-static",
+  "title": "Lens — Static",
+  "registryDependencies": [
+    "https://yousefkadah.github.io/react-animation-library/r/lens.json"
+  ],
+  "files": [
+    {
+      "path": "src/registry/examples/lens-static.tsx",
+      "content": "import { Lens } from \"@/components/ui/lens\"\n\nexport default function LensStatic() {\n  return (\n    <div className=\"relative flex w-full max-w-md flex-col gap-6 rounded-xl border bg-card py-6 text-card-foreground\">\n      <div className=\"px-6\">\n        <Lens isStatic position={{ x: 260, y: 150 }}>\n          <img\n            src=\"https://images.unsplash.com/photo-1736606355698-5efdb410fe93?q=80&w=1200&auto=format&fit=crop\"\n            alt=\"Camp destination\"\n            width={500}\n            height={375}\n            className=\"aspect-[4/3] w-full object-cover\"\n          />\n        </Lens>\n      </div>\n      <div className=\"space-y-1.5 px-6\">\n        <h3 className=\"text-2xl leading-none font-semibold\">Your next camp</h3>\n        <p className=\"text-sm text-muted-foreground\">See our latest and best camp destinations all across the five continents of the globe.</p>\n      </div>\n      <div className=\"flex items-center gap-4 px-6\">\n        <button type=\"button\" className=\"inline-flex h-9 items-center justify-center rounded-md bg-primary px-4 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90\">\n          Let&apos;s go\n        </button>\n        <button type=\"button\" className=\"inline-flex h-9 items-center justify-center rounded-md bg-secondary px-4 text-sm font-medium text-secondary-foreground transition-colors hover:bg-secondary/80\">\n          Another time\n        </button>\n      </div>\n    </div>\n  )\n}\n",
+      "type": "registry:example"
+    }
+  ],
+  "type": "registry:example"
+}

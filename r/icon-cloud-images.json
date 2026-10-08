@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "icon-cloud-images",
+  "title": "Icon Cloud — Images",
+  "registryDependencies": [
+    "https://yousefkadah.github.io/react-animation-library/r/icon-cloud.json"
+  ],
+  "files": [
+    {
+      "path": "src/registry/examples/icon-cloud-images.tsx",
+      "content": "import { IconCloud } from \"@/components/ui/icon-cloud\"\n\nconst photos = [\n  \"1506905925346-21bda4d32df4\",\n  \"1469474968028-56623f02e42e\",\n  \"1501785888041-af3ef285b470\",\n  \"1470071459604-3b5ec3a7fe05\",\n  \"1441974231531-c6227db76b6e\",\n  \"1447752875215-b2761acb3c5d\",\n  \"1433086966358-54859d0ed716\",\n  \"1472214103451-9374bd1c798e\",\n]\n\n// Repeat the set so the sphere is well populated; small crops keep it fast.\nconst images = [...photos, ...photos].map((id) => `https://images.unsplash.com/photo-${id}?w=96&h=96&fit=crop&auto=format`)\n\nexport default function IconCloudImages() {\n  return (\n    <div className=\"relative flex size-full max-w-lg items-center justify-center overflow-hidden rounded-lg border bg-background\">\n      <IconCloud images={images} />\n    </div>\n  )\n}\n",
+      "type": "registry:example"
+    }
+  ],
+  "type": "registry:example"
+}

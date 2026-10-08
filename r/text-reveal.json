@@ -1,0 +1,23 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "text-reveal",
+  "title": "Text Reveal",
+  "description": "Fade in text as you scroll down the page.",
+  "dependencies": [
+    "motion"
+  ],
+  "registryDependencies": [
+    "utils"
+  ],
+  "files": [
+    {
+      "path": "src/registry/ui/text-reveal.tsx",
+      "content": "\"use client\"\n\nimport { useRef, type ComponentPropsWithoutRef, type RefObject } from \"react\"\nimport { motion, useScroll, useTransform, type MotionValue } from \"motion/react\"\n\nimport { cn } from \"@/lib/utils\"\n\nexport interface TextRevealProps extends Omit<ComponentPropsWithoutRef<\"div\">, \"children\"> {\n  /** The text to reveal word by word. */\n  children: string\n  /**\n   * The scrolling element to track. Defaults to the page. Set it when TextReveal sits\n   * inside its own `overflow-y-auto` box.\n   */\n  container?: RefObject<HTMLElement | null>\n}\n\nexport function TextReveal({ children, className, container, ...props }: TextRevealProps) {\n  const sectionRef = useRef<HTMLDivElement | null>(null)\n  const { scrollYProgress } = useScroll({ target: sectionRef, container })\n\n  if (typeof children !== \"string\") {\n    throw new Error(\"TextReveal: children must be a string\")\n  }\n\n  const words = children.split(\" \")\n\n  return (\n    <div ref={sectionRef} className={cn(\"relative z-0 h-[200vh]\", className)} {...props}>\n      <div className=\"sticky top-0 mx-auto flex h-[50%] max-w-4xl items-center bg-transparent px-4 py-20\">\n        <span className=\"sr-only\">{children}</span>\n        <span\n          aria-hidden=\"true\"\n          className=\"flex flex-wrap p-5 text-2xl font-bold text-foreground/20 md:p-8 md:text-3xl lg:p-10 lg:text-4xl xl:text-5xl\"\n        >\n          {words.map((word, index) => {\n            const start = index / words.length\n            const end = start + 1 / words.length\n            return <Word key={index} progress={scrollYProgress} range={[start, end]} word={word} />\n          })}\n        </span>\n      </div>\n    </div>\n  )\n}\n\ninterface WordProps {\n  word: string\n  /** Scroll progress of the whole TextReveal section, 0–1. */\n  progress: MotionValue<number>\n  /** The slice of `progress` over which this word fades in. */\n  range: [number, number]\n}\n\nfunction Word({ word, progress, range }: WordProps) {\n  const opacity = useTransform(progress, range, [0, 1])\n  return (\n    <span className=\"relative mx-1 lg:mx-1.5\">\n      <span className=\"absolute opacity-30\">{word}</span>\n      <motion.span style={{ opacity }} className=\"text-foreground\">\n        {word}\n      </motion.span>\n    </span>\n  )\n}\n",
+      "type": "registry:ui"
+    }
+  ],
+  "categories": [
+    "text-animations"
+  ],
+  "type": "registry:ui"
+}

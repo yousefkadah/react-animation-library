@@ -1,0 +1,23 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "pointer",
+  "title": "Pointer",
+  "description": "Replaces the cursor with a custom animated pointer while hovering a container.",
+  "dependencies": [
+    "motion"
+  ],
+  "registryDependencies": [
+    "utils"
+  ],
+  "files": [
+    {
+      "path": "src/registry/ui/pointer.tsx",
+      "content": "\"use client\"\n\nimport { useEffect, useRef, useState } from \"react\"\nimport { AnimatePresence, motion, useMotionValue, type HTMLMotionProps } from \"motion/react\"\n\nimport { cn } from \"@/lib/utils\"\n\n/**\n * Replaces the cursor with a custom, animated pointer while it is over this component's parent\n * element. Drop it inside any `relative` container and pass your own pointer as children.\n * `className` styles the default arrow; every other prop goes to the motion element.\n */\nexport type PointerProps = HTMLMotionProps<\"div\">\n\nexport function Pointer({ className, style, children, ...props }: PointerProps) {\n  const x = useMotionValue(0)\n  const y = useMotionValue(0)\n  const [isActive, setIsActive] = useState(false)\n  const anchorRef = useRef<HTMLDivElement>(null)\n\n  useEffect(() => {\n    const parent = anchorRef.current?.parentElement\n    if (!parent) return\n\n    const handleMove = (event: MouseEvent) => {\n      x.set(event.clientX)\n      y.set(event.clientY)\n      setIsActive(true)\n    }\n    const handleLeave = () => setIsActive(false)\n\n    // Hide the real cursor on the parent only, and put back whatever it had before.\n    const previousCursor = parent.style.cursor\n    parent.style.cursor = \"none\"\n    parent.addEventListener(\"mousemove\", handleMove)\n    parent.addEventListener(\"mouseenter\", handleMove)\n    parent.addEventListener(\"mouseleave\", handleLeave)\n\n    return () => {\n      parent.style.cursor = previousCursor\n      parent.removeEventListener(\"mousemove\", handleMove)\n      parent.removeEventListener(\"mouseenter\", handleMove)\n      parent.removeEventListener(\"mouseleave\", handleLeave)\n    }\n  }, [x, y])\n\n  return (\n    <div ref={anchorRef} className=\"contents\">\n      <AnimatePresence>\n        {isActive && (\n          <motion.div\n            aria-hidden\n            className=\"pointer-events-none fixed z-50\"\n            style={{ ...style, top: y, left: x }}\n            initial={{ scale: 0, opacity: 0 }}\n            animate={{ scale: 1, opacity: 1 }}\n            exit={{ scale: 0, opacity: 0 }}\n            {...props}\n          >\n            {children || (\n              <svg\n                stroke=\"currentColor\"\n                fill=\"currentColor\"\n                strokeWidth=\"1\"\n                viewBox=\"0 0 16 16\"\n                height=\"24\"\n                width=\"24\"\n                xmlns=\"http://www.w3.org/2000/svg\"\n                className={cn(\"rotate-[-70deg] stroke-white text-black\", className)}\n              >\n                <path d=\"M14.082 2.182a.5.5 0 0 1 .103.557L8.528 15.467a.5.5 0 0 1-.917-.007L5.57 10.694.803 8.652a.5.5 0 0 1-.006-.916l12.728-5.657a.5.5 0 0 1 .556.103z\" />\n              </svg>\n            )}\n          </motion.div>\n        )}\n      </AnimatePresence>\n    </div>\n  )\n}\n",
+      "type": "registry:ui"
+    }
+  ],
+  "categories": [
+    "components"
+  ],
+  "type": "registry:ui"
+}

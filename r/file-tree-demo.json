@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "file-tree-demo",
+  "title": "File Tree — From data",
+  "registryDependencies": [
+    "https://yousefkadah.github.io/react-animation-library/r/file-tree.json"
+  ],
+  "files": [
+    {
+      "path": "src/registry/examples/file-tree-demo.tsx",
+      "content": "import { Tree, type TreeViewElement } from \"@/components/ui/file-tree\"\n\nconst ELEMENTS: TreeViewElement[] = [\n  {\n    id: \"src\",\n    type: \"folder\",\n    name: \"src\",\n    children: [\n      {\n        id: \"lib\",\n        type: \"folder\",\n        name: \"lib\",\n        children: [{ id: \"utils\", name: \"utils.ts\" }],\n      },\n      {\n        id: \"pages\",\n        type: \"folder\",\n        name: \"pages\",\n        children: [\n          { id: \"index\", name: \"index.tsx\" },\n          { id: \"about\", name: \"about.tsx\" },\n        ],\n      },\n      {\n        id: \"components\",\n        type: \"folder\",\n        name: \"components\",\n        children: [\n          { id: \"header\", name: \"site-header.tsx\" },\n          {\n            id: \"ui\",\n            type: \"folder\",\n            name: \"ui\",\n            children: [{ id: \"button\", name: \"button.tsx\" }],\n          },\n          { id: \"footer\", name: \"site-footer.tsx\" },\n        ],\n      },\n      { id: \"app\", name: \"App.tsx\" },\n      { id: \"main\", name: \"main.tsx\" },\n    ],\n  },\n]\n\nexport default function FileTreeDemo() {\n  return (\n    <div className=\"relative flex h-[300px] w-full max-w-sm flex-col items-center justify-center overflow-hidden rounded-lg border bg-background\">\n      <Tree\n        className=\"overflow-hidden rounded-md bg-background p-2\"\n        initialSelectedId=\"button\"\n        initialExpandedItems={[\"src\", \"pages\", \"components\", \"ui\", \"lib\"]}\n        elements={ELEMENTS}\n      />\n    </div>\n  )\n}\n",
+      "type": "registry:example"
+    }
+  ],
+  "type": "registry:example"
+}

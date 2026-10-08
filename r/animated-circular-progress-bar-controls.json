@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "animated-circular-progress-bar-controls",
+  "title": "Animated Circular Progress Bar — Controlled",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "https://yousefkadah.github.io/react-animation-library/r/animated-circular-progress-bar.json"
+  ],
+  "files": [
+    {
+      "path": "src/registry/examples/animated-circular-progress-bar-controls.tsx",
+      "content": "\"use client\"\n\nimport { useState } from \"react\"\nimport { Minus, Plus } from \"lucide-react\"\n\nimport { AnimatedCircularProgressBar } from \"@/components/ui/animated-circular-progress-bar\"\n\nexport default function AnimatedCircularProgressBarControls() {\n  const [value, setValue] = useState(40)\n  const step = (delta: number) => setValue((current) => Math.min(100, Math.max(0, current + delta)))\n\n  return (\n    <div className=\"flex items-center gap-6\">\n      <button\n        type=\"button\"\n        aria-label=\"Decrease\"\n        className=\"inline-flex size-9 items-center justify-center rounded-full border transition-colors hover:bg-accent disabled:opacity-50\"\n        disabled={value <= 0}\n        onClick={() => step(-10)}\n      >\n        <Minus className=\"size-4\" />\n      </button>\n      <AnimatedCircularProgressBar\n        value={value}\n        gaugePrimaryColor=\"#10b981\"\n        gaugeSecondaryColor=\"var(--track)\"\n        className=\"[--track:rgba(0,0,0,0.08)] dark:[--track:rgba(255,255,255,0.12)]\"\n      />\n      <button\n        type=\"button\"\n        aria-label=\"Increase\"\n        className=\"inline-flex size-9 items-center justify-center rounded-full border transition-colors hover:bg-accent disabled:opacity-50\"\n        disabled={value >= 100}\n        onClick={() => step(10)}\n      >\n        <Plus className=\"size-4\" />\n      </button>\n    </div>\n  )\n}\n",
+      "type": "registry:example"
+    }
+  ],
+  "type": "registry:example"
+}

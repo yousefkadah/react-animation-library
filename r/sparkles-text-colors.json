@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "sparkles-text-colors",
+  "title": "Sparkles Text — Custom colours",
+  "registryDependencies": [
+    "https://yousefkadah.github.io/react-animation-library/r/sparkles-text.json"
+  ],
+  "files": [
+    {
+      "path": "src/registry/examples/sparkles-text-colors.tsx",
+      "content": "import { SparklesText } from \"@/components/ui/sparkles-text\"\n\nconst colors = { first: \"#FBBF24\", second: \"#F97316\" }\n\nexport default function SparklesTextColors() {\n  return (\n    <div className=\"flex flex-col items-center gap-3 text-center\">\n      <p className=\"text-sm font-medium tracking-wide text-muted-foreground uppercase\">Limited release</p>\n      <SparklesText as=\"h2\" sparklesCount={16} colors={colors} className=\"text-5xl sm:text-6xl\">\n        Golden Hour\n      </SparklesText>\n    </div>\n  )\n}\n",
+      "type": "registry:example"
+    }
+  ],
+  "type": "registry:example"
+}

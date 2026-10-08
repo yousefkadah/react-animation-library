@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "dia-text-reveal-timing",
+  "title": "Dia Text Reveal — Duration and delay",
+  "registryDependencies": [
+    "https://yousefkadah.github.io/react-animation-library/r/dia-text-reveal.json"
+  ],
+  "files": [
+    {
+      "path": "src/registry/examples/dia-text-reveal-timing.tsx",
+      "content": "import { DiaTextReveal } from \"@/components/ui/dia-text-reveal\"\n\nexport default function DiaTextRevealTiming() {\n  return (\n    <div className=\"flex min-h-56 items-center justify-center p-8\">\n      <DiaTextReveal\n        className=\"text-4xl font-bold tracking-tight\"\n        colors={[\"#f97316\", \"#eab308\", \"#22c55e\", \"#3b82f6\", \"#a855f7\"]}\n        delay={0.35}\n        duration={2.4}\n        text=\"Made with care\"\n      />\n    </div>\n  )\n}\n",
+      "type": "registry:example"
+    }
+  ],
+  "type": "registry:example"
+}

@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "hexagon-pattern-dashed",
+  "title": "Hexagon Pattern — Dashed",
+  "registryDependencies": [
+    "https://yousefkadah.github.io/react-animation-library/r/hexagon-pattern.json"
+  ],
+  "files": [
+    {
+      "path": "src/registry/examples/hexagon-pattern-dashed.tsx",
+      "content": "import { HexagonPattern } from \"@/components/ui/hexagon-pattern\"\n\nexport default function HexagonPatternDashed() {\n  return (\n    <div className=\"relative flex h-[400px] w-full items-center justify-center overflow-hidden rounded-lg border bg-background p-20\">\n      <HexagonPattern radius={40} x={-1} y={-1} strokeDasharray=\"4 2\" />\n    </div>\n  )\n}\n",
+      "type": "registry:example"
+    }
+  ],
+  "type": "registry:example"
+}

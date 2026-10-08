@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "smooth-cursor-custom",
+  "title": "Smooth Cursor — Custom cursor",
+  "registryDependencies": [
+    "https://yousefkadah.github.io/react-animation-library/r/smooth-cursor.json"
+  ],
+  "files": [
+    {
+      "path": "src/registry/examples/smooth-cursor-custom.tsx",
+      "content": "\"use client\"\n\nimport { useState } from \"react\"\n\nimport { SmoothCursor } from \"@/components/ui/smooth-cursor\"\n\nconst springConfig = { damping: 30, stiffness: 300, mass: 0.6, restDelta: 0.001 }\n\nexport default function SmoothCursorCustom() {\n  const [enabled, setEnabled] = useState(false)\n\n  return (\n    <div className=\"flex flex-col items-center gap-4 text-center\">\n      <p className=\"max-w-xs text-sm text-muted-foreground\">\n        Pass any element as <code className=\"rounded bg-muted px-1 py-0.5 font-mono text-xs\">cursor</code>. The most recently\n        mounted SmoothCursor wins, so this one takes over while it&apos;s on.\n      </p>\n      <button\n        type=\"button\"\n        className=\"inline-flex h-9 items-center justify-center rounded-md bg-primary px-4 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90\"\n        aria-pressed={enabled}\n        onClick={() => setEnabled((value) => !value)}\n      >\n        {enabled ? \"Use the default cursor\" : \"Try a custom cursor\"}\n      </button>\n      {enabled && (\n        <SmoothCursor\n          springConfig={springConfig}\n          cursor={\n            <div className=\"flex size-8 items-center justify-center rounded-full border-2 border-violet-500 bg-violet-500/15 backdrop-blur-sm\">\n              <div className=\"size-2 -translate-y-1 rounded-full bg-violet-500\" />\n            </div>\n          }\n        />\n      )}\n    </div>\n  )\n}\n",
+      "type": "registry:example"
+    }
+  ],
+  "type": "registry:example"
+}

@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "animated-circular-progress-bar-demo",
+  "title": "Animated Circular Progress Bar — Default",
+  "registryDependencies": [
+    "https://yousefkadah.github.io/react-animation-library/r/animated-circular-progress-bar.json"
+  ],
+  "files": [
+    {
+      "path": "src/registry/examples/animated-circular-progress-bar-demo.tsx",
+      "content": "\"use client\"\n\nimport { useEffect, useState } from \"react\"\n\nimport { AnimatedCircularProgressBar } from \"@/components/ui/animated-circular-progress-bar\"\n\nconst next = (previous: number) => (previous === 100 ? 0 : previous + 10)\n\nexport default function AnimatedCircularProgressBarDemo() {\n  const [value, setValue] = useState(0)\n\n  useEffect(() => {\n    setValue(next)\n    const interval = setInterval(() => setValue(next), 2000)\n    return () => clearInterval(interval)\n  }, [])\n\n  return (\n    // The track colour switches with the theme through a CSS variable.\n    <AnimatedCircularProgressBar\n      value={value}\n      gaugePrimaryColor=\"rgb(79 70 229)\"\n      gaugeSecondaryColor=\"var(--track)\"\n      className=\"[--track:rgba(0,0,0,0.1)] dark:[--track:rgba(255,255,255,0.1)]\"\n    />\n  )\n}\n",
+      "type": "registry:example"
+    }
+  ],
+  "type": "registry:example"
+}

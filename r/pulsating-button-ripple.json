@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "pulsating-button-ripple",
+  "title": "Pulsating Button — Ripple variant",
+  "registryDependencies": [
+    "https://yousefkadah.github.io/react-animation-library/r/pulsating-button.json"
+  ],
+  "files": [
+    {
+      "path": "src/registry/examples/pulsating-button-ripple.tsx",
+      "content": "import { PulsatingButton } from \"@/components/ui/pulsating-button\"\n\nexport default function PulsatingButtonRipple() {\n  return (\n    <PulsatingButton variant=\"ripple\" distance=\"10px\" className=\"bg-blue-400 text-white\">\n      Join Affiliate Program\n    </PulsatingButton>\n  )\n}\n",
+      "type": "registry:example"
+    }
+  ],
+  "type": "registry:example"
+}

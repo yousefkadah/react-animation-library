@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "pulsating-button-demo",
+  "title": "Pulsating Button — Pulse",
+  "registryDependencies": [
+    "https://yousefkadah.github.io/react-animation-library/r/pulsating-button.json"
+  ],
+  "files": [
+    {
+      "path": "src/registry/examples/pulsating-button-demo.tsx",
+      "content": "import { PulsatingButton } from \"@/components/ui/pulsating-button\"\n\nexport default function PulsatingButtonDemo() {\n  return <PulsatingButton>Join Affiliate Program</PulsatingButton>\n}\n",
+      "type": "registry:example"
+    }
+  ],
+  "type": "registry:example"
+}

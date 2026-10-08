@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "typing-animation-demo",
+  "title": "Typing Animation — Basic usage",
+  "registryDependencies": [
+    "https://yousefkadah.github.io/react-animation-library/r/typing-animation.json"
+  ],
+  "files": [
+    {
+      "path": "src/registry/examples/typing-animation-demo.tsx",
+      "content": "import { TypingAnimation } from \"@/components/ui/typing-animation\"\n\nexport default function TypingAnimationDemo() {\n  return <TypingAnimation className=\"text-4xl font-bold sm:text-5xl\">Hello World! 👋</TypingAnimation>\n}\n",
+      "type": "registry:example"
+    }
+  ],
+  "type": "registry:example"
+}

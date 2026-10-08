@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "spinning-text-demo",
+  "title": "Spinning Text — Basic",
+  "registryDependencies": [
+    "https://yousefkadah.github.io/react-animation-library/r/spinning-text.json"
+  ],
+  "files": [
+    {
+      "path": "src/registry/examples/spinning-text-demo.tsx",
+      "content": "import { SpinningText } from \"@/components/ui/spinning-text\"\n\nexport default function SpinningTextDemo() {\n  return <SpinningText>learn more • earn more • grow more •</SpinningText>\n}\n",
+      "type": "registry:example"
+    }
+  ],
+  "type": "registry:example"
+}

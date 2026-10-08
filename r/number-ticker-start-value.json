@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "number-ticker-start-value",
+  "title": "Number Ticker — Start value",
+  "registryDependencies": [
+    "https://yousefkadah.github.io/react-animation-library/r/number-ticker.json"
+  ],
+  "files": [
+    {
+      "path": "src/registry/examples/number-ticker-start-value.tsx",
+      "content": "import { NumberTicker } from \"@/components/ui/number-ticker\"\n\nexport default function NumberTickerStartValue() {\n  return <NumberTicker value={100} startValue={80} className=\"text-8xl font-medium tracking-tighter whitespace-pre-wrap\" />\n}\n",
+      "type": "registry:example"
+    }
+  ],
+  "type": "registry:example"
+}

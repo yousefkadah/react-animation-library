@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "noise-texture-button",
+  "title": "Noise Texture — Button",
+  "registryDependencies": [
+    "https://yousefkadah.github.io/react-animation-library/r/noise-texture.json"
+  ],
+  "files": [
+    {
+      "path": "src/registry/examples/noise-texture-button.tsx",
+      "content": "import { NoiseTexture } from \"@/components/ui/noise-texture\"\n\nexport default function NoiseTextureButton() {\n  return (\n    <button\n      type=\"button\"\n      className=\"group/button relative h-10 cursor-pointer overflow-hidden rounded-md bg-secondary px-8 text-sm font-medium text-secondary-foreground transition-transform active:scale-[0.98]\"\n    >\n      <span className=\"relative z-10\">Subscribe</span>\n      <NoiseTexture noiseOpacity={0.45} className=\"transition-opacity group-hover/button:opacity-100\" />\n    </button>\n  )\n}\n",
+      "type": "registry:example"
+    }
+  ],
+  "type": "registry:example"
+}

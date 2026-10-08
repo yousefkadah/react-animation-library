@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "grid-pattern-demo",
+  "title": "Grid Pattern — Highlighted squares",
+  "registryDependencies": [
+    "https://yousefkadah.github.io/react-animation-library/r/grid-pattern.json"
+  ],
+  "files": [
+    {
+      "path": "src/registry/examples/grid-pattern-demo.tsx",
+      "content": "import { GridPattern } from \"@/components/ui/grid-pattern\"\n\nconst squares: Array<[number, number]> = [\n  [4, 4],\n  [5, 1],\n  [8, 2],\n  [5, 3],\n  [5, 5],\n  [10, 10],\n  [12, 15],\n  [15, 10],\n  [10, 15],\n  [6, 7],\n  [11, 6],\n  [13, 9],\n]\n\nexport default function GridPatternDemo() {\n  return (\n    <div className=\"relative flex h-[400px] w-full flex-col items-center justify-center overflow-hidden rounded-lg border bg-background\">\n      <GridPattern\n        squares={squares}\n        className=\"inset-x-0 inset-y-[-30%] h-[200%] skew-y-12 [mask-image:radial-gradient(400px_circle_at_center,white,transparent)]\"\n      />\n    </div>\n  )\n}\n",
+      "type": "registry:example"
+    }
+  ],
+  "type": "registry:example"
+}

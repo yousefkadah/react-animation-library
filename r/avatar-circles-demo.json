@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "avatar-circles-demo",
+  "title": "Avatar Circles — Default",
+  "registryDependencies": [
+    "https://yousefkadah.github.io/react-animation-library/r/avatar-circles.json"
+  ],
+  "files": [
+    {
+      "path": "src/registry/examples/avatar-circles-demo.tsx",
+      "content": "import { AvatarCircles } from \"@/components/ui/avatar-circles\"\n\nconst avatars = [\"jack\", \"jill\", \"john\", \"jane\", \"jenny\", \"james\"].map((name) => ({\n  imageUrl: `https://avatar.vercel.sh/${name}`,\n  profileUrl: \"#\",\n}))\n\nexport default function AvatarCirclesDemo() {\n  return <AvatarCircles numPeople={99} avatarUrls={avatars} />\n}\n",
+      "type": "registry:example"
+    }
+  ],
+  "type": "registry:example"
+}

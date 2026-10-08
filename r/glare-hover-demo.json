@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "glare-hover-demo",
+  "title": "Glare Hover — Pricing card",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "https://yousefkadah.github.io/react-animation-library/r/glare-hover.json"
+  ],
+  "files": [
+    {
+      "path": "src/registry/examples/glare-hover-demo.tsx",
+      "content": "import { Check } from \"lucide-react\"\n\nimport { GlareHover } from \"@/components/ui/glare-hover\"\n\nconst features = [\"Unlimited projects\", \"Team collaboration\", \"Advanced analytics\"]\n\nexport default function GlareHoverDemo() {\n  return (\n    <GlareHover className=\"rounded-xl\" background=\"transparent\" color=\"#a78bfa\" opacity={0.4} duration={600}>\n      <div className=\"flex w-[340px] flex-col gap-6 rounded-xl border bg-card py-6 text-card-foreground shadow-sm\">\n        <div className=\"space-y-1.5 px-6\">\n          <div className=\"flex items-center justify-between\">\n            <h3 className=\"leading-none font-semibold\">Pro</h3>\n            <span className=\"rounded-md bg-primary px-2 py-0.5 text-xs font-medium text-primary-foreground\">Popular</span>\n          </div>\n          <p className=\"text-sm text-muted-foreground\">For teams that need more.</p>\n          <div className=\"flex items-baseline gap-1 pt-2\">\n            <span className=\"text-4xl font-semibold tracking-tight\">$49</span>\n            <span className=\"text-sm text-muted-foreground\">/mo</span>\n          </div>\n        </div>\n        <ul className=\"flex flex-col gap-2.5 px-6\">\n          {features.map((feature) => (\n            <li key={feature} className=\"flex items-center gap-2 text-sm\">\n              <Check className=\"size-4\" aria-hidden=\"true\" />\n              {feature}\n            </li>\n          ))}\n          <li className=\"flex items-center gap-2 text-sm text-muted-foreground\">\n            <span className=\"mx-1.5 size-1 rounded-full bg-current opacity-40\" aria-hidden=\"true\" />\n            SSO (coming soon)\n          </li>\n        </ul>\n        <div className=\"px-6\">\n          <button className=\"h-9 w-full rounded-md bg-primary px-4 text-sm font-medium text-primary-foreground hover:bg-primary/90\">\n            Get started\n          </button>\n        </div>\n      </div>\n    </GlareHover>\n  )\n}\n",
+      "type": "registry:example"
+    }
+  ],
+  "type": "registry:example"
+}

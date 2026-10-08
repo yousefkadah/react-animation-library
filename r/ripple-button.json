@@ -1,0 +1,36 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "ripple-button",
+  "title": "Ripple Button",
+  "description": "An animated button with ripple useful for user engagement.",
+  "registryDependencies": [
+    "utils"
+  ],
+  "files": [
+    {
+      "path": "src/registry/ui/ripple-button.tsx",
+      "content": "\"use client\"\n\nimport { useEffect, useRef, useState, type ComponentProps, type CSSProperties, type MouseEvent } from \"react\"\n\nimport { cn } from \"@/lib/utils\"\n\nexport interface RippleButtonProps extends ComponentProps<\"button\"> {\n  /** Colour of the ripple. */\n  rippleColor?: string\n  /** Duration of one ripple, e.g. `600ms` or `1s`. */\n  duration?: string\n}\n\ninterface Ripple {\n  x: number\n  y: number\n  size: number\n  key: number\n}\n\nfunction toMilliseconds(duration: string): number {\n  const value = Number.parseFloat(duration)\n  if (Number.isNaN(value)) return 600\n  const unit = duration.trim()\n  return unit.endsWith(\"s\") && !unit.endsWith(\"ms\") ? value * 1000 : value\n}\n\nexport function RippleButton({\n  className,\n  children,\n  rippleColor = \"#ffffff\",\n  duration = \"600ms\",\n  onClick,\n  ...props\n}: RippleButtonProps) {\n  const [ripples, setRipples] = useState<Ripple[]>([])\n  const timers = useRef(new Set<ReturnType<typeof setTimeout>>())\n  const nextKey = useRef(0)\n\n  useEffect(() => {\n    const pending = timers.current\n    return () => {\n      for (const timer of pending) clearTimeout(timer)\n      pending.clear()\n    }\n  }, [])\n\n  const createRipple = (event: MouseEvent<HTMLButtonElement>) => {\n    const rect = event.currentTarget.getBoundingClientRect()\n    const size = Math.max(rect.width, rect.height)\n    const ripple = {\n      x: event.clientX - rect.left - size / 2,\n      y: event.clientY - rect.top - size / 2,\n      size,\n      key: nextKey.current++,\n    }\n    setRipples((current) => [...current, ripple])\n\n    const timer = setTimeout(() => {\n      timers.current.delete(timer)\n      setRipples((current) => current.filter((item) => item.key !== ripple.key))\n    }, toMilliseconds(duration))\n    timers.current.add(timer)\n  }\n\n  const handleClick = (event: MouseEvent<HTMLButtonElement>) => {\n    createRipple(event)\n    onClick?.(event)\n  }\n\n  return (\n    <button\n      className={cn(\n        \"relative flex cursor-pointer items-center justify-center overflow-hidden rounded-lg border-2 bg-background px-4 py-2 text-center text-primary\",\n        className\n      )}\n      onClick={handleClick}\n      {...props}\n    >\n      <span className=\"relative z-10\">{children}</span>\n      <span aria-hidden=\"true\" className=\"pointer-events-none absolute inset-0\">\n        {ripples.map((ripple) => (\n          <span\n            key={ripple.key}\n            className=\"absolute animate-rippling rounded-full bg-background opacity-30\"\n            style={\n              {\n                width: `${ripple.size}px`,\n                height: `${ripple.size}px`,\n                top: `${ripple.y}px`,\n                left: `${ripple.x}px`,\n                backgroundColor: rippleColor,\n                transform: \"scale(0)\",\n                \"--duration\": duration,\n              } as CSSProperties\n            }\n          />\n        ))}\n      </span>\n    </button>\n  )\n}\n",
+      "type": "registry:ui"
+    }
+  ],
+  "cssVars": {
+    "theme": {
+      "animate-rippling": "rippling var(--duration) ease-out"
+    }
+  },
+  "css": {
+    "@keyframes rippling": {
+      "0%": {
+        "opacity": "1"
+      },
+      "100%": {
+        "transform": "scale(2)",
+        "opacity": "0"
+      }
+    }
+  },
+  "categories": [
+    "buttons"
+  ],
+  "type": "registry:ui"
+}

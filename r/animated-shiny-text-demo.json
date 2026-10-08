@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "animated-shiny-text-demo",
+  "title": "Animated Shiny Text — Announcement pill",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "https://yousefkadah.github.io/react-animation-library/r/animated-shiny-text.json"
+  ],
+  "files": [
+    {
+      "path": "src/registry/examples/animated-shiny-text-demo.tsx",
+      "content": "import { ArrowRight } from \"lucide-react\"\n\nimport { AnimatedShinyText } from \"@/components/ui/animated-shiny-text\"\n\nexport default function AnimatedShinyTextDemo() {\n  return (\n    <div className=\"z-10 flex min-h-64 items-center justify-center\">\n      <div className=\"group rounded-full border border-black/5 bg-neutral-100 text-base text-white transition-all ease-in hover:cursor-pointer hover:bg-neutral-200 dark:border-white/5 dark:bg-neutral-900 dark:hover:bg-neutral-800\">\n        <AnimatedShinyText className=\"inline-flex items-center justify-center px-4 py-1 transition ease-out hover:text-neutral-600 hover:duration-300 hover:dark:text-neutral-400\">\n          <span>✨ Introducing React Magic UI</span>\n          <ArrowRight className=\"ms-1 size-3 transition-transform duration-300 ease-in-out group-hover:translate-x-0.5\" />\n        </AnimatedShinyText>\n      </div>\n    </div>\n  )\n}\n",
+      "type": "registry:example"
+    }
+  ],
+  "type": "registry:example"
+}

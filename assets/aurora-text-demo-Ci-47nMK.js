@@ -1,0 +1,1 @@
+import{o as e}from"./index-Bg9Yv0sK.js";import{t}from"./aurora-text-ClpVB6Qr.js";var n=e();function r(){return(0,n.jsxs)(`h1`,{className:`text-4xl font-bold tracking-tighter md:text-5xl lg:text-7xl`,children:[`Ship `,(0,n.jsx)(t,{children:`beautiful`})]})}export{r as default};

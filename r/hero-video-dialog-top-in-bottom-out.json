@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "hero-video-dialog-top-in-bottom-out",
+  "title": "Hero Video Dialog — Top in, bottom out",
+  "registryDependencies": [
+    "https://yousefkadah.github.io/react-animation-library/r/hero-video-dialog.json"
+  ],
+  "files": [
+    {
+      "path": "src/registry/examples/hero-video-dialog-top-in-bottom-out.tsx",
+      "content": "import { HeroVideoDialog } from \"@/components/ui/hero-video-dialog\"\n\nexport default function HeroVideoDialogTopInBottomOut() {\n  return (\n    <div className=\"relative w-full max-w-xl\">\n      <HeroVideoDialog\n        animationStyle=\"top-in-bottom-out\"\n        videoSrc=\"https://www.youtube.com/embed/8pDqJVdNa44\"\n        thumbnailSrc=\"https://i.ytimg.com/vi/8pDqJVdNa44/maxresdefault.jpg\"\n        thumbnailAlt=\"React.js: The Documentary\"\n      />\n    </div>\n  )\n}\n",
+      "type": "registry:example"
+    }
+  ],
+  "type": "registry:example"
+}

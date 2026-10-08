@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "interactive-grid-pattern-demo",
+  "title": "Interactive Grid Pattern — Skewed",
+  "registryDependencies": [
+    "https://yousefkadah.github.io/react-animation-library/r/interactive-grid-pattern.json"
+  ],
+  "files": [
+    {
+      "path": "src/registry/examples/interactive-grid-pattern-demo.tsx",
+      "content": "import { InteractiveGridPattern } from \"@/components/ui/interactive-grid-pattern\"\n\nexport default function InteractiveGridPatternDemo() {\n  return (\n    <div className=\"relative flex h-[400px] w-full flex-col items-center justify-center overflow-hidden rounded-lg border bg-background\">\n      <InteractiveGridPattern className=\"inset-x-0 inset-y-[-30%] h-[200%] skew-y-12 [mask-image:radial-gradient(400px_circle_at_center,white,transparent)]\" />\n    </div>\n  )\n}\n",
+      "type": "registry:example"
+    }
+  ],
+  "type": "registry:example"
+}

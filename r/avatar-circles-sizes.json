@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "avatar-circles-sizes",
+  "title": "Avatar Circles — Sizes",
+  "registryDependencies": [
+    "https://yousefkadah.github.io/react-animation-library/r/avatar-circles.json"
+  ],
+  "files": [
+    {
+      "path": "src/registry/examples/avatar-circles-sizes.tsx",
+      "content": "import { AvatarCircles } from \"@/components/ui/avatar-circles\"\n\nconst avatars = [\"sarah\", \"evan\", \"anthony\", \"daniel\"].map((name) => ({\n  imageUrl: `https://avatar.vercel.sh/${name}`,\n  profileUrl: \"#\",\n}))\n\nexport default function AvatarCirclesSizes() {\n  return (\n    <div className=\"flex flex-col items-center gap-6\">\n      <AvatarCircles numPeople={8} avatarUrls={avatars} className=\"-space-x-2 [&_img]:size-7 [&_span]:size-7 [&_span]:text-[10px]\" />\n      <AvatarCircles numPeople={12} avatarUrls={avatars} />\n      <AvatarCircles numPeople={36} avatarUrls={avatars} className=\"-space-x-6 [&_img]:size-14 [&_span]:size-14 [&_span]:text-sm\" />\n    </div>\n  )\n}\n",
+      "type": "registry:example"
+    }
+  ],
+  "type": "registry:example"
+}

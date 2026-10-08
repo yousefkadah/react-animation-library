@@ -1,0 +1,1 @@
+import{o as e}from"./index-Bg9Yv0sK.js";import{t}from"./typing-animation-68_girql.js";var n=e();function r(){return(0,n.jsx)(t,{className:`text-4xl font-bold sm:text-5xl`,children:`Hello World! 👋`})}export{r as default};

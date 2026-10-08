@@ -1,0 +1,32 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "animated-gradient-text",
+  "title": "Animated Gradient Text",
+  "description": "An animated gradient background which transitions between colors for text.",
+  "registryDependencies": [
+    "utils"
+  ],
+  "files": [
+    {
+      "path": "src/registry/ui/animated-gradient-text.tsx",
+      "content": "import type { ComponentPropsWithoutRef, CSSProperties } from \"react\"\n\nimport { cn } from \"@/lib/utils\"\n\nexport interface AnimatedGradientTextProps extends ComponentPropsWithoutRef<\"span\"> {\n  /** Animation speed multiplier; widens the gradient so it travels further per loop. */\n  speed?: number\n  /** Gradient start (and end) colour. */\n  colorFrom?: string\n  /** Gradient middle colour. */\n  colorTo?: string\n}\n\nexport function AnimatedGradientText({\n  children,\n  className,\n  speed = 1,\n  colorFrom = \"#ffaa40\",\n  colorTo = \"#9c40ff\",\n  style,\n  ...props\n}: AnimatedGradientTextProps) {\n  return (\n    <span\n      style={\n        {\n          \"--bg-size\": `${speed * 300}%`,\n          \"--color-from\": colorFrom,\n          \"--color-to\": colorTo,\n          ...style,\n        } as CSSProperties\n      }\n      className={cn(\n        \"animate-gradient inline bg-linear-to-r from-(--color-from) via-(--color-to) to-(--color-from) bg-size-[var(--bg-size)_100%] bg-clip-text text-transparent motion-reduce:animate-none\",\n        className\n      )}\n      {...props}\n    >\n      {children}\n    </span>\n  )\n}\n",
+      "type": "registry:ui"
+    }
+  ],
+  "cssVars": {
+    "theme": {
+      "animate-gradient": "gradient 8s linear infinite"
+    }
+  },
+  "css": {
+    "@keyframes gradient": {
+      "to": {
+        "background-position": "var(--bg-size, 300%) 0"
+      }
+    }
+  },
+  "categories": [
+    "text-animations"
+  ],
+  "type": "registry:ui"
+}

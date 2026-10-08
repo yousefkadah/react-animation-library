@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "text-animate-slide-up",
+  "title": "Text Animate — Slide up by word",
+  "registryDependencies": [
+    "https://yousefkadah.github.io/react-animation-library/r/text-animate.json"
+  ],
+  "files": [
+    {
+      "path": "src/registry/examples/text-animate-slide-up.tsx",
+      "content": "import { TextAnimate } from \"@/components/ui/text-animate\"\n\nexport default function TextAnimateSlideUp() {\n  return (\n    <div className=\"flex flex-col items-center gap-3 text-center\">\n      <TextAnimate as=\"h2\" animation=\"slideUp\" by=\"word\" className=\"text-4xl font-bold tracking-tighter sm:text-5xl\">\n        Slide up by word\n      </TextAnimate>\n      <TextAnimate\n        animation=\"blurIn\"\n        by=\"word\"\n        delay={0.4}\n        duration={0.6}\n        className=\"max-w-sm text-balance text-muted-foreground\"\n      >\n        Pass any string as children and pick how it is split.\n      </TextAnimate>\n    </div>\n  )\n}\n",
+      "type": "registry:example"
+    }
+  ],
+  "type": "registry:example"
+}

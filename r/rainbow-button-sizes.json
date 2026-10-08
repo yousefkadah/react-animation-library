@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "rainbow-button-sizes",
+  "title": "Rainbow Button — Sizes",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "https://yousefkadah.github.io/react-animation-library/r/rainbow-button.json"
+  ],
+  "files": [
+    {
+      "path": "src/registry/examples/rainbow-button-sizes.tsx",
+      "content": "import { Sparkles } from \"lucide-react\"\n\nimport { RainbowButton } from \"@/components/ui/rainbow-button\"\n\nexport default function RainbowButtonSizes() {\n  return (\n    <div className=\"flex flex-wrap items-center justify-center gap-4\">\n      <RainbowButton size=\"sm\">Small</RainbowButton>\n      <RainbowButton>Default</RainbowButton>\n      <RainbowButton size=\"lg\">Large</RainbowButton>\n      <RainbowButton size=\"icon\" aria-label=\"Sparkles\">\n        <Sparkles />\n      </RainbowButton>\n      <RainbowButton asChild variant=\"outline\" className=\"[--speed:4s]\">\n        <a href=\"#\">Link, slower</a>\n      </RainbowButton>\n    </div>\n  )\n}\n",
+      "type": "registry:example"
+    }
+  ],
+  "type": "registry:example"
+}

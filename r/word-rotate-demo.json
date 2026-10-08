@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "word-rotate-demo",
+  "title": "Word Rotate — Default",
+  "registryDependencies": [
+    "https://yousefkadah.github.io/react-animation-library/r/word-rotate.json"
+  ],
+  "files": [
+    {
+      "path": "src/registry/examples/word-rotate-demo.tsx",
+      "content": "import { WordRotate } from \"@/components/ui/word-rotate\"\n\nexport default function WordRotateDemo() {\n  return <WordRotate className=\"text-4xl font-bold text-black dark:text-white\" words={[\"Word\", \"Rotate\"]} />\n}\n",
+      "type": "registry:example"
+    }
+  ],
+  "type": "registry:example"
+}

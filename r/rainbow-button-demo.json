@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "rainbow-button-demo",
+  "title": "Rainbow Button — Default",
+  "registryDependencies": [
+    "https://yousefkadah.github.io/react-animation-library/r/rainbow-button.json"
+  ],
+  "files": [
+    {
+      "path": "src/registry/examples/rainbow-button-demo.tsx",
+      "content": "import { RainbowButton } from \"@/components/ui/rainbow-button\"\n\nexport default function RainbowButtonDemo() {\n  return <RainbowButton>Get Unlimited Access</RainbowButton>\n}\n",
+      "type": "registry:example"
+    }
+  ],
+  "type": "registry:example"
+}

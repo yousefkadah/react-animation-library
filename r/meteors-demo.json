@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "meteors-demo",
+  "title": "Meteors — Meteor shower",
+  "registryDependencies": [
+    "https://yousefkadah.github.io/react-animation-library/r/meteors.json"
+  ],
+  "files": [
+    {
+      "path": "src/registry/examples/meteors-demo.tsx",
+      "content": "import { Meteors } from \"@/components/ui/meteors\"\n\nexport default function MeteorsDemo() {\n  return (\n    <div className=\"relative flex h-[350px] w-full flex-col items-center justify-center overflow-hidden rounded-lg border\">\n      <Meteors number={30} />\n      <span className=\"pointer-events-none bg-linear-to-b from-black to-gray-300/80 bg-clip-text text-center text-7xl leading-none font-semibold whitespace-pre-wrap text-transparent sm:text-8xl dark:from-white dark:to-slate-900/10\">\n        Meteors\n      </span>\n    </div>\n  )\n}\n",
+      "type": "registry:example"
+    }
+  ],
+  "type": "registry:example"
+}

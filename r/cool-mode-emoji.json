@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "cool-mode-emoji",
+  "title": "Cool Mode — Emoji",
+  "registryDependencies": [
+    "https://yousefkadah.github.io/react-animation-library/r/cool-mode.json"
+  ],
+  "files": [
+    {
+      "path": "src/registry/examples/cool-mode-emoji.tsx",
+      "content": "import { CoolMode } from \"@/components/ui/cool-mode\"\n\nexport default function CoolModeEmoji() {\n  return (\n    <div className=\"flex flex-wrap items-center justify-center gap-4\">\n      <CoolMode options={{ particle: \"🎉\", size: 12 }}>\n        <button type=\"button\" className=\"inline-flex h-9 items-center justify-center rounded-md bg-primary px-4 text-sm font-medium text-primary-foreground shadow-xs transition-colors hover:bg-primary/90\">\n          Party 🎉\n        </button>\n      </CoolMode>\n      <CoolMode options={{ particle: \"❤️\", size: 10, particleCount: 25, speedUp: 18 }}>\n        <button\n          type=\"button\"\n          className=\"inline-flex h-9 items-center justify-center rounded-md border bg-background px-4 text-sm font-medium shadow-xs transition-colors hover:bg-accent hover:text-accent-foreground\"\n        >\n          Like ❤️\n        </button>\n      </CoolMode>\n    </div>\n  )\n}\n",
+      "type": "registry:example"
+    }
+  ],
+  "type": "registry:example"
+}

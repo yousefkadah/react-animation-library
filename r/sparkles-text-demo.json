@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "sparkles-text-demo",
+  "title": "Sparkles Text — Default",
+  "registryDependencies": [
+    "https://yousefkadah.github.io/react-animation-library/r/sparkles-text.json"
+  ],
+  "files": [
+    {
+      "path": "src/registry/examples/sparkles-text-demo.tsx",
+      "content": "import { SparklesText } from \"@/components/ui/sparkles-text\"\n\nexport default function SparklesTextDemo() {\n  return <SparklesText>Magic UI</SparklesText>\n}\n",
+      "type": "registry:example"
+    }
+  ],
+  "type": "registry:example"
+}

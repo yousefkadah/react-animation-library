@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "terminal-demo",
+  "title": "Terminal — Sequenced",
+  "registryDependencies": [
+    "https://yousefkadah.github.io/react-animation-library/r/terminal.json"
+  ],
+  "files": [
+    {
+      "path": "src/registry/examples/terminal-demo.tsx",
+      "content": "import { AnimatedSpan, Terminal, TerminalTypingAnimation } from \"@/components/ui/terminal\"\n\nexport default function TerminalDemo() {\n  return (\n    <Terminal>\n      <TerminalTypingAnimation>&gt; npx shadcn@latest init</TerminalTypingAnimation>\n\n      <AnimatedSpan className=\"text-green-500\">✔ Preflight checks.</AnimatedSpan>\n      <AnimatedSpan className=\"text-green-500\">✔ Verifying framework. Found Next.js.</AnimatedSpan>\n      <AnimatedSpan className=\"text-green-500\">✔ Validating Tailwind CSS.</AnimatedSpan>\n      <AnimatedSpan className=\"text-green-500\">✔ Validating import alias.</AnimatedSpan>\n      <AnimatedSpan className=\"text-green-500\">✔ Writing components.json.</AnimatedSpan>\n      <AnimatedSpan className=\"text-green-500\">✔ Checking registry.</AnimatedSpan>\n      <AnimatedSpan className=\"text-green-500\">✔ Updating app/globals.css</AnimatedSpan>\n      <AnimatedSpan className=\"text-green-500\">✔ Installing dependencies.</AnimatedSpan>\n\n      <AnimatedSpan className=\"text-blue-500\">\n        <span>ℹ Updated 1 file:</span>\n        <span className=\"pl-2\">- lib/utils.ts</span>\n      </AnimatedSpan>\n\n      <TerminalTypingAnimation className=\"text-muted-foreground\">Success! Project initialization completed.</TerminalTypingAnimation>\n      <TerminalTypingAnimation className=\"text-muted-foreground\">You may now add components.</TerminalTypingAnimation>\n    </Terminal>\n  )\n}\n",
+      "type": "registry:example"
+    }
+  ],
+  "type": "registry:example"
+}

@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "interactive-hover-button-demo",
+  "title": "Interactive Hover Button — Default",
+  "registryDependencies": [
+    "https://yousefkadah.github.io/react-animation-library/r/interactive-hover-button.json"
+  ],
+  "files": [
+    {
+      "path": "src/registry/examples/interactive-hover-button-demo.tsx",
+      "content": "import { InteractiveHoverButton } from \"@/components/ui/interactive-hover-button\"\n\nexport default function InteractiveHoverButtonDemo() {\n  return <InteractiveHoverButton>Hover Me</InteractiveHoverButton>\n}\n",
+      "type": "registry:example"
+    }
+  ],
+  "type": "registry:example"
+}

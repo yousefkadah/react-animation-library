@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "warp-background-tunnel",
+  "title": "Warp Background — Deep tunnel",
+  "registryDependencies": [
+    "https://yousefkadah.github.io/react-animation-library/r/warp-background.json"
+  ],
+  "files": [
+    {
+      "path": "src/registry/examples/warp-background-tunnel.tsx",
+      "content": "import { WarpBackground } from \"@/components/ui/warp-background\"\n\nexport default function WarpBackgroundTunnel() {\n  return (\n    <WarpBackground perspective={60} beamsPerSide={5} beamSize={4} beamDuration={2} className=\"rounded-2xl p-16\">\n      <div className=\"flex flex-col items-center gap-1 rounded-full border bg-background/80 px-6 py-3 text-center backdrop-blur\">\n        <span className=\"text-sm font-semibold\">Hyperdrive engaged</span>\n        <span className=\"text-xs text-muted-foreground\">More beams, a deeper tunnel, faster travel</span>\n      </div>\n    </WarpBackground>\n  )\n}\n",
+      "type": "registry:example"
+    }
+  ],
+  "type": "registry:example"
+}

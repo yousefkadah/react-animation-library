@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "text-animate-demo",
+  "title": "Text Animate — Blur in by character",
+  "registryDependencies": [
+    "https://yousefkadah.github.io/react-animation-library/r/text-animate.json"
+  ],
+  "files": [
+    {
+      "path": "src/registry/examples/text-animate-demo.tsx",
+      "content": "import { TextAnimate } from \"@/components/ui/text-animate\"\n\nexport default function TextAnimateDemo() {\n  return (\n    <TextAnimate animation=\"blurInUp\" by=\"character\" once className=\"text-4xl font-semibold tracking-tight sm:text-5xl\">\n      Blur in by character\n    </TextAnimate>\n  )\n}\n",
+      "type": "registry:example"
+    }
+  ],
+  "type": "registry:example"
+}

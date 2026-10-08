@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "safari-demo",
+  "title": "Safari — Empty window",
+  "registryDependencies": [
+    "https://yousefkadah.github.io/react-animation-library/r/safari.json"
+  ],
+  "files": [
+    {
+      "path": "src/registry/examples/safari-demo.tsx",
+      "content": "import { Safari } from \"@/components/ui/safari\"\n\nexport default function SafariDemo() {\n  return (\n    <div className=\"w-full max-w-[600px]\">\n      <Safari url=\"yousefkadah.github.io\" />\n    </div>\n  )\n}\n",
+      "type": "registry:example"
+    }
+  ],
+  "type": "registry:example"
+}

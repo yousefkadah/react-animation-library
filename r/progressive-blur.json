@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "progressive-blur",
+  "title": "Progressive Blur",
+  "description": "A blur that gradually strengthens toward an edge, for fading out scrolling content or images.",
+  "registryDependencies": [
+    "utils"
+  ],
+  "files": [
+    {
+      "path": "src/registry/ui/progressive-blur.tsx",
+      "content": "import type { ComponentPropsWithoutRef, CSSProperties } from \"react\"\n\nimport { cn } from \"@/lib/utils\"\n\nexport interface ProgressiveBlurProps extends ComponentPropsWithoutRef<\"div\"> {\n  /** Height of the blurred band, e.g. `30%` or `120px`. Ignored when `position` is `both`. */\n  height?: string\n  /** Edge the blur sits on. `both` covers the whole container. */\n  position?: \"top\" | \"bottom\" | \"both\"\n  /** Blur radius of each stacked layer, in pixels, from the faintest to the strongest. */\n  blurLevels?: number[]\n}\n\nconst DEFAULT_BLUR_LEVELS = [0.5, 1, 2, 4, 8, 16, 32, 64]\nconst FULL_MASK = \"linear-gradient(rgba(0,0,0,0) 0%, rgba(0,0,0,1) 5%, rgba(0,0,0,1) 95%, rgba(0,0,0,0) 100%)\"\n\n/**\n * Each layer blurs more than the last and is masked to a band 12.5% further along, so the blur\n * ramps up smoothly toward the edge instead of starting with a hard line.\n */\nfunction layerStyles(position: NonNullable<ProgressiveBlurProps[\"position\"]>, levels: number[]): CSSProperties[] {\n  const direction = position === \"top\" ? \"to top\" : \"to bottom\"\n  const band = (from: number, to: number, end: number) =>\n    position === \"both\"\n      ? FULL_MASK\n      : `linear-gradient(${direction}, rgba(0,0,0,0) ${from}%, rgba(0,0,0,1) ${to}%, rgba(0,0,0,1) ${end}%, rgba(0,0,0,0) ${end + 12.5}%)`\n\n  return levels.map((blur, index) => {\n    let mask: string\n    if (index === 0) mask = band(0, 12.5, 25)\n    else if (index === levels.length - 1)\n      mask = position === \"both\" ? FULL_MASK : `linear-gradient(${direction}, rgba(0,0,0,0) 87.5%, rgba(0,0,0,1) 100%)`\n    else mask = band(index * 12.5, (index + 1) * 12.5, (index + 2) * 12.5)\n\n    return {\n      zIndex: index + 1,\n      backdropFilter: `blur(${blur}px)`,\n      WebkitBackdropFilter: `blur(${blur}px)`,\n      maskImage: mask,\n      WebkitMaskImage: mask,\n    }\n  })\n}\n\nexport function ProgressiveBlur({\n  className,\n  height = \"30%\",\n  position = \"bottom\",\n  blurLevels = DEFAULT_BLUR_LEVELS,\n  style,\n  children,\n  ...props\n}: ProgressiveBlurProps) {\n  return (\n    <div\n      {...props}\n      className={cn(\n        \"pointer-events-none absolute inset-x-0 z-10\",\n        className,\n        position === \"top\" ? \"top-0\" : position === \"bottom\" ? \"bottom-0\" : \"inset-y-0\"\n      )}\n      style={{ height: position === \"both\" ? \"100%\" : height, ...style }}\n    >\n      {layerStyles(position, blurLevels).map((layerStyle, index) => (\n        <div key={index} aria-hidden className=\"absolute inset-0\" style={layerStyle} />\n      ))}\n      {children}\n    </div>\n  )\n}\n",
+      "type": "registry:ui"
+    }
+  ],
+  "categories": [
+    "components"
+  ],
+  "type": "registry:ui"
+}

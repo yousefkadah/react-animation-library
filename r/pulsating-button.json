@@ -1,0 +1,44 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "pulsating-button",
+  "title": "Pulsating Button",
+  "description": "An animated pulsating button useful for capturing attention of users.",
+  "registryDependencies": [
+    "utils"
+  ],
+  "files": [
+    {
+      "path": "src/registry/ui/pulsating-button.tsx",
+      "content": "\"use client\"\n\nimport { useImperativeHandle, useLayoutEffect, useRef, type ComponentProps, type CSSProperties } from \"react\"\n\nimport { cn } from \"@/lib/utils\"\n\nexport interface PulsatingButtonProps extends ComponentProps<\"button\"> {\n  /** Colour of the pulse. Defaults to the button's own background colour. */\n  pulseColor?: string\n  /** Duration of one pulse, e.g. `1.5s`. */\n  duration?: string\n  /** How far the pulse spreads, e.g. `8px`. */\n  distance?: string\n  /** `pulse` breathes in and out; `ripple` radiates outward and fades. */\n  variant?: \"pulse\" | \"ripple\"\n}\n\nexport function PulsatingButton({\n  className,\n  children,\n  pulseColor,\n  duration = \"1.5s\",\n  distance = \"8px\",\n  variant = \"pulse\",\n  style,\n  ref,\n  ...props\n}: PulsatingButtonProps) {\n  const innerRef = useRef<HTMLButtonElement>(null)\n  useImperativeHandle(ref, () => innerRef.current!)\n\n  // Without a `pulseColor`, the pulse uses the button's computed background (exposed as `--bg`),\n  // kept in sync when the theme class, the button's attributes or its hover/focus state change.\n  useLayoutEffect(() => {\n    const button = innerRef.current\n    if (!button) return\n\n    if (pulseColor) {\n      button.style.removeProperty(\"--bg\")\n      return\n    }\n\n    let animationFrameId = 0\n    let currentBackground = \"\"\n\n    const updateBackground = () => {\n      animationFrameId = 0\n      const nextBackground = getComputedStyle(button).backgroundColor\n      if (nextBackground === currentBackground) return\n      currentBackground = nextBackground\n      button.style.setProperty(\"--bg\", nextBackground)\n    }\n\n    const scheduleUpdate = () => {\n      if (animationFrameId) return\n      animationFrameId = window.requestAnimationFrame(updateBackground)\n    }\n\n    updateBackground()\n\n    const themeObserver = new MutationObserver(scheduleUpdate)\n    themeObserver.observe(document.documentElement, { attributes: true, attributeFilter: [\"class\"] })\n\n    const buttonObserver = new MutationObserver(scheduleUpdate)\n    buttonObserver.observe(button, { attributes: true })\n\n    const syncEvents = [\"blur\", \"focus\", \"pointerenter\", \"pointerleave\"] as const\n    for (const eventName of syncEvents) button.addEventListener(eventName, scheduleUpdate)\n\n    return () => {\n      if (animationFrameId) window.cancelAnimationFrame(animationFrameId)\n      themeObserver.disconnect()\n      buttonObserver.disconnect()\n      for (const eventName of syncEvents) button.removeEventListener(eventName, scheduleUpdate)\n    }\n  }, [pulseColor])\n\n  return (\n    <button\n      ref={innerRef}\n      className={cn(\n        \"relative flex cursor-pointer items-center justify-center rounded-lg bg-primary px-4 py-2 text-center text-primary-foreground\",\n        className\n      )}\n      style={\n        {\n          ...(pulseColor && { \"--pulse-color\": pulseColor }),\n          \"--duration\": duration,\n          \"--distance\": distance,\n          ...style,\n        } as CSSProperties\n      }\n      {...props}\n    >\n      <span className=\"relative z-10\">{children}</span>\n      <span\n        aria-hidden=\"true\"\n        className={cn(\n          \"pointer-events-none absolute inset-0 rounded-[inherit] bg-inherit motion-reduce:animate-none\",\n          variant === \"pulse\" ? \"animate-pulsating\" : \"animate-pulsating-ripple\"\n        )}\n      />\n    </button>\n  )\n}\n",
+      "type": "registry:ui"
+    }
+  ],
+  "cssVars": {
+    "theme": {
+      "animate-pulsating": "pulsating var(--duration) ease-out infinite",
+      "animate-pulsating-ripple": "pulsating-ripple var(--duration) cubic-bezier(0.16, 1, 0.3, 1) infinite"
+    }
+  },
+  "css": {
+    "@keyframes pulsating": {
+      "0%, 100%": {
+        "box-shadow": "0 0 0 0 var(--pulse-color, oklch(from var(--bg) l c h / 0.5))"
+      },
+      "50%": {
+        "box-shadow": "0 0 0 var(--distance) var(--pulse-color, oklch(from var(--bg) l c h / 0.5))"
+      }
+    },
+    "@keyframes pulsating-ripple": {
+      "0%": {
+        "box-shadow": "0 0 0 0 oklch(from var(--pulse-color, var(--bg)) l c h / 1)"
+      },
+      "100%": {
+        "box-shadow": "0 0 0 var(--distance) oklch(from var(--pulse-color, var(--bg)) l c h / 0)"
+      }
+    }
+  },
+  "categories": [
+    "buttons"
+  ],
+  "type": "registry:ui"
+}

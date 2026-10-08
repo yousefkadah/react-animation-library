@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "video-text-typography",
+  "title": "Video Text — Custom typography",
+  "registryDependencies": [
+    "https://yousefkadah.github.io/react-animation-library/r/video-text.json"
+  ],
+  "files": [
+    {
+      "path": "src/registry/examples/video-text-typography.tsx",
+      "content": "import { VideoText } from \"@/components/ui/video-text\"\n\nexport default function VideoTextTypography() {\n  return (\n    <div className=\"flex w-full max-w-xl flex-col items-center gap-2\">\n      <div className=\"relative h-[180px] w-full overflow-hidden\">\n        <VideoText\n          as=\"h2\"\n          src=\"https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.webm\"\n          fontSize={24}\n          fontWeight={900}\n          fontFamily=\"Georgia, 'Times New Roman', serif\"\n        >\n          Spring\n        </VideoText>\n      </div>\n      <p className=\"text-sm text-muted-foreground\">Any font, weight or size: the mask is plain SVG text.</p>\n    </div>\n  )\n}\n",
+      "type": "registry:example"
+    }
+  ],
+  "type": "registry:example"
+}

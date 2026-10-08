@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "android-image",
+  "title": "Android — With image",
+  "registryDependencies": [
+    "https://yousefkadah.github.io/react-animation-library/r/android.json"
+  ],
+  "files": [
+    {
+      "path": "src/registry/examples/android-image.tsx",
+      "content": "import { Android } from \"@/components/ui/android\"\n\nexport default function AndroidImage() {\n  return <Android width={200} height={437} src=\"https://picsum.photos/seed/android/720/1600\" />\n}\n",
+      "type": "registry:example"
+    }
+  ],
+  "type": "registry:example"
+}

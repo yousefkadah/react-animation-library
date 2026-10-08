@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "text-reveal-card",
+  "title": "Text Reveal — Card with slot text",
+  "registryDependencies": [
+    "https://yousefkadah.github.io/react-animation-library/r/text-reveal.json"
+  ],
+  "files": [
+    {
+      "path": "src/registry/examples/text-reveal-card.tsx",
+      "content": "\"use client\"\n\nimport { useRef } from \"react\"\n\nimport { TextReveal } from \"@/components/ui/text-reveal\"\n\nexport default function TextRevealCard() {\n  const scroller = useRef<HTMLDivElement>(null)\n\n  return (\n    <div className=\"relative w-full max-w-2xl overflow-hidden rounded-xl border bg-card shadow-sm\">\n      <div ref={scroller} className=\"h-[320px] overflow-y-auto\">\n        <TextReveal container={scroller} className=\"h-[640px]\">\n          Every word fades in as you scroll, so the story unfolds at the reader's pace.\n        </TextReveal>\n      </div>\n      <div className=\"pointer-events-none absolute inset-x-0 top-0 h-10 bg-linear-to-b from-card\" />\n      <div className=\"pointer-events-none absolute inset-x-0 bottom-0 h-10 bg-linear-to-t from-card\" />\n    </div>\n  )\n}\n",
+      "type": "registry:example"
+    }
+  ],
+  "type": "registry:example"
+}

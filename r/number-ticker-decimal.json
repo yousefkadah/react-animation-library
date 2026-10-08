@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "number-ticker-decimal",
+  "title": "Number Ticker — Decimal",
+  "registryDependencies": [
+    "https://yousefkadah.github.io/react-animation-library/r/number-ticker.json"
+  ],
+  "files": [
+    {
+      "path": "src/registry/examples/number-ticker-decimal.tsx",
+      "content": "import { NumberTicker } from \"@/components/ui/number-ticker\"\n\nexport default function NumberTickerDecimal() {\n  return <NumberTicker value={5.67} decimalPlaces={2} className=\"text-8xl font-medium tracking-tighter whitespace-pre-wrap\" />\n}\n",
+      "type": "registry:example"
+    }
+  ],
+  "type": "registry:example"
+}

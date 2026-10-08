@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "magic-card-demo",
+  "title": "Magic Card — Login card",
+  "registryDependencies": [
+    "https://yousefkadah.github.io/react-animation-library/r/magic-card.json"
+  ],
+  "files": [
+    {
+      "path": "src/registry/examples/magic-card-demo.tsx",
+      "content": "import { MagicCard } from \"@/components/ui/magic-card\"\n\nexport default function MagicCardDemo() {\n  return (\n    <div className=\"w-full max-w-sm rounded-xl\">\n      {/* The spotlight colour is a CSS variable, so it can differ between light and dark mode. */}\n      <MagicCard gradientColor=\"var(--spotlight)\" className=\"[--spotlight:#D9D9D955] dark:[--spotlight:#262626]\">\n        <div className=\"space-y-1.5 border-b p-4\">\n          <h3 className=\"leading-none font-semibold\">Login</h3>\n          <p className=\"text-sm text-muted-foreground\">Enter your credentials to access your account</p>\n        </div>\n        <form className=\"grid gap-4 p-4\" onSubmit={(event) => event.preventDefault()}>\n          <label className=\"grid gap-2 text-sm font-medium\">\n            Email\n            <input\n              type=\"email\"\n              placeholder=\"name@example.com\"\n              className=\"h-9 rounded-md border bg-transparent px-3 text-sm font-normal outline-none focus-visible:ring-2 focus-visible:ring-ring/50\"\n            />\n          </label>\n          <label className=\"grid gap-2 text-sm font-medium\">\n            Password\n            <input\n              type=\"password\"\n              className=\"h-9 rounded-md border bg-transparent px-3 text-sm font-normal outline-none focus-visible:ring-2 focus-visible:ring-ring/50\"\n            />\n          </label>\n        </form>\n        <div className=\"border-t p-4\">\n          <button className=\"h-9 w-full rounded-md bg-primary px-4 text-sm font-medium text-primary-foreground hover:bg-primary/90\">\n            Sign In\n          </button>\n        </div>\n      </MagicCard>\n    </div>\n  )\n}\n",
+      "type": "registry:example"
+    }
+  ],
+  "type": "registry:example"
+}

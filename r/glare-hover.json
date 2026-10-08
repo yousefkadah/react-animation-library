@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "glare-hover",
+  "title": "Glare Hover",
+  "description": "A diagonal glare that sweeps across its content on hover, driven by CSS variables (angle, size, duration, colour).",
+  "registryDependencies": [
+    "utils"
+  ],
+  "files": [
+    {
+      "path": "src/registry/ui/glare-hover.tsx",
+      "content": "import type { ComponentPropsWithoutRef, CSSProperties } from \"react\"\n\nimport { cn } from \"@/lib/utils\"\n\nexport interface GlareHoverProps extends ComponentPropsWithoutRef<\"div\"> {\n  /** CSS width of the root, e.g. `100%` or `320px`. */\n  width?: string\n  /** CSS height of the root, e.g. `auto` or `200px`. */\n  height?: string\n  /** Background colour of the wrapper. */\n  background?: string\n  /** Glare colour as `#rgb` or `#rrggbb` (converted to `rgba` with `opacity`). */\n  color?: string\n  /** Opacity of the glare colour, 0–1. */\n  opacity?: number\n  /** Angle of the glare in degrees. */\n  angle?: number\n  /** Size of the glare tile as a percentage of the element. */\n  size?: number\n  /** Duration of the sweep in milliseconds. */\n  duration?: number\n  /** Only animate while hovered — the glare snaps back instead of sweeping out. */\n  playOnce?: boolean\n}\n\nfunction parseHex(color: string, opacity: number): string {\n  const hex = color.replace(\"#\", \"\")\n  const parse = (value: string) => Number.parseInt(value, 16)\n  if (/^[0-9A-Fa-f]{6}$/.test(hex)) {\n    return `rgba(${parse(hex.slice(0, 2))},${parse(hex.slice(2, 4))},${parse(hex.slice(4, 6))},${opacity})`\n  }\n  if (/^[0-9A-Fa-f]{3}$/.test(hex)) {\n    return `rgba(${parse(hex[0] + hex[0])},${parse(hex[1] + hex[1])},${parse(hex[2] + hex[2])},${opacity})`\n  }\n  return color\n}\n\nexport function GlareHover({\n  background = \"#000\",\n  children,\n  color = \"#ffffff\",\n  opacity = 0.5,\n  angle = -45,\n  size = 250,\n  duration = 650,\n  playOnce = false,\n  className,\n  style,\n  width,\n  height,\n  ...props\n}: GlareHoverProps) {\n  const cssVars = {\n    \"--gh-angle\": `${angle}deg`,\n    \"--gh-duration\": `${duration}ms`,\n    \"--gh-size\": `${size}%`,\n    \"--gh-rgba\": parseHex(color, opacity),\n    background,\n    ...style,\n    ...(width !== undefined ? { width } : {}),\n    ...(height !== undefined ? { height } : {}),\n  } as CSSProperties\n\n  return (\n    <div\n      {...props}\n      className={cn(\n        \"relative grid size-fit cursor-pointer place-items-center overflow-hidden bg-transparent\",\n        \"before:pointer-events-none before:absolute before:inset-0 before:z-10 before:bg-no-repeat\",\n        \"before:[background-image:linear-gradient(var(--gh-angle),transparent_60%,var(--gh-rgba)_70%,transparent,transparent_100%)]\",\n        \"before:[background-size:var(--gh-size)_var(--gh-size),100%_100%]\",\n        \"before:[background-position:-100%_-100%,0_0]\",\n        !playOnce && \"before:transition-[background-position] before:duration-(--gh-duration) before:ease-in-out\",\n        playOnce &&\n          \"before:transition-none hover:before:transition-[background-position] hover:before:duration-(--gh-duration)\",\n        \"hover:before:[background-position:100%_100%,0_0]\",\n        className\n      )}\n      style={cssVars}\n    >\n      {children}\n    </div>\n  )\n}\n",
+      "type": "registry:ui"
+    }
+  ],
+  "categories": [
+    "special-effects"
+  ],
+  "type": "registry:ui"
+}

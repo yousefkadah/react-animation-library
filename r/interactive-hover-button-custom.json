@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "interactive-hover-button-custom",
+  "title": "Interactive Hover Button — Custom styles",
+  "registryDependencies": [
+    "https://yousefkadah.github.io/react-animation-library/r/interactive-hover-button.json"
+  ],
+  "files": [
+    {
+      "path": "src/registry/examples/interactive-hover-button-custom.tsx",
+      "content": "import { InteractiveHoverButton } from \"@/components/ui/interactive-hover-button\"\n\nexport default function InteractiveHoverButtonCustom() {\n  return (\n    <div className=\"flex flex-wrap items-center justify-center gap-4\">\n      <InteractiveHoverButton className=\"px-8 py-3 text-lg\">Get started</InteractiveHoverButton>\n      {/* The fill and its text follow --primary / --primary-foreground, so a scoped override recolours them. */}\n      <InteractiveHoverButton className=\"border-emerald-500/40 [--primary-foreground:#ffffff] [--primary:#10b981]\">\n        Book a demo\n      </InteractiveHoverButton>\n    </div>\n  )\n}\n",
+      "type": "registry:example"
+    }
+  ],
+  "type": "registry:example"
+}

@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "hero-video-dialog-styles",
+  "title": "Hero Video Dialog — All animation styles",
+  "registryDependencies": [
+    "https://yousefkadah.github.io/react-animation-library/r/hero-video-dialog.json"
+  ],
+  "files": [
+    {
+      "path": "src/registry/examples/hero-video-dialog-styles.tsx",
+      "content": "\"use client\"\n\nimport { useState } from \"react\"\n\nimport { HeroVideoDialog, type HeroVideoAnimationStyle } from \"@/components/ui/hero-video-dialog\"\n\nconst styles: HeroVideoAnimationStyle[] = [\n  \"from-center\",\n  \"from-bottom\",\n  \"from-top\",\n  \"from-left\",\n  \"from-right\",\n  \"fade\",\n  \"top-in-bottom-out\",\n  \"left-in-right-out\",\n]\n\nexport default function HeroVideoDialogStyles() {\n  const [selected, setSelected] = useState<HeroVideoAnimationStyle>(\"from-left\")\n\n  return (\n    <div className=\"flex w-full max-w-xl flex-col gap-4\">\n      <div className=\"flex flex-wrap justify-center gap-1.5\" role=\"radiogroup\" aria-label=\"Animation style\">\n        {styles.map((style) => (\n          <button\n            key={style}\n            type=\"button\"\n            role=\"radio\"\n            aria-checked={selected === style}\n            className=\"rounded-full border px-3 py-1 font-mono text-xs transition-colors hover:bg-accent aria-checked:border-primary aria-checked:bg-primary aria-checked:text-primary-foreground\"\n            onClick={() => setSelected(style)}\n          >\n            {style}\n          </button>\n        ))}\n      </div>\n      <HeroVideoDialog\n        animationStyle={selected}\n        videoSrc=\"https://www.youtube.com/embed/8pDqJVdNa44\"\n        thumbnailSrc=\"https://i.ytimg.com/vi/8pDqJVdNa44/maxresdefault.jpg\"\n        thumbnailAlt=\"React.js: The Documentary\"\n      />\n    </div>\n  )\n}\n",
+      "type": "registry:example"
+    }
+  ],
+  "type": "registry:example"
+}

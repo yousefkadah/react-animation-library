@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "hyper-text-characters",
+  "title": "Hyper Text — Custom character sets",
+  "registryDependencies": [
+    "https://yousefkadah.github.io/react-animation-library/r/hyper-text.json"
+  ],
+  "files": [
+    {
+      "path": "src/registry/examples/hyper-text-characters.tsx",
+      "content": "import { HyperText } from \"@/components/ui/hyper-text\"\n\nconst binary = [\"0\", \"1\"]\nconst symbols = \"!<>-_\\\\/[]{}—=+*^?#\".split(\"\")\n\nexport default function HyperTextCharacters() {\n  return (\n    <div className=\"flex flex-col items-center gap-2 text-center\">\n      <HyperText as=\"h2\" characterSet={binary} duration={1600} className=\"text-3xl sm:text-5xl\">\n        Decrypting\n      </HyperText>\n      <HyperText as=\"p\" characterSet={symbols} delay={600} className=\"text-lg font-medium text-muted-foreground sm:text-xl\">\n        Access granted\n      </HyperText>\n    </div>\n  )\n}\n",
+      "type": "registry:example"
+    }
+  ],
+  "type": "registry:example"
+}

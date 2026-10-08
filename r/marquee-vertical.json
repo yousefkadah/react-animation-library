@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "marquee-vertical",
+  "title": "Marquee — Vertical",
+  "registryDependencies": [
+    "https://yousefkadah.github.io/react-animation-library/r/marquee.json"
+  ],
+  "files": [
+    {
+      "path": "src/registry/examples/marquee-vertical.tsx",
+      "content": "import { Marquee } from \"@/components/ui/marquee\"\n\nconst reviews = [\n  { name: \"Jack\", username: \"@jack\", body: \"I've never seen anything like this before. It's amazing.\", img: \"https://avatar.vercel.sh/jack\" },\n  { name: \"Jill\", username: \"@jill\", body: \"I don't know what to say. I'm speechless.\", img: \"https://avatar.vercel.sh/jill\" },\n  { name: \"John\", username: \"@john\", body: \"I'm at a loss for words. This is amazing.\", img: \"https://avatar.vercel.sh/john\" },\n  { name: \"Jane\", username: \"@jane\", body: \"Shipped our landing page in an afternoon.\", img: \"https://avatar.vercel.sh/jane\" },\n  { name: \"Jenny\", username: \"@jenny\", body: \"The motion feels incredibly polished.\", img: \"https://avatar.vercel.sh/jenny\" },\n  { name: \"James\", username: \"@james\", body: \"Copy, paste, done. Love it.\", img: \"https://avatar.vercel.sh/james\" },\n]\n\nfunction ReviewCard({ img, name, username, body }: (typeof reviews)[number]) {\n  return (\n    <figure className=\"relative w-56 overflow-hidden rounded-xl border border-gray-950/[.1] bg-gray-950/[.01] p-4 dark:border-gray-50/[.1] dark:bg-gray-50/[.10]\">\n      <div className=\"flex items-center gap-2\">\n        <img className=\"rounded-full\" width=\"32\" height=\"32\" alt=\"\" src={img} />\n        <div className=\"flex flex-col\">\n          <p className=\"text-sm font-medium\">{name}</p>\n          <p className=\"text-xs font-medium text-muted-foreground\">{username}</p>\n        </div>\n      </div>\n      <blockquote className=\"mt-2 text-sm\">{body}</blockquote>\n    </figure>\n  )\n}\n\nexport default function MarqueeVertical() {\n  return (\n    <div className=\"relative flex h-[500px] w-full flex-row items-center justify-center overflow-hidden\">\n      <Marquee pauseOnHover vertical duration=\"20s\">\n        {reviews.slice(0, 3).map((review) => (\n          <ReviewCard key={review.username} {...review} />\n        ))}\n      </Marquee>\n      <Marquee reverse pauseOnHover vertical duration=\"20s\">\n        {reviews.slice(3).map((review) => (\n          <ReviewCard key={review.username} {...review} />\n        ))}\n      </Marquee>\n      <div className=\"pointer-events-none absolute inset-x-0 top-0 h-1/4 bg-linear-to-b from-background\" />\n      <div className=\"pointer-events-none absolute inset-x-0 bottom-0 h-1/4 bg-linear-to-t from-background\" />\n    </div>\n  )\n}\n",
+      "type": "registry:example"
+    }
+  ],
+  "type": "registry:example"
+}

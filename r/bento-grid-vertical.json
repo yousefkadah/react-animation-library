@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "bento-grid-vertical",
+  "title": "Bento Grid — Vertical",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "https://yousefkadah.github.io/react-animation-library/r/bento-grid.json"
+  ],
+  "files": [
+    {
+      "path": "src/registry/examples/bento-grid-vertical.tsx",
+      "content": "import { Bell, Calendar, FileText, Globe, TextCursorInput } from \"lucide-react\"\n\nimport { cn } from \"@/lib/utils\"\nimport { BentoCard, BentoGrid } from \"@/components/ui/bento-grid\"\n\nconst features = [\n  {\n    Icon: FileText,\n    name: \"Save your files\",\n    description: \"We automatically save your files as you type.\",\n    glow: \"from-sky-400/40 to-indigo-500/40\",\n    className: \"lg:row-start-1 lg:row-end-4 lg:col-start-2 lg:col-end-3\",\n  },\n  {\n    Icon: TextCursorInput,\n    name: \"Full text search\",\n    description: \"Search through all your files in one place.\",\n    glow: \"from-emerald-400/40 to-teal-500/40\",\n    className: \"lg:col-start-1 lg:col-end-2 lg:row-start-1 lg:row-end-3\",\n  },\n  {\n    Icon: Globe,\n    name: \"Multilingual\",\n    description: \"Supports 100+ languages and counting.\",\n    glow: \"from-amber-400/40 to-orange-500/40\",\n    className: \"lg:col-start-1 lg:col-end-2 lg:row-start-3 lg:row-end-4\",\n  },\n  {\n    Icon: Calendar,\n    name: \"Calendar\",\n    description: \"Use the calendar to filter your files by date.\",\n    glow: \"from-fuchsia-400/40 to-pink-500/40\",\n    className: \"lg:col-start-3 lg:col-end-3 lg:row-start-1 lg:row-end-2\",\n  },\n  {\n    Icon: Bell,\n    name: \"Notifications\",\n    description: \"Get notified when someone shares a file or mentions you in a comment.\",\n    glow: \"from-violet-400/40 to-purple-500/40\",\n    className: \"lg:col-start-3 lg:col-end-3 lg:row-start-2 lg:row-end-4\",\n  },\n]\n\nexport default function BentoGridVertical() {\n  return (\n    <BentoGrid className=\"lg:grid-rows-3\">\n      {features.map(({ glow, ...feature }) => (\n        <BentoCard\n          key={feature.name}\n          {...feature}\n          href=\"#\"\n          cta=\"Learn more\"\n          background={\n            <div\n              className={cn(\n                \"absolute -end-20 -top-20 size-64 rounded-full bg-radial blur-3xl transition-transform duration-500 group-hover:scale-125\",\n                glow\n              )}\n              aria-hidden=\"true\"\n            />\n          }\n        />\n      ))}\n    </BentoGrid>\n  )\n}\n",
+      "type": "registry:example"
+    }
+  ],
+  "type": "registry:example"
+}

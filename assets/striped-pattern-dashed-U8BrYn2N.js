@@ -1,0 +1,1 @@
+import{o as e}from"./index-Bg9Yv0sK.js";import{t}from"./striped-pattern-CKJzd0ks.js";var n=e();function r(){return(0,n.jsx)(`div`,{className:`relative flex h-[300px] w-full flex-col items-center justify-center overflow-hidden rounded-lg border bg-background`,children:(0,n.jsx)(t,{className:`stroke-[0.3] [stroke-dasharray:8,4]`})})}export{r as default};

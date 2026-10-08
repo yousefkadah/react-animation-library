@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "iphone-image",
+  "title": "iPhone — With image",
+  "registryDependencies": [
+    "https://yousefkadah.github.io/react-animation-library/r/iphone.json"
+  ],
+  "files": [
+    {
+      "path": "src/registry/examples/iphone-image.tsx",
+      "content": "import { Iphone } from \"@/components/ui/iphone\"\n\nexport default function IphoneImage() {\n  return (\n    <div className=\"flex items-end gap-6\">\n      <Iphone width={180} src=\"https://picsum.photos/seed/iphone-left/900/1950\" className=\"hidden sm:inline-block\" />\n      <Iphone width={210} src=\"https://images.unsplash.com/photo-1511300636408-a63a89df3482?q=80&w=900&auto=format&fit=crop\" />\n    </div>\n  )\n}\n",
+      "type": "registry:example"
+    }
+  ],
+  "type": "registry:example"
+}

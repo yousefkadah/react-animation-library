@@ -1,0 +1,24 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "highlighter",
+  "title": "Highlighter",
+  "description": "A hand-drawn highlight, underline, box or circle that animates around inline text.",
+  "dependencies": [
+    "motion",
+    "rough-notation"
+  ],
+  "registryDependencies": [
+    "utils"
+  ],
+  "files": [
+    {
+      "path": "src/registry/ui/highlighter.tsx",
+      "content": "\"use client\"\n\nimport { useLayoutEffect, useRef, type ReactNode } from \"react\"\nimport { useInView } from \"motion/react\"\nimport { annotate } from \"rough-notation\"\nimport type { RoughAnnotation } from \"rough-notation/lib/model\"\n\nimport { cn } from \"@/lib/utils\"\n\nexport interface HighlighterProps {\n  /** The content to annotate. */\n  children: ReactNode\n  className?: string\n  /** The kind of annotation to draw. */\n  action?: \"highlight\" | \"underline\" | \"box\" | \"circle\" | \"strike-through\" | \"crossed-off\" | \"bracket\"\n  /** Colour of the annotation. */\n  color?: string\n  /** Stroke width in pixels. */\n  strokeWidth?: number\n  /** Milliseconds the drawing animation takes. */\n  animationDuration?: number\n  /** How many times the annotation is drawn; more than 1 gives a sketchier look. */\n  iterations?: number\n  /** Padding between the text and the annotation, in pixels. */\n  padding?: number\n  /** Annotate each line of wrapped text separately. */\n  multiline?: boolean\n  /** Wait until the text scrolls into view before drawing. */\n  isView?: boolean\n}\n\nexport function Highlighter({\n  children,\n  className,\n  action = \"highlight\",\n  color = \"#ffd1dc\",\n  strokeWidth = 1.5,\n  animationDuration = 600,\n  iterations = 2,\n  padding = 2,\n  multiline = true,\n  isView = false,\n}: HighlighterProps) {\n  const elementRef = useRef<HTMLSpanElement>(null)\n\n  const isInView = useInView(elementRef, {\n    once: true,\n    margin: \"-10%\",\n  })\n\n  // Draw straight away, or once in view when `isView` is set.\n  const shouldShow = !isView || isInView\n\n  useLayoutEffect(() => {\n    const element = elementRef.current\n    if (!shouldShow || !element) return\n\n    const annotation: RoughAnnotation = annotate(element, {\n      type: action,\n      color,\n      strokeWidth,\n      animationDuration,\n      iterations,\n      padding,\n      multiline,\n    })\n    annotation.show()\n\n    // Re-draw when the text reflows so the annotation keeps hugging it.\n    const resizeObserver = new ResizeObserver(() => {\n      annotation.hide()\n      annotation.show()\n    })\n    resizeObserver.observe(element)\n    resizeObserver.observe(document.body)\n\n    return () => {\n      annotation.remove()\n      resizeObserver.disconnect()\n    }\n  }, [shouldShow, action, color, strokeWidth, animationDuration, iterations, padding, multiline])\n\n  return (\n    <span ref={elementRef} className={cn(\"relative inline-block bg-transparent\", className)}>\n      {children}\n    </span>\n  )\n}\n",
+      "type": "registry:ui"
+    }
+  ],
+  "categories": [
+    "text-animations"
+  ],
+  "type": "registry:ui"
+}

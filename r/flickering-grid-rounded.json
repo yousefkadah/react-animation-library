@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "flickering-grid-rounded",
+  "title": "Flickering Grid — Radial mask",
+  "registryDependencies": [
+    "https://yousefkadah.github.io/react-animation-library/r/flickering-grid.json"
+  ],
+  "files": [
+    {
+      "path": "src/registry/examples/flickering-grid-rounded.tsx",
+      "content": "import { FlickeringGrid } from \"@/components/ui/flickering-grid\"\n\nexport default function FlickeringGridRounded() {\n  return (\n    <div className=\"relative h-[400px] w-full overflow-hidden rounded-lg border bg-background\">\n      <FlickeringGrid\n        className=\"absolute inset-0 z-0 size-full [mask-image:radial-gradient(300px_circle_at_center,white,transparent)]\"\n        squareSize={4}\n        gridGap={6}\n        color=\"#60A5FA\"\n        maxOpacity={0.5}\n        flickerChance={0.1}\n      />\n    </div>\n  )\n}\n",
+      "type": "registry:example"
+    }
+  ],
+  "type": "registry:example"
+}

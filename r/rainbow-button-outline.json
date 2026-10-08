@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "rainbow-button-outline",
+  "title": "Rainbow Button — Outline",
+  "registryDependencies": [
+    "https://yousefkadah.github.io/react-animation-library/r/rainbow-button.json"
+  ],
+  "files": [
+    {
+      "path": "src/registry/examples/rainbow-button-outline.tsx",
+      "content": "import { RainbowButton } from \"@/components/ui/rainbow-button\"\n\nexport default function RainbowButtonOutline() {\n  return <RainbowButton variant=\"outline\">Get Unlimited Access</RainbowButton>\n}\n",
+      "type": "registry:example"
+    }
+  ],
+  "type": "registry:example"
+}

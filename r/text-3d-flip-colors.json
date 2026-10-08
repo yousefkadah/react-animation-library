@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "text-3d-flip-colors",
+  "title": "Text 3D Flip — Coloured back face",
+  "registryDependencies": [
+    "https://yousefkadah.github.io/react-animation-library/r/text-3d-flip.json"
+  ],
+  "files": [
+    {
+      "path": "src/registry/examples/text-3d-flip-colors.tsx",
+      "content": "import { Text3DFlip } from \"@/components/ui/text-3d-flip\"\n\nexport default function Text3DFlipColors() {\n  return (\n    <div className=\"flex flex-col items-center gap-3\">\n      <Text3DFlip\n        as=\"h2\"\n        className=\"text-4xl font-bold tracking-tight sm:text-6xl\"\n        textClassName=\"bg-background text-foreground\"\n        flipTextClassName=\"bg-background text-violet-600 dark:text-violet-400\"\n        rotateDirection=\"right\"\n        staggerFrom=\"last\"\n      >\n        Hover to flip\n      </Text3DFlip>\n      <p className=\"text-sm text-muted-foreground\">Rotates right, staggered from the last letter.</p>\n    </div>\n  )\n}\n",
+      "type": "registry:example"
+    }
+  ],
+  "type": "registry:example"
+}

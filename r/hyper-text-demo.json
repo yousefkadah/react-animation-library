@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "hyper-text-demo",
+  "title": "Hyper Text — Hover me",
+  "registryDependencies": [
+    "https://yousefkadah.github.io/react-animation-library/r/hyper-text.json"
+  ],
+  "files": [
+    {
+      "path": "src/registry/examples/hyper-text-demo.tsx",
+      "content": "import { HyperText } from \"@/components/ui/hyper-text\"\n\nexport default function HyperTextDemo() {\n  return <HyperText>Hover Me!</HyperText>\n}\n",
+      "type": "registry:example"
+    }
+  ],
+  "type": "registry:example"
+}

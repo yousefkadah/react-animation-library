@@ -1,0 +1,40 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "meteors",
+  "title": "Meteors",
+  "description": "A meteor shower effect.",
+  "registryDependencies": [
+    "utils"
+  ],
+  "files": [
+    {
+      "path": "src/registry/ui/meteors.tsx",
+      "content": "\"use client\"\n\nimport { useEffect, useState, type CSSProperties } from \"react\"\n\nimport { cn } from \"@/lib/utils\"\n\nexport interface MeteorsProps {\n  className?: string\n  /** Number of meteors. */\n  number?: number\n  /** Minimum delay in seconds before a meteor starts. */\n  minDelay?: number\n  /** Maximum delay in seconds before a meteor starts. */\n  maxDelay?: number\n  /** Minimum seconds a meteor takes to fall. */\n  minDuration?: number\n  /** Maximum seconds a meteor takes to fall. */\n  maxDuration?: number\n  /** Angle of the trajectory in degrees. */\n  angle?: number\n}\n\nexport function Meteors({\n  number = 20,\n  minDelay = 0.2,\n  maxDelay = 1.2,\n  minDuration = 2,\n  maxDuration = 10,\n  angle = 215,\n  className,\n}: MeteorsProps) {\n  // Positions are random, so they are generated after mount (nothing renders during SSR).\n  const [meteorStyles, setMeteorStyles] = useState<CSSProperties[]>([])\n\n  useEffect(() => {\n    setMeteorStyles(\n      Array.from(\n        { length: number },\n        () =>\n          ({\n            \"--angle\": `${-angle}deg`,\n            top: \"-5%\",\n            left: `${Math.floor(Math.random() * 100)}%`,\n            animationDelay: `${Math.random() * (maxDelay - minDelay) + minDelay}s`,\n            animationDuration: `${Math.floor(Math.random() * (maxDuration - minDuration) + minDuration)}s`,\n          }) as CSSProperties\n      )\n    )\n  }, [number, minDelay, maxDelay, minDuration, maxDuration, angle])\n\n  return (\n    <>\n      {meteorStyles.map((style, index) => (\n        <span\n          key={index}\n          aria-hidden=\"true\"\n          style={style}\n          className={cn(\n            \"pointer-events-none absolute size-0.5 rotate-(--angle) animate-meteor rounded-full bg-zinc-500 shadow-[0_0_0_1px_#ffffff10] motion-reduce:hidden\",\n            className\n          )}\n        >\n          {/* tail */}\n          <span className=\"pointer-events-none absolute top-1/2 -z-10 h-px w-12.5 -translate-y-1/2 bg-linear-to-r from-zinc-500 to-transparent\" />\n        </span>\n      ))}\n    </>\n  )\n}\n",
+      "type": "registry:ui"
+    }
+  ],
+  "cssVars": {
+    "theme": {
+      "animate-meteor": "meteor 5s linear infinite"
+    }
+  },
+  "css": {
+    "@keyframes meteor": {
+      "0%": {
+        "transform": "rotate(var(--angle)) translateX(0)",
+        "opacity": "1"
+      },
+      "70%": {
+        "opacity": "1"
+      },
+      "100%": {
+        "transform": "rotate(var(--angle)) translateX(-500px)",
+        "opacity": "0"
+      }
+    }
+  },
+  "categories": [
+    "special-effects"
+  ],
+  "type": "registry:ui"
+}

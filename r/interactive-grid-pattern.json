@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "interactive-grid-pattern",
+  "title": "Interactive Grid Pattern",
+  "description": "An interactive background grid pattern made with SVGs, fully customizable using Tailwind CSS.",
+  "registryDependencies": [
+    "utils"
+  ],
+  "files": [
+    {
+      "path": "src/registry/ui/interactive-grid-pattern.tsx",
+      "content": "\"use client\"\n\nimport { useMemo, useState, type ComponentPropsWithoutRef } from \"react\"\n\nimport { cn } from \"@/lib/utils\"\n\nexport interface InteractiveGridPatternProps extends ComponentPropsWithoutRef<\"svg\"> {\n  /** Width of one square in pixels. */\n  width?: number\n  /** Height of one square in pixels. */\n  height?: number\n  /** Number of squares as `[horizontal, vertical]`. */\n  squares?: [horizontal: number, vertical: number]\n  /** Classes for every square, e.g. `hover:fill-blue-500`. */\n  squaresClassName?: string\n}\n\nconst squareBaseClass = \"stroke-gray-400/30 transition-all duration-100 ease-in-out not-[&:hover]:duration-1000\"\n\nexport function InteractiveGridPattern({\n  width = 40,\n  height = 40,\n  squares = [24, 24],\n  className,\n  squaresClassName,\n  ...props\n}: InteractiveGridPatternProps) {\n  const [horizontal, vertical] = squares\n  const [hoveredSquare, setHoveredSquare] = useState<number | null>(null)\n\n  // Resolved once, not per square, so hovering stays cheap on large grids.\n  const idleSquareClass = useMemo(() => cn(squareBaseClass, \"fill-transparent\", squaresClassName), [squaresClassName])\n  const hoveredSquareClass = useMemo(() => cn(squareBaseClass, \"fill-gray-300/30\", squaresClassName), [squaresClassName])\n\n  return (\n    <svg\n      aria-hidden=\"true\"\n      width={width * horizontal}\n      height={height * vertical}\n      {...props}\n      className={cn(\"absolute inset-0 h-full w-full border border-gray-400/30\", className)}\n    >\n      {Array.from({ length: horizontal * vertical }, (_, index) => (\n        <rect\n          key={index}\n          x={(index % horizontal) * width}\n          y={Math.floor(index / horizontal) * height}\n          width={width}\n          height={height}\n          className={hoveredSquare === index ? hoveredSquareClass : idleSquareClass}\n          onMouseEnter={() => setHoveredSquare(index)}\n          onMouseLeave={() => setHoveredSquare(null)}\n        />\n      ))}\n    </svg>\n  )\n}\n",
+      "type": "registry:ui"
+    }
+  ],
+  "categories": [
+    "backgrounds"
+  ],
+  "type": "registry:ui"
+}

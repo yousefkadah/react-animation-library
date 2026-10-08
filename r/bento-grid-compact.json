@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "bento-grid-compact",
+  "title": "Bento Grid — Compact",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "https://yousefkadah.github.io/react-animation-library/r/bento-grid.json"
+  ],
+  "files": [
+    {
+      "path": "src/registry/examples/bento-grid-compact.tsx",
+      "content": "import { Gauge, Lock, Palette, Zap } from \"lucide-react\"\n\nimport { BentoCard, BentoGrid } from \"@/components/ui/bento-grid\"\n\nconst features = [\n  {\n    Icon: Zap,\n    name: \"Fast by default\",\n    description: \"Pure CSS where it can be, Motion where it must.\",\n    cta: \"Benchmarks\",\n    glow: \"bg-linear-to-br from-yellow-300/30\",\n  },\n  {\n    Icon: Palette,\n    name: \"Themeable\",\n    description: \"Every colour comes from your shadcn tokens.\",\n    cta: \"Theming\",\n    glow: \"bg-linear-to-bl from-pink-300/30\",\n  },\n  {\n    Icon: Lock,\n    name: \"Accessible\",\n    description: \"Reduced motion and screen readers are first-class.\",\n    cta: \"Accessibility\",\n    glow: \"bg-linear-to-tr from-emerald-300/30\",\n  },\n  {\n    Icon: Gauge,\n    name: \"Tiny\",\n    description: \"Copy only what you use — no runtime to install.\",\n    cta: \"Install\",\n    glow: \"bg-linear-to-tl from-sky-300/30\",\n  },\n]\n\nexport default function BentoGridCompact() {\n  return (\n    <BentoGrid className=\"max-w-2xl auto-rows-[14rem] grid-cols-2\">\n      {features.map(({ glow, ...feature }) => (\n        <BentoCard\n          key={feature.name}\n          {...feature}\n          href=\"#\"\n          className=\"col-span-2 sm:col-span-1\"\n          background={<div className={`absolute inset-0 via-transparent to-transparent ${glow}`} aria-hidden=\"true\" />}\n        />\n      ))}\n    </BentoGrid>\n  )\n}\n",
+      "type": "registry:example"
+    }
+  ],
+  "type": "registry:example"
+}

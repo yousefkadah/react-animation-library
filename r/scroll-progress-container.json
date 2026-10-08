@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "scroll-progress-container",
+  "title": "Scroll Progress — Scroll container",
+  "registryDependencies": [
+    "https://yousefkadah.github.io/react-animation-library/r/scroll-progress.json"
+  ],
+  "files": [
+    {
+      "path": "src/registry/examples/scroll-progress-container.tsx",
+      "content": "\"use client\"\n\nimport { useRef } from \"react\"\n\nimport { ScrollProgress } from \"@/components/ui/scroll-progress\"\n\nconst sections = [\n  {\n    title: \"Why motion matters\",\n    body: \"Animation guides attention. A well-timed transition tells people where something came from and where it went, so the interface feels continuous instead of jumping between states.\",\n  },\n  {\n    title: \"Keep it short\",\n    body: \"Most interface transitions should land between 150 and 400 milliseconds. Longer than that and people start waiting for the UI instead of using it.\",\n  },\n  {\n    title: \"Respect preferences\",\n    body: \"Some people get dizzy from large movements. Honour prefers-reduced-motion by swapping slides and zooms for simple fades, or turning looping effects off.\",\n  },\n  {\n    title: \"Animate the cheap properties\",\n    body: \"Transforms and opacity can be composited on the GPU. Animating width, height or top forces layout on every frame and quickly drops below 60fps.\",\n  },\n  {\n    title: \"Ship it\",\n    body: \"Copy the component, tweak the classes, and you are done. The progress bar above tracks how far you have read through this card.\",\n  },\n]\n\nexport default function ScrollProgressContainer() {\n  const scroller = useRef<HTMLDivElement>(null)\n\n  return (\n    <div ref={scroller} className=\"relative h-[300px] w-full max-w-md overflow-y-auto rounded-xl border bg-card text-card-foreground\">\n      <ScrollProgress container={scroller} className=\"sticky h-1\" />\n      <article className=\"space-y-6 p-6\">\n        <h3 className=\"text-lg font-semibold\">Motion design, in five minutes</h3>\n        {sections.map((section) => (\n          <section key={section.title} className=\"space-y-2\">\n            <h4 className=\"font-medium\">{section.title}</h4>\n            <p className=\"text-sm leading-relaxed text-muted-foreground\">{section.body}</p>\n          </section>\n        ))}\n      </article>\n    </div>\n  )\n}\n",
+      "type": "registry:example"
+    }
+  ],
+  "type": "registry:example"
+}

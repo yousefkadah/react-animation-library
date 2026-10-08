@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "code-comparison-diff",
+  "title": "Code Comparison — Diff",
+  "dependencies": [
+    "tailwindcss"
+  ],
+  "registryDependencies": [
+    "https://yousefkadah.github.io/react-animation-library/r/code-comparison.json"
+  ],
+  "files": [
+    {
+      "path": "src/registry/examples/code-comparison-diff.tsx",
+      "content": "import { CodeComparison } from \"@/components/ui/code-comparison\"\n\nconst beforeCode = `@tailwind base;\n@tailwind components;\n@tailwind utilities;\n\n@layer base {\n  :root {\n    --background: 0 0% 100%;\n    --foreground: 0 0% 3.9%;\n  }\n}`\n\nconst afterCode = `@tailwind base; /* [!code --] */\n@tailwind components; /* [!code --] */\n@tailwind utilities; /* [!code --] */\n@import \"tailwindcss\"; /* [!code ++] */\n\n@theme inline { /* [!code ++] */\n  --color-background: var(--background); /* [!code ++] */\n  --color-foreground: var(--foreground); /* [!code ++] */\n} /* [!code ++] */\n\n:root {\n  --background: oklch(1 0 0);\n  --foreground: oklch(0.145 0 0);\n}`\n\nexport default function CodeComparisonDiff() {\n  return <CodeComparison beforeCode={beforeCode} afterCode={afterCode} language=\"css\" filename=\"globals.css\" />\n}\n",
+      "type": "registry:example"
+    }
+  ],
+  "type": "registry:example"
+}

@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "code-comparison-highlighter",
+  "title": "Code Comparison — Custom highlighter",
+  "registryDependencies": [
+    "https://yousefkadah.github.io/react-animation-library/r/code-comparison.json"
+  ],
+  "files": [
+    {
+      "path": "src/registry/examples/code-comparison-highlighter.tsx",
+      "content": "import { CodeComparison, type CodeComparisonHighlighter } from \"@/components/ui/code-comparison\"\n\nconst beforeCode = `function greet(name) {\n  // Say hello\n  return 'Hello, ' + name + '!'\n}`\n\nconst afterCode = `const greet = (name: string) => {\n  // Say hello\n  return \\`Hello, \\${name}!\\`\n}`\n\nconst escapeHtml = (value: string) => value.replace(/&/g, \"&amp;\").replace(/</g, \"&lt;\").replace(/>/g, \"&gt;\")\n\n/**\n * Any highlighter that returns Shiki-shaped HTML works — e.g. Shiki's own `codeToHtml`.\n * This tiny one colours comments, strings and keywords. Define it outside the component\n * (or memoise it) so it isn't re-run on every render.\n */\nconst highlighter: CodeComparisonHighlighter = (code) => {\n  const token = /(\\/\\/.*$)|('[^']*'|`[^`]*`)|\\b(const|function|return|string)\\b/gm\n  const lines = escapeHtml(code)\n    .replace(token, (match, comment, text) => {\n      const color = comment\n        ? \"text-muted-foreground italic\"\n        : text\n          ? \"text-emerald-600 dark:text-emerald-400\"\n          : \"text-rose-600 dark:text-rose-400\"\n      return `<span class=\"${color}\">${match}</span>`\n    })\n    .split(\"\\n\")\n    .map((line) => `<span class=\"line\">${line}</span>`)\n  return `<pre><code>${lines.join(\"\\n\")}</code></pre>`\n}\n\nexport default function CodeComparisonHighlighter() {\n  return (\n    <CodeComparison\n      beforeCode={beforeCode}\n      afterCode={afterCode}\n      language=\"typescript\"\n      filename=\"greet.ts\"\n      highlighter={highlighter}\n    />\n  )\n}\n",
+      "type": "registry:example"
+    }
+  ],
+  "type": "registry:example"
+}

@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "noise-texture-demo",
+  "title": "Noise Texture — Radial mask",
+  "registryDependencies": [
+    "https://yousefkadah.github.io/react-animation-library/r/noise-texture.json"
+  ],
+  "files": [
+    {
+      "path": "src/registry/examples/noise-texture-demo.tsx",
+      "content": "import { NoiseTexture } from \"@/components/ui/noise-texture\"\n\nexport default function NoiseTextureDemo() {\n  return (\n    <div className=\"relative flex h-[400px] w-full flex-col items-center justify-center overflow-hidden rounded-lg border bg-neutral-100/80 dark:bg-neutral-950\">\n      <NoiseTexture className=\"absolute inset-0 [mask-image:radial-gradient(420px_circle_at_center,white,transparent)]\" />\n    </div>\n  )\n}\n",
+      "type": "registry:example"
+    }
+  ],
+  "type": "registry:example"
+}

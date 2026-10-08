@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "animated-grid-pattern-linear-gradient",
+  "title": "Animated Grid Pattern — Linear gradient",
+  "registryDependencies": [
+    "https://yousefkadah.github.io/react-animation-library/r/animated-grid-pattern.json"
+  ],
+  "files": [
+    {
+      "path": "src/registry/examples/animated-grid-pattern-linear-gradient.tsx",
+      "content": "import { AnimatedGridPattern } from \"@/components/ui/animated-grid-pattern\"\n\nexport default function AnimatedGridPatternLinearGradient() {\n  return (\n    <div className=\"relative flex h-[400px] w-full items-center justify-center overflow-hidden rounded-lg border bg-background\">\n      <AnimatedGridPattern\n        width={30}\n        height={30}\n        numSquares={60}\n        maxOpacity={0.15}\n        duration={2}\n        repeatDelay={0.5}\n        className=\"text-sky-500 [mask-image:linear-gradient(to_bottom_right,white,transparent,transparent)] dark:text-sky-400\"\n      />\n    </div>\n  )\n}\n",
+      "type": "registry:example"
+    }
+  ],
+  "type": "registry:example"
+}

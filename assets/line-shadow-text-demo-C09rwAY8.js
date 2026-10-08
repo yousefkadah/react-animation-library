@@ -1,0 +1,1 @@
+import{o as e}from"./index-Bg9Yv0sK.js";import{t}from"./line-shadow-text-Cp2yV1yc.js";var n=e();function r(){return(0,n.jsxs)(`h1`,{className:`text-5xl leading-none font-semibold tracking-tighter text-balance sm:text-6xl md:text-7xl lg:text-8xl`,children:[`Ship`,` `,(0,n.jsx)(t,{className:`italic`,shadowColor:`var(--foreground)`,children:`Fast`})]})}export{r as default};

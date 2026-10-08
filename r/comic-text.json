@@ -1,0 +1,23 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "comic-text",
+  "title": "Comic Text",
+  "description": "Comic-book lettering with a halftone fill, thick outline and a pop-in animation.",
+  "dependencies": [
+    "motion"
+  ],
+  "registryDependencies": [
+    "utils"
+  ],
+  "files": [
+    {
+      "path": "src/registry/ui/comic-text.tsx",
+      "content": "\"use client\"\n\nimport type { CSSProperties } from \"react\"\nimport { motion } from \"motion/react\"\n\nimport { cn } from \"@/lib/utils\"\n\nexport interface ComicTextProps {\n  /** The text to display. */\n  children: string\n  className?: string\n  /** Inline styles, merged over the comic styles. */\n  style?: CSSProperties\n  /** Font size in `rem`. The outline and shadows scale with it. */\n  fontSize?: number\n}\n\nconst DOT_COLOR = \"#EF4444\"\nconst BACKGROUND_COLOR = \"#FACC15\"\n\nexport function ComicText({ children, className, style, fontSize = 5 }: ComicTextProps) {\n  if (typeof children !== \"string\") {\n    throw new Error(\"children must be a string\")\n  }\n\n  return (\n    <motion.div\n      className={cn(\"text-center select-none\", className)}\n      style={{\n        fontSize: `${fontSize}rem`,\n        fontFamily: \"'Bangers', 'Comic Sans MS', 'Impact', sans-serif\",\n        fontWeight: \"900\",\n        WebkitTextStroke: `${fontSize * 0.35}px #000000`,\n        textTransform: \"uppercase\",\n        filter: `drop-shadow(5px 5px 0px #000000) drop-shadow(3px 3px 0px ${DOT_COLOR})`,\n        backgroundColor: BACKGROUND_COLOR,\n        backgroundImage: `radial-gradient(circle at 1px 1px, ${DOT_COLOR} 1px, transparent 0)`,\n        backgroundSize: \"8px 8px\",\n        backgroundClip: \"text\",\n        WebkitBackgroundClip: \"text\",\n        WebkitTextFillColor: \"transparent\",\n        ...style,\n      }}\n      // The skew is a motion value so it combines with the pop-in scale and rotation.\n      initial={{ opacity: 0, scale: 0.8, rotate: -2, skewX: -10 }}\n      animate={{ opacity: 1, scale: 1, rotate: 0, skewX: -10 }}\n      transition={{\n        duration: 0.6,\n        ease: [0.175, 0.885, 0.32, 1.275],\n        type: \"spring\",\n      }}\n    >\n      {children}\n    </motion.div>\n  )\n}\n",
+      "type": "registry:ui"
+    }
+  ],
+  "categories": [
+    "text-animations"
+  ],
+  "type": "registry:ui"
+}

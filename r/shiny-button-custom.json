@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "shiny-button-custom",
+  "title": "Shiny Button — Custom styles",
+  "registryDependencies": [
+    "https://yousefkadah.github.io/react-animation-library/r/shiny-button.json"
+  ],
+  "files": [
+    {
+      "path": "src/registry/examples/shiny-button-custom.tsx",
+      "content": "import { ShinyButton } from \"@/components/ui/shiny-button\"\n\nexport default function ShinyButtonCustom() {\n  return (\n    <div className=\"flex flex-wrap items-center justify-center gap-4\">\n      <ShinyButton className=\"rounded-full px-8\">Rounded</ShinyButton>\n      {/* The shine is drawn with --primary, so a scoped override tints it. */}\n      <ShinyButton className=\"border-violet-500/30 bg-violet-500/5 [--primary:#8b5cf6]\">Violet shine</ShinyButton>\n    </div>\n  )\n}\n",
+      "type": "registry:example"
+    }
+  ],
+  "type": "registry:example"
+}

@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "ripple-button-demo",
+  "title": "Ripple Button — Default",
+  "registryDependencies": [
+    "https://yousefkadah.github.io/react-animation-library/r/ripple-button.json"
+  ],
+  "files": [
+    {
+      "path": "src/registry/examples/ripple-button-demo.tsx",
+      "content": "import { RippleButton } from \"@/components/ui/ripple-button\"\n\nexport default function RippleButtonDemo() {\n  return <RippleButton rippleColor=\"#ADD8E6\">Click me</RippleButton>\n}\n",
+      "type": "registry:example"
+    }
+  ],
+  "type": "registry:example"
+}

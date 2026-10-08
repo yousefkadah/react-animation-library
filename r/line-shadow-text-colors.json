@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "line-shadow-text-colors",
+  "title": "Line Shadow Text — Custom colour",
+  "registryDependencies": [
+    "https://yousefkadah.github.io/react-animation-library/r/line-shadow-text.json"
+  ],
+  "files": [
+    {
+      "path": "src/registry/examples/line-shadow-text-colors.tsx",
+      "content": "import { LineShadowText } from \"@/components/ui/line-shadow-text\"\n\nexport default function LineShadowTextColors() {\n  return (\n    <div className=\"flex flex-col items-center gap-2 text-center\">\n      <LineShadowText as=\"h2\" shadowColor=\"#9c40ff\" className=\"text-6xl font-black tracking-tighter text-[#9c40ff] italic sm:text-7xl\">\n        Magic\n      </LineShadowText>\n      <LineShadowText as=\"p\" shadowColor=\"#ffaa40\" className=\"text-3xl font-bold tracking-tight sm:text-4xl\">\n        Retro poster type\n      </LineShadowText>\n    </div>\n  )\n}\n",
+      "type": "registry:example"
+    }
+  ],
+  "type": "registry:example"
+}

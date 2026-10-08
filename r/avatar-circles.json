@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "avatar-circles",
+  "title": "Avatar Circles",
+  "description": "Overlapping circles of avatars.",
+  "registryDependencies": [
+    "utils"
+  ],
+  "files": [
+    {
+      "path": "src/registry/ui/avatar-circles.tsx",
+      "content": "import { cn } from \"@/lib/utils\"\n\nexport interface AvatarCircleItem {\n  imageUrl: string\n  profileUrl: string\n}\n\nexport interface AvatarCirclesProps {\n  className?: string\n  /** Number shown in the last circle, e.g. `99` renders “+99”. Hidden when 0 or omitted. */\n  numPeople?: number\n  avatarUrls: AvatarCircleItem[]\n}\n\nexport function AvatarCircles({ numPeople, className, avatarUrls }: AvatarCirclesProps) {\n  return (\n    <div className={cn(\"z-10 flex -space-x-4 rtl:space-x-reverse\", className)}>\n      {avatarUrls.map((url, index) => (\n        <a\n          key={index}\n          href={url.profileUrl}\n          target=\"_blank\"\n          rel=\"noopener noreferrer\"\n          className=\"rounded-full transition-transform hover:z-10 hover:-translate-y-0.5 focus-visible:z-10 focus-visible:ring-2 focus-visible:ring-ring/50 focus-visible:outline-none\"\n        >\n          <img\n            className=\"size-10 rounded-full border-2 border-background bg-muted\"\n            src={url.imageUrl}\n            width={40}\n            height={40}\n            alt={`Avatar ${index + 1}`}\n          />\n        </a>\n      ))}\n      {(numPeople ?? 0) > 0 && (\n        <span\n          className=\"flex size-10 items-center justify-center rounded-full border-2 border-background bg-foreground text-center text-xs font-medium text-background\"\n          aria-label={`${numPeople} more`}\n        >\n          +{numPeople}\n        </span>\n      )}\n    </div>\n  )\n}\n",
+      "type": "registry:ui"
+    }
+  ],
+  "categories": [
+    "components"
+  ],
+  "type": "registry:ui"
+}
