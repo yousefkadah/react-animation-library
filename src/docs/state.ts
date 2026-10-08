@@ -38,6 +38,13 @@ themeStore.subscribe(() => {
   }
 })
 
+/** Components such as AnimatedThemeToggler flip the class directly — keep the header icon in sync. */
+if (typeof MutationObserver !== 'undefined' && typeof document !== 'undefined') {
+  new MutationObserver(() => {
+    themeStore.set(document.documentElement.classList.contains('dark') ? 'dark' : 'light')
+  }).observe(document.documentElement, { attributes: true, attributeFilter: ['class'] })
+}
+
 export function toggleTheme() {
   themeStore.set(themeStore.get() === 'dark' ? 'light' : 'dark')
 }
