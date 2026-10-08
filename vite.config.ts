@@ -51,7 +51,7 @@ function staticRoutes(): Plugin {
   }
 }
 
-export default defineConfig(({ mode, command }) => {
+export default defineConfig(({ mode, command, isPreview }) => {
   if (mode === 'lib') {
     return {
       resolve: { alias },
@@ -88,7 +88,7 @@ export default defineConfig(({ mode, command }) => {
   }
 
   return {
-    base: command === 'build' ? '/react-animation-library/' : '/',
+    base: command === 'build' || isPreview ? '/react-animation-library/' : '/',
     resolve: { alias },
     plugins: [react(), tailwindcss(), staticRoutes()],
     build: {
