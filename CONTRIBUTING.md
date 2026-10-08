@@ -1,6 +1,6 @@
 # Contributing
 
-Every component lives in the **registry** (`src/registry`). The docs site, the shadcn-vue
+Every component lives in the **registry** (`src/registry`). The docs site, the shadcn
 registry JSON, the npm entry and the animation theme are all generated from it.
 
 ```
