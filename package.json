@@ -1,6 +1,6 @@
 {
   "name": "@yousefkadah/react-magic-ui",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "70+ free and open-source animated components for React, built with Tailwind CSS and Motion. Copy-paste them with the shadcn CLI or install from npm.",
   "type": "module",
   "main": "./dist/index.js",

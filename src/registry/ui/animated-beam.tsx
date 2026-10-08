@@ -81,12 +81,17 @@ export function AnimatedBeam({
       const rectA = from.getBoundingClientRect()
       const rectB = to.getBoundingClientRect()
 
-      setSvgDimensions({ width: containerRect.width, height: containerRect.height })
+      // Client rects are in screen pixels; the SVG draws in the container's own CSS pixels.
+      // They differ when an ancestor is scaled (CSS zoom or a transform), so convert.
+      const scaleX = container.offsetWidth ? containerRect.width / container.offsetWidth : 1
+      const scaleY = container.offsetHeight ? containerRect.height / container.offsetHeight : 1
 
-      const startX = rectA.left - containerRect.left + rectA.width / 2 + startXOffset
-      const startY = rectA.top - containerRect.top + rectA.height / 2 + startYOffset
-      const endX = rectB.left - containerRect.left + rectB.width / 2 + endXOffset
-      const endY = rectB.top - containerRect.top + rectB.height / 2 + endYOffset
+      setSvgDimensions({ width: containerRect.width / scaleX, height: containerRect.height / scaleY })
+
+      const startX = (rectA.left - containerRect.left + rectA.width / 2) / scaleX + startXOffset
+      const startY = (rectA.top - containerRect.top + rectA.height / 2) / scaleY + startYOffset
+      const endX = (rectB.left - containerRect.left + rectB.width / 2) / scaleX + endXOffset
+      const endY = (rectB.top - containerRect.top + rectB.height / 2) / scaleY + endYOffset
 
       const controlY = startY - curvature
       setPathD(`M ${startX},${startY} Q ${(startX + endX) / 2},${controlY} ${endX},${endY}`)
