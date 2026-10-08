@@ -64,6 +64,7 @@ export default defineConfig(({ mode, command }) => {
         }),
         copyTheme(),
       ],
+      publicDir: false,
       build: {
         outDir: 'dist',
         emptyOutDir: true,
@@ -79,8 +80,8 @@ export default defineConfig(({ mode, command }) => {
             ...Object.keys(pkg.dependencies),
             'react/jsx-runtime',
           ].flatMap((dep) => [dep, new RegExp(`^${dep}/`)]),
-          // Next.js app router: every module is a client module.
-          output: { preserveModules: true, preserveModulesRoot: 'src', banner: "'use client';" },
+          // Source files keep their own "use client" directives (Next.js App Router).
+          output: { preserveModules: true, preserveModulesRoot: 'src' },
         },
       },
     }
