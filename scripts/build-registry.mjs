@@ -88,10 +88,23 @@ let metas = slugs.map((slug) => {
 }).filter(Boolean)
 
 const exportOwners = new Map()
+const themeOwners = new Map()
+const cssOwners = new Map()
 for (const meta of metas) {
   for (const name of meta.exports ?? []) {
     if (exportOwners.has(name)) fail(meta.name, `export "${name}" is also declared by ${exportOwners.get(name)}`)
     exportOwners.set(name, meta.name)
+  }
+  for (const [key, value] of Object.entries(meta.cssVars?.theme ?? {})) {
+    const owner = themeOwners.get(key)
+    if (owner && owner.value !== value) fail(meta.name, `--${key} is also defined (differently) by ${owner.slug}`)
+    else themeOwners.set(key, { slug: meta.name, value })
+  }
+  for (const [selector, body] of Object.entries(meta.css ?? {})) {
+    const owner = cssOwners.get(selector)
+    const serialized = JSON.stringify(body)
+    if (owner && owner.value !== serialized) fail(meta.name, `"${selector}" is also defined (differently) by ${owner.slug} — rename it`)
+    else cssOwners.set(selector, { slug: meta.name, value: serialized })
   }
   for (const dep of meta.registryDependencies ?? []) {
     if (!allSlugs.includes(dep)) fail(meta.name, `registryDependency "${dep}" is not a component in this registry`)
